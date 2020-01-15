@@ -1,0 +1,24 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/comboxArrow.png</file>
+        <file>images/disk_abnormal.png</file>
+        <file>images/motetion_warn.png</file>
+        <file>images/videoloss.png</file>
+        <file>images/cloudControl_bg.png</file>
+        <file>images/cloudControl_down.png</file>
+        <file>images/cloudControl_down_p.png</file>
+        <file>images/cloudControl_left.png</file>
+        <file>images/cloudControl_left_P.png</file>
+        <file>images/cloudControl_right.png</file>
+        <file>images/cloudControl_right_p.png</file>
+        <file>images/cloudControl_up.png</file>
+        <file>images/cloudControl_up_p.png</file>
+        <file>images/setHome.png</file>
+        <file>images/setHome_p.png</file>
+        <file>images/video_replay.png</file>
+        <file>images/video_replay_p.png</file>
+        <file>images/videoType_swith.png</file>
+        <file>images/videoType_swith_p.png</file>
+        <file>images/record_state.png</file>
+    </qresource>
+</RCC>

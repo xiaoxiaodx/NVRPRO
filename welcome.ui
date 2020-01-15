@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Welcome</class>
+ <widget class="QDialog" name="Welcome">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>592</width>
+    <height>380</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+	background-color: rgb(255, 255, 255);
+}
+QLineEdit {
+	color:#ADADAD;
+    border: 0px solid rgb(41, 57, 85);
+    border-radius: 4px; 
+    background: #EDEEF0;  
+    selection-background-color: green; 
+	font-family: &quot;Microsoft YaHei&quot;;
+    font-size: 16px ;
+	padding-left:20px;
+	padding-right:20px;
+	placeholderText:&quot;password&quot;
+}
+ 
+ QLineEdit[echoMode=&quot;2&quot;] {
+      lineedit-password-character: 9679;
+}
+
+QLineEdit:hover {
+    border: 1px solid rgba(71,107,253,1);; 
+}
+
+</string>
+  </property>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>240</x>
+     <y>90</y>
+     <width>152</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 30px;
+    color: #333333;</string>
+   </property>
+   <property name="text">
+    <string>welcome!</string>
+   </property>
+  </widget>
+  <widget class="QLineEdit" name="lineEdit_password">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>170</y>
+     <width>312</width>
+     <height>46</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="echoMode">
+    <enum>QLineEdit::Password</enum>
+   </property>
+   <property name="placeholderText">
+    <string>password</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>270</y>
+     <width>312</width>
+     <height>48</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color:rgba(71,107,253,1);
+	border-width:0;
+    padding:4px;  
+	border-style:inset;  
+	border-radius:10px;  
+	color:white;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size: 20px;
+}
+QPushButton#pushButton:pressed {  
+    /* 改变背景色   
+    background-color:rgb(40,85,20); */
+    /* 使文字有一点移动 */  
+    padding-left:6px;  
+    padding-top:6px;  
+}  
+</string>
+   </property>
+   <property name="text">
+    <string>Next</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
