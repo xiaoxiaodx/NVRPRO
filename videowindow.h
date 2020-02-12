@@ -15,12 +15,15 @@ public:
     explicit VideoWindow(QWidget *parent = nullptr,int mW = 0,int mH = 0 );
     ~VideoWindow();
 
+
 private:
     Ui::VideoWindow *ui;
     void setControlPostion();
 
     int mWidth = 0;//提前获取的宽高保存在这
     int mHeight = 0;
+
+    bool event(QEvent *event);
 };
 
 #endif // VIDEOWINDOW_H

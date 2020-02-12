@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include "customerevent.h"
 
 //Qt Style Sheets Examples
 MainWindow::MainWindow(QWidget *parent) :
@@ -52,6 +52,20 @@ MainWindow::MainWindow(QWidget *parent) :
     //createDialog_passwordSetting();
     //createDialog_welcome();
     createVideoWindow(4);
+    createDialog_config();
+}
+bool MainWindow::event(QEvent *event)
+{
+    //qDebug()<<"event:"<<event->type();
+    if (event->type() == CustomerEvent::eventType())
+    {
+        CustomerEvent *customerEvent = dynamic_cast<CustomerEvent*>(event);
+        qDebug() <<"MainWindow:"<< customerEvent->getValueString();
+        return true;
+    }else if (event->type() == QEvent::MouseButtonPress) {
+        qDebug() <<"MainWindow:"<< event->type();
+    }
+    return QWidget::event(event);
 }
 
 MainWindow::~MainWindow()
@@ -59,6 +73,26 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::createDialog_config()
+{
+    QDesktopWidget* pDesktopWidget = QApplication::desktop();
+    //获取可用桌面大小
+    QRect deskRect = QApplication::desktop()->availableGeometry();
+    //获取主屏幕分辨率
+    QRect screenRect = QApplication::desktop()->screenGeometry();
+
+    qDebug()<<deskRect.x()<<"    "<<deskRect.y()<<"    "<<deskRect.width()<<"    "<<deskRect.height();
+
+    qDebug()<<screenRect.x()<<"    "<<screenRect.y()<<"    "<<deskRect.width()<<"    "<<deskRect.height();
+
+
+    if(nvrConfig == nullptr){
+        nvrConfig = new NvrConfig(this);
+        qDebug()<< nvrConfig->width() << nvrConfig->height();
+        nvrConfig->setGeometry((deskRect.width()-nvrConfig->width())/2,(deskRect.height()-nvrConfig->height())/2,nvrConfig->width(),nvrConfig->height());
+        nvrConfig->show();
+    }
+}
 
 void MainWindow::createVideoWindow(int n)
 {
@@ -68,8 +102,6 @@ void MainWindow::createVideoWindow(int n)
     QRect deskRect = QApplication::desktop()->availableGeometry();
     //获取主屏幕分辨率
     QRect screenRect = QApplication::desktop()->screenGeometry();
-
-
 
     int widthPerRect = (deskRect.width() - rectSpace *(videoN-1))/videoN;
     int heightPerRect = (deskRect.height() - rectSpace *(videoN-1))/videoN;

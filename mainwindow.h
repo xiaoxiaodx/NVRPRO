@@ -14,6 +14,7 @@
 #include "passwordsetting.h"
 #include "welcome.h"
 #include "videowindow.h"
+#include "nvrConfig/nvrconfig.h"
 namespace Ui {
 class MainWindow;
 }
@@ -36,6 +37,7 @@ protected:
     void mouseMoveEvent(QMouseEvent *event);
     void wheelEvent(QWheelEvent *event);
 
+    bool event(QEvent *event);
 private slots:
     void on_btnAudio_clicked();
     void on_btnBeer_clicked();
@@ -60,7 +62,7 @@ private:
     void createDialog_passwordSetting();
     void createDialog_welcome();
     void createVideoWindow(int n);
-
+    void createDialog_config();
 
     void drawVideoRect(QPainter *paint,int nxn);
     void drawCloudControl(QPainter *paint);
@@ -69,6 +71,7 @@ private:
     int const rectSpace = 2;//分屏的时候，相邻矩形的边距
     int const videoN = 2;//几乘几的视频显示
 
+    NvrConfig *nvrConfig = nullptr;
     Timezonesetting *timeZoneSetting = nullptr;
     PasswordSetting *passwordSetting = nullptr;
     Welcome *welcome = nullptr;

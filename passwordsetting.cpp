@@ -49,6 +49,4 @@ void PasswordSetting::setControlPostion()
     ui->lineEdit_confirm->setGeometry((thisW - lineEdit_confirmW)/2,lineEdit_confirmY,lineEdit_confirmW,lineEdit_confirmH);
 
     ui->pushButton->setGeometry((thisW - btnW)/2,btnY,btnW,btnH);
-
-
 }

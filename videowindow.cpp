@@ -1,6 +1,7 @@
 #include "videowindow.h"
 #include "ui_videowindow.h"
 #include <QDebug>
+#include "customerevent.h"
 VideoWindow::VideoWindow(QWidget *parent,int mW,int mH) :
     QWidget(parent),
     ui(new Ui::VideoWindow)
@@ -8,6 +9,21 @@ VideoWindow::VideoWindow(QWidget *parent,int mW,int mH) :
     ui->setupUi(this);
     mWidth = mW;
     mHeight = mH;
+
+    QPushButton *button = new QPushButton(this);
+    button->setText("测试自定义事件");
+    // 建立连接, 发送信号
+    QObject::connect(button, &QPushButton::clicked, [=](void)->void{
+        // 使用PostEvent方式发送
+        CustomerEvent *customerEvent = new CustomerEvent("PostCustomerEvent");
+        QCoreApplication::postEvent(this->parent(), customerEvent);
+
+        // 使用SendEvent方式发送
+        CustomerEvent *sendCustomerEvent = new CustomerEvent("SendCustomerEvent");
+        bool result = QCoreApplication::sendEvent(this, sendCustomerEvent);
+        qDebug() << "The Dispose Result Is " << result;
+        delete sendCustomerEvent;
+    });
     setControlPostion();
 }
 
@@ -16,6 +32,19 @@ VideoWindow::~VideoWindow()
     delete ui;
 }
 
+bool VideoWindow::event(QEvent *event)
+{
+    if (event->type() == CustomerEvent::eventType())
+    {
+        CustomerEvent *customerEvent = dynamic_cast<CustomerEvent*>(event);
+        qDebug() <<"VideoWindow:"<< customerEvent->getValueString();
+        return true;
+    }else if (event->type() == QEvent::MouseButtonPress) {
+        qDebug() <<"VideoWindow:"<< event->type();
+    }
+
+    return QWidget::event(event);
+}
 
 void VideoWindow::setControlPostion()
 {
@@ -69,7 +98,4 @@ void VideoWindow::setControlPostion()
     ui->pushButton_video_swith->setGeometry(firstBtnX,btnY,commonBtnW,commonBtnH);
     ui->pushButton_replay->setGeometry(firstBtnX-42-commonBtnW,btnY,commonBtnW,commonBtnH);
     ui->pushButton_setHome->setGeometry(firstBtnX-116-commonBtnW,btnY,commonBtnW,commonBtnH);
-
-
-
 }

@@ -20,5 +20,17 @@
         <file>images/videoType_swith.png</file>
         <file>images/videoType_swith_p.png</file>
         <file>images/record_state.png</file>
+        <file>images/ask.png</file>
+        <file>images/config_close.png</file>
+        <file>images/config_icon.png</file>
+        <file>images/device_select.png</file>
+        <file>images/device_setting.png</file>
+        <file>images/device_unselect.png</file>
+        <file>images/masterPreview.png</file>
+        <file>images/system_manager.png</file>
+        <file>images/status_connect.png</file>
+        <file>images/status_disconnect.png</file>
+        <file>images/switch_off.png</file>
+        <file>images/switch_on.png</file>
     </qresource>
 </RCC>

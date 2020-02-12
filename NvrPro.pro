@@ -30,21 +30,29 @@ SOURCES += \
     timezonesetting.cpp \
     passwordsetting.cpp \
     welcome.cpp \
-    videowindow.cpp
+    videowindow.cpp \
+    customerevent.cpp \
+    nvrConfig/nvrconfig.cpp \
+    nvrConfig/devicesetting.cpp
 
 HEADERS += \
         mainwindow.h \
     timezonesetting.h \
     passwordsetting.h \
     welcome.h \
-    videowindow.h
+    videowindow.h \
+    customerevent.h \
+    nvrConfig/nvrconfig.h \
+    nvrConfig/devicesetting.h
 
 FORMS += \
         mainwindow.ui \
     timezonesetting.ui \
     passwordsetting.ui \
     welcome.ui \
-    videowindow.ui
+    videowindow.ui \
+    nvrConfig/devicesetting.ui \
+    nvrConfig/nvrconfig.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
