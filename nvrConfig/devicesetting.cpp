@@ -11,22 +11,11 @@ DeviceSetting::DeviceSetting(QWidget *parent) :
 {
     ui->setupUi(this);
 
-
-
     init();
 }
 
 void DeviceSetting::init()
 {
-    //    //各个控件位置进行设置
-    //    ui->widget->setGeometry(0,0,925,518);
-
-    //    ui->widget_3->setGeometry(0,0,925,518);
-    //    ui->widget_4->setGeometry(0,0,925,518);
-    //    ui->widget_5->setGeometry(0,0,925,518);
-
-    //第一页
-    createDeviceTable();
     QMap<QString,QVariant> map;
     map.insert("isSelect",true);
     map.insert("did","11111");
@@ -35,6 +24,12 @@ void DeviceSetting::init()
     map.insert("softwareVersion","5555");
     map.insert("hardwareVersion","66666");
     deviceTableInsert(0,map);
+
+    ui->label_title->move(15,16);
+    ui->tabWidget->setGeometry(15,56,950,552);
+
+    //第一页
+    createDeviceTable();
 
     createOSDSetting();
     adjustOSDWidgetPos();
@@ -173,8 +168,6 @@ void DeviceSetting::createDeviceTable()
 void DeviceSetting::createOSDSetting()
 {
     adjustOSDWidgetPos();
-
-
 }
 
 void DeviceSetting::adjustOSDWidgetPos()
@@ -269,7 +262,29 @@ void DeviceSetting::createVideoSetting()
 }
 void DeviceSetting::adjustVideoWidgetPos()
 {
+    ui->Videolabel_setting->move(20,20);
+    ui->Videoline->move(20,52);
+    ui->VideopushButton_cam1->move(40,77);
+    ui->Videolabel_cam1->move(66,73);
+    ui->VideopushButton_cam2->move(129,77);
+    ui->Videolabel_cam2->move(155,73);
+    ui->VideopushButton_cam3->move(218,77);
+    ui->Videolabel_cam3->move(244,73);
+    ui->VideopushButton_cam4->move(307,77);
+    ui->Videolabel_cam4->move(333,73);
 
+    ui->VideolpushButton_recordingoff->move(40,119);
+    ui->Videolabel_recordingoff->move(66,115);
+    ui->VideopushButton_alarm->move(185,119);
+    ui->Videolabel_alarm->move(211,115);
+    ui->VideopushButton_wholedayrecording->move(314,119);
+    ui->Videolabel_wholedayrecording->move(340,115);
+
+    ui->Videolabel_resolution->move(40,170);
+    ui->VideocomboBox->move(124,163);
+
+    ui->Videolabel_AlarmTime->move(30,235);
+    ui->Videoline_2->move(20,267);
 }
 void DeviceSetting::createRTMPSetting()
 {
@@ -278,7 +293,31 @@ void DeviceSetting::createRTMPSetting()
 }
 void DeviceSetting::adjustRTMPWidgetPos()
 {
+    ui->RTMPlabel_setting->move(20,20);
+    ui->RTMPline->move(20,52);
 
+    ui->RTMPlabel_swith->move(36,73);
+    ui->RTMPswith->move(100,77);
+    ui->RTMPpushButton_cam1->move(40,119);
+    ui->RTMPlabel_cam1->move(66,115);
+    ui->RTMPpushButton_cam2->move(129,119);
+    ui->RTMPlabel_cam2->move(155,115);
+    ui->RTMPpushButton_cam3->move(218,119);
+    ui->RTMPlabel_cam3->move(244,115);
+    ui->RTMPpushButton_cam4->move(307,119);
+    ui->RTMPlabel_cam4->move(333,115);
+
+    ui->RTMPlabel_resolution->move(40,166);
+    ui->RTMPcomboBox->move(124,163);
+
+    ui->RTMPlabel_url->move(85,234);
+    ui->RTMPlineEdit_url->move(124,231);
+    ui->RTMPlabel_username->move(37,279);
+    ui->RTMPlineEdit_username->move(124,276);
+    ui->RTMPlabel_password->move(48,327);
+    ui->RTMPlineEdit_password->move(124,324);
+
+    ui->RTMPpushButton_submit->move(270,372);
 }
 DeviceSetting::~DeviceSetting()
 {

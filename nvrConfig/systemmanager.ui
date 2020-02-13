@@ -1,0 +1,1271 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SystemManager</class>
+ <widget class="QWidget" name="SystemManager">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1164</width>
+    <height>596</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QLabel" name="label_title">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>171</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 16px;
+    color: #333333;</string>
+   </property>
+   <property name="text">
+    <string>System Setting</string>
+   </property>
+  </widget>
+  <widget class="QTabWidget" name="tabWidget">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>70</y>
+     <width>1161</width>
+     <height>501</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QTabWidget::pane{border-width:0px;}
+
+QTabBar::tab {
+
+min-width:155px;
+
+min-height:34px;
+
+color: #666666;
+
+font:bold 14px &quot;Microsoft YaHei&quot;;
+
+border: 0px solid;
+ 
+}
+
+
+QTabBar::tab:selected{
+
+min-width:160px;
+
+min-height:34px;
+
+color: #4796f0;
+
+font:15px &quot;Microsoft YaHei&quot;;
+
+border: 0px solid;
+
+border-bottom: 2px solid;
+
+border-color: #476BFD;
+
+}
+
+
+QTabBar::close-button {
+
+image: url(:/png/images/jy_close1.png)
+
+}
+
+ 
+
+QTabBar::close-button:selected {
+
+image: url(:/png/images/jy_close2.png)
+
+}
+</string>
+   </property>
+   <property name="currentIndex">
+    <number>5</number>
+   </property>
+   <property name="elideMode">
+    <enum>Qt::ElideRight</enum>
+   </property>
+   <widget class="QWidget" name="tab">
+    <attribute name="title">
+     <string>Time Setting</string>
+    </attribute>
+    <widget class="QWidget" name="widget" native="true">
+     <property name="geometry">
+      <rect>
+       <x>30</x>
+       <y>9</y>
+       <width>1131</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #F9F9F9;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size:14px;
+    color: #333333;</string>
+     </property>
+     <widget class="Line" name="TimeSetline">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>60</y>
+        <width>910</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+background-color: rgb(226, 226, 226);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TimeSetlabel_swith_setting">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>80</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Switch</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TimeSetlabel_url">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>172</y>
+        <width>27</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>URL</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="TimeSetswith_timesave">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>400</y>
+        <width>30</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/switch_on.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="TimeSetpushButton_url">
+      <property name="geometry">
+       <rect>
+        <x>400</x>
+        <y>170</y>
+        <width>55</width>
+        <height>25</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:rgba(71,107,253,1);
+	border-width:0;
+    padding:4px;  
+	border-style:inset;  
+	border-radius:3px;  
+	color:white;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 10px;
+}
+QPushButton#pushButton:pressed {  
+    /* 改变背景色   
+    background-color:rgb(40,85,20); */
+    /* 使文字有一点移动 */  
+    padding-left:6px;  
+    padding-top:6px;  
+}  
+</string>
+      </property>
+      <property name="text">
+       <string>Submit</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TimeSetlabel_swith_savetime">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>400</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+      <property name="text">
+       <string>Switch</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="TimeSetswith_setting">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>80</y>
+        <width>30</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/switch_on.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="TimeSetlineEdit_url">
+      <property name="geometry">
+       <rect>
+        <x>120</x>
+        <y>170</y>
+        <width>200</width>
+        <height>28</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TimeSetlabel_setting">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>20</y>
+        <width>85</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 14px;
+    color: #333333;</string>
+      </property>
+      <property name="text">
+       <string>NTP Setting</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="TimeSetpushButton_everyhour">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>120</y>
+        <width>14</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/checked.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TimeSetlabel_everyhour">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>120</y>
+        <width>74</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Every Hour</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TimeSetlabel_everyday">
+      <property name="geometry">
+       <rect>
+        <x>250</x>
+        <y>120</y>
+        <width>74</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Every Day</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="TimeSetpushButton_everyday">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>120</y>
+        <width>14</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/checked.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TimeSetlabel_everyweek">
+      <property name="geometry">
+       <rect>
+        <x>410</x>
+        <y>120</y>
+        <width>81</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Every Week</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="TimeSetpushButton_everyweek">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>120</y>
+        <width>14</width>
+        <height>14</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/checked.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TimeSetlabel_summertime">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>210</y>
+        <width>111</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 14px;
+    color: #333333;</string>
+      </property>
+      <property name="text">
+       <string>Summer Time</string>
+      </property>
+     </widget>
+     <widget class="Line" name="TimeSetline_1">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>250</y>
+        <width>910</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+background-color: rgb(226, 226, 226);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="TimeSetlabel_savetime">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>330</y>
+        <width>211</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 14px;
+    color: #333333;</string>
+      </property>
+      <property name="text">
+       <string>Daylighting-Saving Time</string>
+      </property>
+     </widget>
+     <widget class="Line" name="TimeSetline_2">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>370</y>
+        <width>910</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+background-color: rgb(226, 226, 226);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QComboBox" name="TimeSetcomboBox">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>270</y>
+        <width>160</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QComboBox {
+      border: 1px solid #D2D2D2;
+      border-radius: 2px;
+      padding: 1px 1px 1px 10px;
+      min-width: 120px;
+	  color:#000000;
+	  font-size:14px;
+  }
+
+  QComboBox:editable {
+      background:#F9F9F9;
+  }
+
+  QComboBox:!editable, QComboBox::drop-down:editable {
+       background: #F9F9F9;
+  }
+
+  QComboBox:!editable:on, QComboBox::drop-down:editable:on {
+      background: #F9F9F9;
+      padding-top: 1px;
+      padding-left: 10px;
+  }
+
+  QComboBox::drop-down {
+      subcontrol-origin: padding;
+      subcontrol-position: top right;
+      width:40px;
+      border-left-width: 1px;
+      border-left-color: darkgray;
+      border-radius: 4px;
+  }
+
+  QComboBox::down-arrow {
+	padding: 1px 1px 1px 10px;
+	width:10;
+	height:6;
+	image:url(:/images/comboxArrow.png)
+  }
+
+  QComboBox::down-arrow:on {
+      top: 0px;
+      left: 0px;
+  }
+
+/**************   QComboBox 定制 ****************/
+QComboBox QAbstractItemView
+{
+    outline:0px;
+    background:#ffffff;
+	border:1px solid rgba(0,0,0,0.15);
+}
+QComboBox QAbstractItemView::item
+{
+    padding-left:20px;
+	border-width:0px;
+    font-size:14px;
+    color:#333333;
+    background:#ffffff;
+    font-family:&quot;Microsoft YaHei&quot;;
+	min-height: 30px; 
+}
+
+QComboBox QAbstractItemView::item:selected
+{
+	background:#000000;
+	border-width:0px
+}
+
+QComboBox QScrollBar::vertical{
+    width:6px;
+    background:#FFFFFF;
+    border:none;
+    border-radius:3px;
+}
+QComboBox QScrollBar::handle::vertical{ 
+    border-radius:3px;
+    width: 6px;
+    background:#D8D8D8;
+}
+QComboBox QScrollBar::handle::vertical::hover{
+    background:rgb(232,232,232);
+}
+QComboBox QScrollBar::add-line::vertical{
+    border:none;
+}
+QComboBox QScrollBar::sub-line::vertical{
+    border:none;
+}</string>
+      </property>
+      <item>
+       <property name="text">
+        <string>GMT+08:00北京</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>GMT+08:00北京</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>GMT+08:00北京</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>GMT+08:00北京</string>
+       </property>
+      </item>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_2">
+    <attribute name="title">
+     <string>System Info</string>
+    </attribute>
+    <widget class="QWidget" name="widget_2" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1131</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #F9F9F9;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size:14px;
+    color: #333333;</string>
+     </property>
+     <widget class="QLabel" name="Systeminfolabel_systeminfo">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>30</y>
+        <width>85</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 14px;
+    color: #333333;</string>
+      </property>
+      <property name="text">
+       <string>System Info</string>
+      </property>
+     </widget>
+     <widget class="Line" name="Systeminfoline">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>70</y>
+        <width>910</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+background-color: rgb(226, 226, 226);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfolabel_networkinfo">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>250</y>
+        <width>101</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 14px;
+    color: #333333;</string>
+      </property>
+      <property name="text">
+       <string>Network Info</string>
+      </property>
+     </widget>
+     <widget class="Line" name="Systeminfoline_1">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>290</y>
+        <width>910</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+background-color: rgb(226, 226, 226);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfolabel_devicetype">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>110</y>
+        <width>84</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Device Typle</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfolabel_devicetypeInput">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>110</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfolabel_devicedidinput">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>140</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfolabel_devicedid">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>140</y>
+        <width>81</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Device DID</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfolabel_softversioninput">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>180</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfolabel_softversion">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>170</y>
+        <width>113</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:#666666</string>
+      </property>
+      <property name="text">
+       <string>Software Version</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfolabel_hardwareversioninput">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>210</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfolabel_hardwareversion">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>210</y>
+        <width>119</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Hardware Version</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfolabel_ipaddress">
+      <property name="geometry">
+       <rect>
+        <x>100</x>
+        <y>310</y>
+        <width>73</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>IP Address</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfolabel_macaddressinput">
+      <property name="geometry">
+       <rect>
+        <x>220</x>
+        <y>360</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfoabel_macaddress">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>360</y>
+        <width>90</width>
+        <height>19</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Mac Address</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systeminfolabel_ipaddressinput">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>310</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_3">
+    <attribute name="title">
+     <string>Alarm Query</string>
+    </attribute>
+    <widget class="QWidget" name="widget_3" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1131</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #F9F9F9;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size:14px;
+    color: #333333;</string>
+     </property>
+     <widget class="QTableWidget" name="tableWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>70</y>
+        <width>991</width>
+        <height>381</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true"/>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_4">
+    <attribute name="title">
+     <string>Disk Management</string>
+    </attribute>
+    <widget class="QWidget" name="widget_4" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1131</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #F9F9F9;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size:14px;
+    color: #333333;</string>
+     </property>
+     <widget class="Line" name="Diskmanagerline">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>80</y>
+        <width>910</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+background-color: rgb(226, 226, 226);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Diskmanagerlabel_diskerr">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>40</y>
+        <width>131</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 14px;
+    color: #333333;</string>
+      </property>
+      <property name="text">
+       <string>Disk Error Alarm</string>
+      </property>
+     </widget>
+     <widget class="Line" name="Diskmanagerline_1">
+      <property name="geometry">
+       <rect>
+        <x>60</x>
+        <y>260</y>
+        <width>910</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+background-color: rgb(226, 226, 226);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Diskmanagerlabel_hderr">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>220</y>
+        <width>171</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 14px;
+    color: #333333;</string>
+      </property>
+      <property name="text">
+       <string>Alarm Setting for HD</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Diskmanagerlabel_swith">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>140</y>
+        <width>51</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Switch</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Diskmanagerswith">
+      <property name="geometry">
+       <rect>
+        <x>140</x>
+        <y>140</y>
+        <width>30</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/switch_on.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Diskmanagerlabel_storage">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>290</y>
+        <width>121</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Storage Capacity</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Diskmanagerlabel_storage_2">
+      <property name="geometry">
+       <rect>
+        <x>270</x>
+        <y>320</y>
+        <width>190</width>
+        <height>15</height>
+       </rect>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+	right-padding:10px;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size:12px;
+    color: #476BFD;</string>
+      </property>
+      <property name="text">
+       <string>0/0</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="margin">
+       <number>0</number>
+      </property>
+      <property name="indent">
+       <number>-3</number>
+      </property>
+     </widget>
+     <widget class="QProgressBar" name="DiskmanagerprogressBar">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>300</y>
+        <width>380</width>
+        <height>10</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QProgressBar{
+        border-radius: 5px;
+        color: #476BFD;
+        text-align: center;
+        background: #E7EAF4;
+radius:10;
+}
+QProgressBar::chunk {
+        border-radius: 5px;
+        background: #476BFD;
+
+}</string>
+      </property>
+      <property name="value">
+       <number>0</number>
+      </property>
+      <property name="textVisible">
+       <bool>false</bool>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_5">
+    <attribute name="title">
+     <string>System operation</string>
+    </attribute>
+    <widget class="QWidget" name="widget_5" native="true">
+     <property name="geometry">
+      <rect>
+       <x>0</x>
+       <y>0</y>
+       <width>1131</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #F9F9F9;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size:14px;
+    color: #333333;</string>
+     </property>
+     <widget class="QPushButton" name="Systemoperation_pushbutton_reboot">
+      <property name="geometry">
+       <rect>
+        <x>90</x>
+        <y>60</y>
+        <width>36</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/restart.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="Systemoperation_pushbutton_reset">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>60</y>
+        <width>36</width>
+        <height>36</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/images/reset.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systemoperation_label_reboot">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>170</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reboot</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Systemoperation_label_reset">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>170</y>
+        <width>54</width>
+        <height>12</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reset</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QWidget" name="tab_6">
+    <attribute name="title">
+     <string>User Management</string>
+    </attribute>
+    <widget class="QWidget" name="widget_6" native="true">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>0</y>
+       <width>1131</width>
+       <height>461</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">background-color: #F9F9F9;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size:14px;
+    color: #333333;background-color: #F9F9F9</string>
+     </property>
+     <widget class="QLabel" name="UserManagerlabel_title">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>40</y>
+        <width>111</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 14px;
+    color: #333333;</string>
+      </property>
+      <property name="text">
+       <string>Edit Password</string>
+      </property>
+     </widget>
+     <widget class="Line" name="UserManagerline">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>80</y>
+        <width>910</width>
+        <height>1</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border:none;
+background-color: rgb(226, 226, 226);</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="UserManagerlabel_oldpassword">
+      <property name="geometry">
+       <rect>
+        <x>70</x>
+        <y>132</y>
+        <width>101</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Old Password</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="UserManagerlineEdit_newpassword">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>130</y>
+        <width>160</width>
+        <height>28</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="UserManagerlabel_newpassword">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>182</y>
+        <width>111</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>New Password</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="UserManagerlineEdit_oldpassword">
+      <property name="geometry">
+       <rect>
+        <x>210</x>
+        <y>180</y>
+        <width>160</width>
+        <height>28</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QLabel" name="UserManagerlabel_confirmagain">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>252</y>
+        <width>111</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Confirm Again</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="UserManagerlineEdit_confirmagain">
+      <property name="geometry">
+       <rect>
+        <x>200</x>
+        <y>250</y>
+        <width>160</width>
+        <height>28</height>
+       </rect>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="UserManagerpushButton_submit">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>350</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+	background-color:rgba(71,107,253,1);
+	border-width:0;
+    padding:4px;  
+	border-style:inset;  
+	border-radius:3px;  
+	color:white;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 10px;
+}
+QPushButton#pushButton:pressed {  
+    /* 改变背景色   
+    background-color:rgb(40,85,20); */
+    /* 使文字有一点移动 */  
+    padding-left:6px;  
+    padding-top:6px;  
+}  
+</string>
+      </property>
+      <property name="text">
+       <string>Submit</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

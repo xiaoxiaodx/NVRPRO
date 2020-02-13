@@ -33,7 +33,8 @@ SOURCES += \
     videowindow.cpp \
     customerevent.cpp \
     nvrConfig/nvrconfig.cpp \
-    nvrConfig/devicesetting.cpp
+    nvrConfig/devicesetting.cpp \
+    nvrConfig/systemmanager.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -43,7 +44,8 @@ HEADERS += \
     videowindow.h \
     customerevent.h \
     nvrConfig/nvrconfig.h \
-    nvrConfig/devicesetting.h
+    nvrConfig/devicesetting.h \
+    nvrConfig/systemmanager.h
 
 FORMS += \
         mainwindow.ui \
@@ -52,7 +54,8 @@ FORMS += \
     welcome.ui \
     videowindow.ui \
     nvrConfig/devicesetting.ui \
-    nvrConfig/nvrconfig.ui
+    nvrConfig/nvrconfig.ui \
+    nvrConfig/systemmanager.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

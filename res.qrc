@@ -32,5 +32,12 @@
         <file>images/status_disconnect.png</file>
         <file>images/switch_off.png</file>
         <file>images/switch_on.png</file>
+        <file>images/checked.png</file>
+        <file>images/unchecked.png</file>
+        <file>images/dialogExit.png</file>
+        <file>images/reset.png</file>
+        <file>images/reset_press.png</file>
+        <file>images/restart.png</file>
+        <file>images/restart_press.png</file>
     </qresource>
 </RCC>

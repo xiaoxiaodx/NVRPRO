@@ -27,7 +27,13 @@ void NvrConfig::initStackedWidget()
         qDebug()<<"initStackedWidget "<<ui->stackedWidget->width()<<"    "<<ui->stackedWidget->height();
 
         ui->stackedWidget->addWidget(deviceSetting);
-        ui->stackedWidget->setCurrentWidget(deviceSetting);
+
+    }
+
+    if(systemManager == nullptr){
+        systemManager = new SystemManager(this);
+        ui->stackedWidget->addWidget(systemManager);
+
     }
 }
 
@@ -46,6 +52,13 @@ void NvrConfig::setMenuItem()
     buttonGround->addButton(btnSystemManagement);
     buttonGround->setExclusive(true);
 
+    connect(btnDeviceSetting,&QPushButton::clicked,[=](){
+       ui->stackedWidget->setCurrentWidget(deviceSetting);
+    });
+
+    connect(btnSystemManagement,&QPushButton::clicked,[=](){
+       ui->stackedWidget->setCurrentWidget(systemManager);
+    });
     /*容器包含*/
     QVBoxLayout *menuLayout = new QVBoxLayout();
     menuLayout->setMargin(0);
@@ -59,6 +72,7 @@ void NvrConfig::setMenuItem()
 
     ui->widget_menu->setLayout(menuLayout);
 }
+
 
 QPushButton * NvrConfig::createSelfBtn(QString btnTxt,QString res)
 {
