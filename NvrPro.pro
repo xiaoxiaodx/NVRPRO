@@ -30,32 +30,54 @@ SOURCES += \
     timezonesetting.cpp \
     passwordsetting.cpp \
     welcome.cpp \
-    videowindow.cpp \
     customerevent.cpp \
     nvrConfig/nvrconfig.cpp \
     nvrConfig/devicesetting.cpp \
-    nvrConfig/systemmanager.cpp
+    nvrConfig/systemmanager.cpp \
+    nvrConfig/deleteconfirmdialog.cpp \
+    nvrConfig/cameramenu.cpp \
+    nvrConfig/alarmtypemenu.cpp \
+    masterPreview/videowindow.cpp \
+    videoReplay/replaywindow.cpp \
+    videoReplay/mycalendar.cpp \
+    videoReplay/replaytimeline.cpp \
+    nvrConfig/timeselectdialog.cpp
 
 HEADERS += \
         mainwindow.h \
     timezonesetting.h \
     passwordsetting.h \
     welcome.h \
-    videowindow.h \
     customerevent.h \
     nvrConfig/nvrconfig.h \
     nvrConfig/devicesetting.h \
-    nvrConfig/systemmanager.h
+    nvrConfig/systemmanager.h \
+    nvrConfig/deleteconfirmdialog.h \
+    nvrConfig/cameramenu.h \
+    nvrConfig/alarmtypemenu.h \
+    masterPreview/videowindow.h \
+    videoReplay/replaywindow.h \
+    videoReplay/mycalendar.h \
+    videoReplay/replaytimeline.h \
+    util.h \
+    nvrConfig/timeselectdialog.h
 
 FORMS += \
         mainwindow.ui \
     timezonesetting.ui \
     passwordsetting.ui \
     welcome.ui \
-    videowindow.ui \
     nvrConfig/devicesetting.ui \
     nvrConfig/nvrconfig.ui \
-    nvrConfig/systemmanager.ui
+    nvrConfig/systemmanager.ui \
+    nvrConfig/deleteconfirmdialog.ui \
+    nvrConfig/cameramenu.ui \
+    nvrConfig/alarmtypemenu.ui \
+    masterPreview/videowindow.ui \
+    videoReplay/replaywindow.ui \
+    videoReplay/mycalendar.ui \
+    videoReplay/replaytimeline.ui \
+    nvrConfig/timeselectdialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

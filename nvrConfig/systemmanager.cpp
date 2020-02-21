@@ -1,6 +1,8 @@
 #include "systemmanager.h"
 #include "ui_systemmanager.h"
-
+#include <QHeaderView>
+#include <QScrollBar>
+#include <QHBoxLayout>
 SystemManager::SystemManager(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::SystemManager)
@@ -99,11 +101,233 @@ void SystemManager::createAlarmQuery()
 
 void SystemManager::adjustAlarmQueryWidgetPos()
 {
+
+    QMap<QString,QVariant> map;
+    map.insert("index",0);
+    map.insert("camara","11111");
+    map.insert("alarmType","Motion Detection");
+    map.insert("startTime","2019-01-08 14:00:00");
+    map.insert("endTime","2019-01-08 14:30:00");
+
+    QMap<QString,QVariant> map1;
+    map1.insert("index",1);
+    map1.insert("camara","2222");
+    map1.insert("alarmType","Disk exception");
+    map1.insert("startTime","2019-01-08 14:00:00");
+    map1.insert("endTime","2019-01-08 14:30:00");
+
+    QMap<QString,QVariant> map2;
+    map2.insert("index",2);
+    map2.insert("camara","2222");
+    map2.insert("alarmType","Video Loss");
+    map2.insert("startTime","2019-01-09 14:00:00");
+    map2.insert("endTime","2019-01-09 14:30:00");
+
+
     ui->widget_3->setGeometry(0,0,950,518);
+    ui->label_title_alarm->move(20,20);
+    ui->widget_date->move(479,16);
+    ui->widget_time->move(717,16);
+
+    createAlarmQueryTable();
+    createDeviceTableHeader();
+    alarmQueryTableInsert(1,map);
+    alarmQueryTableInsert(2,map1);
+    alarmQueryTableInsert(3,map2);
 
 
+}
+
+void SystemManager::createAlarmQueryTable()
+{
+
+    ui->tableWidget_2->setGeometry(20,52,815,400);
+    ui->tableWidget_2->setRowCount(3);
+    ui->tableWidget_2->setColumnCount(5); //设置列数
 
 
+    // ui->tableWidget_2->horizontalHeader()->setDefaultSectionSize(130);
+    ui->tableWidget_2->horizontalHeader()->resizeSection(0,114);
+    ui->tableWidget_2->horizontalHeader()->resizeSection(1,130);
+    ui->tableWidget_2->horizontalHeader()->resizeSection(2,206);
+    ui->tableWidget_2->horizontalHeader()->resizeSection(3,210);
+    ui->tableWidget_2->horizontalHeader()->resizeSection(4,150);
+
+    ui->tableWidget_2->horizontalHeader()->setFixedHeight(31); //设置表头的高度
+
+    ui->tableWidget_2->horizontalHeader()->setStyleSheet("QHeaderView::section{border:none;font:bold;background:#EBECF0;}"); //设置表头背景色
+    ui->tableWidget_2->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+
+    ui->tableWidget_2->horizontalHeader()->setVisible(false); //设置垂直头不可见
+    ui->tableWidget_2->verticalHeader()->setDefaultSectionSize(2); //设置行距
+    ui->tableWidget_2->verticalHeader()->setVisible(false); //设置垂直头不可见
+
+
+    ui->tableWidget_2->setFrameShape(QFrame::NoFrame);
+    ui->tableWidget_2->setFrameShape(QFrame::NoFrame); //设置无边框
+    ui->tableWidget_2->setShowGrid(false); //设置不显示格子线
+
+    ui->tableWidget_2->setSelectionMode(QAbstractItemView::ExtendedSelection); //可多选（Ctrl、Shift、 Ctrl+A都可以）
+    ui->tableWidget_2->setSelectionBehavior(QAbstractItemView::SelectRows); //设置选择行为时每次选择一行
+    ui->tableWidget_2->setEditTriggers(QAbstractItemView::NoEditTriggers); //设置不可编辑
+
+    ui->tableWidget_2->setStyleSheet("background-color:#F9F9F9;selection-background-color:#F1F4FF;"); //设置背景色
+    ui->tableWidget_2->setFocusPolicy(Qt::NoFocus);
+
+    //设置水平、垂直滚动条样式
+    ui->tableWidget_2->horizontalScrollBar()->setStyleSheet("QScrollBar{background:transparent; height:10px;}"
+                                                            "QScrollBar::handle{background:lightgray; border:2px solid transparent; border-radius:5px;}"
+                                                            "QScrollBar::handle:hover{background:gray;}"
+                                                            "QScrollBar::sub-line{background:transparent;}"
+                                                            "QScrollBar::add-line{background:transparent;}");
+    ui->tableWidget_2->verticalScrollBar()->setStyleSheet("QScrollBar{background:transparent; width: 10px;}"
+                                                          "QScrollBar::handle{background:lightgray; border:2px solid transparent; border-radius:5px;}"
+                                                          "QScrollBar::handle:hover{background:gray;}"
+                                                          "QScrollBar::sub-line{background:transparent;}"
+                                                          "QScrollBar::add-line{background:transparent;}");
+
+}
+
+//由于表头的自定义麻烦 故将第一行作为表头数据
+void SystemManager::createDeviceTableHeader()
+{
+    int row_count = 0;
+
+    QLabel *lable1 = new QLabel("S/N");
+
+    lable1->setAlignment(Qt::AlignCenter);
+
+
+    QWidget *widget2 = new QWidget(this);
+    QLabel *lable2 = new QLabel("Camera",widget2);
+    QPushButton *btn2 = new QPushButton(widget2);
+    lable2->setGeometry(0,10,44,15);
+    btn2->setGeometry(48,13,10,10);
+    btn2 ->setStyleSheet("QPushButton{border-image: url(:/images/table_menu.png);}"
+                         "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}");
+
+
+    connect(btn2,&QPushButton::clicked,[=](){
+        if(cameraMenu == nullptr){
+            cameraMenu = new CameraMenu(ui->widget_3);
+            cameraMenu->move(157,70);
+        }
+        cameraMenu->show();
+    });
+    QWidget *widget3 = new QWidget(this);
+    QLabel *lable3 = new QLabel("Alarm Typle",widget3);
+    QPushButton *btn3 = new QPushButton(widget3);
+    lable3->setGeometry(0,10,69,15);
+    btn3->setGeometry(73,13,10,10);
+    btn3 ->setStyleSheet("QPushButton{border-image: url(:/images/table_menu.png);}"
+                         "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}");
+
+    connect(btn3,&QPushButton::clicked,[=](){
+        if(alarmtypeMenu == nullptr){
+            alarmtypeMenu = new AlarmTypeMenu(ui->widget_3);
+            alarmtypeMenu->move(302,70);
+        }
+        alarmtypeMenu->show();
+    });
+
+    QWidget *widget4 = new QWidget(this);
+    QLabel *lable4 = new QLabel("Start Time",widget4);
+    QPushButton *btn4up = new QPushButton(widget4);
+    QPushButton *btn4down = new QPushButton(widget4);
+    lable4->setGeometry(0,10,59,15);
+    btn4up->setGeometry(63,12,10,6);
+    btn4down->setGeometry(63,19,10,6);
+    btn4up ->setStyleSheet("QPushButton{border-image: url(:/images/table_up.png);}"
+                           "QPushButton:pressed{border-image: url(:/images/table_up_p.png);}");
+    btn4down ->setStyleSheet("QPushButton{border-image: url(:/images/table_down.png);}"
+                             "QPushButton:pressed{border-image: url(:/images/table_down_p.png);}");
+
+    QWidget *widget5 = new QWidget(this);
+    QLabel *lable5 = new QLabel("End Time",widget5);
+    QPushButton *btn5up = new QPushButton(widget5);
+    QPushButton *btn5down = new QPushButton(widget5);
+    lable5->setGeometry(0,10,54,15);
+
+    btn5up->setGeometry(58,12,10,6);
+    btn5down->setGeometry(58,19,10,6);
+    btn5up ->setStyleSheet("QPushButton{border-image: url(:/images/table_up.png);}"
+                           "QPushButton:pressed{border-image: url(:/images/table_up_p.png);}");
+
+    btn5down ->setStyleSheet("QPushButton{border-image: url(:/images/table_down.png);}"
+                             "QPushButton:pressed{border-image: url(:/images/table_down_p.png);}");
+
+
+    lable1->setStyleSheet("background-color:#EDEDED;");
+    widget2->setStyleSheet("background-color:#EDEDED;");
+    widget3->setStyleSheet("background-color:#EDEDED;");
+    widget4->setStyleSheet("background-color:#EDEDED;");
+    widget5->setStyleSheet("background-color:#EDEDED;");
+
+
+    ui->tableWidget_2->setRowHeight(row_count,35);
+    ui->tableWidget_2->setCellWidget(row_count, 0,lable1);
+    ui->tableWidget_2->setCellWidget(row_count, 1,widget2);
+    ui->tableWidget_2->setCellWidget(row_count, 2,widget3);
+    ui->tableWidget_2->setCellWidget(row_count, 3,widget4);
+    ui->tableWidget_2->setCellWidget(row_count, 4,widget5);
+}
+
+void SystemManager::alarmQueryTableInsert(int row_count,QMap<QString,QVariant> map)
+{
+    //int row_count = table_widget->rowCount(); //获取表单行数
+
+    ui->tableWidget_2->insertRow(row_count); //插入新行
+
+
+    QLabel *lable0 = new QLabel(QString::number(map.value("index").toInt()));
+
+    lable0->setAlignment(Qt::AlignCenter);
+    lable0->setStyleSheet("background-color:transparent");
+
+    QTableWidgetItem *item1 = new QTableWidgetItem(map.value("camara").toString());
+
+    QWidget *widget2 = nullptr;
+    QTableWidgetItem *item2 = nullptr;
+    if(map.value("alarmType").toString().compare("Motion Detection")==0){
+        widget2 = new QWidget(this);
+        QLabel *lable2 = new QLabel("Motion Detection",widget2);
+        QPushButton *btn2 = new QPushButton(widget2);
+        lable2->setGeometry(3,8,102,15);
+        btn2->setGeometry(108,11,12,12);
+        btn2 ->setStyleSheet("QPushButton{border-image: url(:/images/table_play.png);}"
+                             "QPushButton:pressed{border-image: url(:/images/table_play_p.png);}");
+        widget2->setStyleSheet("background-color:transparent");
+    }else {
+        item2 = new QTableWidgetItem(map.value("alarmType").toString());
+    }
+
+
+    QTableWidgetItem *item3 = new QTableWidgetItem(map.value("startTime").toString());
+    QTableWidgetItem *item4 = new QTableWidgetItem(map.value("endTime").toString());
+
+
+    // ui->tableWidget->setItem(row_count, 0, item0);
+
+    QPushButton *pbtnDelete = new QPushButton(tr("Delete"));
+    pbtnDelete->setStyleSheet("text-align:left;background-color:transparent;border:none;color:#476BFD;font:bold 12px;");
+
+    connect(pbtnDelete,&QPushButton::clicked,[=](){
+
+    });
+
+
+    ui->tableWidget_2->setCellWidget(row_count, 0, lable0);
+    ui->tableWidget_2->setItem(row_count, 1, item1);
+    if(map.value("alarmType").toString().compare("Motion Detection")==0){
+        if(widget2 != nullptr)
+            ui->tableWidget_2->setCellWidget(row_count, 2, widget2);
+    }else{
+        if(item2 != nullptr)
+            ui->tableWidget_2->setItem(row_count, 2, item2);
+    }
+    ui->tableWidget_2->setItem(row_count, 3, item3);
+    ui->tableWidget_2->setItem(row_count, 4, item4);
+    ui->tableWidget_2->setRowHeight(row_count,35);
 }
 
 void SystemManager::createDiskManagement()
@@ -161,4 +385,72 @@ void SystemManager::adjustUserManagementWidgetPos()
 SystemManager::~SystemManager()
 {
     delete ui;
+}
+
+void SystemManager::on_pushButton_date_clicked()
+{
+    if(dateSelectMenu == nullptr){
+        dateSelectMenu = new QMenu(this);
+
+        dateSelectMenu->setStyleSheet("QMenu {background-color: white; border: 1px solid white;}"
+                                      "QMenu::item {background-color: transparent;padding:8px 32px;border-bottom:1px solid #DBDBDB;}"
+                                      "QMenu::item:selected { background-color: #476BFD;}");
+
+        QAction *timeStart = new QAction(tr("Start Date"),this);
+        QAction *timeEnd = new QAction(tr("End Date"),this);
+
+        //动作添加到菜单
+        dateSelectMenu->addAction(timeStart);
+        dateSelectMenu->addAction(timeEnd);
+
+        //给动作设置信号槽
+        connect( timeStart, &QAction::triggered, [=]()
+        {
+
+            dateSelectMenu->close();
+            currentDateSelectType = STARTTIME;
+            popCalendar();
+        });
+        connect( timeEnd,&QAction::triggered, [=]()
+        {
+
+            dateSelectMenu->close();
+            currentDateSelectType = ENDTIME;
+            popCalendar();
+        });
+
+    }
+    dateSelectMenu->exec(QCursor::pos());
+}
+
+void SystemManager::popCalendar()
+{
+    if(myCalendar == nullptr){
+        myCalendar = new MyCalendar(this);
+        myCalendar->setModal(true);
+        myCalendar->setGeometry(1068+114,375,280,314);
+        connect(myCalendar,&MyCalendar::dateUpdate,[&](QDate date){
+
+            if(currentDateSelectType == STARTTIME)
+                ui->label_startDate->setText(date.toString("yyyy.MM.dd"));
+            else
+                ui->label_endDate->setText(date.toString("yyyy.MM.dd"));
+
+        });
+    }
+    myCalendar->show();
+}
+
+
+
+void SystemManager::on_pushButton_time_clicked()
+{
+
+    if(timeSelectDialog == nullptr){
+        timeSelectDialog = new TimeSelectDialog(this);
+        timeSelectDialog->setModal(true);
+        timeSelectDialog->setGeometry(1068+114,375,120,224);
+    }
+    timeSelectDialog->show();
+
 }

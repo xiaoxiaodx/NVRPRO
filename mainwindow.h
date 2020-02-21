@@ -8,13 +8,15 @@
 #include <QApplication>
 #include <QDesktopWidget>
 
-
-
 #include "timezonesetting.h"
 #include "passwordsetting.h"
 #include "welcome.h"
-#include "videowindow.h"
+#include "masterPreview/videowindow.h"
 #include "nvrConfig/nvrconfig.h"
+#include "videoReplay/replaywindow.h"
+
+#include <QMouseEvent>
+
 namespace Ui {
 class MainWindow;
 }
@@ -28,53 +30,49 @@ public:
     ~MainWindow();
 
 
+public slots:
+    //void slot_switchWindow(WindowType type);
 protected:
     void paintEvent(QPaintEvent*);
 
+
     void mousePressEvent(QMouseEvent *event);
-    void mouseReleaseEvent(QMouseEvent *event);
-    void mouseDoubleClickEvent(QMouseEvent *event);
-    void mouseMoveEvent(QMouseEvent *event);
-    void wheelEvent(QWheelEvent *event);
 
     bool event(QEvent *event);
-private slots:
-    void on_btnAudio_clicked();
-    void on_btnBeer_clicked();
-    void on_btnHDMI_clicked();
-    void on_btnNetWork_clicked();
-    void on_btnVGA_clicked();
-    void on_btnPan_clicked();
-
-private:
-    QPushButton *btnAudio;
-    QPushButton *btnBeer;
-    QPushButton *btnHDMI;
-    QPushButton *btnNetWork;
-    QPushButton *btnVGA;
-    QPushButton *btnPan;
 
 
 private:
     Ui::MainWindow *ui;
+
+    void popMenu();
 
     void createDialog_timeZoneSetting();
     void createDialog_passwordSetting();
     void createDialog_welcome();
     void createVideoWindow(int n);
     void createDialog_config();
+    void createReplayWindow();
 
-    void drawVideoRect(QPainter *paint,int nxn);
-    void drawCloudControl(QPainter *paint);
+    void showMasterVideo(bool isShow);
+    void switchWindow(WindowType type);
+//    void drawVideoRect(QPainter *paint,int nxn);
+//    void drawCloudControl(QPainter *paint);
 
+    QPushButton *createSelfBtn(QString str,QString res);
 
     int const rectSpace = 2;//分屏的时候，相邻矩形的边距
     int const videoN = 2;//几乘几的视频显示
 
+    QMenu *rightMouseMenu = nullptr;
+
+    QList<VideoWindow*> listVideoW;
+    ReplayWindow *replayWindow = nullptr;
     NvrConfig *nvrConfig = nullptr;
     Timezonesetting *timeZoneSetting = nullptr;
     PasswordSetting *passwordSetting = nullptr;
     Welcome *welcome = nullptr;
+
+    WindowType currentShowType;
 };
 
 #endif // MAINWINDOW_H

@@ -39,5 +39,45 @@
         <file>images/reset_press.png</file>
         <file>images/restart.png</file>
         <file>images/restart_press.png</file>
+        <file>images/modalclose.png</file>
+        <file>images/table_menu.png</file>
+        <file>images/table_menu_hover.png</file>
+        <file>images/table_menu_p.png</file>
+        <file>images/table_down.png</file>
+        <file>images/table_down_p.png</file>
+        <file>images/table_up.png</file>
+        <file>images/table_up_p.png</file>
+        <file>images/table_date.png</file>
+        <file>images/table_date_p.png</file>
+        <file>images/table_play.png</file>
+        <file>images/table_play_p.png</file>
+        <file>images/table_time.png</file>
+        <file>images/table_time_p.png</file>
+        <file>images/popmenuBg.png</file>
+        <file>images/popmenuBg1.png</file>
+        <file>images/rectbg.png</file>
+        <file>images/menu_cloudcontrol.png</file>
+        <file>images/menu_deviceManager.png</file>
+        <file>images/menu_replay.png</file>
+        <file>images/menu_systemmanager.png</file>
+        <file>images/monthnext.png</file>
+        <file>images/monthpre.png</file>
+        <file>images/yearnext.png</file>
+        <file>images/yearpre.png</file>
+        <file>images/monthnext_p.png</file>
+        <file>images/monthpre_p.png</file>
+        <file>images/yearnext_p.png</file>
+        <file>images/yearpre_p.png</file>
+        <file>images/repaly_1.png</file>
+        <file>images/repaly_play.png</file>
+        <file>images/replay_4.png</file>
+        <file>images/replay_fast.png</file>
+        <file>images/replay_slow.png</file>
+        <file>images/replay_alarm.png</file>
+        <file>images/replay_fast_p.png</file>
+        <file>images/replay_normal.png</file>
+        <file>images/replay_slow_p.png</file>
+        <file>images/replay_noVideo.png</file>
+        <file>images/replay_voice.png</file>
     </qresource>
 </RCC>

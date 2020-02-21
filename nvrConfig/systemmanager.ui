@@ -93,7 +93,7 @@ image: url(:/png/images/jy_close2.png)
 </string>
    </property>
    <property name="currentIndex">
-    <number>5</number>
+    <number>2</number>
    </property>
    <property name="elideMode">
     <enum>Qt::ElideRight</enum>
@@ -112,10 +112,55 @@ image: url(:/png/images/jy_close2.png)
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #F9F9F9;
+      <string notr="true">QWidget{
+	background-color: #F9F9F9;
 	font-family: &quot;Microsoft YaHei&quot;;
 	font-size:14px;
-    color: #333333;</string>
+    color: #333333;
+}
+
+/*2个开关按钮*/
+QPushButton#TimeSetswith_setting,
+#TimeSetswith_timesave{
+	background-color:#00000000;
+	border-image: url(:/images/switch_off.png);
+}
+QPushButton#TimeSetswith_setting:checked,
+#TimeSetswith_timesave:checked{
+	background-color:#00000000;
+	border-image: url(:/images/switch_on.png);
+}
+/*3个类型按钮*/
+QPushButton#TimeSetpushButton_everyhour,
+#TimeSetpushButton_everyday,
+#TimeSetpushButton_everyweek{
+	background-color:#00000000;
+	border-image: url(:/images/unchecked.png);
+}
+QPushButton#TimeSetpushButton_everyhour:checked,
+#TimeSetpushButton_everyday:checked,
+#TimeSetpushButton_everyweek:checked{
+	background-color:#00000000;
+	border-image: url(:/images/checked.png);
+}
+
+QPushButton#TimeSetpushButton_url{
+	background-color:rgba(71,107,253,1);
+	border-width:0;
+    padding:4px;  
+	border-style:inset;  
+	border-radius:3px;  
+	color:white;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 10px;
+}
+QPushButton#TimeSetpushButton_url:pressed {  
+    /* 改变背景色   
+    background-color:rgb(40,85,20); */
+    /* 使文字有一点移动 */  
+    padding-left:6px;  
+    padding-top:6px;  
+}  </string>
      </property>
      <widget class="Line" name="TimeSetline">
       <property name="geometry">
@@ -170,10 +215,13 @@ background-color: rgb(226, 226, 226);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/switch_on.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="TimeSetpushButton_url">
@@ -186,24 +234,7 @@ background-color: rgb(226, 226, 226);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color:rgba(71,107,253,1);
-	border-width:0;
-    padding:4px;  
-	border-style:inset;  
-	border-radius:3px;  
-	color:white;
-	font-family: &quot;Microsoft YaHei&quot;;
-	font:bold 10px;
-}
-QPushButton#pushButton:pressed {  
-    /* 改变背景色   
-    background-color:rgb(40,85,20); */
-    /* 使文字有一点移动 */  
-    padding-left:6px;  
-    padding-top:6px;  
-}  
-</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Submit</string>
@@ -235,10 +266,13 @@ QPushButton#pushButton:pressed {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/switch_on.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLineEdit" name="TimeSetlineEdit_url">
@@ -279,10 +313,13 @@ QPushButton#pushButton:pressed {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/checked.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="TimeSetlabel_everyhour">
@@ -321,10 +358,16 @@ QPushButton#pushButton:pressed {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/checked.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="TimeSetlabel_everyweek">
@@ -350,10 +393,13 @@ QPushButton#pushButton:pressed {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/checked.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="TimeSetlabel_summertime">
@@ -805,7 +851,7 @@ background-color: rgb(226, 226, 226);</string>
     <widget class="QWidget" name="widget_3" native="true">
      <property name="geometry">
       <rect>
-       <x>0</x>
+       <x>-10</x>
        <y>0</y>
        <width>1131</width>
        <height>461</height>
@@ -814,14 +860,14 @@ background-color: rgb(226, 226, 226);</string>
      <property name="styleSheet">
       <string notr="true">background-color: #F9F9F9;
 	font-family: &quot;Microsoft YaHei&quot;;
-	font-size:14px;
+	font-size:12px;
     color: #333333;</string>
      </property>
      <widget class="QTableWidget" name="tableWidget_2">
       <property name="geometry">
        <rect>
-        <x>40</x>
-        <y>70</y>
+        <x>10</x>
+        <y>50</y>
         <width>991</width>
         <height>381</height>
        </rect>
@@ -829,6 +875,174 @@ background-color: rgb(226, 226, 226);</string>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
+     </widget>
+     <widget class="QLabel" name="label_title_alarm">
+      <property name="geometry">
+       <rect>
+        <x>20</x>
+        <y>10</y>
+        <width>91</width>
+        <height>22</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 14px;
+    color: #333333;</string>
+      </property>
+      <property name="text">
+       <string>Alarm Log</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="widget_date" native="true">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>10</y>
+        <width>228</width>
+        <height>31</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:4px;
+border:1px solid rgba(217,217,217,1);</string>
+      </property>
+      <widget class="QLabel" name="label_startDate">
+       <property name="geometry">
+        <rect>
+         <x>9</x>
+         <y>3</y>
+         <width>81</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+color:#BABABA;</string>
+       </property>
+       <property name="text">
+        <string>Start Time</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_date">
+       <property name="geometry">
+        <rect>
+         <x>204</x>
+         <y>8</y>
+         <width>14</width>
+         <height>12</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QPushButton{
+border:0px solid #ffffff;
+border-image: url(:/images/table_date.png);
+}
+
+QPushButton:pressed{border-image: url(:/images/table_date_p.png);}
+</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_endDate">
+       <property name="geometry">
+        <rect>
+         <x>110</x>
+         <y>3</y>
+         <width>71</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+color:#BABABA;</string>
+       </property>
+       <property name="text">
+        <string>End Time</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label">
+       <property name="geometry">
+        <rect>
+         <x>90</x>
+         <y>3</y>
+         <width>16</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+color:#BABABA;
+font-size:20px</string>
+       </property>
+       <property name="text">
+        <string>-</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="widget_time" native="true">
+      <property name="geometry">
+       <rect>
+        <x>790</x>
+        <y>10</y>
+        <width>120</width>
+        <height>28</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-radius:4px;
+border:1px solid rgba(217,217,217,1);</string>
+      </property>
+      <widget class="QLabel" name="label_time">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>3</y>
+         <width>61</width>
+         <height>22</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+color:#BABABA;</string>
+       </property>
+       <property name="text">
+        <string>00:00:00</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="pushButton_time">
+       <property name="geometry">
+        <rect>
+         <x>98</x>
+         <y>8</y>
+         <width>12</width>
+         <height>12</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">
+QPushButton{
+border:0px solid #ffffff;
+border-image: url(:/images/table_time.png);
+}
+
+QPushButton:pressed{border-image: url(:/images/table_time_p.png);}</string>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
      </widget>
     </widget>
    </widget>
@@ -944,10 +1158,23 @@ background-color: rgb(226, 226, 226);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/switch_on.png);</string>
+       <string notr="true">QPushButton{
+	background-color:#00000000;
+	border-image: url(:/images/switch_off.png);
+}
+QPushButton:checked{
+	background-color:#00000000;
+	border-image: url(:/images/switch_on.png);
+}</string>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QLabel" name="Diskmanagerlabel_storage">
@@ -977,7 +1204,7 @@ background-color: rgb(226, 226, 226);</string>
       </property>
       <property name="styleSheet">
        <string notr="true">
-	right-padding:10px;
+	padding-right:10px;
 	font-family: &quot;Microsoft YaHei&quot;;
 	font-size:12px;
     color: #476BFD;</string>
@@ -1010,12 +1237,10 @@ background-color: rgb(226, 226, 226);</string>
         color: #476BFD;
         text-align: center;
         background: #E7EAF4;
-radius:10;
 }
 QProgressBar::chunk {
         border-radius: 5px;
         background: #476BFD;
-
 }</string>
       </property>
       <property name="value">
@@ -1044,7 +1269,8 @@ QProgressBar::chunk {
       <string notr="true">background-color: #F9F9F9;
 	font-family: &quot;Microsoft YaHei&quot;;
 	font-size:14px;
-    color: #333333;</string>
+    color: #333333;
+</string>
      </property>
      <widget class="QPushButton" name="Systemoperation_pushbutton_reboot">
       <property name="geometry">
@@ -1056,7 +1282,11 @@ QProgressBar::chunk {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/restart.png);</string>
+       <string notr="true">QPushButton{border-image: url(:/images/restart.png);
+}
+QPushButton:pressed{
+border-image: url(:/images/restart_press.png);
+}</string>
       </property>
       <property name="text">
        <string/>
@@ -1072,7 +1302,12 @@ QProgressBar::chunk {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/reset.png);</string>
+       <string notr="true">
+QPushButton{border-image: url(:/images/reset.png);
+}
+QPushButton:pressed{
+border-image: url(:/images/reset_press.png);
+}</string>
       </property>
       <property name="text">
        <string/>
@@ -1249,7 +1484,7 @@ background-color: rgb(226, 226, 226);</string>
 	font-family: &quot;Microsoft YaHei&quot;;
 	font:bold 10px;
 }
-QPushButton#pushButton:pressed {  
+QPushButton:pressed {  
     /* 改变背景色   
     background-color:rgb(40,85,20); */
     /* 使文字有一点移动 */  

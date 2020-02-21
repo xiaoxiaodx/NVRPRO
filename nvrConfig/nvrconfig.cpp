@@ -4,6 +4,12 @@
 #include <QButtonGroup>
 #include <QVBoxLayout>
 #include <QDebug>
+#include <QCoreApplication>
+#include <QMouseEvent>
+
+
+
+
 NvrConfig::NvrConfig(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::NvrConfig)
@@ -21,13 +27,8 @@ void NvrConfig::initStackedWidget()
 {
 
     if(deviceSetting == nullptr){
-
         deviceSetting = new DeviceSetting(this);
-        //deviceSetting->resize(ui->stackedWidget->width(),ui->stackedWidget->height());
-        qDebug()<<"initStackedWidget "<<ui->stackedWidget->width()<<"    "<<ui->stackedWidget->height();
-
         ui->stackedWidget->addWidget(deviceSetting);
-
     }
 
     if(systemManager == nullptr){
@@ -39,10 +40,10 @@ void NvrConfig::initStackedWidget()
 
 void NvrConfig::setMenuItem()
 {
-    QPushButton *btnMasterPreview = createSelfBtn("Master Preview",":/images/masterPreview.png");
-    QPushButton *btnReplay= createSelfBtn("Video Replay",":/images/video_replay.png");
-    QPushButton *btnDeviceSetting= createSelfBtn("Device Setting",":/images/device_setting.png");
-    QPushButton *btnSystemManagement= createSelfBtn("System Management",":/images/system_manager.png");
+    btnMasterPreview = createSelfBtn("Master Preview",":/images/masterPreview.png");
+    btnReplay= createSelfBtn("Video Replay",":/images/video_replay.png");
+    btnDeviceSetting= createSelfBtn("Device Setting",":/images/device_setting.png");
+    btnSystemManagement= createSelfBtn("System Management",":/images/system_manager.png");
 
     /*单选菜单效果*/
     QButtonGroup *buttonGround = new QButtonGroup(this);
@@ -52,13 +53,24 @@ void NvrConfig::setMenuItem()
     buttonGround->addButton(btnSystemManagement);
     buttonGround->setExclusive(true);
 
+    connect(btnMasterPreview,&QPushButton::clicked,[=](){
+        emit signal_switchWindow(MASTERPREVIEW);
+        this->close();
+    });
+    connect(btnReplay,&QPushButton::clicked,[=](){
+        emit signal_switchWindow(REPLAYVIDEO);
+        this->close();
+    });
+
     connect(btnDeviceSetting,&QPushButton::clicked,[=](){
-       ui->stackedWidget->setCurrentWidget(deviceSetting);
+        ui->stackedWidget->setCurrentWidget(deviceSetting);
     });
 
     connect(btnSystemManagement,&QPushButton::clicked,[=](){
-       ui->stackedWidget->setCurrentWidget(systemManager);
+        ui->stackedWidget->setCurrentWidget(systemManager);
     });
+
+
     /*容器包含*/
     QVBoxLayout *menuLayout = new QVBoxLayout();
     menuLayout->setMargin(0);
@@ -72,7 +84,23 @@ void NvrConfig::setMenuItem()
 
     ui->widget_menu->setLayout(menuLayout);
 }
+void NvrConfig::showDeviceSet()
+{
+    if(deviceSetting != nullptr){
+        this->show();
+        btnDeviceSetting->setChecked(true);
+        ui->stackedWidget->setCurrentWidget(deviceSetting);
+    }
+}
 
+void NvrConfig::showSystemSet()
+{
+    if(systemManager != nullptr){
+        this->show();
+        btnSystemManagement->setChecked(true);
+        ui->stackedWidget->setCurrentWidget(systemManager);
+    }
+}
 
 QPushButton * NvrConfig::createSelfBtn(QString btnTxt,QString res)
 {

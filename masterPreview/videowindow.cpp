@@ -10,6 +10,7 @@ VideoWindow::VideoWindow(QWidget *parent,int mW,int mH) :
     mWidth = mW;
     mHeight = mH;
 
+
     QPushButton *button = new QPushButton(this);
     button->setText("测试自定义事件");
     // 建立连接, 发送信号
@@ -24,6 +25,7 @@ VideoWindow::VideoWindow(QWidget *parent,int mW,int mH) :
         qDebug() << "The Dispose Result Is " << result;
         delete sendCustomerEvent;
     });
+
     setControlPostion();
 }
 
@@ -48,10 +50,8 @@ bool VideoWindow::event(QEvent *event)
 
 void VideoWindow::setControlPostion()
 {
-
     int cloudControllW = 160;
     int cloudControllH = 160;
-
 
     int videoLossW = 283;
     int videoLossH = 30;
@@ -59,19 +59,9 @@ void VideoWindow::setControlPostion()
     int motionDetectionW = 40;
     int motionDetectionH = 40;
 
-//    int setHomeW = 32;
-//    int setHomeH = 32;
-
-//    int videoReplayW = 32;
-//    int videoReplayH = 32;
-
-//    int videoSwitchW = 32;
-//    int videoSwitchH = 32;
-
     int commonBtnW = 32;
     int commonBtnH = 32;
 
-    qDebug()<<"W W "<<this->width() << "    "<<mWidth;
     int thisW = mWidth;
     int thisH = mHeight;
 
@@ -89,8 +79,6 @@ void VideoWindow::setControlPostion()
     ui->label_ipc_identify->setGeometry(20,20,ipcIdentifyW,ipcIdentifyH);
     ui->label_recordState->setGeometry(20 + 30 + ipcIdentifyW,ipcIdentifyH,recordStateW,recordStateH);
     ui->pushButton_motionDetection->setGeometry(thisW-20-motionDetectionW,52,motionDetectionW,motionDetectionH);
-
-    qDebug()<<" ui->widget_cloudControl "<<ui->widget_cloudControl->x()<<"  "<<ui->widget_cloudControl->y();
 
     //从右边第一个按钮开始为准，另外2个按钮以他为基准
     int btnY = thisH - 12 - commonBtnH;

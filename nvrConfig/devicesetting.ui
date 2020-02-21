@@ -96,7 +96,7 @@ image: url(:/png/images/jy_close2.png)
 </string>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>2</number>
    </property>
    <widget class="QWidget" name="tab_1">
     <attribute name="title">
@@ -117,10 +117,10 @@ image: url(:/png/images/jy_close2.png)
      <widget class="QTableWidget" name="tableWidget">
       <property name="geometry">
        <rect>
-        <x>100</x>
+        <x>40</x>
         <y>60</y>
-        <width>781</width>
-        <height>381</height>
+        <width>871</width>
+        <height>401</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -143,10 +143,47 @@ image: url(:/png/images/jy_close2.png)
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #F9F9F9;
+      <string notr="true">QWidget{
+background-color: #F9F9F9;
 	font-family: &quot;Microsoft YaHei&quot;;
 	font-size:14px;
-    color: #333333;</string>
+    color: #333333;
+}
+/*2个开关*/
+QPushButton#OSDswith_timeDisplay,#OSDswith_nameDisplay{
+background-color:#00000000;
+	border-image: url(:/images/switch_off.png);
+}
+QPushButton#OSDswith_timeDisplay:checked,#OSDswith_nameDisplay:checked{
+	border-image:url(:/images/switch_on.png);
+}
+/*3个通道选择按钮*/
+QPushButton#OSDpushButton_cam1,#OSDpushButton_cam2,#OSDpushButton_cam3,#OSDpushButton_cam4{
+background-color:#00000000;
+	border-image: url(:/images/device_unselect.png);
+}
+
+QPushButton#OSDpushButton_cam1:checked,#OSDpushButton_cam2:checked,#OSDpushButton_cam3:checked,#OSDpushButton_cam4:checked{
+	border-image:url(:/images/device_select.png);
+}
+
+/*确定按钮*/
+QPushButton#OSDpushButton_submit {
+	background-color:rgba(71,107,253,1);
+	border-width:0;
+    padding:4px;  
+	border-style:inset;  
+	border-radius:3px;  
+	color:white;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 10px;
+}
+QPushButton#OSDpushButton_submit:pressed {  
+    padding-left:6px;  
+    padding-top:6px;  
+}  
+
+</string>
      </property>
      <widget class="QLabel" name="OSDlabel_timedisplay">
       <property name="geometry">
@@ -215,7 +252,7 @@ image: url(:/png/images/jy_close2.png)
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -225,6 +262,9 @@ image: url(:/png/images/jy_close2.png)
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="OSDlabel_swith_timeDisplay">
@@ -250,10 +290,16 @@ image: url(:/png/images/jy_close2.png)
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/switch_on.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QLabel" name="OSDlabel_namediplay">
@@ -299,10 +345,16 @@ background-color: rgb(226, 226, 226);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/switch_on.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QLabel" name="OSDlabel_swith_nameDisplay">
@@ -376,7 +428,7 @@ background-color: rgb(226, 226, 226);</string>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -386,6 +438,12 @@ background-color: rgb(226, 226, 226);</string>
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QLabel" name="OSDlabel_cam3">
@@ -423,7 +481,7 @@ background-color: rgb(226, 226, 226);</string>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -433,6 +491,12 @@ background-color: rgb(226, 226, 226);</string>
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="OSDlabel_cam4">
@@ -470,7 +534,7 @@ background-color: rgb(226, 226, 226);</string>
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -480,6 +544,12 @@ background-color: rgb(226, 226, 226);</string>
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QLabel" name="OSDlabel_cam_2">
@@ -561,23 +631,7 @@ background-color: rgb(226, 226, 226);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color:rgba(71,107,253,1);
-	border-width:0;
-    padding:4px;  
-	border-style:inset;  
-	border-radius:3px;  
-	color:white;
-	font-family: &quot;Microsoft YaHei&quot;;
-	font:bold 10px;
-}
-QPushButton#pushButton:pressed {  
-    /* 改变背景色   
-    background-color:rgb(40,85,20); */
-    /* 使文字有一点移动 */  
-    padding-left:6px;  
-    padding-top:6px;  
-}  
+       <string notr="true">
 </string>
       </property>
       <property name="text">
@@ -600,10 +654,44 @@ QPushButton#pushButton:pressed {
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #F9F9F9;
+      <string notr="true">QWidget{background-color: #F9F9F9;
 font-family: &quot;Microsoft YaHei&quot;;
 	font-size:14px;
-    color: #333333;</string>
+    color: #333333;
+}
+
+/*8个设置按钮*/
+QPushButton#Alarmswitch_motionDetection_1,
+#Alarmswitch_motionDetection_2,
+#Alarmswitch_motionDetection_3,
+#Alarmswitch_motionDetection_4,
+#Alarmswitch_videoloss_1,
+#Alarmswitch_videoloss_2,
+#Alarmswitch_videoloss_3,
+#Alarmswitch_videoloss_4{
+background-color:#00000000;
+	border-image: url(:/images/device_unselect.png);
+}
+QPushButton#Alarmswitch_motionDetection_1:checked,
+#Alarmswitch_motionDetection_2:checked,
+#Alarmswitch_motionDetection_3:checked,
+#Alarmswitch_motionDetection_4:checked,
+#Alarmswitch_videoloss_1:checked,
+#Alarmswitch_videoloss_2:checked,
+#Alarmswitch_videoloss_3:checked,
+#Alarmswitch_videoloss_4:checked{
+	background-color:#00000000;
+	border-image: url(:/images/device_select.png);
+}
+
+/*1个开关*/
+QPushButton#Alarmswitch{
+	background-color:#00000000;
+	border-image: url(:/images/switch_off.png);
+}
+QPushButton#Alarmswitch:checked{
+	border-image:url(:/images/switch_on.png);
+}</string>
      </property>
      <widget class="QLabel" name="Alarmlabel_setting">
       <property name="geometry">
@@ -703,10 +791,16 @@ font-family: &quot;Microsoft YaHei&quot;;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="Alarmswitch_videoloss_1">
@@ -719,10 +813,13 @@ font-family: &quot;Microsoft YaHei&quot;;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="Alarmlabel_alarmtime">
@@ -803,10 +900,16 @@ font-family: &quot;Microsoft YaHei&quot;;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/switch_on.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QLabel" name="Alarmlabel_swith">
@@ -886,10 +989,13 @@ font-family: &quot;Microsoft YaHei&quot;;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="Alarmswitch_videoloss_2">
@@ -902,10 +1008,13 @@ font-family: &quot;Microsoft YaHei&quot;;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="Alarmlabel_cam_3">
@@ -972,10 +1081,13 @@ font-family: &quot;Microsoft YaHei&quot;;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="Alarmswitch_videoloss_3">
@@ -988,10 +1100,16 @@ font-family: &quot;Microsoft YaHei&quot;;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="Alarmlabel_cam_4">
@@ -1058,10 +1176,13 @@ font-family: &quot;Microsoft YaHei&quot;;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="Alarmswitch_videoloss_4">
@@ -1074,10 +1195,13 @@ font-family: &quot;Microsoft YaHei&quot;;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
     </widget>
@@ -1096,11 +1220,42 @@ font-family: &quot;Microsoft YaHei&quot;;
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">
-background-color: #F9F9F9;
-font-family: &quot;Microsoft YaHei&quot;;
+      <string notr="true">QWidget{
+	background-color: #F9F9F9;
+	font-family: &quot;Microsoft YaHei&quot;;
 	font-size:14px;
-    color: #333333;</string>
+    color: #333333;
+}
+
+/*4个通道按钮*/
+QPushButton#VideopushButton_cam1,
+#VideopushButton_cam2,
+#VideopushButton_cam3,
+#VideopushButton_cam4{
+	background-color:#00000000;
+	border-image: url(:/images/device_unselect.png);
+}
+QPushButton#VideopushButton_cam1:checked,
+#VideopushButton_cam2:checked,
+#VideopushButton_cam3:checked,
+#VideopushButton_cam4:checked{
+	background-color:#00000000;
+	border-image: url(:/images/device_select.png);
+}
+/*3个类型按钮*/
+QPushButton#VideolpushButton_recordingoff,
+#VideopushButton_alarm,
+#VideopushButton_wholedayrecording{
+	background-color:#00000000;
+	border-image: url(:/images/unchecked.png);
+}
+QPushButton#VideolpushButton_recordingoff:checked,
+#VideopushButton_alarm:checked,
+#VideopushButton_wholedayrecording:checked{
+	background-color:#00000000;
+	border-image: url(:/images/checked.png);
+}
+</string>
      </property>
      <widget class="QComboBox" name="VideocomboBox">
       <property name="geometry">
@@ -1286,7 +1441,7 @@ QComboBox QScrollBar::sub-line::vertical{
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -1296,6 +1451,9 @@ QComboBox QScrollBar::sub-line::vertical{
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="VideopushButton_cam3">
@@ -1320,7 +1478,7 @@ QComboBox QScrollBar::sub-line::vertical{
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -1330,6 +1488,9 @@ QComboBox QScrollBar::sub-line::vertical{
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="VideopushButton_cam1">
@@ -1354,7 +1515,7 @@ QComboBox QScrollBar::sub-line::vertical{
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -1364,6 +1525,12 @@ QComboBox QScrollBar::sub-line::vertical{
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="VideopushButton_cam4">
@@ -1388,7 +1555,7 @@ QComboBox QScrollBar::sub-line::vertical{
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -1398,6 +1565,9 @@ QComboBox QScrollBar::sub-line::vertical{
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="Videolabel_setting">
@@ -1496,10 +1666,13 @@ QComboBox QScrollBar::sub-line::vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/checked.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="Videolabel_recordingoff">
@@ -1525,10 +1698,13 @@ QComboBox QScrollBar::sub-line::vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/checked.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="Videolabel_alarm">
@@ -1554,10 +1730,16 @@ QComboBox QScrollBar::sub-line::vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/checked.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="Videolabel_wholedayrecording">
@@ -1589,10 +1771,53 @@ QComboBox QScrollBar::sub-line::vertical{
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #F9F9F9;
-font-family: &quot;Microsoft YaHei&quot;;
+      <string notr="true">QWidget{
+background-color: #F9F9F9;
+	font-family: &quot;Microsoft YaHei&quot;;
 	font-size:14px;
-    color: #333333;</string>
+    color: #333333;
+}
+/*1个开关*/
+QPushButton#RTMPswith{
+	background-color:#00000000;
+	border-image: url(:/images/switch_off.png);
+}
+QPushButton#RTMPswith:checked{
+	border-image:url(:/images/switch_on.png);
+}
+/*4个通道选择按钮*/
+QPushButton#RTMPpushButton_cam1,
+#RTMPpushButton_cam2,
+#RTMPpushButton_cam3,
+#RTMPpushButton_cam4{
+	background-color:#00000000;
+	border-image: url(:/images/device_unselect.png);
+}
+
+QPushButton#RTMPpushButton_cam1:checked,
+#RTMPpushButton_cam2:checked,
+#RTMPpushButton_cam3:checked,
+#RTMPpushButton_cam4:checked{
+	border-image:url(:/images/device_select.png);
+}
+
+/*确定按钮*/
+QPushButton#RTMPpushButton_submit {
+	background-color:rgba(71,107,253,1);
+	border-width:0;
+    padding:4px;  
+	border-style:inset;  
+	border-radius:3px;  
+	color:white;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 10px;
+}
+QPushButton#RTMPpushButton_submit:pressed {  
+    padding-left:6px;  
+    padding-top:6px;  
+}  
+
+</string>
      </property>
      <widget class="QLabel" name="RTMPlabel_setting">
       <property name="geometry">
@@ -1634,7 +1859,7 @@ font-family: &quot;Microsoft YaHei&quot;;
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -1644,6 +1869,12 @@ font-family: &quot;Microsoft YaHei&quot;;
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QLabel" name="RTMPlabel_cam4">
@@ -1697,7 +1928,7 @@ font-family: &quot;Microsoft YaHei&quot;;
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -1707,6 +1938,12 @@ font-family: &quot;Microsoft YaHei&quot;;
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QLabel" name="RTMPlabel_cam1">
@@ -1744,7 +1981,7 @@ font-family: &quot;Microsoft YaHei&quot;;
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -1754,6 +1991,12 @@ font-family: &quot;Microsoft YaHei&quot;;
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QPushButton" name="RTMPpushButton_cam2">
@@ -1778,7 +2021,7 @@ font-family: &quot;Microsoft YaHei&quot;;
        </size>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/device_select.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
@@ -1788,6 +2031,12 @@ font-family: &quot;Microsoft YaHei&quot;;
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+      <property name="checked">
+       <bool>false</bool>
       </property>
      </widget>
      <widget class="QLabel" name="RTMPlabel_cam3">
@@ -1839,10 +2088,13 @@ font-family: &quot;Microsoft YaHei&quot;;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">border-image: url(:/images/switch_on.png);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string/>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
       </property>
      </widget>
      <widget class="QComboBox" name="RTMPcomboBox">
@@ -2061,24 +2313,7 @@ QComboBox QScrollBar::sub-line::vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color:rgba(71,107,253,1);
-	border-width:0;
-    padding:4px;  
-	border-style:inset;  
-	border-radius:3px;  
-	color:white;
-	font-family: &quot;Microsoft YaHei&quot;;
-	font:bold 10px;
-}
-QPushButton#pushButton:pressed {  
-    /* 改变背景色   
-    background-color:rgb(40,85,20); */
-    /* 使文字有一点移动 */  
-    padding-left:6px;  
-    padding-top:6px;  
-}  
-</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Submit</string>

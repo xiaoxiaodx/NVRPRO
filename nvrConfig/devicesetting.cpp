@@ -5,6 +5,8 @@
 #include <QPushButton>
 #include <QSpinBox>
 #include <QDebug>
+#include <QHBoxLayout>
+#include "deleteconfirmdialog.h"
 DeviceSetting::DeviceSetting(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DeviceSetting)
@@ -23,13 +25,14 @@ void DeviceSetting::init()
     map.insert("status",true);
     map.insert("softwareVersion","5555");
     map.insert("hardwareVersion","66666");
-    deviceTableInsert(0,map);
 
     ui->label_title->move(15,16);
     ui->tabWidget->setGeometry(15,56,950,552);
 
     //第一页
+
     createDeviceTable();
+    createDeviceTableHeader();
 
     createOSDSetting();
     adjustOSDWidgetPos();
@@ -43,14 +46,55 @@ void DeviceSetting::init()
     createRTMPSetting();
     adjustRTMPWidgetPos();
 
+    deviceTableInsert(1,map);
 }
+//由于表头的自定义麻烦 故将第一行作为表头数据
+void DeviceSetting::createDeviceTableHeader()
+{
+    int row_count = 0;
+
+    QWidget *widget3 = new QWidget(this);
+    QLabel *lable = new QLabel("Status",widget3);
+    QPushButton *btn = new QPushButton(widget3);
+
+    lable->setGeometry(0,10,36,15);
+    btn ->setStyleSheet("QPushButton{border-image: url(:/images/table_menu.png);}"
+                         "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}"
+                         "QPushButton:hovered{border-image: url(:/images/table_menu_hover.png);}");
+    btn->setGeometry(40,13,10,10);
+
+    QLabel *lable0 = new QLabel("");
+    QLabel *lable1 = new QLabel(tr("DID"));
+    QLabel *lable2 = new QLabel(tr("Device Name"));
+    QLabel *lable4 = new QLabel(tr("Software Version"));
+    QLabel *lable5 = new QLabel(tr("Hardware Version"));
+    QLabel *lable6 = new QLabel(tr("Operate"));
+
+    widget3->setStyleSheet("background-color:#EBECF0;");
+    lable0->setStyleSheet("background-color:#EBECF0;");
+    lable1->setStyleSheet("background-color:#EBECF0;");
+    lable2->setStyleSheet("background-color:#EBECF0;");
+    lable4->setStyleSheet("background-color:#EBECF0;");
+    lable5->setStyleSheet("background-color:#EBECF0;");
+    lable6->setStyleSheet("background-color:#EBECF0;");
+
+
+    ui->tableWidget->setRowHeight(row_count,35);
+    ui->tableWidget->setCellWidget(row_count, 0,lable0);
+    ui->tableWidget->setCellWidget(row_count, 1,lable1);
+    ui->tableWidget->setCellWidget(row_count, 2,lable2);
+    ui->tableWidget->setCellWidget(row_count, 3,widget3);
+    ui->tableWidget->setCellWidget(row_count, 4,lable4);
+    ui->tableWidget->setCellWidget(row_count, 5,lable5);
+    ui->tableWidget->setCellWidget(row_count, 6,lable6);
+}
+
 void DeviceSetting::deviceTableInsert(int row_count,QMap<QString,QVariant> map)
 {
     //int row_count = table_widget->rowCount(); //获取表单行数
 
     ui->tableWidget->insertRow(row_count); //插入新行
 
-    QTableWidgetItem *item0 = new QTableWidgetItem();
     QTableWidgetItem *item1 = new QTableWidgetItem();
     QTableWidgetItem *item2 = new QTableWidgetItem();
     QTableWidgetItem *item3 = new QTableWidgetItem();
@@ -58,19 +102,20 @@ void DeviceSetting::deviceTableInsert(int row_count,QMap<QString,QVariant> map)
     QTableWidgetItem *item5 = new QTableWidgetItem();
     QTableWidgetItem *item6 = new QTableWidgetItem();
 
-    //    QPushButton *pbtnSelect = new QPushButton();
-    //    pbtnSelect->resize(12,12);
-    //    if(map.value("isSelect").toBool())
-    //        pbtnSelect->setStyleSheet("border-image: url(:/images/device_unselect.png);");
-    //    else
-    //        pbtnSelect->setStyleSheet("border-image: url(:/images/device_select.png);");
 
-    item0->setIcon(QIcon(QPixmap(":/images/device_select.png").scaled(12,12)));
+    QWidget *widget = new QWidget();
+    widget->setStyleSheet("background-color:transparent");
+    QPushButton *btnChecked = new QPushButton(widget);
+    btnChecked->setCheckable(true);
+    btnChecked ->setStyleSheet("QPushButton{border-image: url(:/images/device_unselect.png);}"
+                        "QPushButton:checked{border-image: url(:/images/device_select.png);}");
+    btnChecked->setGeometry(20,13,12,12);
+
+
     item1->setText(map.value("did").toString());
     item2->setText(map.value("name").toString());
 
     if(map.value("status").toBool()){
-
         item3->setIcon(QIcon(QPixmap(":/images/status_connect.png").scaled(8,8)));
         item3->setText("Connected");
     }else {
@@ -81,35 +126,32 @@ void DeviceSetting::deviceTableInsert(int row_count,QMap<QString,QVariant> map)
     item5->setText(map.value("hardwareVersion").toString());
     item6->setText("Delete");
 
-    // ui->tableWidget->setItem(row_count, 0, item0);
 
     QPushButton *pbtnDelete = new QPushButton(tr("Delete"));
     pbtnDelete->setStyleSheet("text-align:left;background-color:transparent;border:none;color:#476BFD;font:bold 12px;");
 
     connect(pbtnDelete,&QPushButton::clicked,[=](){
-        qDebug()<<"delete";
+        showDialog(row_count);
     });
 
-
-    ui->tableWidget->setItem(row_count, 0, item0);
+    ui->tableWidget->setRowHeight(row_count,35);
+    ui->tableWidget->setCellWidget(row_count, 0, widget);
     ui->tableWidget->setItem(row_count, 1, item1);
     ui->tableWidget->setItem(row_count, 2, item2);
     ui->tableWidget->setItem(row_count, 3, item3);
     ui->tableWidget->setItem(row_count, 4, item4);
     ui->tableWidget->setItem(row_count, 5, item5);
     ui->tableWidget->setCellWidget(row_count, 6, pbtnDelete);
-    //  ui->tableWidget->setItem(row_count, 6, item6);
-    //设置样式为灰色
-    QColor color("black");
-    item1->setTextColor(color);
-    item2->setTextColor(color);
-    item3->setTextColor(color);
-    item4->setTextColor(color);
-    item5->setTextColor(color);
-    item6->setTextColor(color);
-
 }
 
+void DeviceSetting::showDialog(int deleteIndex)
+{
+    qDebug()<<"准备删除"<<deleteIndex<<"行,ps:表头是第0行";
+
+    DeleteConfirmDialog *dialog = new DeleteConfirmDialog(this);
+    dialog->setGeometry(256,234,300,110);
+    dialog->show();
+}
 
 void DeviceSetting::createDeviceTable()
 {
@@ -122,7 +164,20 @@ void DeviceSetting::createDeviceTable()
     //设置表头内容
     QStringList header;
     header<<" "<<tr("DID")<<tr("Device Name")<<tr("Status")<<tr("Software Version   ")<<tr("Hardware Version    ")<<tr("Operate");
-    ui->tableWidget->setHorizontalHeaderLabels(header);
+
+    // new QTableWidgetItem(QIcon(":/Image/IED.png"), "Jan's month")
+
+    int index =0;
+    ui->tableWidget->setHorizontalHeaderItem(index++,new QTableWidgetItem("   "));
+    ui->tableWidget->setHorizontalHeaderItem(index++,new QTableWidgetItem(tr("DID")));
+    ui->tableWidget->setHorizontalHeaderItem(index++,new QTableWidgetItem(tr("Device Name")));
+    QTableWidgetItem *item = new QTableWidgetItem(QIcon(":/images/checked.png"),tr("Status"));
+
+    ui->tableWidget->setHorizontalHeaderItem(index++,item);
+    ui->tableWidget->setHorizontalHeaderItem(index++,new QTableWidgetItem(tr("Software Version   ")));
+    ui->tableWidget->setHorizontalHeaderItem(index++,new QTableWidgetItem(tr("Hardware Version   ")));
+    ui->tableWidget->setHorizontalHeaderItem(index++,new QTableWidgetItem(tr("Operate")));
+    //  ui->tableWidget->setHorizontalHeaderLabels(header);
 
     //设置表头字体加粗
     QFont font = ui->tableWidget->horizontalHeader()->font();
@@ -131,13 +186,19 @@ void DeviceSetting::createDeviceTable()
     ui->tableWidget->horizontalHeader()->setFont(font);
     ui->tableWidget->horizontalHeader()->setStretchLastSection(true); //设置充满表宽度
     //ui->tableWidget->verticalHeader()->setResizeMode(QHeaderView::ResizeToContents);
-    ui->tableWidget->verticalHeader()->setDefaultSectionSize(2); //设置行距
+
     ui->tableWidget->horizontalHeader()->setDefaultSectionSize(130);
     ui->tableWidget->horizontalHeader()->resizeSection(0,50); //设置表头第一列的宽度为150
     ui->tableWidget->horizontalHeader()->setFixedHeight(31); //设置表头的高度
-    ui->tableWidget->verticalHeader()->setVisible(false); //设置垂直头不可见
+
     ui->tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{border:none;font:bold;background:#EBECF0;}"); //设置表头背景色
     ui->tableWidget->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
+
+    ui->tableWidget->horizontalHeader()->setVisible(false);
+
+
+    ui->tableWidget->verticalHeader()->setDefaultSectionSize(2); //设置行距
+    ui->tableWidget->verticalHeader()->setVisible(false); //设置垂直头不可见
 
     ui->tableWidget->setFrameShape(QFrame::NoFrame);
     ui->tableWidget->setFrameShape(QFrame::NoFrame); //设置无边框

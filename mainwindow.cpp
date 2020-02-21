@@ -1,8 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "customerevent.h"
-
-//Qt Style Sheets Examples
+#include <QIcon>
+#include <QWidgetAction>
+#include <QHBoxLayout>
+#include <QLabel>
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -11,52 +13,26 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     this->setWindowFlags(Qt::FramelessWindowHint);
-
     setAttribute(Qt::WA_TranslucentBackground, true);
-
     setAutoFillBackground(true);
 
-    btnAudio = new QPushButton(this);
-    btnBeer = new QPushButton(this);
-    btnHDMI = new QPushButton(this);
-    btnNetWork = new QPushButton(this);
-    btnVGA = new QPushButton(this);
-    btnPan = new QPushButton(this);
 
-    btnAudio->setText("音频");
-    btnBeer->setText("蜂鸣器");
-    btnHDMI->setText("HDMI视频");
-    btnVGA->setText("VGA视频");
-    btnPan->setText("磁盘容量");
-    btnNetWork->setText("网口");
-
-    int y0 = 20;
-    int x0 = 300;
-    int dy = 70;
-    btnAudio->setGeometry(x0,y0,80,40);
-    btnPan->setGeometry(x0,y0+dy,80,40);
-    btnBeer->setGeometry(x0,y0+dy*2,80,40);
-    btnHDMI->setGeometry(x0,y0+dy*3,80,40);
-    btnNetWork->setGeometry(x0,y0+dy*4,80,40);
-    btnVGA->setGeometry(x0,y0+dy*5,80,40);
-
-    connect(btnAudio,&QPushButton::clicked,this,&MainWindow::on_btnAudio_clicked);
-    connect(btnBeer,&QPushButton::clicked,this,&MainWindow::on_btnBeer_clicked);
-    connect(btnHDMI,&QPushButton::clicked,this,&MainWindow::on_btnHDMI_clicked);
-    connect(btnVGA,&QPushButton::clicked,this,&MainWindow::on_btnVGA_clicked);
-    connect(btnPan,&QPushButton::clicked,this,&MainWindow::on_btnPan_clicked);
-    connect(btnNetWork,&QPushButton::clicked,this,&MainWindow::on_btnNetWork_clicked);
-
-
+    listVideoW.clear();
     //createDialog_timeZoneSetting();
     //createDialog_passwordSetting();
     //createDialog_welcome();
     createVideoWindow(4);
-    createDialog_config();
+    currentShowType = MASTERPREVIEW;
+    //createDialog_config();
+    // createReplayWindow();
+
+
 }
+
 bool MainWindow::event(QEvent *event)
 {
-    //qDebug()<<"event:"<<event->type();
+
+    //  qDebug()<<"dsadsa:"<<event->type();
     if (event->type() == CustomerEvent::eventType())
     {
         CustomerEvent *customerEvent = dynamic_cast<CustomerEvent*>(event);
@@ -73,6 +49,28 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::createReplayWindow()
+{
+    QDesktopWidget* pDesktopWidget = QApplication::desktop();
+    //获取可用桌面大小
+    QRect deskRect = QApplication::desktop()->availableGeometry();
+    //获取主屏幕分辨率
+    QRect screenRect = QApplication::desktop()->screenGeometry();
+
+    if(replayWindow == nullptr){
+        replayWindow = new ReplayWindow(this);
+        replayWindow->setGeometry(0,0,deskRect.width(),deskRect.height());
+        replayWindow->init();
+
+        connect(replayWindow,&ReplayWindow::signal_switchWindow,[=](WindowType type){
+            switchWindow(type);
+        });
+
+    }
+    replayWindow->show();
+
+}
+
 void MainWindow::createDialog_config()
 {
     QDesktopWidget* pDesktopWidget = QApplication::desktop();
@@ -81,17 +79,15 @@ void MainWindow::createDialog_config()
     //获取主屏幕分辨率
     QRect screenRect = QApplication::desktop()->screenGeometry();
 
-    qDebug()<<deskRect.x()<<"    "<<deskRect.y()<<"    "<<deskRect.width()<<"    "<<deskRect.height();
-
-    qDebug()<<screenRect.x()<<"    "<<screenRect.y()<<"    "<<deskRect.width()<<"    "<<deskRect.height();
-
-
     if(nvrConfig == nullptr){
         nvrConfig = new NvrConfig(this);
-        qDebug()<< nvrConfig->width() << nvrConfig->height();
         nvrConfig->setGeometry((deskRect.width()-nvrConfig->width())/2,(deskRect.height()-nvrConfig->height())/2,nvrConfig->width(),nvrConfig->height());
-        nvrConfig->show();
+
+        connect(nvrConfig,&NvrConfig::signal_switchWindow,[=](WindowType type){
+            switchWindow(type);
+        });
     }
+    nvrConfig->show();
 }
 
 void MainWindow::createVideoWindow(int n)
@@ -108,17 +104,14 @@ void MainWindow::createVideoWindow(int n)
     for (int i=0;i<videoN;i++) {
 
         for(int j=0;j<videoN;j++){//横向添加
-
             VideoWindow *videoWindow = new VideoWindow(this,widthPerRect,heightPerRect);
+
             videoWindow->setGeometry((widthPerRect+rectSpace)*j ,(heightPerRect+rectSpace)*i,widthPerRect,heightPerRect);
 
+
+            listVideoW.append(videoWindow);
         }
-
     }
-
-
-
-
 }
 void MainWindow::createDialog_timeZoneSetting()
 {
@@ -128,14 +121,10 @@ void MainWindow::createDialog_timeZoneSetting()
     //获取主屏幕分辨率
     QRect screenRect = QApplication::desktop()->screenGeometry();
 
-    qDebug()<<deskRect.x()<<"    "<<deskRect.y()<<"    "<<deskRect.width()<<"    "<<deskRect.height();
-
-    qDebug()<<screenRect.x()<<"    "<<screenRect.y()<<"    "<<deskRect.width()<<"    "<<deskRect.height();
-
 
     if(timeZoneSetting == nullptr){
         timeZoneSetting = new Timezonesetting(this);
-        qDebug()<< timeZoneSetting->width() << timeZoneSetting->height();
+
         timeZoneSetting->setGeometry((deskRect.width()-timeZoneSetting->width())/2,(deskRect.height()-timeZoneSetting->height())/2,timeZoneSetting->width(),timeZoneSetting->height());
         timeZoneSetting->show();
     }
@@ -149,9 +138,9 @@ void MainWindow::createDialog_passwordSetting()
     QRect screenRect = QApplication::desktop()->screenGeometry();
 
     if(passwordSetting == nullptr){
-         passwordSetting = new PasswordSetting(this);
-         passwordSetting->setGeometry((deskRect.width()-passwordSetting->width())/2,(deskRect.height()-passwordSetting->height())/2,passwordSetting->width(),passwordSetting->height());
-         passwordSetting->show();
+        passwordSetting = new PasswordSetting(this);
+        passwordSetting->setGeometry((deskRect.width()-passwordSetting->width())/2,(deskRect.height()-passwordSetting->height())/2,passwordSetting->width(),passwordSetting->height());
+        passwordSetting->show();
     }
 }
 
@@ -164,9 +153,9 @@ void MainWindow::createDialog_welcome()
     QRect screenRect = QApplication::desktop()->screenGeometry();
 
     if(welcome == nullptr){
-         welcome = new Welcome(this);
-         welcome->setGeometry((deskRect.width()-welcome->width())/2,(deskRect.height()-welcome->height())/2,welcome->width(),welcome->height());
-         welcome->show();
+        welcome = new Welcome(this);
+        welcome->setGeometry((deskRect.width()-welcome->width())/2,(deskRect.height()-welcome->height())/2,welcome->width(),welcome->height());
+        welcome->show();
     }
 }
 
@@ -194,69 +183,171 @@ void MainWindow::paintEvent(QPaintEvent*)
 }
 
 
-void drawVideoRect(QPainter *paint,int nxn)
-{
-
-
-
-}
-
-void drawCloudControl(QPainter *paint)
-{
-
-}
-
-
-void MainWindow::on_btnAudio_clicked()
-{
-    qDebug()<<"音频点击";
-
-}
-
-
-void MainWindow::on_btnBeer_clicked()
-{
-    qDebug()<<"音频点击";
-}
-void MainWindow::on_btnHDMI_clicked()
-{
-    qDebug()<<"HDMI点击";
-}
-void MainWindow::on_btnNetWork_clicked()
-{
-    qDebug()<<"网口点击";
-}
-void MainWindow::on_btnVGA_clicked()
-{
-    qDebug()<<"VGA点击";
-}
-void MainWindow::on_btnPan_clicked()
-{
-    qDebug()<<"磁盘容量点击";
-}
-
-
 
 void MainWindow::mousePressEvent(QMouseEvent *event)
 {
-    qDebug()<<"鼠标按下";
+    if(event->button() == Qt::LeftButton)
+    {
+
+    }
+    // 如果是鼠标右键按下
+    else if(event->button() == Qt::RightButton)
+    {
+        qDebug()<<"鼠标右键按下";
+        popMenu();
+    }
 }
-void MainWindow::mouseReleaseEvent(QMouseEvent *event)
+void MainWindow::popMenu()
 {
-    qDebug()<<"鼠标释放";
-}
-void MainWindow::mouseDoubleClickEvent(QMouseEvent *event)
-{
-    qDebug()<<"鼠标双击";
+
+
+    //初始化菜单
+    if(rightMouseMenu == nullptr){
+        rightMouseMenu = new QMenu(this);
+
+
+        QWidgetAction *buttonActionCloudControl = new QWidgetAction(this);
+        QWidgetAction *buttonActionReplay = new QWidgetAction(this);
+        QWidgetAction *buttonActionDeviceSet = new QWidgetAction(this);
+        QWidgetAction *buttonActionSystemSet = new QWidgetAction(this);
+
+
+        QPushButton *pbtnCloudControl =  createSelfBtn(tr("PTZ Control"),":/images/menu_cloudcontrol.png");
+        buttonActionCloudControl->setDefaultWidget(pbtnCloudControl);
+
+        QPushButton *pbtnReplay =  createSelfBtn(tr("Video Replay"),":/images/menu_replay.png");
+        buttonActionReplay->setDefaultWidget(pbtnReplay);
+
+        QPushButton *pbtnDeviceSet =  createSelfBtn(tr("Device Setting"),":/images/menu_deviceManager.png");
+        buttonActionDeviceSet->setDefaultWidget(pbtnDeviceSet);
+
+        QPushButton *pbtnSystemSet =  createSelfBtn(tr("System Setting"),":/images/menu_systemmanager.png");
+        buttonActionSystemSet->setDefaultWidget(pbtnSystemSet);
+
+        //动作添加到菜单
+        rightMouseMenu->addAction(buttonActionCloudControl);
+        rightMouseMenu->addAction(buttonActionReplay);
+        rightMouseMenu->addAction(buttonActionDeviceSet);
+        rightMouseMenu->addAction(buttonActionSystemSet);
+
+        //给动作设置信号槽
+        connect( pbtnCloudControl, &QPushButton::clicked, [=]()
+        {
+            rightMouseMenu->close();
+        });
+        connect( pbtnReplay, &QPushButton::clicked, [=]()
+        {
+            rightMouseMenu->close();
+            switchWindow(REPLAYVIDEO);
+        });
+        connect( pbtnDeviceSet, &QPushButton::clicked, [=]()
+        {
+            rightMouseMenu->close();
+            switchWindow(DEVICESET);
+        });
+        connect( pbtnSystemSet, &QPushButton::clicked, [=]()
+        {
+            rightMouseMenu->close();
+            switchWindow(SYSTEMSET);
+        });
+    }
+
+
+
+
+    rightMouseMenu->exec(QCursor::pos());
 }
 
-void MainWindow::mouseMoveEvent(QMouseEvent *event)
+void MainWindow::showMasterVideo(bool isShow)
 {
-    qDebug()<<"鼠标移动";
+    if(listVideoW.size()<=0)
+        createVideoWindow(4);
+
+    if(isShow){
+
+        for (int i=0;i<listVideoW.size();i++)
+            listVideoW.at(i)->show();
+
+    }else {
+
+        for (int i=0;i<listVideoW.size();i++)
+            listVideoW.at(i)->hide();
+    }
+
 }
-void MainWindow::wheelEvent(QWheelEvent *event)
+void MainWindow::switchWindow(WindowType type)
 {
-    qDebug()<<"滚轮";
+
+
+    //隐藏当前的窗口
+    switch (currentShowType)
+    {
+    case MASTERPREVIEW:
+        if(type == REPLAYVIDEO)
+            showMasterVideo(false);
+        break;
+    case REPLAYVIDEO:
+        if(type == MASTERPREVIEW)
+            replayWindow->hide();
+        break;
+    }
+
+    //显示切换的窗口
+    switch (type) {
+    case MASTERPREVIEW:
+        showMasterVideo(true);
+        currentShowType = type;
+        break;
+    case REPLAYVIDEO:
+        createReplayWindow();
+        currentShowType = type;
+        break;
+    case SYSTEMSET:
+
+        if(nvrConfig == nullptr)
+            createDialog_config();
+        nvrConfig->showSystemSet();
+
+        break;
+    case DEVICESET:
+
+        if(nvrConfig == nullptr)
+            createDialog_config();
+        nvrConfig->showDeviceSet();
+        break;
+
+    default:
+        return;
+    }
+
+
+
 }
 
+QPushButton *MainWindow::createSelfBtn(QString btnTxt,QString res)
+{
+    const QSize btnSize(236,42);
+    QPushButton *btn = new QPushButton();
+
+    btn ->setFixedSize(btnSize);
+    btn ->setStyleSheet("QPushButton{background-color: #171717;border:none}"
+                        "QPushButton:pressed{background-color: #476BFD;}");
+    QLabel* label = new QLabel();
+    QLabel* label2 = new QLabel();
+    label2->setFixedSize(QSize(20,20));
+    QString sty = "border-image:url("+res+");background-color: #00ffffff;";
+    label->setStyleSheet("background-color: #00ffffff;font-size: 16px;font-family:Microsoft Yahei;color:white;font:#ffffff");
+    label2 ->setStyleSheet(sty);
+
+    label->setText(btnTxt);
+    QHBoxLayout* myLayout = new QHBoxLayout();
+    myLayout->addSpacing(20);
+    myLayout->addWidget(label2);
+    myLayout->addSpacing(10);
+    myLayout->addWidget(label);
+    myLayout->addStretch();
+    btn->setLayout(myLayout);
+
+    return btn;
+}
 

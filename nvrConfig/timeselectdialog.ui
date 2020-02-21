@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TimeSelectDialog</class>
+ <widget class="QDialog" name="TimeSelectDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>266</width>
+    <height>303</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget{
+	background-color: rgba(0,0,0,0.09);
+	font-family: &quot;HelveticaNeue&quot;;
+	font-size:12px;
+    color: rgba(0,0,0,0.65);
+}
+
+QListView{
+	border:0px solid gray;   /*边界线:宽度、颜色*/
+    background:#ffffff;   /*表格背景色*/
+    color:rgba(0,0,0,0.65);        /*前景色：文字颜色*/
+    /*margin:5px,5px,0px,50px;*/   /*上、下、左、右，间距}*/
+}
+QListView::item
+{
+    padding-top:12px;
+    padding-bottom:6px;
+}
+
+QListView::item:hover
+{
+    show-decoration-selected:5;
+    background:#F7F7F7;
+}
+
+QListView::item:selected
+{    /*border:0px;*/
+    background:#F4F6FF;
+    padding:0px;
+    margin:0px;
+}/*上次选择后保留的状态，鼠标离开后显示*/QListView::item:selected:!active
+{
+    border-width:0px;
+    background:lightgreen;
+}
+QScrollBar:vertical
+{
+    width:8px;
+    background:rgb(0,0,0,0%);
+    margin:0px,0px,0px,0px;
+    padding-top:0px;   /*上预留位置*/
+    padding-bottom:0px;    /*下预留位置*/}/*滚动条中滑块的样式*/
+QScrollBar::handle:vertical
+{
+    width:8px;
+    background:rgb(0,0,0,25%);
+    border-radius:4px;
+    min-height:20px;}/*鼠标触及滑块样式*/QScrollBar::handle:vertical:hover
+{
+    width:9px;
+	height:0px;
+    background:rgb(0,0,0,50%);
+    border-radius:4px;
+    min-height:0;}
+/*设置下箭头*/QScrollBar::add-line:vertical
+{
+    height:0px;
+    width:0px;
+    subcontrol-position:bottom;}
+/*设置上箭头*/QScrollBar::sub-line:vertical
+{
+    height:0px;
+    width:0px;
+    subcontrol-position:top;}
+/*设置下箭头:悬浮状态*/
+QScrollBar::add-line:vertical:hover
+{
+    height:12px;
+    width:10px;
+    subcontrol-position:bottom;}
+/*设置上箭头：悬浮状态*/
+QScrollBar::sub-line:vertical:hover
+{
+    height:0px;
+    width:0px;
+    subcontrol-position:top;}
+/*当滚动条滚动的时候，上面的部分和下面的部分*/QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
+{
+    background:rgb(0,0,0,10%);
+    border-radius:4px;}
+</string>
+  </property>
+  <widget class="QListView" name="listView_hour">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>30</y>
+     <width>40</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QListView" name="listView_minute">
+   <property name="geometry">
+    <rect>
+     <x>41</x>
+     <y>30</y>
+     <width>40</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QListView" name="listView_seconds">
+   <property name="geometry">
+    <rect>
+     <x>82</x>
+     <y>30</y>
+     <width>40</width>
+     <height>192</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>121</width>
+     <height>31</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>00:00:00</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

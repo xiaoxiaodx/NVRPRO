@@ -2,11 +2,11 @@
 #define DEVICESETTING_H
 
 #include <QWidget>
-
+#include <QTableWidget>
 namespace Ui {
 class DeviceSetting;
 }
-#include <QTableWidget>
+
 class DeviceSetting : public QWidget
 {
     Q_OBJECT
@@ -19,7 +19,9 @@ private:
     Ui::DeviceSetting *ui;
 
     void createDeviceTable();
+    void createDeviceTableHeader();
     void deviceTableInsert(int pos,QMap<QString,QVariant> hash);
+    void showDialog(int deleteIndex);
 
     void createOSDSetting();
     void adjustOSDWidgetPos();
@@ -34,6 +36,8 @@ private:
     void adjustRTMPWidgetPos();
 
     void init();
+
+
 
 
 };

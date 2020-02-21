@@ -15,7 +15,6 @@ public:
     explicit VideoWindow(QWidget *parent = nullptr,int mW = 0,int mH = 0 );
     ~VideoWindow();
 
-
 private:
     Ui::VideoWindow *ui;
     void setControlPostion();

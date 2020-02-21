@@ -14,7 +14,8 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">border:1px rgb(85, 255, 0);
+</string>
   </property>
   <widget class="QLabel" name="label_videoLoss">
    <property name="geometry">
@@ -51,7 +52,7 @@
   <widget class="QPushButton" name="pushButton_setHome">
    <property name="geometry">
     <rect>
-     <x>360</x>
+     <x>450</x>
      <y>360</y>
      <width>32</width>
      <height>32</height>
@@ -88,9 +89,8 @@
    <property name="styleSheet">
     <string notr="true">
  QPushButton {
-      
+background-color: transparent;
 		border-image: url(:/images/videoType_swith.png);
-
   }
 
   QPushButton:pressed {
@@ -140,7 +140,8 @@
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/images/cloudControl_bg.png);</string>
+    <string notr="true">background-color: transparent;
+border-image: url(:/images/cloudControl_bg.png);</string>
    </property>
    <widget class="QPushButton" name="pushButton_cloudControl_up_3">
     <property name="geometry">
@@ -226,6 +227,7 @@
     <property name="styleSheet">
      <string notr="true">
  QPushButton {
+		
 		border-image: url(:/images/cloudControl_right.png);
   }
 
