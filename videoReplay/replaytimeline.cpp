@@ -33,22 +33,10 @@ void ReplayTimeline::init()
     buttonGround->addButton(ui->pushButton_30min);
     buttonGround->setExclusive(true);
 
-    connect(ui->pushButton_24h,&QPushButton::clicked,[&]{
-        scaleType = TIMELINE24H;
-        this->update();
-    });
-    connect(ui->pushButton_2h,&QPushButton::clicked,[&]{
-        scaleType = TIMELINE2H;
-        this->update();
-    });
-    connect(ui->pushButton_1h,&QPushButton::clicked,[&]{
-        scaleType = TIMELINE1H;
-        this->update();
-    });
-    connect(ui->pushButton_30min,&QPushButton::clicked,[&]{
-        scaleType = TIMELINE30M;
-        this->update();
-    });
+    connect(ui->pushButton_24h,&QPushButton::clicked,this,&ReplayTimeline::slot_24hSelect);
+    connect(ui->pushButton_2h,&QPushButton::clicked,this,&ReplayTimeline::slot_2hSelect);
+    connect(ui->pushButton_1h,&QPushButton::clicked,this,&ReplayTimeline::slot_1hSelect);
+    connect(ui->pushButton_30min,&QPushButton::clicked,this,&ReplayTimeline::slot_30mSelect);
 
     ui->widget_date->move(302,11);
 
@@ -70,6 +58,28 @@ void ReplayTimeline::init()
 
 
     initTimeLineInterval();
+}
+
+
+void ReplayTimeline::slot_24hSelect()
+{
+    scaleType = TIMELINE24H;
+    this->update();
+}
+void ReplayTimeline::slot_2hSelect()
+{
+    scaleType = TIMELINE2H;
+    this->update();
+}
+void ReplayTimeline::slot_1hSelect()
+{
+    scaleType = TIMELINE1H;
+    this->update();
+}
+void ReplayTimeline::slot_30mSelect()
+{
+    scaleType = TIMELINE30M;
+    this->update();
 }
 
 void ReplayTimeline::initTimeLineInterval()

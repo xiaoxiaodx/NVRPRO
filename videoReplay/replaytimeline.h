@@ -22,7 +22,11 @@ public:
     void setDate(QDate date);
 signals:
     void signal_popDateDialog();
-
+public slots:
+    void slot_24hSelect();
+    void slot_2hSelect();
+    void slot_1hSelect();
+    void slot_30mSelect();
 protected:
     void paintEvent(QPaintEvent * event);
 private slots:

@@ -62,9 +62,7 @@ void MainWindow::createReplayWindow()
         replayWindow->setGeometry(0,0,deskRect.width(),deskRect.height());
         replayWindow->init();
 
-        connect(replayWindow,&ReplayWindow::signal_switchWindow,[=](WindowType type){
-            switchWindow(type);
-        });
+        connect(replayWindow,&ReplayWindow::signal_switchWindow,this,&MainWindow::slot_switchWindow);
 
     }
     replayWindow->show();
@@ -83,9 +81,7 @@ void MainWindow::createDialog_config()
         nvrConfig = new NvrConfig(this);
         nvrConfig->setGeometry((deskRect.width()-nvrConfig->width())/2,(deskRect.height()-nvrConfig->height())/2,nvrConfig->width(),nvrConfig->height());
 
-        connect(nvrConfig,&NvrConfig::signal_switchWindow,[=](WindowType type){
-            switchWindow(type);
-        });
+        connect(nvrConfig,&NvrConfig::signal_switchWindow,this,&MainWindow::slot_switchWindow);
     }
     nvrConfig->show();
 }
@@ -231,25 +227,10 @@ void MainWindow::popMenu()
         rightMouseMenu->addAction(buttonActionSystemSet);
 
         //给动作设置信号槽
-        connect( pbtnCloudControl, &QPushButton::clicked, [=]()
-        {
-            rightMouseMenu->close();
-        });
-        connect( pbtnReplay, &QPushButton::clicked, [=]()
-        {
-            rightMouseMenu->close();
-            switchWindow(REPLAYVIDEO);
-        });
-        connect( pbtnDeviceSet, &QPushButton::clicked, [=]()
-        {
-            rightMouseMenu->close();
-            switchWindow(DEVICESET);
-        });
-        connect( pbtnSystemSet, &QPushButton::clicked, [=]()
-        {
-            rightMouseMenu->close();
-            switchWindow(SYSTEMSET);
-        });
+        connect( pbtnCloudControl, &QPushButton::clicked,this,&MainWindow::slot_menuSelectCloudControl);
+        connect( pbtnReplay, &QPushButton::clicked,this,&MainWindow::slot_menuSelectReplay);
+        connect( pbtnDeviceSet, &QPushButton::clicked,this,&MainWindow::slot_menuSelectDeviceSet);
+        connect( pbtnSystemSet, &QPushButton::clicked, this,&MainWindow::slot_menuSelectSystemSet);
     }
 
 
@@ -258,6 +239,23 @@ void MainWindow::popMenu()
     rightMouseMenu->exec(QCursor::pos());
 }
 
+void MainWindow::slot_menuSelectCloudControl()
+{rightMouseMenu->close();}
+
+void MainWindow::slot_menuSelectReplay()
+{
+    rightMouseMenu->close();
+    slot_switchWindow(REPLAYVIDEO);
+}
+void MainWindow::slot_menuSelectDeviceSet()
+{
+    rightMouseMenu->close();
+    slot_switchWindow(DEVICESET);
+}
+void MainWindow::slot_menuSelectSystemSet()
+{rightMouseMenu->close();
+    slot_switchWindow(SYSTEMSET);
+}
 void MainWindow::showMasterVideo(bool isShow)
 {
     if(listVideoW.size()<=0)
@@ -275,7 +273,7 @@ void MainWindow::showMasterVideo(bool isShow)
     }
 
 }
-void MainWindow::switchWindow(WindowType type)
+void MainWindow::slot_switchWindow(WindowType type)
 {
 
 

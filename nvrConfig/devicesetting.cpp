@@ -130,9 +130,9 @@ void DeviceSetting::deviceTableInsert(int row_count,QMap<QString,QVariant> map)
     QPushButton *pbtnDelete = new QPushButton(tr("Delete"));
     pbtnDelete->setStyleSheet("text-align:left;background-color:transparent;border:none;color:#476BFD;font:bold 12px;");
 
-    connect(pbtnDelete,&QPushButton::clicked,[=](){
-        showDialog(row_count);
-    });
+//    connect(pbtnDelete,&QPushButton::clicked,[=](){
+//        showDialog(row_count);
+//    });
 
     ui->tableWidget->setRowHeight(row_count,35);
     ui->tableWidget->setCellWidget(row_count, 0, widget);

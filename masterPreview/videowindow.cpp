@@ -11,20 +11,20 @@ VideoWindow::VideoWindow(QWidget *parent,int mW,int mH) :
     mHeight = mH;
 
 
-    QPushButton *button = new QPushButton(this);
-    button->setText("测试自定义事件");
-    // 建立连接, 发送信号
-    QObject::connect(button, &QPushButton::clicked, [=](void)->void{
-        // 使用PostEvent方式发送
-        CustomerEvent *customerEvent = new CustomerEvent("PostCustomerEvent");
-        QCoreApplication::postEvent(this->parent(), customerEvent);
+//    QPushButton *button = new QPushButton(this);
+//    button->setText("测试自定义事件");
+//    // 建立连接, 发送信号
+//    QObject::connect(button, &QPushButton::clicked, [=](void)->void{
+//        // 使用PostEvent方式发送
+//        CustomerEvent *customerEvent = new CustomerEvent("PostCustomerEvent");
+//        QCoreApplication::postEvent(this->parent(), customerEvent);
 
-        // 使用SendEvent方式发送
-        CustomerEvent *sendCustomerEvent = new CustomerEvent("SendCustomerEvent");
-        bool result = QCoreApplication::sendEvent(this, sendCustomerEvent);
-        qDebug() << "The Dispose Result Is " << result;
-        delete sendCustomerEvent;
-    });
+//        // 使用SendEvent方式发送
+//        CustomerEvent *sendCustomerEvent = new CustomerEvent("SendCustomerEvent");
+//        bool result = QCoreApplication::sendEvent(this, sendCustomerEvent);
+//        qDebug() << "The Dispose Result Is " << result;
+//        delete sendCustomerEvent;
+//    });
 
     setControlPostion();
 }

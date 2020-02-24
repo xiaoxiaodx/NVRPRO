@@ -41,7 +41,8 @@ SOURCES += \
     videoReplay/replaywindow.cpp \
     videoReplay/mycalendar.cpp \
     videoReplay/replaytimeline.cpp \
-    nvrConfig/timeselectdialog.cpp
+    nvrConfig/timeselectdialog.cpp \
+    nvrConfig/dcalendardialog.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -60,7 +61,8 @@ HEADERS += \
     videoReplay/mycalendar.h \
     videoReplay/replaytimeline.h \
     util.h \
-    nvrConfig/timeselectdialog.h
+    nvrConfig/timeselectdialog.h \
+    nvrConfig/dcalendardialog.h
 
 FORMS += \
         mainwindow.ui \
@@ -77,7 +79,8 @@ FORMS += \
     videoReplay/replaywindow.ui \
     videoReplay/mycalendar.ui \
     videoReplay/replaytimeline.ui \
-    nvrConfig/timeselectdialog.ui
+    nvrConfig/timeselectdialog.ui \
+    nvrConfig/dcalendardialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

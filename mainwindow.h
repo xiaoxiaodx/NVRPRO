@@ -31,7 +31,11 @@ public:
 
 
 public slots:
-    //void slot_switchWindow(WindowType type);
+    void slot_switchWindow(WindowType type);
+    void slot_menuSelectCloudControl();
+    void slot_menuSelectReplay();
+    void slot_menuSelectDeviceSet();
+    void slot_menuSelectSystemSet();
 protected:
     void paintEvent(QPaintEvent*);
 
@@ -54,7 +58,7 @@ private:
     void createReplayWindow();
 
     void showMasterVideo(bool isShow);
-    void switchWindow(WindowType type);
+   // void switchWindow(WindowType type);
 //    void drawVideoRect(QPainter *paint,int nxn);
 //    void drawCloudControl(QPainter *paint);
 

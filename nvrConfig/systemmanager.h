@@ -29,6 +29,10 @@ private slots:
 
     void on_pushButton_time_clicked();
 
+
+    void slot_alarmTypeMenuClick();
+    void slot_channelMenuClick();
+    void slot_timeChange(QTime time);
 private:
     Ui::SystemManager *ui;
     void init();
@@ -53,8 +57,8 @@ private:
 
     void popCalendar();
     AlarmTypeMenu *alarmtypeMenu = NULL;
-    CameraMenu *cameraMenu = NULL;
-    QMenu *dateSelectMenu = NULL;
+    CameraMenu *cameraChannelMenu = NULL;
+
 
     DateSelectType currentDateSelectType;
     MyCalendar *myCalendar = NULL;

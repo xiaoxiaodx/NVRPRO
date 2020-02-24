@@ -207,13 +207,8 @@ void SystemManager::createDeviceTableHeader()
                          "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}");
 
 
-    connect(btn2,&QPushButton::clicked,[=](){
-        if(cameraMenu == NULL){
-            cameraMenu = new CameraMenu(ui->widget_3);
-            cameraMenu->move(157,70);
-        }
-        cameraMenu->show();
-    });
+    connect(btn2,&QPushButton::clicked,this,&SystemManager::slot_channelMenuClick);
+
     QWidget *widget3 = new QWidget(this);
     QLabel *lable3 = new QLabel("Alarm Typle",widget3);
     QPushButton *btn3 = new QPushButton(widget3);
@@ -222,13 +217,7 @@ void SystemManager::createDeviceTableHeader()
     btn3 ->setStyleSheet("QPushButton{border-image: url(:/images/table_menu.png);}"
                          "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}");
 
-    connect(btn3,&QPushButton::clicked,[=](){
-        if(alarmtypeMenu == NULL){
-            alarmtypeMenu = new AlarmTypeMenu(ui->widget_3);
-            alarmtypeMenu->move(302,70);
-        }
-        alarmtypeMenu->show();
-    });
+    connect(btn3,&QPushButton::clicked,this,&SystemManager::slot_alarmTypeMenuClick);
 
     QWidget *widget4 = new QWidget(this);
     QLabel *lable4 = new QLabel("Start Time",widget4);
@@ -272,6 +261,22 @@ void SystemManager::createDeviceTableHeader()
     ui->tableWidget_2->setCellWidget(row_count, 4,widget5);
 }
 
+void SystemManager::slot_channelMenuClick()
+{
+    if(cameraChannelMenu == NULL){
+        cameraChannelMenu = new CameraMenu(ui->widget_3);
+        cameraChannelMenu->move(157,70);
+    }
+    cameraChannelMenu->show();
+}
+void SystemManager::slot_alarmTypeMenuClick()
+{
+    if(alarmtypeMenu == NULL){
+        alarmtypeMenu = new AlarmTypeMenu(ui->widget_3);
+        alarmtypeMenu->move(302,70);
+    }
+    alarmtypeMenu->show();
+}
 void SystemManager::alarmQueryTableInsert(int row_count,QMap<QString,QVariant> map)
 {
     //int row_count = table_widget->rowCount(); //获取表单行数
@@ -308,12 +313,12 @@ void SystemManager::alarmQueryTableInsert(int row_count,QMap<QString,QVariant> m
 
     // ui->tableWidget->setItem(row_count, 0, item0);
 
-    QPushButton *pbtnDelete = new QPushButton(tr("Delete"));
-    pbtnDelete->setStyleSheet("text-align:left;background-color:transparent;border:none;color:#476BFD;font:bold 12px;");
+//    QPushButton *pbtnDelete = new QPushButton(tr("Delete"));
+//    pbtnDelete->setStyleSheet("text-align:left;background-color:transparent;border:none;color:#476BFD;font:bold 12px;");
 
-    connect(pbtnDelete,&QPushButton::clicked,[=](){
+//    connect(pbtnDelete,&QPushButton::clicked,[=](){
 
-    });
+//    });
 
 
     ui->tableWidget_2->setCellWidget(row_count, 0, lable0);
@@ -389,83 +394,39 @@ SystemManager::~SystemManager()
 
 void SystemManager::on_pushButton_date_clicked()
 {
-    if(dateSelectMenu == NULL){
-        dateSelectMenu = new QMenu(this);
-
-        dateSelectMenu->setStyleSheet("QMenu {background-color: white; border: 1px solid white;}"
-                                      "QMenu::item {background-color: transparent;padding:8px 32px;border-bottom:1px solid #DBDBDB;}"
-                                      "QMenu::item:selected { background-color: #476BFD;}");
-
-        QAction *timeStart = new QAction(tr("Start Date"),this);
-        QAction *timeEnd = new QAction(tr("End Date"),this);
-
-        //动作添加到菜单
-        dateSelectMenu->addAction(timeStart);
-        dateSelectMenu->addAction(timeEnd);
-
-        //给动作设置信号槽
-        connect( timeStart, &QAction::triggered, [=]()
-        {
-
-            dateSelectMenu->close();
-            currentDateSelectType = STARTTIME;
-            popCalendar();
-        });
-        connect( timeEnd,&QAction::triggered, [=]()
-        {
-
-            dateSelectMenu->close();
-            currentDateSelectType = ENDTIME;
-            popCalendar();
-        });
-
-    }
-    dateSelectMenu->exec(QCursor::pos());
+    //popCalendar();
 }
 
 void SystemManager::popCalendar()
 {
-    if(myCalendar == NULL){
-        myCalendar = new MyCalendar(this);
-        myCalendar->setModal(true);
-        myCalendar->setGeometry(1068+114,375,280,314);
-        connect(myCalendar,&MyCalendar::dateUpdate,[&](QDate date){
+//    if(myCalendar == NULL){
+//        myCalendar = new MyCalendar(this);
+//        myCalendar->setModal(true);
+//        myCalendar->setGeometry(1068+114,375,280,314);
+//        connect(myCalendar,&MyCalendar::dateUpdate,[&](QDate date){
 
-            if(currentDateSelectType == STARTTIME)
-                ui->label_startDate->setText(date.toString("yyyy.MM.dd"));
-            else
-                ui->label_endDate->setText(date.toString("yyyy.MM.dd"));
+//            if(currentDateSelectType == STARTTIME)
+//                ui->label_startDate->setText(date.toString("yyyy.MM.dd"));
+//            else
+//                ui->label_endDate->setText(date.toString("yyyy.MM.dd"));
 
-        });
-    }
-    myCalendar->show();
+//        });
+//    }
+//    myCalendar->show();
 }
 
 
 
 void SystemManager::on_pushButton_time_clicked()
 {
-
-    qDebug()<<"pushButton_time  "<<ui->pushButton_time->pos();
-    qDebug()<<"widget_time  "<<ui->widget_time->pos();
-    qDebug()<<"screen pos  "<<ui->widget_time->mapToGlobal(ui->widget_time->pos());
-
-    qDebug()<<"this pos  "<<this->pos();
-    qDebug()<<"screen pos  "<<QWidget::mapToGlobal(this->pos());
-
-    qDebug()<<"mouse pos  "<<QCursor::pos();
-
     if(timeSelectDialog == NULL){
         timeSelectDialog = new TimeSelectDialog(this);
         timeSelectDialog->setModal(true);
 
-        QPoint widget_timeScreenPos = QWidget::mapToGlobal(ui->widget_time->pos());
+        QPoint widget_timeScreenPos = ui->widget_time->mapToGlobal(QPoint(0,0));
         timeSelectDialog->setGeometry(widget_timeScreenPos.x(),widget_timeScreenPos.y()+ui->widget_time->height(),120,254);
 
-        connect(timeSelectDialog,&TimeSelectDialog::signal_timeChange,[=](QTime time){
-
-            ui->label_time->setText(time.toString("hh:mm::ss"));
-        });
+        connect(timeSelectDialog,&TimeSelectDialog::signal_timeChange,this,&SystemManager::slot_timeChange);
     }
 
 
@@ -474,4 +435,9 @@ void SystemManager::on_pushButton_time_clicked()
     timeSelectDialog->setInitTime(time);
     timeSelectDialog->show();
 
+}
+
+void SystemManager::slot_timeChange(QTime time)
+{
+    ui->label_time->setText(time.toString("hh:mm::ss"));
 }

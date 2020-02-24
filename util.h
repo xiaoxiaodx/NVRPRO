@@ -20,10 +20,12 @@ public:
 };
 
 enum WindowType{
+
     MASTERPREVIEW = 0,
     REPLAYVIDEO,
     SYSTEMSET,
     DEVICESET,
+    NONE,
 };
 
 enum DateSelectType{

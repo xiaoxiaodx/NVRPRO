@@ -21,21 +21,25 @@ void ReplayWindow::createTimeLine()
         replayTimeline->setGeometry(0,926,1920,154);
         replayTimeline->init();
 
-        connect(replayTimeline,&ReplayTimeline::signal_popDateDialog,[&](){
+        connect(replayTimeline,&ReplayTimeline::signal_popDateDialog,this,&ReplayWindow::slot_popDateDialog);
+    }
+}
 
-            if(myCalendar == NULL){
-                myCalendar = new MyCalendar(this);
-                myCalendar->setGeometry(227,612,280,314);
-                connect(myCalendar,&MyCalendar::dateUpdate,[&](QDate date){
+void ReplayWindow::slot_popDateDialog()
+{
+    if(myCalendar == NULL){
+        myCalendar = new MyCalendar(this);
 
+        myCalendar->setGeometry(227,612,280,314);
+        connect(myCalendar,&MyCalendar::dateUpdate,this,&ReplayWindow::slot_dateUpdate);
+    }
+    myCalendar->show();
+}
 
-                    if(replayTimeline != NULL){
-                        replayTimeline->setDate(date);
-                    }
-                });
-            }
-            myCalendar->show();
-        });
+void ReplayWindow::slot_dateUpdate(QDate date)
+{
+    if(replayTimeline != NULL){
+        replayTimeline->setDate(date);
     }
 }
 
@@ -81,38 +85,44 @@ void ReplayWindow::popMenu()
     buttonActionSystemSet->setDefaultWidget(pbtnSystemSet);
 
     //初始化菜单
-    QMenu *buttonMenu = new QMenu(this);
+    if(buttonMenu == NULL){
+        buttonMenu = new QMenu(this);
 
-    //动作添加到菜单
-    buttonMenu->addAction(buttonActionCloudControl);
-    buttonMenu->addAction(buttonActionReplay);
-    buttonMenu->addAction(buttonActionDeviceSet);
-    buttonMenu->addAction(buttonActionSystemSet);
+        //动作添加到菜单
+        buttonMenu->addAction(buttonActionCloudControl);
+        buttonMenu->addAction(buttonActionReplay);
+        buttonMenu->addAction(buttonActionDeviceSet);
+        buttonMenu->addAction(buttonActionSystemSet);
 
 
-    //给动作设置信号槽
-    connect( pbtnCloudControl, &QPushButton::clicked, [=]()
-    {
-
-        buttonMenu->close();
-
-    });
-    connect( pbtnMaster, &QPushButton::clicked, [=]()
-    {
-        emit signal_switchWindow(MASTERPREVIEW);
-        buttonMenu->close();
-    });
-    connect( pbtnDeviceSet, &QPushButton::clicked, [=]()
-    {
-        emit signal_switchWindow(SYSTEMSET);
-        buttonMenu->close();
-    });
-    connect( pbtnSystemSet, &QPushButton::clicked, [=]()
-    {
-        emit signal_switchWindow(DEVICESET);
-        buttonMenu->close();
-    });
+        //给动作设置信号槽
+        connect( pbtnCloudControl, &QPushButton::clicked,this,&ReplayWindow::slot_CloudControlClick);
+        connect( pbtnMaster, &QPushButton::clicked,this,&ReplayWindow::slot_MasterClick);
+        connect( pbtnDeviceSet, &QPushButton::clicked, this,&ReplayWindow::slot_DeviceSetClick);
+        connect( pbtnSystemSet, &QPushButton::clicked,this,&ReplayWindow::slot_SystemSetClick);
+    }
     buttonMenu->exec(QCursor::pos());
+}
+
+
+void ReplayWindow::slot_CloudControlClick()
+{
+    buttonMenu->close();
+}
+void ReplayWindow::slot_MasterClick()
+{
+    emit signal_switchWindow(MASTERPREVIEW);
+    buttonMenu->close();
+}
+void ReplayWindow::slot_DeviceSetClick()
+{
+    emit signal_switchWindow(SYSTEMSET);
+    buttonMenu->close();
+}
+void ReplayWindow::slot_SystemSetClick()
+{
+    emit signal_switchWindow(DEVICESET);
+    buttonMenu->close();
 }
 
 QPushButton *ReplayWindow::createSelfBtn(QString btnTxt,QString res)

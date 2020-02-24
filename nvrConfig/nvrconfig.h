@@ -21,6 +21,11 @@ public:
 
     void showDeviceSet();
     void showSystemSet();
+public slots:
+    void slot_MenuSelectMasterPreview();
+    void slot_MenuSelectReplay();
+    void slot_MenuSelectDeviceSetting();
+    void slot_MenuSelectSystemManagement();
 signals:
     void signal_switchWindow(WindowType type);
 private:

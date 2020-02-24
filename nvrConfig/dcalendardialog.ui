@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DCalendarDialog</class>
+ <widget class="QDialog" name="DCalendarDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>983</width>
+    <height>608</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QCalendarWidget" name="calendarWidget">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>160</y>
+     <width>280</width>
+     <height>234</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* navigation bar */
+QCalendarWidget QWidget#qt_calendar_navigationbar { background-color: #ffffff; }
+
+QCalendarWidget QToolButton {
+    height: 39px;
+    width: 280px;
+    color: #333333;
+    font-size: 14px;
+    icon-size: 12px, 12px;
+    background-color: #ffffff;
+}
+QCalendarWidget QMenu {
+    width: 32px;
+    left: 20px;
+    color: white;
+    font-size: 14px;
+    background-color: rgb(100, 100, 100);
+}
+QCalendarWidget QSpinBox { 
+    width: 150px; 
+    font-size:24px; 
+    color: white; 
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop: 0 #cccccc, stop: 1 #333333); 
+    selection-background-color: rgb(136, 136, 136);
+    selection-color: rgb(255, 255, 255);
+}
+QCalendarWidget QSpinBox::up-button { subcontrol-origin: border;  subcontrol-position: top right;  width:65px; }
+QCalendarWidget QSpinBox::down-button {subcontrol-origin: border; subcontrol-position: bottom right;  width:65px;}
+QCalendarWidget QSpinBox::up-arrow { width:56px;  height:56px; }
+QCalendarWidget QSpinBox::down-arrow { width:56px;  height:56px; }
+ 
+/* header row */
+QCalendarWidget QWidget { alternate-background-color: #ffffff; }
+ 
+/* normal days */
+QCalendarWidget QAbstractItemView:enabled 
+{
+	font-family:HelveticaNeue;
+    font-size:14px;  
+    color: #333333;  
+    background-color: white;  
+    selection-background-color:#476BFD; 
+    selection-color:white; 
+}
+ 
+/* days in other months */
+QCalendarWidget QAbstractItemView:disabled { color: rgba(0,0,0,0.25); }
+</string>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedStates"/>
+   </property>
+   <property name="verticalHeaderFormat">
+    <enum>QCalendarWidget::NoVerticalHeader</enum>
+   </property>
+   <property name="navigationBarVisible">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_yearnext">
+   <property name="geometry">
+    <rect>
+     <x>284</x>
+     <y>90</y>
+     <width>12</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{border-image: url(:/images/yearnext.png);}
+QPushButton:pressed{border-image: url(:/images/yearnext_p.png);}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_cancel">
+   <property name="geometry">
+    <rect>
+     <x>540</x>
+     <y>50</y>
+     <width>46</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color:transparent;
+	border:none;
+	color:#666666;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size: 12px;
+}
+QPushButton:pressed {  
+    /* 改变背景色   
+    background-color:rgb(40,85,20); */
+    /* 使文字有一点移动 */  
+    padding-left:2px;  
+    padding-top:2px;  
+}  
+</string>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_monthyear">
+   <property name="geometry">
+    <rect>
+     <x>102</x>
+     <y>86</y>
+     <width>141</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	font-family: &quot;HelveticaNeue-Medium&quot;;
+	font: 14px;
+    color: #333333;</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_done">
+   <property name="geometry">
+    <rect>
+     <x>600</x>
+     <y>50</y>
+     <width>46</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color:transparent;
+	border:none;
+	color:#476BFD;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size: 12px;
+}
+QPushButton:pressed {  
+    /* 改变背景色   
+    background-color:rgb(40,85,20); */
+    /* 使文字有一点移动 */  
+    padding-left:2px;  
+    padding-top:2px;  
+}  
+</string>
+   </property>
+   <property name="text">
+    <string>Done</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_monsepre">
+   <property name="geometry">
+    <rect>
+     <x>70</x>
+     <y>90</y>
+     <width>12</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{border-image: url(:/images/monthpre.png);}
+QPushButton:pressed{border-image: url(:/images/monthpre_p.png);}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_yearpre">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>90</y>
+     <width>12</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{border-image: url(:/images/yearpre.png);}
+QPushButton:pressed{border-image: url(:/images/yearpre_p.png);}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_monthnext">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>90</y>
+     <width>12</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{border-image: url(:/images/monthnext.png);}
+QPushButton:pressed{border-image: url(:/images/monthnext_p.png);}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_yearpre_2">
+   <property name="geometry">
+    <rect>
+     <x>370</x>
+     <y>90</y>
+     <width>12</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{border-image: url(:/images/yearpre.png);}
+QPushButton:pressed{border-image: url(:/images/yearpre_p.png);}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QCalendarWidget" name="calendarWidget_2">
+   <property name="geometry">
+    <rect>
+     <x>340</x>
+     <y>160</y>
+     <width>280</width>
+     <height>234</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">/* navigation bar */
+QCalendarWidget QWidget#qt_calendar_navigationbar { background-color: #ffffff; }
+
+QCalendarWidget QToolButton {
+    height: 39px;
+    width: 280px;
+    color: #333333;
+    font-size: 14px;
+    icon-size: 12px, 12px;
+    background-color: #ffffff;
+}
+QCalendarWidget QMenu {
+    width: 32px;
+    left: 20px;
+    color: white;
+    font-size: 14px;
+    background-color: rgb(100, 100, 100);
+}
+QCalendarWidget QSpinBox { 
+    width: 150px; 
+    font-size:24px; 
+    color: white; 
+    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop: 0 #cccccc, stop: 1 #333333); 
+    selection-background-color: rgb(136, 136, 136);
+    selection-color: rgb(255, 255, 255);
+}
+QCalendarWidget QSpinBox::up-button { subcontrol-origin: border;  subcontrol-position: top right;  width:65px; }
+QCalendarWidget QSpinBox::down-button {subcontrol-origin: border; subcontrol-position: bottom right;  width:65px;}
+QCalendarWidget QSpinBox::up-arrow { width:56px;  height:56px; }
+QCalendarWidget QSpinBox::down-arrow { width:56px;  height:56px; }
+ 
+/* header row */
+QCalendarWidget QWidget { alternate-background-color: #ffffff; }
+ 
+/* normal days */
+QCalendarWidget QAbstractItemView:enabled 
+{
+	font-family:HelveticaNeue;
+    font-size:14px;  
+    color: #333333;  
+    background-color: white;  
+    selection-background-color:#476BFD; 
+    selection-color:white; 
+}
+ 
+/* days in other months */
+QCalendarWidget QAbstractItemView:disabled { color: rgba(0,0,0,0.25); }
+</string>
+   </property>
+   <property name="locale">
+    <locale language="English" country="UnitedStates"/>
+   </property>
+   <property name="verticalHeaderFormat">
+    <enum>QCalendarWidget::NoVerticalHeader</enum>
+   </property>
+   <property name="navigationBarVisible">
+    <bool>false</bool>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_monthnext_2">
+   <property name="geometry">
+    <rect>
+     <x>596</x>
+     <y>90</y>
+     <width>12</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{border-image: url(:/images/monthnext.png);}
+QPushButton:pressed{border-image: url(:/images/monthnext_p.png);}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_monsepre_2">
+   <property name="geometry">
+    <rect>
+     <x>406</x>
+     <y>90</y>
+     <width>12</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{border-image: url(:/images/monthpre.png);}
+QPushButton:pressed{border-image: url(:/images/monthpre_p.png);}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_yearnext_2">
+   <property name="geometry">
+    <rect>
+     <x>620</x>
+     <y>90</y>
+     <width>12</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton{border-image: url(:/images/yearnext.png);}
+QPushButton:pressed{border-image: url(:/images/yearnext_p.png);}
+</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_time">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>40</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size:12px;
+font-family:HelveticaNeue;
+color:rgba(0,0,0,0.65);
+line-height:19px;</string>
+   </property>
+   <property name="text">
+    <string>0/0/0</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_time2">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>40</y>
+     <width>54</width>
+     <height>12</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size:12px;
+font-family:HelveticaNeue;
+color:rgba(0,0,0,0.65);
+line-height:19px;</string>
+   </property>
+   <property name="text">
+    <string>0/0/0</string>
+   </property>
+  </widget>
+  <widget class="Line" name="line1">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>80</y>
+     <width>910</width>
+     <height>1</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:none;
+background-color: rgb(226, 226, 226);</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="Line" name="line_2">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>130</y>
+     <width>910</width>
+     <height>1</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">border:none;
+background-color: rgb(226, 226, 226);</string>
+   </property>
+   <property name="orientation">
+    <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

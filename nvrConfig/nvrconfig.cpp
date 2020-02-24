@@ -50,22 +50,12 @@ void NvrConfig::setMenuItem()
     buttonGround->addButton(btnSystemManagement);
     buttonGround->setExclusive(true);
 
-    connect(btnMasterPreview,&QPushButton::clicked,[=](){
-        emit signal_switchWindow(MASTERPREVIEW);
-        this->close();
-    });
-    connect(btnReplay,&QPushButton::clicked,[=](){
-        emit signal_switchWindow(REPLAYVIDEO);
-        this->close();
-    });
+    connect(btnMasterPreview,&QPushButton::clicked,this,&NvrConfig::slot_MenuSelectMasterPreview);
+    connect(btnReplay,&QPushButton::clicked,this,&NvrConfig::slot_MenuSelectReplay);
 
-    connect(btnDeviceSetting,&QPushButton::clicked,[=](){
-        ui->stackedWidget->setCurrentWidget(deviceSetting);
-    });
+    connect(btnDeviceSetting,&QPushButton::clicked,this,&NvrConfig::slot_MenuSelectDeviceSetting);
 
-    connect(btnSystemManagement,&QPushButton::clicked,[=](){
-        ui->stackedWidget->setCurrentWidget(systemManager);
-    });
+    connect(btnSystemManagement,&QPushButton::clicked,this,&NvrConfig::slot_MenuSelectSystemManagement);
 
 
     /*容器包含*/
@@ -80,6 +70,26 @@ void NvrConfig::setMenuItem()
     menuLayout->addStretch();
 
     ui->widget_menu->setLayout(menuLayout);
+}
+
+
+void NvrConfig::slot_MenuSelectMasterPreview()
+{
+    emit signal_switchWindow(MASTERPREVIEW);
+    this->close();
+}
+void NvrConfig::slot_MenuSelectReplay()
+{
+    emit signal_switchWindow(REPLAYVIDEO);
+    this->close();
+}
+void NvrConfig::slot_MenuSelectDeviceSetting()
+{
+     ui->stackedWidget->setCurrentWidget(deviceSetting);
+}
+void NvrConfig::slot_MenuSelectSystemManagement()
+{
+     ui->stackedWidget->setCurrentWidget(systemManager);
 }
 void NvrConfig::showDeviceSet()
 {

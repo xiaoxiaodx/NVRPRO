@@ -23,8 +23,18 @@ public:
     explicit ReplayWindow(QWidget *parent = NULL);
     ~ReplayWindow();
     void init();
+
 signals:
     void signal_switchWindow(WindowType type);
+public slots:
+    //菜单槽
+    void slot_CloudControlClick();
+    void slot_MasterClick();
+    void slot_DeviceSetClick();
+    void slot_SystemSetClick();
+
+    void slot_popDateDialog();
+    void slot_dateUpdate(QDate time);
 protected:
     void mousePressEvent(QMouseEvent *event);
 
@@ -35,6 +45,7 @@ private:
 
     ReplayTimeline *replayTimeline=NULL;
     MyCalendar *myCalendar = NULL;
+    QMenu *buttonMenu = NULL;
     Ui::ReplayWindow *ui;
 };
 
