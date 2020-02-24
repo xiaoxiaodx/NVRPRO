@@ -207,7 +207,7 @@ void SystemManager::createDeviceTableHeader()
                          "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}");
 
 
-    connect(btn2,&QPushButton::clicked,this,&SystemManager::slot_channelMenuClick);
+    connect(btn2,SIGNAL(clicked()),this,SLOT(slot_channelMenuClick()));
 
     QWidget *widget3 = new QWidget(this);
     QLabel *lable3 = new QLabel("Alarm Typle",widget3);
@@ -217,7 +217,7 @@ void SystemManager::createDeviceTableHeader()
     btn3 ->setStyleSheet("QPushButton{border-image: url(:/images/table_menu.png);}"
                          "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}");
 
-    connect(btn3,&QPushButton::clicked,this,&SystemManager::slot_alarmTypeMenuClick);
+    connect(btn3,SIGNAL(clicked()),this,SLOT(slot_alarmTypeMenuClick()));
 
     QWidget *widget4 = new QWidget(this);
     QLabel *lable4 = new QLabel("Start Time",widget4);
@@ -394,28 +394,28 @@ SystemManager::~SystemManager()
 
 void SystemManager::on_pushButton_date_clicked()
 {
-    //popCalendar();
+    popCalendar();
 }
 
 void SystemManager::popCalendar()
 {
-//    if(myCalendar == NULL){
-//        myCalendar = new MyCalendar(this);
-//        myCalendar->setModal(true);
-//        myCalendar->setGeometry(1068+114,375,280,314);
-//        connect(myCalendar,&MyCalendar::dateUpdate,[&](QDate date){
+    if(myCalendar == NULL){
+        myCalendar = new DCalendarDialog(this);
+        myCalendar->setModal(true);
+        QPoint dateScreenPos = ui->widget_date->mapToGlobal(QPoint(0,0));
+        myCalendar->setGeometry(dateScreenPos.x()-(484-ui->widget_date->width())/2,375+ui->widget_date->height(),484,270);
 
-//            if(currentDateSelectType == STARTTIME)
-//                ui->label_startDate->setText(date.toString("yyyy.MM.dd"));
-//            else
-//                ui->label_endDate->setText(date.toString("yyyy.MM.dd"));
 
-//        });
-//    }
-//    myCalendar->show();
+        connect(myCalendar,SIGNAL(signal_dateUpdate(QString ,QString )),this,SLOT(slot_dateChange(QString ,QString )));
+    }
+    myCalendar->show();
 }
 
-
+void SystemManager::slot_dateChange(QString  datestr1,QString  datestr2)
+{
+    ui->label_startDate->setText(datestr1);
+    ui->label_endDate->setText(datestr2);
+}
 
 void SystemManager::on_pushButton_time_clicked()
 {
@@ -426,7 +426,7 @@ void SystemManager::on_pushButton_time_clicked()
         QPoint widget_timeScreenPos = ui->widget_time->mapToGlobal(QPoint(0,0));
         timeSelectDialog->setGeometry(widget_timeScreenPos.x(),widget_timeScreenPos.y()+ui->widget_time->height(),120,254);
 
-        connect(timeSelectDialog,&TimeSelectDialog::signal_timeChange,this,&SystemManager::slot_timeChange);
+        connect(timeSelectDialog,SIGNAL(signal_timeChange(QTime time)),this,SLOT(slot_timeChange(QTime time)));
     }
 
 

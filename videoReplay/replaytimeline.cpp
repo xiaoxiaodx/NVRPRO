@@ -33,10 +33,10 @@ void ReplayTimeline::init()
     buttonGround->addButton(ui->pushButton_30min);
     buttonGround->setExclusive(true);
 
-    connect(ui->pushButton_24h,&QPushButton::clicked,this,&ReplayTimeline::slot_24hSelect);
-    connect(ui->pushButton_2h,&QPushButton::clicked,this,&ReplayTimeline::slot_2hSelect);
-    connect(ui->pushButton_1h,&QPushButton::clicked,this,&ReplayTimeline::slot_1hSelect);
-    connect(ui->pushButton_30min,&QPushButton::clicked,this,&ReplayTimeline::slot_30mSelect);
+    connect(ui->pushButton_24h,SIGNAL(clicked()),this,SLOT(slot_24hSelect()));
+    connect(ui->pushButton_2h,SIGNAL(clicked()),this,SLOT(slot_2hSelect()));
+    connect(ui->pushButton_1h,SIGNAL(clicked()),this,SLOT(slot_1hSelect()));
+    connect(ui->pushButton_30min,SIGNAL(clicked()),this,SLOT(slot_30mSelect()));
 
     ui->widget_date->move(302,11);
 

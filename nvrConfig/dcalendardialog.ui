@@ -18,8 +18,8 @@
     <rect>
      <x>32</x>
      <y>160</y>
-     <width>280</width>
-     <height>234</height>
+     <width>222</width>
+     <height>183</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -30,15 +30,15 @@ QCalendarWidget QToolButton {
     height: 39px;
     width: 280px;
     color: #333333;
-    font-size: 14px;
-    icon-size: 12px, 12px;
+    font-size: 12px;
+    icon-size: 10px, 10px;
     background-color: #ffffff;
 }
 QCalendarWidget QMenu {
     width: 32px;
     left: 20px;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     background-color: rgb(100, 100, 100);
 }
 QCalendarWidget QSpinBox { 
@@ -61,8 +61,8 @@ QCalendarWidget QWidget { alternate-background-color: #ffffff; }
 QCalendarWidget QAbstractItemView:enabled 
 {
 	font-family:HelveticaNeue;
-    font-size:14px;  
-    color: #333333;  
+    font-size:12px;  
+    color: rgba(102,102,102,1);  
     background-color: white;  
     selection-background-color:#476BFD; 
     selection-color:white; 
@@ -74,6 +74,9 @@ QCalendarWidget QAbstractItemView:disabled { color: rgba(0,0,0,0.25); }
    </property>
    <property name="locale">
     <locale language="English" country="UnitedStates"/>
+   </property>
+   <property name="gridVisible">
+    <bool>false</bool>
    </property>
    <property name="verticalHeaderFormat">
     <enum>QCalendarWidget::NoVerticalHeader</enum>
@@ -87,8 +90,8 @@ QCalendarWidget QAbstractItemView:disabled { color: rgba(0,0,0,0.25); }
     <rect>
      <x>284</x>
      <y>90</y>
-     <width>12</width>
-     <height>12</height>
+     <width>10</width>
+     <height>10</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -135,14 +138,14 @@ QPushButton:pressed {
     <rect>
      <x>102</x>
      <y>86</y>
-     <width>141</width>
-     <height>20</height>
+     <width>101</width>
+     <height>19</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">	font-family: &quot;HelveticaNeue-Medium&quot;;
-	font: 14px;
-    color: #333333;</string>
+    <string notr="true">font-family: &quot;HelveticaNeue&quot;;
+font: 12px;
+color: rgba(0,0,0,0.85);</string>
    </property>
    <property name="text">
     <string/>
@@ -186,8 +189,8 @@ QPushButton:pressed {
     <rect>
      <x>70</x>
      <y>90</y>
-     <width>12</width>
-     <height>12</height>
+     <width>10</width>
+     <height>10</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -204,8 +207,8 @@ QPushButton:pressed{border-image: url(:/images/monthpre_p.png);}
     <rect>
      <x>48</x>
      <y>90</y>
-     <width>12</width>
-     <height>12</height>
+     <width>10</width>
+     <height>10</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -222,8 +225,8 @@ QPushButton:pressed{border-image: url(:/images/yearpre_p.png);}
     <rect>
      <x>260</x>
      <y>90</y>
-     <width>12</width>
-     <height>12</height>
+     <width>10</width>
+     <height>10</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -240,8 +243,8 @@ QPushButton:pressed{border-image: url(:/images/monthnext_p.png);}
     <rect>
      <x>370</x>
      <y>90</y>
-     <width>12</width>
-     <height>12</height>
+     <width>10</width>
+     <height>10</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -256,10 +259,10 @@ QPushButton:pressed{border-image: url(:/images/yearpre_p.png);}
   <widget class="QCalendarWidget" name="calendarWidget_2">
    <property name="geometry">
     <rect>
-     <x>340</x>
-     <y>160</y>
-     <width>280</width>
-     <height>234</height>
+     <x>380</x>
+     <y>150</y>
+     <width>222</width>
+     <height>183</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -270,15 +273,15 @@ QCalendarWidget QToolButton {
     height: 39px;
     width: 280px;
     color: #333333;
-    font-size: 14px;
-    icon-size: 12px, 12px;
+    font-size: 12px;
+    icon-size: 10px, 10px;
     background-color: #ffffff;
 }
 QCalendarWidget QMenu {
     width: 32px;
     left: 20px;
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     background-color: rgb(100, 100, 100);
 }
 QCalendarWidget QSpinBox { 
@@ -301,8 +304,8 @@ QCalendarWidget QWidget { alternate-background-color: #ffffff; }
 QCalendarWidget QAbstractItemView:enabled 
 {
 	font-family:HelveticaNeue;
-    font-size:14px;  
-    color: #333333;  
+    font-size:12px;  
+    color: rgba(102,102,102,1);  
     background-color: white;  
     selection-background-color:#476BFD; 
     selection-color:white; 
@@ -327,8 +330,8 @@ QCalendarWidget QAbstractItemView:disabled { color: rgba(0,0,0,0.25); }
     <rect>
      <x>596</x>
      <y>90</y>
-     <width>12</width>
-     <height>12</height>
+     <width>10</width>
+     <height>10</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -345,8 +348,8 @@ QPushButton:pressed{border-image: url(:/images/monthnext_p.png);}
     <rect>
      <x>406</x>
      <y>90</y>
-     <width>12</width>
-     <height>12</height>
+     <width>10</width>
+     <height>10</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -363,8 +366,8 @@ QPushButton:pressed{border-image: url(:/images/monthpre_p.png);}
     <rect>
      <x>620</x>
      <y>90</y>
-     <width>12</width>
-     <height>12</height>
+     <width>10</width>
+     <height>10</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -381,18 +384,18 @@ QPushButton:pressed{border-image: url(:/images/yearnext_p.png);}
     <rect>
      <x>40</x>
      <y>40</y>
-     <width>54</width>
-     <height>12</height>
+     <width>71</width>
+     <height>19</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">font-size:12px;
-font-family:HelveticaNeue;
+font-family:&quot;HelveticaNeue&quot;;
 color:rgba(0,0,0,0.65);
 line-height:19px;</string>
    </property>
    <property name="text">
-    <string>0/0/0</string>
+    <string>20200/00/00</string>
    </property>
   </widget>
   <widget class="QLabel" name="label_time2">
@@ -400,13 +403,13 @@ line-height:19px;</string>
     <rect>
      <x>150</x>
      <y>40</y>
-     <width>54</width>
-     <height>12</height>
+     <width>70</width>
+     <height>19</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">font-size:12px;
-font-family:HelveticaNeue;
+font-family:&quot;HelveticaNeue&quot;;
 color:rgba(0,0,0,0.65);
 line-height:19px;</string>
    </property>
@@ -446,6 +449,46 @@ background-color: rgb(226, 226, 226);</string>
    </property>
    <property name="orientation">
     <enum>Qt::Horizontal</enum>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_monthyear_2">
+   <property name="geometry">
+    <rect>
+     <x>420</x>
+     <y>90</y>
+     <width>121</width>
+     <height>20</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">	font-family: &quot;HelveticaNeue&quot;;
+	font: 12px;
+    color: rgba(0,0,0,0.85);</string>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label__">
+   <property name="geometry">
+    <rect>
+     <x>130</x>
+     <y>40</y>
+     <width>10</width>
+     <height>19</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size:15px;
+font-family:&quot;HelveticaNeue&quot;;
+color:rgba(0,0,0,0.65);
+line-height:19px;</string>
+   </property>
+   <property name="text">
+    <string>-</string>
    </property>
   </widget>
  </widget>

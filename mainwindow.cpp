@@ -62,7 +62,7 @@ void MainWindow::createReplayWindow()
         replayWindow->setGeometry(0,0,deskRect.width(),deskRect.height());
         replayWindow->init();
 
-        connect(replayWindow,&ReplayWindow::signal_switchWindow,this,&MainWindow::slot_switchWindow);
+        connect(nvrConfig,SIGNAL(signal_switchWindow(WindowType type)),this,SLOT(slot_switchWindow(WindowType type)));
 
     }
     replayWindow->show();
@@ -81,7 +81,7 @@ void MainWindow::createDialog_config()
         nvrConfig = new NvrConfig(this);
         nvrConfig->setGeometry((deskRect.width()-nvrConfig->width())/2,(deskRect.height()-nvrConfig->height())/2,nvrConfig->width(),nvrConfig->height());
 
-        connect(nvrConfig,&NvrConfig::signal_switchWindow,this,&MainWindow::slot_switchWindow);
+        connect(nvrConfig,SIGNAL(signal_switchWindow(WindowType )),this,SLOT(slot_switchWindow(WindowType )));
     }
     nvrConfig->show();
 }
@@ -227,10 +227,10 @@ void MainWindow::popMenu()
         rightMouseMenu->addAction(buttonActionSystemSet);
 
         //给动作设置信号槽
-        connect( pbtnCloudControl, &QPushButton::clicked,this,&MainWindow::slot_menuSelectCloudControl);
-        connect( pbtnReplay, &QPushButton::clicked,this,&MainWindow::slot_menuSelectReplay);
-        connect( pbtnDeviceSet, &QPushButton::clicked,this,&MainWindow::slot_menuSelectDeviceSet);
-        connect( pbtnSystemSet, &QPushButton::clicked, this,&MainWindow::slot_menuSelectSystemSet);
+        connect( pbtnCloudControl, SIGNAL(clicked()),this,SLOT(slot_menuSelectCloudControl()));
+        connect( pbtnReplay, SIGNAL(clicked()),this,SLOT(slot_menuSelectReplay()));
+        connect( pbtnDeviceSet, SIGNAL(clicked()),this,SLOT(slot_menuSelectDeviceSet()));
+        connect( pbtnSystemSet,SIGNAL(clicked()), this,SLOT(slot_menuSelectSystemSet()));
     }
 
 

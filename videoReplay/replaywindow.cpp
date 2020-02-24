@@ -21,7 +21,7 @@ void ReplayWindow::createTimeLine()
         replayTimeline->setGeometry(0,926,1920,154);
         replayTimeline->init();
 
-        connect(replayTimeline,&ReplayTimeline::signal_popDateDialog,this,&ReplayWindow::slot_popDateDialog);
+        connect(replayTimeline,SIGNAL(signal_popDateDialog()),this,SLOT(slot_popDateDialog()));
     }
 }
 
@@ -31,7 +31,7 @@ void ReplayWindow::slot_popDateDialog()
         myCalendar = new MyCalendar(this);
 
         myCalendar->setGeometry(227,612,280,314);
-        connect(myCalendar,&MyCalendar::dateUpdate,this,&ReplayWindow::slot_dateUpdate);
+        connect(myCalendar,SIGNAL(dateUpdate(QDate date)),this,SLOT(slot_dateUpdate(QDate date)));
     }
     myCalendar->show();
 }
@@ -96,10 +96,10 @@ void ReplayWindow::popMenu()
 
 
         //给动作设置信号槽
-        connect( pbtnCloudControl, &QPushButton::clicked,this,&ReplayWindow::slot_CloudControlClick);
-        connect( pbtnMaster, &QPushButton::clicked,this,&ReplayWindow::slot_MasterClick);
-        connect( pbtnDeviceSet, &QPushButton::clicked, this,&ReplayWindow::slot_DeviceSetClick);
-        connect( pbtnSystemSet, &QPushButton::clicked,this,&ReplayWindow::slot_SystemSetClick);
+        connect( pbtnCloudControl, SIGNAL(clicked()),this,SLOT(slot_CloudControlClick()));
+        connect( pbtnMaster, SIGNAL(clicked()),this,SLOT(slot_MasterClick()));
+        connect( pbtnDeviceSet, SIGNAL(clicked()), this,SLOT(slot_DeviceSetClick()));
+        connect( pbtnSystemSet, SIGNAL(clicked()),this,SLOT(slot_SystemSetClick()));
     }
     buttonMenu->exec(QCursor::pos());
 }

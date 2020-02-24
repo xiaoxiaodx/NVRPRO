@@ -50,12 +50,12 @@ void NvrConfig::setMenuItem()
     buttonGround->addButton(btnSystemManagement);
     buttonGround->setExclusive(true);
 
-    connect(btnMasterPreview,&QPushButton::clicked,this,&NvrConfig::slot_MenuSelectMasterPreview);
-    connect(btnReplay,&QPushButton::clicked,this,&NvrConfig::slot_MenuSelectReplay);
+    connect(btnMasterPreview,SIGNAL(clicked()),this,SLOT(slot_MenuSelectMasterPreview()));
+    connect(btnReplay,SIGNAL(clicked()),this,SLOT(slot_MenuSelectReplay()));
 
-    connect(btnDeviceSetting,&QPushButton::clicked,this,&NvrConfig::slot_MenuSelectDeviceSetting);
+    connect(btnDeviceSetting,SIGNAL(clicked()),this,SLOT(slot_MenuSelectDeviceSetting()));
 
-    connect(btnSystemManagement,&QPushButton::clicked,this,&NvrConfig::slot_MenuSelectSystemManagement);
+    connect(btnSystemManagement,SIGNAL(clicked()),this,SLOT(slot_MenuSelectSystemManagement()));
 
 
     /*容器包含*/

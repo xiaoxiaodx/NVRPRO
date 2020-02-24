@@ -5,11 +5,11 @@
 #include "alarmtypemenu.h"
 #include "cameramenu.h"
 #include <QMenu>
-#include "videoReplay/mycalendar.h"
+
 #include "util.h"
 #include "timeselectdialog.h"
 
-
+#include "dcalendardialog.h"
 namespace Ui {
 class SystemManager;
 }
@@ -33,6 +33,7 @@ private slots:
     void slot_alarmTypeMenuClick();
     void slot_channelMenuClick();
     void slot_timeChange(QTime time);
+    void slot_dateChange(QString  datestr1,QString  datestr2);
 private:
     Ui::SystemManager *ui;
     void init();
@@ -61,7 +62,7 @@ private:
 
 
     DateSelectType currentDateSelectType;
-    MyCalendar *myCalendar = NULL;
+    DCalendarDialog *myCalendar = NULL;
     TimeSelectDialog *timeSelectDialog= NULL;
 };
 
