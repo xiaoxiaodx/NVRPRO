@@ -19,6 +19,9 @@ DCalendarDialog::DCalendarDialog(QWidget *parent) :
     ui->label_monthyear_2->setText(monthNumber2English(ui->calendarWidget->monthShown())+" "+QString::number(ui->calendarWidget->yearShown()));
 
 
+    connect(ui->calendarWidget,SIGNAL(selectionChanged()),this,SLOT(slot_currentSelectChange()));
+    connect(ui->calendarWidget_2,SIGNAL(selectionChanged()),this,SLOT(slot_currentSelectChange2()));
+
 }
 
 void DCalendarDialog::init()
@@ -26,6 +29,7 @@ void DCalendarDialog::init()
     ui->line1->setGeometry(0,31,485,1);
     ui->line_2->setGeometry(0,67,485,1);
     ui->label_time->move(10,7);
+    ui->label__->move(80,7);
     ui->label_time2->move(96,7);
     ui->pushButton_cancel->move(385,6);
     ui->pushButton_done->move(444,6);
@@ -44,6 +48,8 @@ void DCalendarDialog::init()
     ui->label_monthyear->move(74,42);
     ui->label_monthyear_2->move(314,42);
 
+
+
     ui->calendarWidget->move(10,73);
     ui->calendarWidget_2->move(252,73);
 }
@@ -61,7 +67,7 @@ QString DCalendarDialog::monthNumber2English(int month)
     case 4:
         return "April";
     case 5:
-       return "May";
+        return "May";
     case 6:
         return "June";
     case 7:
@@ -93,6 +99,18 @@ void DCalendarDialog::slot_currentPageChanged2(int year, int month)
     QString monthEnglish = monthNumber2English(month);
     QString monthyear = monthEnglish + " "+ QString::number(year);
     ui->label_monthyear_2->setText(monthyear);
+}
+
+void DCalendarDialog::slot_currentSelectChange()
+{
+    QDate date = ui->calendarWidget->selectedDate();
+    ui->label_time->setText(date.toString("yy/MM/dd"));
+}
+
+void DCalendarDialog::slot_currentSelectChange2()
+{
+    QDate date = ui->calendarWidget_2->selectedDate();
+    ui->label_time2->setText(date.toString("yyyy/MM/dd"));
 }
 DCalendarDialog::~DCalendarDialog()
 {

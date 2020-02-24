@@ -426,7 +426,7 @@ void SystemManager::on_pushButton_time_clicked()
         QPoint widget_timeScreenPos = ui->widget_time->mapToGlobal(QPoint(0,0));
         timeSelectDialog->setGeometry(widget_timeScreenPos.x(),widget_timeScreenPos.y()+ui->widget_time->height(),120,254);
 
-        connect(timeSelectDialog,SIGNAL(signal_timeChange(QTime time)),this,SLOT(slot_timeChange(QTime time)));
+        connect(timeSelectDialog,SIGNAL(signal_timeChange(QTime )),this,SLOT(slot_timeChange(QTime )));
     }
 
 

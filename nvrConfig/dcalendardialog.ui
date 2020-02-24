@@ -384,7 +384,7 @@ QPushButton:pressed{border-image: url(:/images/yearnext_p.png);}
     <rect>
      <x>40</x>
      <y>40</y>
-     <width>71</width>
+     <width>70</width>
      <height>19</height>
     </rect>
    </property>
