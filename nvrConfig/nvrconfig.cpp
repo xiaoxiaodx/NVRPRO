@@ -7,9 +7,6 @@
 #include <QCoreApplication>
 #include <QMouseEvent>
 
-
-
-
 NvrConfig::NvrConfig(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::NvrConfig)

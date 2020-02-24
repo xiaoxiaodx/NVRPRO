@@ -15,12 +15,14 @@
   </property>
   <property name="styleSheet">
    <string notr="true">QWidget{
-	background-color: rgba(0,0,0,0.09);
+	background-color: #dddddd;
 	font-family: &quot;HelveticaNeue&quot;;
 	font-size:12px;
     color: rgba(0,0,0,0.65);
 }
-
+QLable{
+	background-color:#ffffff;
+}
 QListView{
 	border:0px solid gray;   /*边界线:宽度、颜色*/
     background:#ffffff;   /*表格背景色*/
@@ -33,37 +35,32 @@ QListView::item
     padding-bottom:6px;
 }
 
-QListView::item:hover
-{
-    show-decoration-selected:5;
-    background:#F7F7F7;
-}
-
 QListView::item:selected
 {    /*border:0px;*/
     background:#F4F6FF;
+	color:rgba(0,0,0,0.65);  
     padding:0px;
     margin:0px;
 }/*上次选择后保留的状态，鼠标离开后显示*/QListView::item:selected:!active
 {
     border-width:0px;
-    background:lightgreen;
+    background:#F4F6FF;
 }
 QScrollBar:vertical
 {
-    width:8px;
-    background:rgb(0,0,0,0%);
+    width:3px;
+    background:#ffffff;
     margin:0px,0px,0px,0px;
     padding-top:0px;   /*上预留位置*/
     padding-bottom:0px;    /*下预留位置*/}/*滚动条中滑块的样式*/
 QScrollBar::handle:vertical
 {
-    width:8px;
-    background:rgb(0,0,0,25%);
+    width:3px;
+    background:rgba(0,0,0,0.15);
     border-radius:4px;
     min-height:20px;}/*鼠标触及滑块样式*/QScrollBar::handle:vertical:hover
 {
-    width:9px;
+    width:4px;
 	height:0px;
     background:rgb(0,0,0,50%);
     border-radius:4px;
@@ -82,18 +79,16 @@ QScrollBar::handle:vertical
 QScrollBar::add-line:vertical:hover
 {
     height:12px;
-    width:10px;
+    width:0px;
     subcontrol-position:bottom;}
 /*设置上箭头：悬浮状态*/
 QScrollBar::sub-line:vertical:hover
 {
     height:0px;
     width:0px;
-    subcontrol-position:top;}
-/*当滚动条滚动的时候，上面的部分和下面的部分*/QScrollBar::add-page:vertical,QScrollBar::sub-page:vertical
-{
-    background:rgb(0,0,0,10%);
-    border-radius:4px;}
+    subcontrol-position:top;
+}
+
 </string>
   </property>
   <widget class="QListView" name="listView_hour">
@@ -104,6 +99,21 @@ QScrollBar::sub-line:vertical:hover
      <width>40</width>
      <height>192</height>
     </rect>
+   </property>
+   <property name="editTriggers">
+    <set>QAbstractItemView::NoEditTriggers</set>
+   </property>
+   <property name="textElideMode">
+    <enum>Qt::ElideMiddle</enum>
+   </property>
+   <property name="horizontalScrollMode">
+    <enum>QAbstractItemView::ScrollPerItem</enum>
+   </property>
+   <property name="wordWrap">
+    <bool>false</bool>
+   </property>
+   <property name="itemAlignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QListView" name="listView_minute">
@@ -126,20 +136,90 @@ QScrollBar::sub-line:vertical:hover
     </rect>
    </property>
   </widget>
-  <widget class="QLabel" name="label">
+  <widget class="QLabel" name="label_time">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>121</width>
+     <width>120</width>
      <height>31</height>
     </rect>
+   </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">padding-left:10px;
+background-color: rgb(255, 255, 255);</string>
    </property>
    <property name="text">
     <string>00:00:00</string>
    </property>
    <property name="alignment">
-    <set>Qt::AlignCenter</set>
+    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_done">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>220</y>
+     <width>60</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color:#ffffff;
+	border:none;
+	color:#476BFD;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size: 12px;
+}
+QPushButton:pressed {  
+    /* 改变背景色   
+    background-color:rgb(40,85,20); */
+    /* 使文字有一点移动 */  
+    padding-left:2px;  
+    padding-top:2px;  
+}  
+</string>
+   </property>
+   <property name="text">
+    <string>Done</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_cancel">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>220</y>
+     <width>60</width>
+     <height>30</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	background-color:#ffffff;
+	border:none;
+	color:#666666;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size: 12px;
+}
+QPushButton:pressed {  
+    /* 改变背景色   
+    background-color:rgb(40,85,20); */
+    /* 使文字有一点移动 */  
+    padding-left:2px;  
+    padding-top:2px;  
+}  
+</string>
+   </property>
+   <property name="text">
+    <string>Cancel</string>
    </property>
   </widget>
  </widget>

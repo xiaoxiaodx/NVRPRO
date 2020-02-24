@@ -347,8 +347,8 @@ void SystemManager::adjustDiskManagementWidgetPos()
     ui->Diskmanagerlabel_storage->move(40,189);
     ui->DiskmanagerprogressBar->move(185,194);
     ui->Diskmanagerlabel_storage_2->move(375,214);
-
 }
+
 void SystemManager::createSystemOperation()
 {
     adjustSystemOperationWidgetPos();
@@ -449,8 +449,18 @@ void SystemManager::on_pushButton_time_clicked()
     if(timeSelectDialog == nullptr){
         timeSelectDialog = new TimeSelectDialog(this);
         timeSelectDialog->setModal(true);
-        timeSelectDialog->setGeometry(1068+114,375,120,224);
+        timeSelectDialog->setGeometry(1068+114,373,120,254);
+
+        connect(timeSelectDialog,&TimeSelectDialog::signal_timeChange,[=](QTime time){
+
+            ui->label_time->setText(time.toString("hh:mm::ss"));
+        });
     }
+
+
+    QTime time = TimeSelectDialog::timeStr2QTime(ui->label_time->text());
+
+    timeSelectDialog->setInitTime(time);
     timeSelectDialog->show();
 
 }

@@ -2,7 +2,7 @@
 #define UTIL_H
 
 #include <QTime>
-
+#include <QDebug>
 enum IntervalType{
     VIDEOLOSS = 0,
     VIDEONORMAL,
@@ -30,4 +30,5 @@ enum DateSelectType{
     STARTTIME,
     ENDTIME,
 };
+
 #endif // UTIL_H
