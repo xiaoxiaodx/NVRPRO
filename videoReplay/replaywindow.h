@@ -20,7 +20,7 @@ class ReplayWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit ReplayWindow(QWidget *parent = nullptr);
+    explicit ReplayWindow(QWidget *parent = NULL);
     ~ReplayWindow();
     void init();
 signals:
@@ -33,8 +33,8 @@ private:
     void popMenu();
     QPushButton *createSelfBtn(QString btnTxt,QString res);
 
-    ReplayTimeline *replayTimeline=nullptr;
-    MyCalendar *myCalendar = nullptr;
+    ReplayTimeline *replayTimeline=NULL;
+    MyCalendar *myCalendar = NULL;
     Ui::ReplayWindow *ui;
 };
 

@@ -12,7 +12,7 @@ class DeviceSetting : public QWidget
     Q_OBJECT
 
 public:
-    explicit DeviceSetting(QWidget *parent = nullptr);
+    explicit DeviceSetting(QWidget *parent = NULL);
     ~DeviceSetting();
 
 private:

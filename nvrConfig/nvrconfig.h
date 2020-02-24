@@ -16,7 +16,7 @@ class NvrConfig : public QDialog
     Q_OBJECT
 
 public:
-    explicit NvrConfig(QWidget *parent = nullptr);
+    explicit NvrConfig(QWidget *parent = NULL);
     ~NvrConfig();
 
     void showDeviceSet();
@@ -34,14 +34,14 @@ private:
 
     QPushButton * createSelfBtn(QString btnTxt,QString res);
 
-    DeviceSetting *deviceSetting = nullptr;
-    SystemManager *systemManager = nullptr;
+    DeviceSetting *deviceSetting = NULL;
+    SystemManager *systemManager = NULL;
 
 
-    QPushButton *btnMasterPreview = nullptr;
-    QPushButton *btnReplay= nullptr;
-    QPushButton *btnDeviceSetting= nullptr;
-    QPushButton *btnSystemManagement= nullptr;
+    QPushButton *btnMasterPreview = NULL;
+    QPushButton *btnReplay= NULL;
+    QPushButton *btnDeviceSetting= NULL;
+    QPushButton *btnSystemManagement= NULL;
 
 };
 

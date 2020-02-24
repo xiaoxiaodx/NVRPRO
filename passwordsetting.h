@@ -12,7 +12,7 @@ class PasswordSetting : public QDialog
     Q_OBJECT
 
 public:
-    explicit PasswordSetting(QWidget *parent = nullptr);
+    explicit PasswordSetting(QWidget *parent = NULL);
     ~PasswordSetting();
 
 private:

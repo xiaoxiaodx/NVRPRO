@@ -16,7 +16,7 @@ class ReplayTimeline : public QWidget
 {
     Q_OBJECT
 public:
-    explicit ReplayTimeline(QWidget *parent = nullptr);
+    explicit ReplayTimeline(QWidget *parent = NULL);
     ~ReplayTimeline();
     void init();
     void setDate(QDate date);
@@ -53,7 +53,7 @@ private:
     QList<TimeInterval*> listVideoInterval3;
     QList<TimeInterval*> listVideoInterval4;
 
-    MyCalendar *myCalendar = nullptr;
+    MyCalendar *myCalendar = NULL;
 };
 
 #endif // REPLAYTIMELINE_H

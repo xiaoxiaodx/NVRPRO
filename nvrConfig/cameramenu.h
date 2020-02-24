@@ -12,7 +12,7 @@ class CameraMenu : public QDialog
     Q_OBJECT
 
 public:
-    explicit CameraMenu(QWidget *parent = nullptr);
+    explicit CameraMenu(QWidget *parent = NULL);
     ~CameraMenu();
 
 protected:

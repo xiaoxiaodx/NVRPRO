@@ -23,12 +23,12 @@ NvrConfig::NvrConfig(QWidget *parent) :
 void NvrConfig::initStackedWidget()
 {
 
-    if(deviceSetting == nullptr){
+    if(deviceSetting == NULL){
         deviceSetting = new DeviceSetting(this);
         ui->stackedWidget->addWidget(deviceSetting);
     }
 
-    if(systemManager == nullptr){
+    if(systemManager == NULL){
         systemManager = new SystemManager(this);
         ui->stackedWidget->addWidget(systemManager);
 
@@ -83,7 +83,7 @@ void NvrConfig::setMenuItem()
 }
 void NvrConfig::showDeviceSet()
 {
-    if(deviceSetting != nullptr){
+    if(deviceSetting != NULL){
         this->show();
         btnDeviceSetting->setChecked(true);
         ui->stackedWidget->setCurrentWidget(deviceSetting);
@@ -92,7 +92,7 @@ void NvrConfig::showDeviceSet()
 
 void NvrConfig::showSystemSet()
 {
-    if(systemManager != nullptr){
+    if(systemManager != NULL){
         this->show();
         btnSystemManagement->setChecked(true);
         ui->stackedWidget->setCurrentWidget(systemManager);

@@ -26,7 +26,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    explicit MainWindow(QWidget *parent = nullptr);
+    explicit MainWindow(QWidget *parent = NULL);
     ~MainWindow();
 
 
@@ -63,14 +63,14 @@ private:
     int const rectSpace = 2;//分屏的时候，相邻矩形的边距
     int const videoN = 2;//几乘几的视频显示
 
-    QMenu *rightMouseMenu = nullptr;
+    QMenu *rightMouseMenu = NULL;
 
     QList<VideoWindow*> listVideoW;
-    ReplayWindow *replayWindow = nullptr;
-    NvrConfig *nvrConfig = nullptr;
-    Timezonesetting *timeZoneSetting = nullptr;
-    PasswordSetting *passwordSetting = nullptr;
-    Welcome *welcome = nullptr;
+    ReplayWindow *replayWindow = NULL;
+    NvrConfig *nvrConfig = NULL;
+    Timezonesetting *timeZoneSetting = NULL;
+    PasswordSetting *passwordSetting = NULL;
+    Welcome *welcome = NULL;
 
     WindowType currentShowType;
 };

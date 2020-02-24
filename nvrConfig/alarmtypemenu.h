@@ -12,7 +12,7 @@ class AlarmTypeMenu : public QDialog
     Q_OBJECT
 
 public:
-    explicit AlarmTypeMenu(QWidget *parent = nullptr);
+    explicit AlarmTypeMenu(QWidget *parent = NULL);
     ~AlarmTypeMenu();
 protected:
     void enterEvent(QEvent *);

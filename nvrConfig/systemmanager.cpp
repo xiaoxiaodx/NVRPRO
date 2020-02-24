@@ -208,7 +208,7 @@ void SystemManager::createDeviceTableHeader()
 
 
     connect(btn2,&QPushButton::clicked,[=](){
-        if(cameraMenu == nullptr){
+        if(cameraMenu == NULL){
             cameraMenu = new CameraMenu(ui->widget_3);
             cameraMenu->move(157,70);
         }
@@ -223,7 +223,7 @@ void SystemManager::createDeviceTableHeader()
                          "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}");
 
     connect(btn3,&QPushButton::clicked,[=](){
-        if(alarmtypeMenu == nullptr){
+        if(alarmtypeMenu == NULL){
             alarmtypeMenu = new AlarmTypeMenu(ui->widget_3);
             alarmtypeMenu->move(302,70);
         }
@@ -286,8 +286,8 @@ void SystemManager::alarmQueryTableInsert(int row_count,QMap<QString,QVariant> m
 
     QTableWidgetItem *item1 = new QTableWidgetItem(map.value("camara").toString());
 
-    QWidget *widget2 = nullptr;
-    QTableWidgetItem *item2 = nullptr;
+    QWidget *widget2 = NULL;
+    QTableWidgetItem *item2 = NULL;
     if(map.value("alarmType").toString().compare("Motion Detection")==0){
         widget2 = new QWidget(this);
         QLabel *lable2 = new QLabel("Motion Detection",widget2);
@@ -319,10 +319,10 @@ void SystemManager::alarmQueryTableInsert(int row_count,QMap<QString,QVariant> m
     ui->tableWidget_2->setCellWidget(row_count, 0, lable0);
     ui->tableWidget_2->setItem(row_count, 1, item1);
     if(map.value("alarmType").toString().compare("Motion Detection")==0){
-        if(widget2 != nullptr)
+        if(widget2 != NULL)
             ui->tableWidget_2->setCellWidget(row_count, 2, widget2);
     }else{
-        if(item2 != nullptr)
+        if(item2 != NULL)
             ui->tableWidget_2->setItem(row_count, 2, item2);
     }
     ui->tableWidget_2->setItem(row_count, 3, item3);
@@ -389,7 +389,7 @@ SystemManager::~SystemManager()
 
 void SystemManager::on_pushButton_date_clicked()
 {
-    if(dateSelectMenu == nullptr){
+    if(dateSelectMenu == NULL){
         dateSelectMenu = new QMenu(this);
 
         dateSelectMenu->setStyleSheet("QMenu {background-color: white; border: 1px solid white;}"
@@ -425,7 +425,7 @@ void SystemManager::on_pushButton_date_clicked()
 
 void SystemManager::popCalendar()
 {
-    if(myCalendar == nullptr){
+    if(myCalendar == NULL){
         myCalendar = new MyCalendar(this);
         myCalendar->setModal(true);
         myCalendar->setGeometry(1068+114,375,280,314);
@@ -446,10 +446,21 @@ void SystemManager::popCalendar()
 void SystemManager::on_pushButton_time_clicked()
 {
 
-    if(timeSelectDialog == nullptr){
+    qDebug()<<"pushButton_time  "<<ui->pushButton_time->pos();
+    qDebug()<<"widget_time  "<<ui->widget_time->pos();
+    qDebug()<<"screen pos  "<<ui->widget_time->mapToGlobal(ui->widget_time->pos());
+
+    qDebug()<<"this pos  "<<this->pos();
+    qDebug()<<"screen pos  "<<QWidget::mapToGlobal(this->pos());
+
+    qDebug()<<"mouse pos  "<<QCursor::pos();
+
+    if(timeSelectDialog == NULL){
         timeSelectDialog = new TimeSelectDialog(this);
         timeSelectDialog->setModal(true);
-        timeSelectDialog->setGeometry(1068+114,373,120,254);
+
+        QPoint widget_timeScreenPos = QWidget::mapToGlobal(ui->widget_time->pos());
+        timeSelectDialog->setGeometry(widget_timeScreenPos.x(),widget_timeScreenPos.y()+ui->widget_time->height(),120,254);
 
         connect(timeSelectDialog,&TimeSelectDialog::signal_timeChange,[=](QTime time){
 

@@ -12,7 +12,7 @@ class TimeSelectDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit TimeSelectDialog(QWidget *parent = nullptr);
+    explicit TimeSelectDialog(QWidget *parent = NULL);
     ~TimeSelectDialog();
 
     void setInitTime(QTime time);

@@ -12,7 +12,7 @@ class Welcome : public QDialog
     Q_OBJECT
 
 public:
-    explicit Welcome(QWidget *parent = nullptr);
+    explicit Welcome(QWidget *parent = NULL);
     ~Welcome();
 
 private:

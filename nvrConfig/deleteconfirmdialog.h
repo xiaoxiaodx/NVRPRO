@@ -12,7 +12,7 @@ class DeleteConfirmDialog : public QDialog
     Q_OBJECT
 
 public:
-    explicit DeleteConfirmDialog(QWidget *parent = nullptr);
+    explicit DeleteConfirmDialog(QWidget *parent = NULL);
     ~DeleteConfirmDialog();
 
 private slots:

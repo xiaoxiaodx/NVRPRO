@@ -57,7 +57,7 @@ void MainWindow::createReplayWindow()
     //获取主屏幕分辨率
     QRect screenRect = QApplication::desktop()->screenGeometry();
 
-    if(replayWindow == nullptr){
+    if(replayWindow == NULL){
         replayWindow = new ReplayWindow(this);
         replayWindow->setGeometry(0,0,deskRect.width(),deskRect.height());
         replayWindow->init();
@@ -79,7 +79,7 @@ void MainWindow::createDialog_config()
     //获取主屏幕分辨率
     QRect screenRect = QApplication::desktop()->screenGeometry();
 
-    if(nvrConfig == nullptr){
+    if(nvrConfig == NULL){
         nvrConfig = new NvrConfig(this);
         nvrConfig->setGeometry((deskRect.width()-nvrConfig->width())/2,(deskRect.height()-nvrConfig->height())/2,nvrConfig->width(),nvrConfig->height());
 
@@ -122,7 +122,7 @@ void MainWindow::createDialog_timeZoneSetting()
     QRect screenRect = QApplication::desktop()->screenGeometry();
 
 
-    if(timeZoneSetting == nullptr){
+    if(timeZoneSetting == NULL){
         timeZoneSetting = new Timezonesetting(this);
 
         timeZoneSetting->setGeometry((deskRect.width()-timeZoneSetting->width())/2,(deskRect.height()-timeZoneSetting->height())/2,timeZoneSetting->width(),timeZoneSetting->height());
@@ -137,7 +137,7 @@ void MainWindow::createDialog_passwordSetting()
     //获取主屏幕分辨率
     QRect screenRect = QApplication::desktop()->screenGeometry();
 
-    if(passwordSetting == nullptr){
+    if(passwordSetting == NULL){
         passwordSetting = new PasswordSetting(this);
         passwordSetting->setGeometry((deskRect.width()-passwordSetting->width())/2,(deskRect.height()-passwordSetting->height())/2,passwordSetting->width(),passwordSetting->height());
         passwordSetting->show();
@@ -152,7 +152,7 @@ void MainWindow::createDialog_welcome()
     //获取主屏幕分辨率
     QRect screenRect = QApplication::desktop()->screenGeometry();
 
-    if(welcome == nullptr){
+    if(welcome == NULL){
         welcome = new Welcome(this);
         welcome->setGeometry((deskRect.width()-welcome->width())/2,(deskRect.height()-welcome->height())/2,welcome->width(),welcome->height());
         welcome->show();
@@ -202,7 +202,7 @@ void MainWindow::popMenu()
 
 
     //初始化菜单
-    if(rightMouseMenu == nullptr){
+    if(rightMouseMenu == NULL){
         rightMouseMenu = new QMenu(this);
 
 
@@ -304,14 +304,14 @@ void MainWindow::switchWindow(WindowType type)
         break;
     case SYSTEMSET:
 
-        if(nvrConfig == nullptr)
+        if(nvrConfig == NULL)
             createDialog_config();
         nvrConfig->showSystemSet();
 
         break;
     case DEVICESET:
 
-        if(nvrConfig == nullptr)
+        if(nvrConfig == NULL)
             createDialog_config();
         nvrConfig->showDeviceSet();
         break;

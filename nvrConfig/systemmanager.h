@@ -8,6 +8,8 @@
 #include "videoReplay/mycalendar.h"
 #include "util.h"
 #include "timeselectdialog.h"
+
+
 namespace Ui {
 class SystemManager;
 }
@@ -18,7 +20,7 @@ class SystemManager : public QWidget
     Q_OBJECT
 
 public:
-    explicit SystemManager(QWidget *parent = nullptr);
+    explicit SystemManager(QWidget *parent = NULL);
     ~SystemManager();
 
 private slots:
@@ -50,13 +52,13 @@ private:
 
 
     void popCalendar();
-    AlarmTypeMenu *alarmtypeMenu = nullptr;
-    CameraMenu *cameraMenu = nullptr;
-    QMenu *dateSelectMenu = nullptr;
+    AlarmTypeMenu *alarmtypeMenu = NULL;
+    CameraMenu *cameraMenu = NULL;
+    QMenu *dateSelectMenu = NULL;
 
     DateSelectType currentDateSelectType;
-    MyCalendar *myCalendar = nullptr;
-    TimeSelectDialog *timeSelectDialog= nullptr;
+    MyCalendar *myCalendar = NULL;
+    TimeSelectDialog *timeSelectDialog= NULL;
 };
 
 #endif // SYSTEMMANAGER_H

@@ -12,7 +12,7 @@ class MyCalendar : public QDialog
     Q_OBJECT
 
 public:
-    explicit MyCalendar(QWidget *parent = nullptr);
+    explicit MyCalendar(QWidget *parent = NULL);
     ~MyCalendar();
 
 signals:

@@ -126,7 +126,7 @@ TimeInterval* ReplayTimeline::findInterval(QList<TimeInterval*> &list,QTime &tim
             return timeI;
     }
 
-    return  nullptr;
+    return  NULL;
 }
 
 void ReplayTimeline::paintEvent(QPaintEvent * event)
@@ -181,7 +181,7 @@ void ReplayTimeline::drawScale(QPainter &painter,IntervalType type)
     splictlineCount = 24-1;
     contentWidth = (rectTimeLine.width()-splictlineCount) / 24;
 
-    TimeInterval *timeInterval = nullptr;
+    TimeInterval *timeInterval = NULL;
     qreal valuePerScale;
     int markInterval;
 
@@ -204,7 +204,7 @@ void ReplayTimeline::drawScale(QPainter &painter,IntervalType type)
         markInterval = 4;
     }
 
-    if(timeInterval == nullptr){
+    if(timeInterval == NULL){
         qDebug()<<"未找到指定区间";
         return;
     }

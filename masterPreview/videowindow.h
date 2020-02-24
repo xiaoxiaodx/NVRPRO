@@ -12,7 +12,7 @@ class VideoWindow : public QWidget
     Q_OBJECT
 
 public:
-    explicit VideoWindow(QWidget *parent = nullptr,int mW = 0,int mH = 0 );
+    explicit VideoWindow(QWidget *parent = NULL,int mW = 0,int mH = 0 );
     ~VideoWindow();
 
 private:

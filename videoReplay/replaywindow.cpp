@@ -16,20 +16,20 @@ void ReplayWindow::init()
 
 void ReplayWindow::createTimeLine()
 {
-    if(replayTimeline == nullptr){
+    if(replayTimeline == NULL){
         replayTimeline = new ReplayTimeline(this);
         replayTimeline->setGeometry(0,926,1920,154);
         replayTimeline->init();
 
         connect(replayTimeline,&ReplayTimeline::signal_popDateDialog,[&](){
 
-            if(myCalendar == nullptr){
+            if(myCalendar == NULL){
                 myCalendar = new MyCalendar(this);
                 myCalendar->setGeometry(227,612,280,314);
                 connect(myCalendar,&MyCalendar::dateUpdate,[&](QDate date){
 
 
-                    if(replayTimeline != nullptr){
+                    if(replayTimeline != NULL){
                         replayTimeline->setDate(date);
                     }
                 });

@@ -12,7 +12,7 @@ class Timezonesetting : public QDialog
     Q_OBJECT
 
 public:
-    explicit Timezonesetting(QWidget *parent = nullptr);
+    explicit Timezonesetting(QWidget *parent = NULL);
     ~Timezonesetting();
 
 private:
