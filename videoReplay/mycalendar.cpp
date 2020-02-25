@@ -7,8 +7,8 @@ MyCalendar::MyCalendar(QWidget *parent) :
 {
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint|Qt::Dialog);
-    connect(ui->calendarWidget,SIGNAL(currentPageChanged(int year, int month)),this,SLOT(slot_currentPageChanged(int year, int month)));
-     ui->calendarWidget->setFocusPolicy(Qt::NoFocus);
+    connect(ui->calendarWidget,SIGNAL(currentPageChanged(int, int)),this,SLOT(slot_currentPageChanged(int, int)));
+    ui->calendarWidget->setFocusPolicy(Qt::NoFocus);
     ui->label_monthyear->setText(monthNumber2English(ui->calendarWidget->monthShown())+" "+QString::number(ui->calendarWidget->yearShown()));
 }
 

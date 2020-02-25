@@ -76,12 +76,12 @@ void NvrConfig::setMenuItem()
 void NvrConfig::slot_MenuSelectMasterPreview()
 {
     emit signal_switchWindow(MASTERPREVIEW);
-    this->close();
+    //this->hide();
 }
 void NvrConfig::slot_MenuSelectReplay()
 {
     emit signal_switchWindow(REPLAYVIDEO);
-    this->close();
+    //this->hide();
 }
 void NvrConfig::slot_MenuSelectDeviceSetting()
 {

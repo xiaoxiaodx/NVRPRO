@@ -10,7 +10,7 @@ ReplayTimeline::ReplayTimeline(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    replayCurrentTime.setHMS(13,20,15);
+    replayCurrentTime.setHMS(14,10,15);
 }
 ReplayTimeline::~ReplayTimeline()
 {

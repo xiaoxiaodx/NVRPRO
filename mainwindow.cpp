@@ -22,7 +22,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //createDialog_passwordSetting();
     //createDialog_welcome();
     createVideoWindow(4);
-    currentShowType = MASTERPREVIEW;
+    currentMainWindowShowType = MASTERPREVIEW;
     //createDialog_config();
     // createReplayWindow();
 
@@ -62,7 +62,7 @@ void MainWindow::createReplayWindow()
         replayWindow->setGeometry(0,0,deskRect.width(),deskRect.height());
         replayWindow->init();
 
-        connect(nvrConfig,SIGNAL(signal_switchWindow(WindowType type)),this,SLOT(slot_switchWindow(WindowType type)));
+        connect(replayWindow,SIGNAL(signal_switchWindow(WindowType)),this,SLOT(slot_switchWindow(WindowType)));
 
     }
     replayWindow->show();
@@ -201,7 +201,6 @@ void MainWindow::popMenu()
     if(rightMouseMenu == NULL){
         rightMouseMenu = new QMenu(this);
 
-
         QWidgetAction *buttonActionCloudControl = new QWidgetAction(this);
         QWidgetAction *buttonActionReplay = new QWidgetAction(this);
         QWidgetAction *buttonActionDeviceSet = new QWidgetAction(this);
@@ -233,9 +232,6 @@ void MainWindow::popMenu()
         connect( pbtnSystemSet,SIGNAL(clicked()), this,SLOT(slot_menuSelectSystemSet()));
     }
 
-
-
-
     rightMouseMenu->exec(QCursor::pos());
 }
 
@@ -244,18 +240,22 @@ void MainWindow::slot_menuSelectCloudControl()
 
 void MainWindow::slot_menuSelectReplay()
 {
-    rightMouseMenu->close();
+
     slot_switchWindow(REPLAYVIDEO);
+    rightMouseMenu->close();
 }
 void MainWindow::slot_menuSelectDeviceSet()
 {
-    rightMouseMenu->close();
+
     slot_switchWindow(DEVICESET);
+    rightMouseMenu->close();
 }
 void MainWindow::slot_menuSelectSystemSet()
-{rightMouseMenu->close();
+{
     slot_switchWindow(SYSTEMSET);
+    rightMouseMenu->close();
 }
+
 void MainWindow::showMasterVideo(bool isShow)
 {
     if(listVideoW.size()<=0)
@@ -277,33 +277,33 @@ void MainWindow::slot_switchWindow(WindowType type)
 {
 
 
-    //隐藏当前的窗口
-    switch (currentShowType)
-    {
-    case MASTERPREVIEW:
-        if(type == REPLAYVIDEO)
-            showMasterVideo(false);
-        break;
-    case REPLAYVIDEO:
-        if(type == MASTERPREVIEW)
-            replayWindow->hide();
-        break;
-    }
-
     //显示切换的窗口
+    qDebug()<<" WindowType  "<<type;
+
     switch (type) {
     case MASTERPREVIEW:
-        showMasterVideo(true);
-        currentShowType = type;
+        if(currentMainWindowShowType == REPLAYVIDEO){
+            replayWindow->hide();
+            showMasterVideo(true);
+        }
+        currentMainWindowShowType = type;
+        if(nvrConfig!=NULL && nvrConfig->isVisible())
+            nvrConfig->hide();
         break;
     case REPLAYVIDEO:
-        createReplayWindow();
-        currentShowType = type;
+        if(currentMainWindowShowType == MASTERPREVIEW){
+            showMasterVideo(false);
+            createReplayWindow();
+        }
+
+        currentMainWindowShowType = type;
+        if(nvrConfig!=NULL && nvrConfig->isVisible())
+            nvrConfig->hide();
         break;
     case SYSTEMSET:
-
         if(nvrConfig == NULL)
             createDialog_config();
+
         nvrConfig->showSystemSet();
 
         break;
@@ -311,6 +311,7 @@ void MainWindow::slot_switchWindow(WindowType type)
 
         if(nvrConfig == NULL)
             createDialog_config();
+
         nvrConfig->showDeviceSet();
         break;
 
@@ -325,7 +326,7 @@ void MainWindow::slot_switchWindow(WindowType type)
 QPushButton *MainWindow::createSelfBtn(QString btnTxt,QString res)
 {
     const QSize btnSize(236,42);
-    QPushButton *btn = new QPushButton();
+    QPushButton *btn = new QPushButton(this);
 
     btn ->setFixedSize(btnSize);
     btn ->setStyleSheet("QPushButton{background-color: #171717;border:none}"

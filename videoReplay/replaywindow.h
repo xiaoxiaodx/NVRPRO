@@ -28,7 +28,6 @@ signals:
     void signal_switchWindow(WindowType type);
 public slots:
     //菜单槽
-    void slot_CloudControlClick();
     void slot_MasterClick();
     void slot_DeviceSetClick();
     void slot_SystemSetClick();

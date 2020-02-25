@@ -31,7 +31,7 @@ void ReplayWindow::slot_popDateDialog()
         myCalendar = new MyCalendar(this);
 
         myCalendar->setGeometry(227,612,280,314);
-        connect(myCalendar,SIGNAL(dateUpdate(QDate date)),this,SLOT(slot_dateUpdate(QDate date)));
+        connect(myCalendar,SIGNAL(dateUpdate(QDate)),this,SLOT(slot_dateUpdate(QDate)));
     }
     myCalendar->show();
 }
@@ -88,15 +88,12 @@ void ReplayWindow::popMenu()
     if(buttonMenu == NULL){
         buttonMenu = new QMenu(this);
 
-        //动作添加到菜单
-        buttonMenu->addAction(buttonActionCloudControl);
         buttonMenu->addAction(buttonActionReplay);
         buttonMenu->addAction(buttonActionDeviceSet);
         buttonMenu->addAction(buttonActionSystemSet);
 
 
         //给动作设置信号槽
-        connect( pbtnCloudControl, SIGNAL(clicked()),this,SLOT(slot_CloudControlClick()));
         connect( pbtnMaster, SIGNAL(clicked()),this,SLOT(slot_MasterClick()));
         connect( pbtnDeviceSet, SIGNAL(clicked()), this,SLOT(slot_DeviceSetClick()));
         connect( pbtnSystemSet, SIGNAL(clicked()),this,SLOT(slot_SystemSetClick()));
@@ -104,31 +101,29 @@ void ReplayWindow::popMenu()
     buttonMenu->exec(QCursor::pos());
 }
 
-
-void ReplayWindow::slot_CloudControlClick()
-{
-    buttonMenu->close();
-}
 void ReplayWindow::slot_MasterClick()
 {
+
     emit signal_switchWindow(MASTERPREVIEW);
     buttonMenu->close();
 }
 void ReplayWindow::slot_DeviceSetClick()
 {
-    emit signal_switchWindow(SYSTEMSET);
+
+    emit signal_switchWindow(DEVICESET);
     buttonMenu->close();
 }
 void ReplayWindow::slot_SystemSetClick()
 {
-    emit signal_switchWindow(DEVICESET);
+
+    emit signal_switchWindow(SYSTEMSET);
     buttonMenu->close();
 }
 
 QPushButton *ReplayWindow::createSelfBtn(QString btnTxt,QString res)
 {
     const QSize btnSize(236,42);
-    QPushButton *btn = new QPushButton();
+    QPushButton *btn = new QPushButton(this);
 
     btn ->setFixedSize(btnSize);
     btn ->setStyleSheet("QPushButton{background-color: #171717;border:none}"

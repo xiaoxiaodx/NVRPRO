@@ -76,7 +76,7 @@ private:
     PasswordSetting *passwordSetting = NULL;
     Welcome *welcome = NULL;
 
-    WindowType currentShowType;
+    WindowType currentMainWindowShowType;
 };
 
 #endif // MAINWINDOW_H
