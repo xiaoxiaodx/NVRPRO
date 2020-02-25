@@ -3,6 +3,7 @@
 
 #include <QDialog>
 #include <QModelIndex>
+#include <QListView>
 #include "util.h"
 namespace Ui {
 class TimeSelectDialog;
