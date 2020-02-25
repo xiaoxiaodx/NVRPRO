@@ -32,7 +32,7 @@ void DCalendarDialog::init()
     ui->label__->move(80,7);
     ui->label_time2->move(96,7);
     ui->pushButton_cancel->move(385,6);
-    ui->pushButton_done->move(444,6);
+    ui->pushButton_done->move(440,6);
 
     ui->pushButton_yearpre->move(13,46);
     ui->pushButton_monsepre->move(32,46);
@@ -47,8 +47,6 @@ void DCalendarDialog::init()
 
     ui->label_monthyear->move(74,42);
     ui->label_monthyear_2->move(314,42);
-
-
 
     ui->calendarWidget->move(10,73);
     ui->calendarWidget_2->move(252,73);
@@ -121,6 +119,7 @@ void DCalendarDialog::on_pushButton_done_clicked()
 {
 
     emit signal_dateUpdate(ui->label_time->text(),ui->label_time2->text());
+    this->close();
 }
 
 void DCalendarDialog::on_pushButton_yearpre_clicked()
@@ -161,4 +160,9 @@ void DCalendarDialog::on_pushButton_monthnext_2_clicked()
 void DCalendarDialog::on_pushButton_yearnext_2_clicked()
 {
     ui->calendarWidget_2->showNextYear();
+}
+
+void DCalendarDialog::on_pushButton_cancel_clicked()
+{
+    this->close();
 }

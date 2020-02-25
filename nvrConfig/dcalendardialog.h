@@ -42,6 +42,8 @@ private slots:
 
     void on_pushButton_yearnext_2_clicked();
 
+    void on_pushButton_cancel_clicked();
+
 private:
     QString monthNumber2English(int month);
     Ui::DCalendarDialog *ui;
