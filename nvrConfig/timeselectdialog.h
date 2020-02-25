@@ -2,6 +2,7 @@
 #define TIMESELECTDIALOG_H
 
 #include <QDialog>
+#include <QModelIndex>
 #include "util.h"
 namespace Ui {
 class TimeSelectDialog;
