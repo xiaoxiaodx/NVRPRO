@@ -71,7 +71,7 @@ QTime TimeSelectDialog::timeStr2QTime(QString str)
 {
     QStringList listT = str.split(":");
 
-    assert(listT.size() > 0);
+    Q_ASSERT(listT.size() > 0);
 
     QTime time;
     time.setHMS(listT.at(0).toInt(),listT.at(1).toInt(),listT.at(2).toInt());
