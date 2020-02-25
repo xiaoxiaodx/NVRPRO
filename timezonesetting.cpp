@@ -9,9 +9,6 @@ Timezonesetting::Timezonesetting(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
 
-
-
-
     QMap<QString, int> City_Zone;
     City_Zone.insert("GMT+08:00北京",10);
     City_Zone.insert("GMT+08:00北京1",21);
@@ -22,10 +19,6 @@ Timezonesetting::Timezonesetting(QWidget *parent) :
     City_Zone.insert("GMT+08:00北京6",591);
     City_Zone.insert("GMT+08:00北京7",532);
     ui->comboBox->clear();
-
-
-
-
 
     QStyledItemDelegate* itemDelegate=new QStyledItemDelegate();
     ui->comboBox->setItemDelegate(itemDelegate);

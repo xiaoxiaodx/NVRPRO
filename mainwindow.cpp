@@ -27,6 +27,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // createReplayWindow();
 
 
+    setFocusPolicy(Qt::NoFocus);
 }
 
 bool MainWindow::event(QEvent *event)
@@ -328,8 +329,9 @@ QPushButton *MainWindow::createSelfBtn(QString btnTxt,QString res)
     const QSize btnSize(236,42);
     QPushButton *btn = new QPushButton(this);
 
+
     btn ->setFixedSize(btnSize);
-    btn ->setStyleSheet("QPushButton{background-color: #171717;border:none}"
+    btn ->setStyleSheet("QPushButton{background-color: #171717;color:white;border:none}"
                         "QPushButton:pressed{background-color: #476BFD;}");
     QLabel* label = new QLabel();
     QLabel* label2 = new QLabel();
