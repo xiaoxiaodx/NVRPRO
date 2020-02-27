@@ -29,7 +29,6 @@ void ReplayWindow::slot_popDateDialog()
 {
     if(myCalendar == NULL){
         myCalendar = new MyCalendar(this);
-
         myCalendar->setGeometry(227,612,280,314);
         connect(myCalendar,SIGNAL(dateUpdate(QDate)),this,SLOT(slot_dateUpdate(QDate)));
     }
@@ -126,13 +125,13 @@ QPushButton *ReplayWindow::createSelfBtn(QString btnTxt,QString res)
     QPushButton *btn = new QPushButton(this);
 
     btn ->setFixedSize(btnSize);
-    btn ->setStyleSheet("QPushButton{background-color: #171717;border:none}"
+    btn ->setStyleSheet("QPushButton{background-color: transparent;border:none}"
                         "QPushButton:pressed{background-color: #476BFD;}");
     QLabel* label = new QLabel();
     QLabel* label2 = new QLabel();
     label2->setFixedSize(QSize(20,20));
-    QString sty = "border-image:url("+res+");background-color: #00ffffff;";
-    label->setStyleSheet("background-color: #00ffffff;font-size: 16px;font-family:Microsoft Yahei;color:white;font:#ffffff");
+    QString sty = "border-image:url("+res+");background-color: transparent;color:#ffffff;";
+    label->setStyleSheet("background-color: #00ffffff;font-size: 16px;font-family:Microsoft Yahei;color:#ffffff;");
     label2 ->setStyleSheet(sty);
 
     label->setText(btnTxt);

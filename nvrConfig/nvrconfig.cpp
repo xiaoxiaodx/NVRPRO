@@ -19,7 +19,7 @@ NvrConfig::NvrConfig(QWidget *parent) :
 
     initStackedWidget();
 }
-
+#include"virtualkeyboard.h"
 void NvrConfig::initStackedWidget()
 {
 
@@ -31,7 +31,6 @@ void NvrConfig::initStackedWidget()
     if(systemManager == NULL){
         systemManager = new SystemManager(this);
         ui->stackedWidget->addWidget(systemManager);
-
     }
 }
 

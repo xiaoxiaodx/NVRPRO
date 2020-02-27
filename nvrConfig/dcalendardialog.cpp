@@ -1,13 +1,13 @@
 #include "dcalendardialog.h"
 #include "ui_dcalendardialog.h"
-
+#include <QTextCharFormat>
 DCalendarDialog::DCalendarDialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::DCalendarDialog)
 {
     ui->setupUi(this);
 
-    this->setWindowFlags(Qt::FramelessWindowHint|Qt::Dialog);
+    this->setWindowFlags(Qt::FramelessWindowHint|Qt::Popup);
 
     init();
     connect(ui->calendarWidget,SIGNAL(currentPageChanged(int, int)),this,SLOT(slot_currentPageChanged(int, int)));
@@ -21,6 +21,22 @@ DCalendarDialog::DCalendarDialog(QWidget *parent) :
 
     connect(ui->calendarWidget,SIGNAL(selectionChanged()),this,SLOT(slot_currentSelectChange()));
     connect(ui->calendarWidget_2,SIGNAL(selectionChanged()),this,SLOT(slot_currentSelectChange2()));
+
+
+
+    QTextCharFormat format = ui->calendarWidget->weekdayTextFormat(Qt::Sunday);
+    format.setForeground(QBrush(QColor(0,0,0,165), Qt::SolidPattern));
+    ui->calendarWidget->setWeekdayTextFormat(Qt::Saturday, format);
+    QTextCharFormat format1 = ui->calendarWidget->weekdayTextFormat(Qt::Sunday);
+    format1.setForeground(QBrush(QColor(0,0,0,165), Qt::SolidPattern));
+    ui->calendarWidget->setWeekdayTextFormat(Qt::Sunday, format1);
+
+    QTextCharFormat format3 = ui->calendarWidget_2->weekdayTextFormat(Qt::Sunday);
+    format3.setForeground(QBrush(QColor(0,0,0,165), Qt::SolidPattern));
+    ui->calendarWidget_2->setWeekdayTextFormat(Qt::Saturday, format3);
+    QTextCharFormat format4 = ui->calendarWidget_2->weekdayTextFormat(Qt::Sunday);
+    format4.setForeground(QBrush(QColor(0,0,0,165), Qt::SolidPattern));
+    ui->calendarWidget_2->setWeekdayTextFormat(Qt::Sunday, format4);
 
 }
 

@@ -93,7 +93,7 @@ image: url(:/png/images/jy_close2.png)
 </string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>0</number>
    </property>
    <property name="elideMode">
     <enum>Qt::ElideRight</enum>
@@ -107,8 +107,8 @@ image: url(:/png/images/jy_close2.png)
       <rect>
        <x>30</x>
        <y>9</y>
-       <width>1131</width>
-       <height>461</height>
+       <width>1071</width>
+       <height>431</height>
       </rect>
      </property>
      <property name="styleSheet">
@@ -214,6 +214,9 @@ background-color: rgb(226, 226, 226);</string>
         <height>15</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -232,6 +235,9 @@ background-color: rgb(226, 226, 226);</string>
         <width>55</width>
         <height>25</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -264,6 +270,9 @@ background-color: rgb(226, 226, 226);</string>
         <width>30</width>
         <height>15</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -312,6 +321,9 @@ background-color: rgb(226, 226, 226);</string>
         <height>14</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -357,6 +369,9 @@ background-color: rgb(226, 226, 226);</string>
         <height>14</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -391,6 +406,9 @@ background-color: rgb(226, 226, 226);</string>
         <width>14</width>
         <height>14</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -936,6 +954,9 @@ color:#BABABA;</string>
          <height>12</height>
         </rect>
        </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
+       </property>
        <property name="styleSheet">
         <string notr="true">QPushButton{
 border:0px solid #ffffff;
@@ -1029,6 +1050,9 @@ color:#BABABA;</string>
          <width>12</width>
          <height>12</height>
         </rect>
+       </property>
+       <property name="focusPolicy">
+        <enum>Qt::NoFocus</enum>
        </property>
        <property name="styleSheet">
         <string notr="true">
@@ -1157,6 +1181,9 @@ background-color: rgb(226, 226, 226);</string>
         <height>15</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{
 	background-color:#00000000;
@@ -1281,6 +1308,9 @@ QProgressBar::chunk {
         <height>36</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true">QPushButton{border-image: url(:/images/restart.png);
 }
@@ -1300,6 +1330,9 @@ border-image: url(:/images/restart_press.png);
         <width>36</width>
         <height>36</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true">
@@ -1472,6 +1505,9 @@ background-color: rgb(226, 226, 226);</string>
         <width>75</width>
         <height>23</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true">QPushButton {

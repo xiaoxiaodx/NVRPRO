@@ -38,6 +38,9 @@
      <height>22</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	background-color:rgba(71,107,253,1);
@@ -70,6 +73,9 @@ QPushButton#pushButton:pressed {
      <width>44</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {

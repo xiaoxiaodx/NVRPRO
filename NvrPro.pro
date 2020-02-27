@@ -42,7 +42,10 @@ SOURCES += \
     videoReplay/mycalendar.cpp \
     videoReplay/replaytimeline.cpp \
     nvrConfig/timeselectdialog.cpp \
-    nvrConfig/dcalendardialog.cpp
+    nvrConfig/dcalendardialog.cpp \
+    virtualkeyboard.cpp \
+    inputeditkeyeventfilter.cpp \
+    mykeypressevent.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -62,7 +65,10 @@ HEADERS += \
     videoReplay/replaytimeline.h \
     util.h \
     nvrConfig/timeselectdialog.h \
-    nvrConfig/dcalendardialog.h
+    nvrConfig/dcalendardialog.h \
+    virtualkeyboard.h \
+    inputeditkeyeventfilter.h \
+    mykeypressevent.h
 
 FORMS += \
         mainwindow.ui \
@@ -80,7 +86,8 @@ FORMS += \
     videoReplay/mycalendar.ui \
     videoReplay/replaytimeline.ui \
     nvrConfig/timeselectdialog.ui \
-    nvrConfig/dcalendardialog.ui
+    nvrConfig/dcalendardialog.ui \
+    virtualkeyboard.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

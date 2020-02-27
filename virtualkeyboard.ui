@@ -1,0 +1,1224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>VirtualKeyboard</class>
+ <widget class="QDialog" name="VirtualKeyboard">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>412</width>
+    <height>152</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog{
+	background-color: rgb(255, 255, 255);
+}
+
+QPushButton{
+	background-color:#F8F9FB;	
+	color:#333333;
+	border-style:solid;
+	border-width:1px;
+	border-color:#EBECF0;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size: 14px;
+    min-width:26px; 
+    min-height:26px;  
+}
+
+QPushButton:hover{
+	border-color:#A5B6FF;
+}
+QPushButton:pressed{
+    /* 使文字有一点移动 */  
+	padding-left:1px;
+	padding-top:1px;
+	border-color:#476BFD;
+}
+
+QPushButton#pushButton_del{
+border-image: url(:/images/keyborad_del.png);
+}
+QPushButton#pushButton_del:hover{
+border-image: url(:/images/keyborad_del_h.png);
+}
+QPushButton#pushButton_del:pressed{
+border-image: url(:/images/keyborad_del_p.png);
+}
+
+QPushButton#pushButton_switchletter{
+border-image: url(:/images/keyborad_letter.png);
+}
+QPushButton#pushButton_switchletter:hover{
+border-image: url(:/images/keyborad_letter_h.png);
+}
+QPushButton#pushButton_switchletter:pressed{
+border-image: url(:/images/keyborad_letter_p.png);
+}
+
+QPushButton#pushButton_enter{
+border-image: url(:/images/keyborad_enter.png);
+}
+QPushButton#pushButton_enter:hover{
+border-image: url(:/images/keyborad_enter_h.png);
+}
+QPushButton#pushButton_enter:pressed{
+border-image: url(:/images/keyborad_enter_P.png);
+}</string>
+  </property>
+  <widget class="QPushButton" name="pushButton_m">
+   <property name="geometry">
+    <rect>
+     <x>244</x>
+     <y>92</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>m</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_gantanhao">
+   <property name="geometry">
+    <rect>
+     <x>274</x>
+     <y>92</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>!</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_n">
+   <property name="geometry">
+    <rect>
+     <x>214</x>
+     <y>92</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>n</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_v">
+   <property name="geometry">
+    <rect>
+     <x>153</x>
+     <y>92</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>v</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_b">
+   <property name="geometry">
+    <rect>
+     <x>183</x>
+     <y>92</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>b</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_dot">
+   <property name="geometry">
+    <rect>
+     <x>334</x>
+     <y>92</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>.</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_douhao">
+   <property name="geometry">
+    <rect>
+     <x>365</x>
+     <y>92</y>
+     <width>44</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>,</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_wenhao">
+   <property name="geometry">
+    <rect>
+     <x>304</x>
+     <y>92</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>?</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_c">
+   <property name="geometry">
+    <rect>
+     <x>123</x>
+     <y>92</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>c</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_z">
+   <property name="geometry">
+    <rect>
+     <x>62</x>
+     <y>92</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>z</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_x">
+   <property name="geometry">
+    <rect>
+     <x>93</x>
+     <y>92</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>x</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_doller">
+   <property name="geometry">
+    <rect>
+     <x>2</x>
+     <y>92</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>$</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_baifenhao">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>92</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>%</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_g">
+   <property name="geometry">
+    <rect>
+     <x>169</x>
+     <y>62</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>g</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_j">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>62</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>j</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_d">
+   <property name="geometry">
+    <rect>
+     <x>109</x>
+     <y>62</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>d</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_f">
+   <property name="geometry">
+    <rect>
+     <x>139</x>
+     <y>62</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>f</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_h">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>62</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>h</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_s">
+   <property name="geometry">
+    <rect>
+     <x>79</x>
+     <y>62</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>s</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_switchletter">
+   <property name="geometry">
+    <rect>
+     <x>2</x>
+     <y>62</y>
+     <width>44</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_a">
+   <property name="geometry">
+    <rect>
+     <x>48</x>
+     <y>62</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>a</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_l">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>62</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>l</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_gang">
+   <property name="geometry">
+    <rect>
+     <x>351</x>
+     <y>62</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>-</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_xiahuaxian">
+   <property name="geometry">
+    <rect>
+     <x>321</x>
+     <y>62</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>_</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_fanxiexian">
+   <property name="geometry">
+    <rect>
+     <x>381</x>
+     <y>62</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>/</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_k">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>62</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>k</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_esc">
+   <property name="geometry">
+    <rect>
+     <x>2</x>
+     <y>2</y>
+     <width>44</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Esc</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_del">
+   <property name="geometry">
+    <rect>
+     <x>352</x>
+     <y>2</y>
+     <width>58</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_0">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>2</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>0</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_3">
+   <property name="geometry">
+    <rect>
+     <x>110</x>
+     <y>2</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>3</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_7">
+   <property name="geometry">
+    <rect>
+     <x>229</x>
+     <y>2</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>7</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_5">
+   <property name="geometry">
+    <rect>
+     <x>168</x>
+     <y>2</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>5</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_9">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>2</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>9</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_2">
+   <property name="geometry">
+    <rect>
+     <x>80</x>
+     <y>2</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>2</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_8">
+   <property name="geometry">
+    <rect>
+     <x>260</x>
+     <y>2</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>8</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_4">
+   <property name="geometry">
+    <rect>
+     <x>138</x>
+     <y>2</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>4</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_6">
+   <property name="geometry">
+    <rect>
+     <x>199</x>
+     <y>2</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>6</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_1">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>2</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>1</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_t">
+   <property name="geometry">
+    <rect>
+     <x>153</x>
+     <y>31</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>t</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_y">
+   <property name="geometry">
+    <rect>
+     <x>183</x>
+     <y>31</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>y</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_p">
+   <property name="geometry">
+    <rect>
+     <x>304</x>
+     <y>31</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>p</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_r">
+   <property name="geometry">
+    <rect>
+     <x>123</x>
+     <y>31</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>r</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_o">
+   <property name="geometry">
+    <rect>
+     <x>274</x>
+     <y>31</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>o</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_maohao">
+   <property name="geometry">
+    <rect>
+     <x>334</x>
+     <y>31</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>:</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_i">
+   <property name="geometry">
+    <rect>
+     <x>244</x>
+     <y>31</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>i</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_u">
+   <property name="geometry">
+    <rect>
+     <x>214</x>
+     <y>31</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>28</width>
+     <height>28</height>
+    </size>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>u</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_at">
+   <property name="geometry">
+    <rect>
+     <x>2</x>
+     <y>31</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>@</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_q">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>31</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>q</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_w">
+   <property name="geometry">
+    <rect>
+     <x>62</x>
+     <y>31</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>w</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_e">
+   <property name="geometry">
+    <rect>
+     <x>93</x>
+     <y>31</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>e</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_yinhao">
+   <property name="geometry">
+    <rect>
+     <x>365</x>
+     <y>31</y>
+     <width>44</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_space">
+   <property name="geometry">
+    <rect>
+     <x>123</x>
+     <y>122</y>
+     <width>164</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>Space</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_guohao1">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>122</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>（</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_denghao">
+   <property name="geometry">
+    <rect>
+     <x>93</x>
+     <y>122</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>=</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_jinghao">
+   <property name="geometry">
+    <rect>
+     <x>2</x>
+     <y>122</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>#</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_qiehao">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>122</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>&amp;&amp;</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_xinghao">
+   <property name="geometry">
+    <rect>
+     <x>62</x>
+     <y>122</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>*</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_kuohao2">
+   <property name="geometry">
+    <rect>
+     <x>320</x>
+     <y>122</y>
+     <width>28</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string>）</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="pushButton_enter">
+   <property name="geometry">
+    <rect>
+     <x>351</x>
+     <y>122</y>
+     <width>58</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <property name="text">
+    <string/>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

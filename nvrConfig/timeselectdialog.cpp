@@ -7,7 +7,7 @@ TimeSelectDialog::TimeSelectDialog(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    this->setWindowFlags(Qt::FramelessWindowHint|Qt::Dialog);
+    this->setWindowFlags(Qt::FramelessWindowHint|Qt::Popup);
 
     init();
 }

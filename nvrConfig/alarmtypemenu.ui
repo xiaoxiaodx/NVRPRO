@@ -35,6 +35,9 @@ border-image:none
      <height>10</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -53,6 +56,9 @@ border-image:none
      <width>10</width>
      <height>10</height>
     </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="text">
     <string/>
@@ -115,6 +121,9 @@ border-image:none
      <height>10</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="text">
     <string/>
    </property>
@@ -133,6 +142,9 @@ border-image:none
      <width>10</width>
      <height>10</height>
     </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="text">
     <string/>

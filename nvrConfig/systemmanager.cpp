@@ -3,6 +3,7 @@
 #include <QHeaderView>
 #include <QScrollBar>
 #include <QHBoxLayout>
+#include "mainwindow.h"
 SystemManager::SystemManager(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::SystemManager)
@@ -34,6 +35,9 @@ void SystemManager::init()
 void SystemManager::createTimeSetting()
 {
     adjustTimeSettingWidgetPos();
+
+    ui->TimeSetlineEdit_url->installEventFilter(MainWindow::EditKeyEventFilter);
+
 }
 
 void SystemManager::adjustTimeSettingWidgetPos()
@@ -370,6 +374,10 @@ void SystemManager::adjustSystemOperationWidgetPos()
 void SystemManager::createUserManagement()
 {
     adjustUserManagementWidgetPos();
+
+    ui->UserManagerlineEdit_oldpassword->installEventFilter(MainWindow::EditKeyEventFilter);
+    ui->UserManagerlineEdit_newpassword->installEventFilter(MainWindow::EditKeyEventFilter);
+    ui->UserManagerlineEdit_confirmagain->installEventFilter(MainWindow::EditKeyEventFilter);
 }
 void SystemManager::adjustUserManagementWidgetPos()
 {
@@ -421,7 +429,6 @@ void SystemManager::on_pushButton_time_clicked()
 {
     if(timeSelectDialog == NULL){
         timeSelectDialog = new TimeSelectDialog(this);
-        timeSelectDialog->setModal(true);
 
         QPoint widget_timeScreenPos = ui->widget_time->mapToGlobal(QPoint(0,0));
         timeSelectDialog->setGeometry(widget_timeScreenPos.x(),widget_timeScreenPos.y()+ui->widget_time->height(),120,254);
@@ -435,9 +442,30 @@ void SystemManager::on_pushButton_time_clicked()
     timeSelectDialog->setInitTime(time);
     timeSelectDialog->show();
 
+
 }
 
 void SystemManager::slot_timeChange(QTime time)
 {
     ui->label_time->setText(time.toString("hh:mm::ss"));
+}
+
+void SystemManager::on_TimeSetpushButton_url_clicked()
+{
+//    QWidget *receiver = QApplication::focusWidget();
+//    qDebug()<<"Send key event to focus widget "<<receiver->objectName();
+
+//    QKeyEvent tabKey(QEvent::KeyPress, Qt::Key_0, Qt::NoModifier);
+
+//    QCoreApplication::sendEvent(receiver, &tabKey);
+
+
+
+
+
+}
+
+bool SystemManager::event(QEvent *event)
+{
+
 }

@@ -14,9 +14,9 @@
 #include "masterPreview/videowindow.h"
 #include "nvrConfig/nvrconfig.h"
 #include "videoReplay/replaywindow.h"
-
+#include "virtualkeyboard.h"
 #include <QMouseEvent>
-
+#include "inputeditkeyeventfilter.h"
 namespace Ui {
 class MainWindow;
 }
@@ -28,7 +28,8 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = NULL);
     ~MainWindow();
-
+static VirtualKeyboard *virtualKeyboard;
+static InputEditKeyEventFilter *EditKeyEventFilter;
 
 public slots:
     void slot_switchWindow(WindowType type);
@@ -56,8 +57,11 @@ private:
     void createVideoWindow(int n);
     void createDialog_config();
     void createReplayWindow();
+    void createSingletonKeyBorad();
+    void createSingletonEditKeyEventFilter();
 
     void showMasterVideo(bool isShow);
+
    // void switchWindow(WindowType type);
 //    void drawVideoRect(QPainter *paint,int nxn);
 //    void drawCloudControl(QPainter *paint);
@@ -77,6 +81,9 @@ private:
     Welcome *welcome = NULL;
 
     WindowType currentMainWindowShowType;
+
+
+
 };
 
 #endif // MAINWINDOW_H

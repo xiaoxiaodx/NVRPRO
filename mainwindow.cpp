@@ -5,6 +5,10 @@
 #include <QWidgetAction>
 #include <QHBoxLayout>
 #include <QLabel>
+
+
+VirtualKeyboard* MainWindow::virtualKeyboard =NULL;
+InputEditKeyEventFilter* MainWindow::EditKeyEventFilter=NULL;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -15,25 +19,45 @@ MainWindow::MainWindow(QWidget *parent) :
     this->setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground, true);
     setAutoFillBackground(true);
+    currentMainWindowShowType = MASTERPREVIEW;
 
 
     listVideoW.clear();
+
+    createSingletonKeyBorad();
+    createSingletonEditKeyEventFilter();
+
+
     //createDialog_timeZoneSetting();
-    //createDialog_passwordSetting();
+    createDialog_passwordSetting();
     //createDialog_welcome();
-    createVideoWindow(4);
-    currentMainWindowShowType = MASTERPREVIEW;
+  //  createVideoWindow(4);
     //createDialog_config();
     // createReplayWindow();
 
 
-    setFocusPolicy(Qt::NoFocus);
+
 }
+
+void MainWindow::createSingletonKeyBorad()
+{
+    if(virtualKeyboard == NULL)
+        virtualKeyboard = new VirtualKeyboard(this);
+}
+
+void MainWindow::createSingletonEditKeyEventFilter()
+{
+    if(EditKeyEventFilter == NULL)
+        EditKeyEventFilter = new InputEditKeyEventFilter(this);
+}
+
 
 bool MainWindow::event(QEvent *event)
 {
 
-    //  qDebug()<<"dsadsa:"<<event->type();
+    if(event->type() == QEvent::KeyPress)
+        qDebug()<<"MainWindow event:"<<event->type();
+
     if (event->type() == CustomerEvent::eventType())
     {
         CustomerEvent *customerEvent = dynamic_cast<CustomerEvent*>(event);
@@ -42,6 +66,7 @@ bool MainWindow::event(QEvent *event)
     }else if (event->type() == QEvent::MouseButtonPress) {
         qDebug() <<"MainWindow:"<< event->type();
     }
+
     return QWidget::event(event);
 }
 
@@ -82,7 +107,9 @@ void MainWindow::createDialog_config()
         nvrConfig = new NvrConfig(this);
         nvrConfig->setGeometry((deskRect.width()-nvrConfig->width())/2,(deskRect.height()-nvrConfig->height())/2,nvrConfig->width(),nvrConfig->height());
 
+
         connect(nvrConfig,SIGNAL(signal_switchWindow(WindowType )),this,SLOT(slot_switchWindow(WindowType )));
+
     }
     nvrConfig->show();
 }
@@ -237,7 +264,10 @@ void MainWindow::popMenu()
 }
 
 void MainWindow::slot_menuSelectCloudControl()
-{rightMouseMenu->close();}
+{
+    rightMouseMenu->close();
+
+}
 
 void MainWindow::slot_menuSelectReplay()
 {
@@ -331,13 +361,14 @@ QPushButton *MainWindow::createSelfBtn(QString btnTxt,QString res)
 
 
     btn ->setFixedSize(btnSize);
-    btn ->setStyleSheet("QPushButton{background-color: #171717;color:white;border:none}"
+    btn ->setStyleSheet("QPushButton{background-color: #171717;color:#ffffff;border:none}"
                         "QPushButton:pressed{background-color: #476BFD;}");
+    btn->setFocusPolicy(Qt::NoFocus);
     QLabel* label = new QLabel();
     QLabel* label2 = new QLabel();
     label2->setFixedSize(QSize(20,20));
-    QString sty = "border-image:url("+res+");background-color: #00ffffff;";
-    label->setStyleSheet("background-color: #00ffffff;font-size: 16px;font-family:Microsoft Yahei;color:white;font:#ffffff");
+    QString sty = "border-image:url("+res+");background-color: transparent;color:#ffffff;";
+    label->setStyleSheet("background-color: transparent;font-size: 16px;font-family:Microsoft Yahei;color:#ffffff;");
     label2 ->setStyleSheet(sty);
 
     label->setText(btnTxt);

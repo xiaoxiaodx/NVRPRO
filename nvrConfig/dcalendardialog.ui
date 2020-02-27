@@ -94,6 +94,9 @@ QCalendarWidget QAbstractItemView:disabled { color: rgba(0,0,0,0.25); }
      <height>10</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{border-image: url(:/images/yearnext.png);}
 QPushButton:pressed{border-image: url(:/images/yearnext_p.png);}
@@ -111,6 +114,9 @@ QPushButton:pressed{border-image: url(:/images/yearnext_p.png);}
      <width>46</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
@@ -163,6 +169,9 @@ color: rgba(0,0,0,0.85);</string>
      <height>22</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
 	background-color:transparent;
@@ -193,6 +202,9 @@ QPushButton:pressed {
      <height>10</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{border-image: url(:/images/monthpre.png);}
 QPushButton:pressed{border-image: url(:/images/monthpre_p.png);}
@@ -210,6 +222,9 @@ QPushButton:pressed{border-image: url(:/images/monthpre_p.png);}
      <width>10</width>
      <height>10</height>
     </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{border-image: url(:/images/yearpre.png);}
@@ -229,6 +244,9 @@ QPushButton:pressed{border-image: url(:/images/yearpre_p.png);}
      <height>10</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{border-image: url(:/images/monthnext.png);}
 QPushButton:pressed{border-image: url(:/images/monthnext_p.png);}
@@ -246,6 +264,9 @@ QPushButton:pressed{border-image: url(:/images/monthnext_p.png);}
      <width>10</width>
      <height>10</height>
     </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{border-image: url(:/images/yearpre.png);}
@@ -334,6 +355,9 @@ QCalendarWidget QAbstractItemView:disabled { color: rgba(0,0,0,0.25); }
      <height>10</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{border-image: url(:/images/monthnext.png);}
 QPushButton:pressed{border-image: url(:/images/monthnext_p.png);}
@@ -352,6 +376,9 @@ QPushButton:pressed{border-image: url(:/images/monthnext_p.png);}
      <height>10</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{border-image: url(:/images/monthpre.png);}
 QPushButton:pressed{border-image: url(:/images/monthpre_p.png);}
@@ -369,6 +396,9 @@ QPushButton:pressed{border-image: url(:/images/monthpre_p.png);}
      <width>10</width>
      <height>10</height>
     </rect>
+   </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton{border-image: url(:/images/yearnext.png);}

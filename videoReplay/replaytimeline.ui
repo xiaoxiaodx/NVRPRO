@@ -61,6 +61,9 @@ QPushButton:checked {
       <height>20</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
@@ -83,6 +86,9 @@ QPushButton:checked {
       <height>20</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true"/>
     </property>
@@ -101,6 +107,9 @@ QPushButton:checked {
       <width>60</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
@@ -123,6 +132,9 @@ QPushButton:checked {
       <width>60</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true"/>
@@ -168,6 +180,9 @@ QPushButton:checked {
        <height>12</height>
       </rect>
      </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
      <property name="styleSheet">
       <string notr="true">border-image: url(:/images/table_date.png);</string>
      </property>
@@ -184,6 +199,9 @@ QPushButton:checked {
       <width>20</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{border-image: url(:/images/replay_slow.png)}
@@ -204,6 +222,9 @@ QPushButton:pressed{border-image: url(:/images/replay_slow_p.png)}
       <height>20</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{border-image: url(:/images/repaly_play.png)}
 
@@ -222,6 +243,9 @@ QPushButton:pressed{border-image: url(:/images/replay_slow_p.png)}
       <width>20</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{border-image: url(:/images/replay_fast.png)}
@@ -393,6 +417,9 @@ QSlider::handle:horizontal
       <height>30</height>
      </rect>
     </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{border-image: url(:/images/repaly_1.png)}
 </string>
@@ -409,6 +436,9 @@ QSlider::handle:horizontal
       <width>30</width>
       <height>30</height>
      </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">QPushButton{border-image: url(:/images/replay_4.png)}

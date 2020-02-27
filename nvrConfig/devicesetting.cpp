@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QHBoxLayout>
 #include "deleteconfirmdialog.h"
+#include "mainwindow.h"
 DeviceSetting::DeviceSetting(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DeviceSetting)
@@ -59,8 +60,8 @@ void DeviceSetting::createDeviceTableHeader()
 
     lable->setGeometry(0,10,36,15);
     btn ->setStyleSheet("QPushButton{border-image: url(:/images/table_menu.png);}"
-                         "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}"
-                         "QPushButton:hovered{border-image: url(:/images/table_menu_hover.png);}");
+                        "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}"
+                        "QPushButton:hovered{border-image: url(:/images/table_menu_hover.png);}");
     btn->setGeometry(40,13,10,10);
 
     QLabel *lable0 = new QLabel("");
@@ -108,7 +109,7 @@ void DeviceSetting::deviceTableInsert(int row_count,QMap<QString,QVariant> map)
     QPushButton *btnChecked = new QPushButton(widget);
     btnChecked->setCheckable(true);
     btnChecked ->setStyleSheet("QPushButton{border-image: url(:/images/device_unselect.png);}"
-                        "QPushButton:checked{border-image: url(:/images/device_select.png);}");
+                               "QPushButton:checked{border-image: url(:/images/device_select.png);}");
     btnChecked->setGeometry(20,13,12,12);
 
 
@@ -130,9 +131,9 @@ void DeviceSetting::deviceTableInsert(int row_count,QMap<QString,QVariant> map)
     QPushButton *pbtnDelete = new QPushButton(tr("Delete"));
     pbtnDelete->setStyleSheet("text-align:left;background-color:transparent;border:none;color:#476BFD;font:bold 12px;");
 
-//    connect(pbtnDelete,&QPushButton::clicked,[=](){
-//        showDialog(row_count);
-//    });
+    //    connect(pbtnDelete,&QPushButton::clicked,[=](){
+    //        showDialog(row_count);
+    //    });
 
     ui->tableWidget->setRowHeight(row_count,35);
     ui->tableWidget->setCellWidget(row_count, 0, widget);
@@ -229,6 +230,10 @@ void DeviceSetting::createDeviceTable()
 void DeviceSetting::createOSDSetting()
 {
     adjustOSDWidgetPos();
+    ui->OSDlineEdit_cam1->installEventFilter(MainWindow::EditKeyEventFilter);
+    ui->OSDlineEdit_cam2->installEventFilter(MainWindow::EditKeyEventFilter);
+    ui->OSDlineEdit_cam3->installEventFilter(MainWindow::EditKeyEventFilter);
+    ui->OSDlineEdit_cam4->installEventFilter(MainWindow::EditKeyEventFilter);
 }
 
 void DeviceSetting::adjustOSDWidgetPos()
@@ -351,6 +356,10 @@ void DeviceSetting::createRTMPSetting()
 {
     ui->widget_5->setGeometry(0,0,950,518);
     adjustRTMPWidgetPos();
+
+    ui->RTMPlineEdit_url->installEventFilter(MainWindow::EditKeyEventFilter);
+    ui->RTMPlineEdit_username->installEventFilter(MainWindow::EditKeyEventFilter);
+    ui->RTMPlineEdit_password->installEventFilter(MainWindow::EditKeyEventFilter);
 }
 void DeviceSetting::adjustRTMPWidgetPos()
 {

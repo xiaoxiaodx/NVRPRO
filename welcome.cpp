@@ -1,6 +1,6 @@
 #include "welcome.h"
 #include "ui_welcome.h"
-
+#include "mainwindow.h"
 Welcome::Welcome(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Welcome)
@@ -36,6 +36,7 @@ void Welcome::setControlPostion()
 
     ui->label->setGeometry((thisW - labelW)/2,labelY,labelW,labelH);
 
+    ui->lineEdit_password->installEventFilter(MainWindow::EditKeyEventFilter);
 
     ui->lineEdit_password->setGeometry((thisW - lineEdit_passwordW)/2,lineEdit_passwordY,lineEdit_passwordW,lineEdit_passwordH);
 

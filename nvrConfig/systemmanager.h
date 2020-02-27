@@ -8,8 +8,8 @@
 
 #include "util.h"
 #include "timeselectdialog.h"
-
 #include "dcalendardialog.h"
+#include "virtualkeyboard.h"
 namespace Ui {
 class SystemManager;
 }
@@ -23,6 +23,9 @@ public:
     explicit SystemManager(QWidget *parent = NULL);
     ~SystemManager();
 
+
+protected:
+    bool event(QEvent *event);
 private slots:
 
     void on_pushButton_date_clicked();
@@ -34,6 +37,8 @@ private slots:
     void slot_channelMenuClick();
     void slot_timeChange(QTime time);
     void slot_dateChange(QString  datestr1,QString  datestr2);
+    void on_TimeSetpushButton_url_clicked();
+
 private:
     Ui::SystemManager *ui;
     void init();
@@ -60,10 +65,10 @@ private:
     AlarmTypeMenu *alarmtypeMenu = NULL;
     CameraMenu *cameraChannelMenu = NULL;
 
-
     DateSelectType currentDateSelectType;
     DCalendarDialog *myCalendar = NULL;
     TimeSelectDialog *timeSelectDialog= NULL;
+    VirtualKeyboard *keyBoard =NULL;
 };
 
 #endif // SYSTEMMANAGER_H

@@ -79,5 +79,14 @@
         <file>images/replay_slow_p.png</file>
         <file>images/replay_noVideo.png</file>
         <file>images/replay_voice.png</file>
+        <file>images/keyborad_del.png</file>
+        <file>images/keyborad_enter.png</file>
+        <file>images/keyborad_letter.png</file>
+        <file>images/keyborad_del_h.png</file>
+        <file>images/keyborad_del_p.png</file>
+        <file>images/keyborad_enter_h.png</file>
+        <file>images/keyborad_enter_P.png</file>
+        <file>images/keyborad_letter_h.png</file>
+        <file>images/keyborad_letter_p.png</file>
     </qresource>
 </RCC>

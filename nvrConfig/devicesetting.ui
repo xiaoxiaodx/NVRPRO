@@ -96,7 +96,7 @@ image: url(:/png/images/jy_close2.png)
 </string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>4</number>
    </property>
    <widget class="QWidget" name="tab_1">
     <attribute name="title">
@@ -122,6 +122,9 @@ image: url(:/png/images/jy_close2.png)
         <width>871</width>
         <height>401</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -251,6 +254,9 @@ QPushButton#OSDpushButton_submit:pressed {
         <height>14</height>
        </size>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -288,6 +294,9 @@ QPushButton#OSDpushButton_submit:pressed {
         <width>30</width>
         <height>15</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -343,6 +352,9 @@ background-color: rgb(226, 226, 226);</string>
         <width>30</width>
         <height>15</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -427,6 +439,9 @@ background-color: rgb(226, 226, 226);</string>
         <height>14</height>
        </size>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -480,6 +495,9 @@ background-color: rgb(226, 226, 226);</string>
         <height>14</height>
        </size>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -532,6 +550,9 @@ background-color: rgb(226, 226, 226);</string>
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -630,9 +651,11 @@ background-color: rgb(226, 226, 226);</string>
         <height>23</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
-       <string notr="true">
-</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Submit</string>
@@ -790,6 +813,9 @@ QPushButton#Alarmswitch:checked{
         <height>14</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -811,6 +837,9 @@ QPushButton#Alarmswitch:checked{
         <width>14</width>
         <height>14</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -898,6 +927,9 @@ QPushButton#Alarmswitch:checked{
         <width>30</width>
         <height>15</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -988,6 +1020,9 @@ QPushButton#Alarmswitch:checked{
         <height>14</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -1006,6 +1041,9 @@ QPushButton#Alarmswitch:checked{
         <width>14</width>
         <height>14</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -1080,6 +1118,9 @@ QPushButton#Alarmswitch:checked{
         <height>14</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -1098,6 +1139,9 @@ QPushButton#Alarmswitch:checked{
         <width>14</width>
         <height>14</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -1175,6 +1219,9 @@ QPushButton#Alarmswitch:checked{
         <height>14</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -1193,6 +1240,9 @@ QPushButton#Alarmswitch:checked{
         <width>14</width>
         <height>14</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -1440,6 +1490,9 @@ QComboBox QScrollBar::sub-line::vertical{
         <height>14</height>
        </size>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -1477,6 +1530,9 @@ QComboBox QScrollBar::sub-line::vertical{
         <height>14</height>
        </size>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -1513,6 +1569,9 @@ QComboBox QScrollBar::sub-line::vertical{
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -1553,6 +1612,9 @@ QComboBox QScrollBar::sub-line::vertical{
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -1665,6 +1727,9 @@ QComboBox QScrollBar::sub-line::vertical{
         <height>14</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -1697,6 +1762,9 @@ QComboBox QScrollBar::sub-line::vertical{
         <height>14</height>
        </rect>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -1728,6 +1796,9 @@ QComboBox QScrollBar::sub-line::vertical{
         <width>14</width>
         <height>14</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -1858,6 +1929,9 @@ QPushButton#RTMPpushButton_submit:pressed {
         <height>14</height>
        </size>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -1927,6 +2001,9 @@ QPushButton#RTMPpushButton_submit:pressed {
         <height>14</height>
        </size>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -1980,6 +2057,9 @@ QPushButton#RTMPpushButton_submit:pressed {
         <height>14</height>
        </size>
       </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
       <property name="styleSheet">
        <string notr="true"/>
       </property>
@@ -2019,6 +2099,9 @@ QPushButton#RTMPpushButton_submit:pressed {
         <width>14</width>
         <height>14</height>
        </size>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -2086,6 +2169,9 @@ QPushButton#RTMPpushButton_submit:pressed {
         <width>30</width>
         <height>15</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>
@@ -2311,6 +2397,9 @@ QComboBox QScrollBar::sub-line::vertical{
         <width>75</width>
         <height>23</height>
        </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
        <string notr="true"/>

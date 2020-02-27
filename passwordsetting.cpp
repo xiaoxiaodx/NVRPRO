@@ -1,6 +1,6 @@
 #include "passwordsetting.h"
 #include "ui_passwordsetting.h"
-
+#include "mainwindow.h"
 PasswordSetting::PasswordSetting(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::PasswordSetting)
@@ -45,8 +45,16 @@ void PasswordSetting::setControlPostion()
     ui->label->setGeometry((thisW - labelW)/2,labelY,labelW,labelH);
     ui->label_2->setGeometry(QRect((thisW - label_2W)/2,label_2Y,label_2W,label_2H));
 
+    ui->lineEdit_password->installEventFilter(MainWindow::EditKeyEventFilter);
+    ui->lineEdit_confirm->installEventFilter(MainWindow::EditKeyEventFilter);
+
     ui->lineEdit_password->setGeometry((thisW - lineEdit_passwordW)/2,lineEdit_passwordY,lineEdit_passwordW,lineEdit_passwordH);
     ui->lineEdit_confirm->setGeometry((thisW - lineEdit_confirmW)/2,lineEdit_confirmY,lineEdit_confirmW,lineEdit_confirmH);
 
-    ui->pushButton->setGeometry((thisW - btnW)/2,btnY,btnW,btnH);
+    ui->pushButton_next->setGeometry((thisW - btnW)/2,btnY,btnW,btnH);
+}
+
+void PasswordSetting::on_pushButton_next_clicked()
+{
+
 }

@@ -33,8 +33,6 @@ private:
     void setMenuItem();
     void initStackedWidget();
 
-
-
     Ui::NvrConfig *ui;
 
     QPushButton * createSelfBtn(QString btnTxt,QString res);
