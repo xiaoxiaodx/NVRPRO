@@ -43,7 +43,7 @@
    </property>
    <property name="styleSheet">
     <string notr="true">QPushButton {
-	background-color:rgba(71,107,253,1);
+	background-color:rgba(28%,42%,99%,100%);
 
 
 	border-style:inset;  

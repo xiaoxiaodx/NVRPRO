@@ -120,8 +120,8 @@ QPushButton * NvrConfig::createSelfBtn(QString btnTxt,QString res)
     QLabel* label = new QLabel();
     QLabel* label2 = new QLabel();
     label2->setFixedSize(QSize(20,20));
-    QString sty = "border-image:url("+res+");background-color: #00ffffff;";
-    label->setStyleSheet("background-color: #00ffffff;font-size: 14px;font-family:Microsoft Yahei;font:#333333");
+    QString sty = "border-image:url("+res+");background-color: rgba(0,0,0,0);";
+    label->setStyleSheet("background-color:  rgba(0,0,0,0);font-size: 14px;font-family:Microsoft Yahei;font:#333333");
     label2 ->setStyleSheet(sty);
 
     label->setText(btnTxt);

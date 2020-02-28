@@ -14,7 +14,7 @@ class VirtualKeyboard : public QDialog
     Q_OBJECT
 
 public:
-    explicit VirtualKeyboard(QWidget *parent = nullptr);
+    explicit VirtualKeyboard(QWidget *parent = NULL);
     ~VirtualKeyboard();
 
 protected:

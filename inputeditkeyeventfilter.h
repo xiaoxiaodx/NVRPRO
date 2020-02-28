@@ -11,7 +11,7 @@ class InputEditKeyEventFilter : public QObject
 {
     Q_OBJECT
 public:
-    explicit InputEditKeyEventFilter(QObject *parent = nullptr);
+    explicit InputEditKeyEventFilter(QObject *parent = NULL);
 protected:
     bool eventFilter(QObject *obj, QEvent *event);
 signals:

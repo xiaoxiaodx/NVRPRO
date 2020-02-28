@@ -18,7 +18,7 @@
 	background-color: #dddddd;
 	font-family: &quot;HelveticaNeue&quot;;
 	font-size:12px;
-    color: rgba(0,0,0,0.65);
+    color: rgba(0,0,0,65%);
 }
 QLable{
 	background-color:#ffffff;
@@ -26,7 +26,7 @@ QLable{
 QListView{
 	border:0px solid gray;   /*边界线:宽度、颜色*/
     background:#ffffff;   /*表格背景色*/
-    color:rgba(0,0,0,0.65);        /*前景色：文字颜色*/
+    color:rgba(0,0,0,65%);        /*前景色：文字颜色*/
     /*margin:5px,5px,0px,50px;*/   /*上、下、左、右，间距}*/
 }
 QListView::item

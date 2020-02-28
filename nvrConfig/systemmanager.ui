@@ -122,30 +122,30 @@ image: url(:/png/images/jy_close2.png)
 /*2个开关按钮*/
 QPushButton#TimeSetswith_setting,
 #TimeSetswith_timesave{
-	background-color:#00000000;
+	background-color:rgba(0,0,0,0);
 	border-image: url(:/images/switch_off.png);
 }
 QPushButton#TimeSetswith_setting:checked,
 #TimeSetswith_timesave:checked{
-	background-color:#00000000;
+	background-color:rgba(0,0,0,0);
 	border-image: url(:/images/switch_on.png);
 }
 /*3个类型按钮*/
 QPushButton#TimeSetpushButton_everyhour,
 #TimeSetpushButton_everyday,
 #TimeSetpushButton_everyweek{
-	background-color:#00000000;
+	background-color:rgba(0,0,0,0);
 	border-image: url(:/images/unchecked.png);
 }
 QPushButton#TimeSetpushButton_everyhour:checked,
 #TimeSetpushButton_everyday:checked,
 #TimeSetpushButton_everyweek:checked{
-	background-color:#00000000;
+	background-color:rgba(0,0,0,0);
 	border-image: url(:/images/checked.png);
 }
 
 QPushButton#TimeSetpushButton_url{
-	background-color:rgba(71,107,253,1);
+	background-color:rgba(28%,42%,99%,100%);
 	border-width:0;
     padding:4px;  
 	border-style:inset;  
@@ -926,7 +926,7 @@ background-color: rgb(226, 226, 226);</string>
       </property>
       <property name="styleSheet">
        <string notr="true">border-radius:4px;
-border:1px solid rgba(217,217,217,1);</string>
+border:1px solid rgba(85%,85%,85%,1);</string>
       </property>
       <widget class="QLabel" name="label_startDate">
        <property name="geometry">
@@ -1026,7 +1026,7 @@ font-size:20px</string>
       </property>
       <property name="styleSheet">
        <string notr="true">border-radius:4px;
-border:1px solid rgba(217,217,217,1);</string>
+border:1px solid rgba(85%,85%,85%,100%);</string>
       </property>
       <widget class="QLabel" name="label_time">
        <property name="geometry">
@@ -1391,10 +1391,31 @@ border-image: url(:/images/reset_press.png);
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #F9F9F9;
+      <string notr="true">QWidget{
+background-color: #F9F9F9;
 	font-family: &quot;Microsoft YaHei&quot;;
 	font-size:14px;
-    color: #333333;background-color: #F9F9F9</string>
+    color: #333333;
+}
+
+QPushButton {
+	background-color:rgba(28%,42%,99%,100%);
+	border-width:0;
+    padding:4px;  
+	border-style:inset;  
+	border-radius:3px;  
+	color:white;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font:bold 10px;
+}
+QPushButton:pressed {  
+    /* 改变背景色   
+    background-color:rgb(40,85,20); */
+    /* 使文字有一点移动 */  
+    padding-left:6px;  
+    padding-top:6px;  
+}  
+</string>
      </property>
      <widget class="QLabel" name="UserManagerlabel_title">
       <property name="geometry">
@@ -1513,24 +1534,7 @@ background-color: rgb(226, 226, 226);</string>
        <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton {
-	background-color:rgba(71,107,253,1);
-	border-width:0;
-    padding:4px;  
-	border-style:inset;  
-	border-radius:3px;  
-	color:white;
-	font-family: &quot;Microsoft YaHei&quot;;
-	font:bold 10px;
-}
-QPushButton:pressed {  
-    /* 改变背景色   
-    background-color:rgb(40,85,20); */
-    /* 使文字有一点移动 */  
-    padding-left:6px;  
-    padding-top:6px;  
-}  
-</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Submit</string>

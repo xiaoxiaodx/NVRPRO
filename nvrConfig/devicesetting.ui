@@ -96,7 +96,7 @@ image: url(:/png/images/jy_close2.png)
 </string>
    </property>
    <property name="currentIndex">
-    <number>4</number>
+    <number>3</number>
    </property>
    <widget class="QWidget" name="tab_1">
     <attribute name="title">
@@ -154,7 +154,7 @@ background-color: #F9F9F9;
 }
 /*2个开关*/
 QPushButton#OSDswith_timeDisplay,#OSDswith_nameDisplay{
-background-color:#00000000;
+background-color:rgba(0,0,0,0);
 	border-image: url(:/images/switch_off.png);
 }
 QPushButton#OSDswith_timeDisplay:checked,#OSDswith_nameDisplay:checked{
@@ -162,7 +162,7 @@ QPushButton#OSDswith_timeDisplay:checked,#OSDswith_nameDisplay:checked{
 }
 /*3个通道选择按钮*/
 QPushButton#OSDpushButton_cam1,#OSDpushButton_cam2,#OSDpushButton_cam3,#OSDpushButton_cam4{
-background-color:#00000000;
+background-color:rgba(0,0,0,0);
 	border-image: url(:/images/device_unselect.png);
 }
 
@@ -172,7 +172,7 @@ QPushButton#OSDpushButton_cam1:checked,#OSDpushButton_cam2:checked,#OSDpushButto
 
 /*确定按钮*/
 QPushButton#OSDpushButton_submit {
-	background-color:rgba(71,107,253,1);
+	background-color:rgba(28%,42%,99%,100%);
 	border-width:0;
     padding:4px;  
 	border-style:inset;  
@@ -692,7 +692,7 @@ QPushButton#Alarmswitch_motionDetection_1,
 #Alarmswitch_videoloss_2,
 #Alarmswitch_videoloss_3,
 #Alarmswitch_videoloss_4{
-background-color:#00000000;
+background-color:rgba(0,0,0,0);
 	border-image: url(:/images/device_unselect.png);
 }
 QPushButton#Alarmswitch_motionDetection_1:checked,
@@ -703,13 +703,13 @@ QPushButton#Alarmswitch_motionDetection_1:checked,
 #Alarmswitch_videoloss_2:checked,
 #Alarmswitch_videoloss_3:checked,
 #Alarmswitch_videoloss_4:checked{
-	background-color:#00000000;
+	background-color:rgba(0,0,0,0);
 	border-image: url(:/images/device_select.png);
 }
 
 /*1个开关*/
 QPushButton#Alarmswitch{
-	background-color:#00000000;
+	background-color:rgba(0,0,0,0);
 	border-image: url(:/images/switch_off.png);
 }
 QPushButton#Alarmswitch:checked{
@@ -1282,27 +1282,27 @@ QPushButton#VideopushButton_cam1,
 #VideopushButton_cam2,
 #VideopushButton_cam3,
 #VideopushButton_cam4{
-	background-color:#00000000;
+	background-color:rgba(0,0,0,0);
 	border-image: url(:/images/device_unselect.png);
 }
 QPushButton#VideopushButton_cam1:checked,
 #VideopushButton_cam2:checked,
 #VideopushButton_cam3:checked,
 #VideopushButton_cam4:checked{
-	background-color:#00000000;
+	background-color:rgba(0,0,0,0);
 	border-image: url(:/images/device_select.png);
 }
 /*3个类型按钮*/
 QPushButton#VideolpushButton_recordingoff,
 #VideopushButton_alarm,
 #VideopushButton_wholedayrecording{
-	background-color:#00000000;
+	background-color:rgba(0,0,0,0);
 	border-image: url(:/images/unchecked.png);
 }
 QPushButton#VideolpushButton_recordingoff:checked,
 #VideopushButton_alarm:checked,
 #VideopushButton_wholedayrecording:checked{
-	background-color:#00000000;
+	background-color:rgba(0,0,0,0);
 	border-image: url(:/images/checked.png);
 }
 </string>
@@ -1366,7 +1366,7 @@ QComboBox QAbstractItemView
 {
     outline:0px;
     background:#ffffff;
-	border:1px solid rgba(0,0,0,0.15);
+	border:1px solid rgba(0,0,0,15%);
 }
 QComboBox QAbstractItemView::item
 {
@@ -1850,7 +1850,7 @@ background-color: #F9F9F9;
 }
 /*1个开关*/
 QPushButton#RTMPswith{
-	background-color:#00000000;
+	background-color:rgba(0,0,0,0);
 	border-image: url(:/images/switch_off.png);
 }
 QPushButton#RTMPswith:checked{
@@ -1861,7 +1861,7 @@ QPushButton#RTMPpushButton_cam1,
 #RTMPpushButton_cam2,
 #RTMPpushButton_cam3,
 #RTMPpushButton_cam4{
-	background-color:#00000000;
+	background-color:rgba(0,0,0,0);
 	border-image: url(:/images/device_unselect.png);
 }
 
@@ -1874,7 +1874,7 @@ QPushButton#RTMPpushButton_cam1:checked,
 
 /*确定按钮*/
 QPushButton#RTMPpushButton_submit {
-	background-color:rgba(71,107,253,1);
+	background-color:rgba(28%,42%,99%,100%);
 	border-width:0;
     padding:4px;  
 	border-style:inset;  
@@ -2242,7 +2242,7 @@ QComboBox QAbstractItemView
 {
     outline:0px;
     background:#ffffff;
-	border:1px solid rgba(0,0,0,0.15);
+	border:1px solid rgba(0,0,0,15%);
 }
 QComboBox QAbstractItemView::item
 {

@@ -72,7 +72,7 @@ QCalendarWidget QAbstractItemView:enabled
 }
  
 /* days in other months */
-QCalendarWidget QAbstractItemView:disabled { color: rgba(0,0,0,0.25); }
+QCalendarWidget QAbstractItemView:disabled { color: rgba(0%,0%,0%,25%); }
 </string>
    </property>
    <property name="locale">
@@ -112,7 +112,7 @@ background-color: rgba(0,0,0,0.09);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">	font-family: &quot;HelveticaNeue-Medium&quot;;
+    <string notr="true">	font-family: &quot;HelveticaNeue&quot;;
 	font: 14px;
     color: #333333;</string>
    </property>

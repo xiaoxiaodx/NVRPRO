@@ -13,17 +13,8 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <widget class="QCalendarWidget" name="calendarWidget">
-   <property name="geometry">
-    <rect>
-     <x>32</x>
-     <y>160</y>
-     <width>222</width>
-     <height>183</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">/* navigation bar */
+  <property name="styleSheet">
+   <string notr="true">/* navigation bar */
 QCalendarWidget QWidget#qt_calendar_navigationbar { background-color: #ffffff; }
 
 QCalendarWidget QToolButton {
@@ -62,7 +53,7 @@ QCalendarWidget QAbstractItemView:enabled
 {
 	font-family:HelveticaNeue;
     font-size:12px;  
-    color: rgba(102,102,102,1);  
+    color: rgba(40%,40%,40%,100%);  
     background-color: white;  
     selection-background-color:#476BFD; 
     selection-color:white; 
@@ -71,6 +62,18 @@ QCalendarWidget QAbstractItemView:enabled
 /* days in other months */
 QCalendarWidget QAbstractItemView:disabled { color: rgba(0,0,0,0.25); }
 </string>
+  </property>
+  <widget class="QCalendarWidget" name="calendarWidget">
+   <property name="geometry">
+    <rect>
+     <x>32</x>
+     <y>160</y>
+     <width>222</width>
+     <height>183</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true"/>
    </property>
    <property name="locale">
     <locale language="English" country="UnitedStates"/>
@@ -151,7 +154,7 @@ QPushButton:pressed {
    <property name="styleSheet">
     <string notr="true">font-family: &quot;HelveticaNeue&quot;;
 font: 12px;
-color: rgba(0,0,0,0.85);</string>
+color: rgba(0,0,0,85%);</string>
    </property>
    <property name="text">
     <string/>
@@ -287,54 +290,7 @@ QPushButton:pressed{border-image: url(:/images/yearpre_p.png);}
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">/* navigation bar */
-QCalendarWidget QWidget#qt_calendar_navigationbar { background-color: #ffffff; }
-
-QCalendarWidget QToolButton {
-    height: 39px;
-    width: 280px;
-    color: #333333;
-    font-size: 12px;
-    icon-size: 10px, 10px;
-    background-color: #ffffff;
-}
-QCalendarWidget QMenu {
-    width: 32px;
-    left: 20px;
-    color: white;
-    font-size: 12px;
-    background-color: rgb(100, 100, 100);
-}
-QCalendarWidget QSpinBox { 
-    width: 150px; 
-    font-size:24px; 
-    color: white; 
-    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1, stop: 0 #cccccc, stop: 1 #333333); 
-    selection-background-color: rgb(136, 136, 136);
-    selection-color: rgb(255, 255, 255);
-}
-QCalendarWidget QSpinBox::up-button { subcontrol-origin: border;  subcontrol-position: top right;  width:65px; }
-QCalendarWidget QSpinBox::down-button {subcontrol-origin: border; subcontrol-position: bottom right;  width:65px;}
-QCalendarWidget QSpinBox::up-arrow { width:56px;  height:56px; }
-QCalendarWidget QSpinBox::down-arrow { width:56px;  height:56px; }
- 
-/* header row */
-QCalendarWidget QWidget { alternate-background-color: #ffffff; }
- 
-/* normal days */
-QCalendarWidget QAbstractItemView:enabled 
-{
-	font-family:HelveticaNeue;
-    font-size:12px;  
-    color: rgba(102,102,102,1);  
-    background-color: white;  
-    selection-background-color:#476BFD; 
-    selection-color:white; 
-}
- 
-/* days in other months */
-QCalendarWidget QAbstractItemView:disabled { color: rgba(0,0,0,0.25); }
-</string>
+    <string notr="true"/>
    </property>
    <property name="locale">
     <locale language="English" country="UnitedStates"/>
@@ -421,7 +377,7 @@ QPushButton:pressed{border-image: url(:/images/yearnext_p.png);}
    <property name="styleSheet">
     <string notr="true">font-size:12px;
 font-family:&quot;HelveticaNeue&quot;;
-color:rgba(0,0,0,0.65);
+color:rgba(0,0,0,65%);
 line-height:19px;</string>
    </property>
    <property name="text">
@@ -440,7 +396,7 @@ line-height:19px;</string>
    <property name="styleSheet">
     <string notr="true">font-size:12px;
 font-family:&quot;HelveticaNeue&quot;;
-color:rgba(0,0,0,0.65);
+color:rgba(0,0,0,65%);
 line-height:19px;</string>
    </property>
    <property name="text">
@@ -493,7 +449,7 @@ background-color: rgb(226, 226, 226);</string>
    <property name="styleSheet">
     <string notr="true">	font-family: &quot;HelveticaNeue&quot;;
 	font: 12px;
-    color: rgba(0,0,0,0.85);</string>
+    color: rgba(0,0,0,85%);</string>
    </property>
    <property name="text">
     <string/>
