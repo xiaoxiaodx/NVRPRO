@@ -139,7 +139,7 @@ QComboBox QScrollBar::sub-line::vertical{
 }</string>
    </property>
   </widget>
-  <widget class="QPushButton" name="pushButton">
+  <widget class="QPushButton" name="pushButton_next">
    <property name="geometry">
     <rect>
      <x>130</x>

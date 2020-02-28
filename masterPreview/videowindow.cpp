@@ -2,14 +2,14 @@
 #include "ui_videowindow.h"
 #include <QDebug>
 #include "customerevent.h"
-VideoWindow::VideoWindow(QWidget *parent,int mW,int mH) :
+VideoWindow::VideoWindow(QWidget *parent,int mW,int mH,int identify) :
     QWidget(parent),
     ui(new Ui::VideoWindow)
 {
     ui->setupUi(this);
     mWidth = mW;
     mHeight = mH;
-
+    mIdentify = identify;
 
 //    QPushButton *button = new QPushButton(this);
 //    button->setText("测试自定义事件");
@@ -38,16 +38,39 @@ bool VideoWindow::event(QEvent *event)
 {
     if (event->type() == CustomerEvent::eventType())
     {
-        CustomerEvent *customerEvent = dynamic_cast<CustomerEvent*>(event);
-        qDebug() <<"VideoWindow:"<< customerEvent->getValueString();
+//        CustomerEvent *customerEvent = dynamic_cast<CustomerEvent*>(event);
+//        qDebug() <<"VideoWindow:"<< customerEvent->getValueString();
         return true;
     }else if (event->type() == QEvent::MouseButtonPress) {
-        qDebug() <<"VideoWindow:"<< event->type();
+        emit signal_selectVideo(mIdentify);
     }
 
     return QWidget::event(event);
 }
 
+void VideoWindow::showControl()
+{
+    ui->frame->setStyleSheet("#frame{border:4px solid #476BFD}");
+    ui->widget_cloudControl->setVisible(true);
+    ui->pushButton_setHome->setVisible(true);
+    ui->pushButton_replay->setVisible(true);
+    ui->pushButton_video_swith->setVisible(true);
+
+}
+void VideoWindow::hideControl()
+{
+
+    ui->frame->setStyleSheet("#frame{border:0px solid #476BFD}");
+    ui->widget_cloudControl->setVisible(false);
+    ui->pushButton_setHome->setVisible(false);
+    ui->pushButton_replay->setVisible(false);
+    ui->pushButton_video_swith->setVisible(false);
+}
+
+int VideoWindow::getIdentify()
+{
+    return mIdentify;
+}
 void VideoWindow::setControlPostion()
 {
     int cloudControllW = 160;
@@ -72,6 +95,8 @@ void VideoWindow::setControlPostion()
     int recordStateH = 24;
 
 
+    ui->frame->setGeometry(0,0,mWidth,mHeight);
+
     ui->widget_cloudControl->setGeometry(10,thisH-cloudControllH-10,cloudControllW,cloudControllH);
 
     ui->label_videoLoss->setGeometry((thisW - videoLossW)/2,(thisH - videoLossH)/2,videoLossW,videoLossH);
@@ -86,4 +111,40 @@ void VideoWindow::setControlPostion()
     ui->pushButton_video_swith->setGeometry(firstBtnX,btnY,commonBtnW,commonBtnH);
     ui->pushButton_replay->setGeometry(firstBtnX-42-commonBtnW,btnY,commonBtnW,commonBtnH);
     ui->pushButton_setHome->setGeometry(firstBtnX-116-commonBtnW,btnY,commonBtnW,commonBtnH);
+}
+
+void VideoWindow::on_pushButton_cloudControl_right_clicked()
+{
+    emit signal_masterControl(mIdentify,PTZ_RIGHT);
+}
+
+void VideoWindow::on_pushButton_cloudControl_left_clicked()
+{
+
+    emit signal_masterControl(mIdentify,PTZ_LEFT);
+}
+
+void VideoWindow::on_pushButton_cloudControl_up_clicked()
+{
+    emit signal_masterControl(mIdentify,PTZ_UP);
+}
+
+void VideoWindow::on_pushButton_cloudControl_down_clicked()
+{
+    emit signal_masterControl(mIdentify,PTZ_DOWN);
+}
+
+void VideoWindow::on_pushButton_setHome_clicked()
+{
+    emit signal_masterControl(mIdentify,SETHOME);
+}
+
+void VideoWindow::on_pushButton_replay_clicked()
+{
+    emit signal_masterControl(mIdentify,REPLAY);
+}
+
+void VideoWindow::on_pushButton_video_swith_clicked()
+{
+    emit signal_masterControl(mIdentify,RECORDVIDEO);
 }

@@ -29,14 +29,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     //createDialog_timeZoneSetting();
-    createDialog_passwordSetting();
+    //createDialog_passwordSetting();
     //createDialog_welcome();
-  //  createVideoWindow(4);
+    createVideoWindow(4);
     //createDialog_config();
     // createReplayWindow();
-
-
-
 }
 
 void MainWindow::createSingletonKeyBorad()
@@ -92,7 +89,6 @@ void MainWindow::createReplayWindow()
 
     }
     replayWindow->show();
-
 }
 
 void MainWindow::createDialog_config()
@@ -123,15 +119,16 @@ void MainWindow::createVideoWindow(int n)
     //获取主屏幕分辨率
     QRect screenRect = QApplication::desktop()->screenGeometry();
 
-    int widthPerRect = (deskRect.width() - rectSpace *(videoN-1))/videoN;
-    int heightPerRect = (deskRect.height() - rectSpace *(videoN-1))/videoN;
+    int widthPerRect = (screenRect.width() - rectSpace *(videoN-1))/videoN;
+    int heightPerRect = (screenRect.height() - rectSpace *(videoN-1))/videoN;
     for (int i=0;i<videoN;i++) {
 
         for(int j=0;j<videoN;j++){//横向添加
-            VideoWindow *videoWindow = new VideoWindow(this,widthPerRect,heightPerRect);
+            VideoWindow *videoWindow = new VideoWindow(this,widthPerRect,heightPerRect,i*videoN+j);
 
+            connect(videoWindow,SIGNAL(signal_selectVideo(int)),this,SLOT(slot_selectVideo(int)));
+            connect(videoWindow,SIGNAL(signal_masterControl(int,MasterControl)),this,SLOT(slot_masterControl(int,MasterControl)));
             videoWindow->setGeometry((widthPerRect+rectSpace)*j ,(heightPerRect+rectSpace)*i,widthPerRect,heightPerRect);
-
 
             listVideoW.append(videoWindow);
         }
@@ -149,6 +146,7 @@ void MainWindow::createDialog_timeZoneSetting()
     if(timeZoneSetting == NULL){
         timeZoneSetting = new Timezonesetting(this);
 
+        connect(timeZoneSetting,SIGNAL(signal_timezoneStr(QString)),this,SLOT(slot_timezoneStr(QString)));
         timeZoneSetting->setGeometry((deskRect.width()-timeZoneSetting->width())/2,(deskRect.height()-timeZoneSetting->height())/2,timeZoneSetting->width(),timeZoneSetting->height());
         timeZoneSetting->show();
     }
@@ -163,6 +161,7 @@ void MainWindow::createDialog_passwordSetting()
 
     if(passwordSetting == NULL){
         passwordSetting = new PasswordSetting(this);
+        connect(passwordSetting,SIGNAL(signal_password(QString,QString)),this,SLOT(slot_passwordSetting(QString,QString)));
         passwordSetting->setGeometry((deskRect.width()-passwordSetting->width())/2,(deskRect.height()-passwordSetting->height())/2,passwordSetting->width(),passwordSetting->height());
         passwordSetting->show();
     }
@@ -178,6 +177,7 @@ void MainWindow::createDialog_welcome()
 
     if(welcome == NULL){
         welcome = new Welcome(this);
+        connect(welcome,SIGNAL(signal_loginStr(QString)),this,SLOT(slot_loginStr(QString)));
         welcome->setGeometry((deskRect.width()-welcome->width())/2,(deskRect.height()-welcome->height())/2,welcome->width(),welcome->height());
         welcome->show();
     }
@@ -382,4 +382,36 @@ QPushButton *MainWindow::createSelfBtn(QString btnTxt,QString res)
 
     return btn;
 }
+void MainWindow::slot_selectVideo(int identify)
+{
 
+    for (int i=0;i<listVideoW.size();i++) {
+
+        VideoWindow *w = listVideoW.at(i);
+        if(identify == w->getIdentify())
+            w->showControl();
+        else
+            w->hideControl();
+    }
+}
+
+void MainWindow::slot_masterControl(int identify,MasterControl type)
+{
+
+
+}
+
+void MainWindow::slot_passwordSetting(QString password,QString confirm)
+{
+
+}
+
+void MainWindow::slot_timezoneStr(QString timezone)
+{
+
+}
+
+void MainWindow::slot_loginStr(QString pwd)
+{
+
+}

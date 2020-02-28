@@ -10,30 +10,44 @@ InputEditKeyEventFilter::InputEditKeyEventFilter(QObject *parent) : QObject(pare
 
 bool InputEditKeyEventFilter::eventFilter(QObject *obj, QEvent *event)
 {
+
+    QLineEdit *lineEdit = dynamic_cast<QLineEdit*>(obj);
+
+    Q_ASSERT(lineEdit);
+
     if (event->type() == MyKeyPressEvent::eventType()) {
         MyKeyPressEvent *customerEvent = dynamic_cast<MyKeyPressEvent*>(event);
-        qDebug() <<"InputEditKeyEventFilter:"<< customerEvent->getValueString();
-
-        QLineEdit *lineEdit = dynamic_cast<QLineEdit*>(obj);
+      //  qDebug() <<"InputEditKeyEventFilter:"<< customerEvent->getValueString();
         QString currentStr = lineEdit->text();
         QString keyStr = customerEvent->getValueString();
-        QString setStr = currentStr;
+        QString setStr = "";
+        int curCursorPos = lineEdit->cursorPosition();
         if(keyStr.compare("enter")==0){
-
+            return true;
         }else if (keyStr.compare("Space")==0) {
-            setStr += " ";
+            setStr = currentStr.insert(curCursorPos,' ');
+            curCursorPos+=1;
         }else if (keyStr.compare("backspace")==0) {
-            setStr = setStr.left(setStr.length() - 1);
+            if(curCursorPos > 0)
+                setStr = currentStr.remove(--curCursorPos,1);
+            else
+                return true;
+            qDebug()<<"backspace:"<<currentStr<<"   "<<setStr<<"    "<<curCursorPos;
+
         }else {
-            setStr += keyStr;
+            setStr += currentStr.insert(curCursorPos,keyStr);
+            curCursorPos+=1;
         }
 
+        qDebug() <<"cursorPosition:"<< curCursorPos<<"    "<<setStr;
+
         lineEdit->setText(setStr);
+        lineEdit->setCursorPosition(curCursorPos);
 
         return true;
     } else if(event->type() == QEvent::MouseButtonRelease){
 
-        QWidget *widget = dynamic_cast<QWidget*>(obj);
+        QLineEdit *widget = dynamic_cast<QLineEdit*>(obj);
 
         QPoint topleftGlobal = widget->mapToGlobal(QPoint(0,0));
 
@@ -41,15 +55,20 @@ bool InputEditKeyEventFilter::eventFilter(QObject *obj, QEvent *event)
         Q_ASSERT(myVir != NULL);
 
         myVir->move(topleftGlobal.x(),topleftGlobal.y()+widget->height());
-        myVir->show();
+        if(myVir->isHidden())
+            myVir->show();
+        return  false;
+    }else if(event->type() == QEvent::FocusIn){
+
+
 
 
         return  false;
+
     } else if(event->type() == QEvent::FocusOut){
+        //qDebug()<<"失去焦点："<<lineEdit->objectName();
 
-
-        qDebug()<<"失去焦点";
-        return QObject::eventFilter(obj, event);
+        return false;
 
     }else {
 

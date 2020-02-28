@@ -48,11 +48,17 @@ void Timezonesetting::setControlPostion()
 
     ui->label->setGeometry((thisW - labelW)/2,labelY,labelW,labelH);
     ui->comboBox->setGeometry((thisW - comboBoxW)/2,comboxY,comboBoxW,comboBoxH);
-    ui->pushButton->setGeometry((thisW - btnW)/2,btnY,btnW,btnH);
+    ui->pushButton_next->setGeometry((thisW - btnW)/2,btnY,btnW,btnH);
 }
 
 
 Timezonesetting::~Timezonesetting()
 {
     delete ui;
+}
+
+void Timezonesetting::on_pushButton_next_clicked()
+{
+    QString str = ui->comboBox->currentText();
+    emit signal_timezoneStr(str);
 }

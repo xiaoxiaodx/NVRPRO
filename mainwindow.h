@@ -37,6 +37,16 @@ public slots:
     void slot_menuSelectReplay();
     void slot_menuSelectDeviceSet();
     void slot_menuSelectSystemSet();
+
+    //主预览
+    void slot_selectVideo(int);
+    void slot_masterControl(int ide,MasterControl type);
+    //密码设置
+    void slot_passwordSetting(QString,QString);
+    //时区
+    void slot_timezoneStr(QString);
+    //登录
+    void slot_loginStr(QString);
 protected:
     void paintEvent(QPaintEvent*);
 

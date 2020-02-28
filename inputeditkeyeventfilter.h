@@ -6,6 +6,7 @@
 #include <QKeyEvent>
 #include "mykeypressevent.h"
 #include "virtualkeyboard.h"
+#include <QLineEdit>
 class InputEditKeyEventFilter : public QObject
 {
     Q_OBJECT
@@ -17,6 +18,9 @@ signals:
 
 public slots:
 
+private:
+    QLineEdit *currentFocusEdit = NULL;
+    bool isHideCursor = false;
 };
 
 #endif // INPUTEDITKEYEVENTFILTER_H

@@ -15,6 +15,8 @@ public:
     explicit PasswordSetting(QWidget *parent = NULL);
     ~PasswordSetting();
 
+signals:
+    void signal_password(QString,QString);
 private slots:
     void on_pushButton_next_clicked();
 

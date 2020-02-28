@@ -44,3 +44,8 @@ void Welcome::setControlPostion()
 
 
 }
+
+void Welcome::on_pushButton_clicked()
+{
+    emit signal_loginStr(ui->lineEdit_password->text());
+}

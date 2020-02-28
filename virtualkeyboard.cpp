@@ -12,6 +12,7 @@ VirtualKeyboard::VirtualKeyboard(QWidget *parent) :
     ui->setupUi(this);
 
     this->setWindowFlags(Qt::FramelessWindowHint|Qt::Popup);
+    this->setFocusPolicy(Qt::NoFocus);
 }
 
 bool VirtualKeyboard::event(QEvent *event){

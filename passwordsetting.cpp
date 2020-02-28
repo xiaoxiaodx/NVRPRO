@@ -54,7 +54,13 @@ void PasswordSetting::setControlPostion()
     ui->pushButton_next->setGeometry((thisW - btnW)/2,btnY,btnW,btnH);
 }
 
+
+
 void PasswordSetting::on_pushButton_next_clicked()
 {
+
+    QString pwd = ui->lineEdit_password->text();
+    QString confirm = ui->lineEdit_confirm->text();
+    emit signal_password(pwd,confirm);
 
 }
