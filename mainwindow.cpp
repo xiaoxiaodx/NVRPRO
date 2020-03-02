@@ -9,6 +9,7 @@
 
 VirtualKeyboard* MainWindow::virtualKeyboard =NULL;
 InputEditKeyEventFilter* MainWindow::EditKeyEventFilter=NULL;
+SystemConfigEventFilter* MainWindow::systemConfigEventFilter = NULL;
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -25,10 +26,10 @@ MainWindow::MainWindow(QWidget *parent) :
     listVideoW.clear();
 
     createSingletonKeyBorad();
-    createSingletonEditKeyEventFilter();
+    createSingletonEventFilter();
 
 
-    //createDialog_timeZoneSetting();
+    createDialog_timeZoneSetting();
     //createDialog_passwordSetting();
     //createDialog_welcome();
     createVideoWindow(4);
@@ -42,27 +43,18 @@ void MainWindow::createSingletonKeyBorad()
         virtualKeyboard = new VirtualKeyboard(this);
 }
 
-void MainWindow::createSingletonEditKeyEventFilter()
+void MainWindow::createSingletonEventFilter()
 {
     if(EditKeyEventFilter == NULL)
         EditKeyEventFilter = new InputEditKeyEventFilter(this);
+    if(systemConfigEventFilter == NULL)
+        systemConfigEventFilter = new SystemConfigEventFilter(this);
 }
 
 
 bool MainWindow::event(QEvent *event)
 {
 
-    if(event->type() == QEvent::KeyPress)
-        qDebug()<<"MainWindow event:"<<event->type();
-
-    if (event->type() == CustomerEvent::eventType())
-    {
-        CustomerEvent *customerEvent = dynamic_cast<CustomerEvent*>(event);
-        qDebug() <<"MainWindow:"<< customerEvent->getValueString();
-        return true;
-    }else if (event->type() == QEvent::MouseButtonPress) {
-        qDebug() <<"MainWindow:"<< event->type();
-    }
 
     return QWidget::event(event);
 }
@@ -146,6 +138,7 @@ void MainWindow::createDialog_timeZoneSetting()
     if(timeZoneSetting == NULL){
         timeZoneSetting = new Timezonesetting(this);
 
+        timeZoneSetting->setDefaultTimeZone(3);
         connect(timeZoneSetting,SIGNAL(signal_timezoneStr(QString)),this,SLOT(slot_timezoneStr(QString)));
         timeZoneSetting->setGeometry((deskRect.width()-timeZoneSetting->width())/2,(deskRect.height()-timeZoneSetting->height())/2,timeZoneSetting->width(),timeZoneSetting->height());
         timeZoneSetting->show();

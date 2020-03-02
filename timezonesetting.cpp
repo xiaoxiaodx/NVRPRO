@@ -2,6 +2,8 @@
 #include "ui_timezonesetting.h"
 #include <QDebug>
 #include <QStyledItemDelegate>
+#include <QTime>
+#include <QFile>
 Timezonesetting::Timezonesetting(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Timezonesetting)
@@ -9,24 +11,25 @@ Timezonesetting::Timezonesetting(QWidget *parent) :
     ui->setupUi(this);
     this->setWindowFlags(Qt::FramelessWindowHint | Qt::Dialog);
 
-    QMap<QString, int> City_Zone;
-    City_Zone.insert("GMT+08:00北京",10);
-    City_Zone.insert("GMT+08:00北京1",21);
-    City_Zone.insert("GMT+08:00北京2",22);
-    City_Zone.insert("GMT+08:00北京3",411);
-    City_Zone.insert("GMT+08:00北京4",416);
-    City_Zone.insert("GMT+08:00北京5",516);
-    City_Zone.insert("GMT+08:00北京6",591);
-    City_Zone.insert("GMT+08:00北京7",532);
     ui->comboBox->clear();
+
+    QFile file(":/config/timezone.conf");
+    if (file.open(QIODevice::ReadOnly | QIODevice::Text)){
+
+        QString allTimeZone = file.readAll();
+        QStringList listTimeZone = allTimeZone.split("\n");
+        for(int i=0;i<listTimeZone.size();i++){
+            QString str= listTimeZone.at(i);
+            ui->comboBox->addItem(str,str);
+        }
+    }
 
     QStyledItemDelegate* itemDelegate=new QStyledItemDelegate();
     ui->comboBox->setItemDelegate(itemDelegate);
     ui->comboBox->setMaxVisibleItems(5);
-    foreach(const QString &str,City_Zone.keys())
-        ui->comboBox->addItem(str,City_Zone.value(str));
 
 }
+
 //所有控件水平居中,Y位置不同
 void Timezonesetting::setControlPostion()
 {
@@ -51,6 +54,10 @@ void Timezonesetting::setControlPostion()
     ui->pushButton_next->setGeometry((thisW - btnW)/2,btnY,btnW,btnH);
 }
 
+void Timezonesetting::setDefaultTimeZone(int index)
+{
+    ui->comboBox->setCurrentIndex(index);
+}
 
 Timezonesetting::~Timezonesetting()
 {

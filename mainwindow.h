@@ -17,6 +17,7 @@
 #include "virtualkeyboard.h"
 #include <QMouseEvent>
 #include "inputeditkeyeventfilter.h"
+#include "systemconfigeventfilter.h"
 namespace Ui {
 class MainWindow;
 }
@@ -30,6 +31,7 @@ public:
     ~MainWindow();
 static VirtualKeyboard *virtualKeyboard;
 static InputEditKeyEventFilter *EditKeyEventFilter;
+static SystemConfigEventFilter *systemConfigEventFilter;
 
 public slots:
     void slot_switchWindow(WindowType type);
@@ -68,7 +70,7 @@ private:
     void createDialog_config();
     void createReplayWindow();
     void createSingletonKeyBorad();
-    void createSingletonEditKeyEventFilter();
+    void createSingletonEventFilter();
 
     void showMasterVideo(bool isShow);
 
@@ -91,8 +93,6 @@ private:
     Welcome *welcome = NULL;
 
     WindowType currentMainWindowShowType;
-
-
 
 };
 

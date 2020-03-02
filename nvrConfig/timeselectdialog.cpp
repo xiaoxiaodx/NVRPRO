@@ -18,23 +18,17 @@ void TimeSelectDialog::init()
     QStandardItemModel  *minItemModel = new QStandardItemModel(this);
     QStandardItemModel  *secsItemModel = new QStandardItemModel(this);
 
-
-
     ui->listView_hour->setModel(hourItemModel);
     ui->listView_minute->setModel(minItemModel);
     ui->listView_seconds->setModel(secsItemModel);
-
 
     ui->listView_hour->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->listView_minute->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->listView_seconds->setEditTriggers(QAbstractItemView::NoEditTriggers);
 
-
     ui->listView_seconds->setFocusPolicy(Qt::NoFocus);
     ui->listView_minute->setFocusPolicy(Qt::NoFocus);
     ui->listView_hour->setFocusPolicy(Qt::NoFocus);
-
-
 
     for (int i=0;i<24;i++) {
         QStandardItem *item = new QStandardItem(QString::number(i));
@@ -45,7 +39,6 @@ void TimeSelectDialog::init()
         QStandardItem *item = new QStandardItem(QString::number(i));
         item->setTextAlignment(Qt::AlignCenter);
         minItemModel->appendRow(item);
-
     }
     for (int i=0;i<60;i++) {
         QStandardItem *item = new QStandardItem(QString::number(i));

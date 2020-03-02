@@ -29,6 +29,8 @@ public:
     int getIdentify();
     void showControl();
     void hideControl();
+    void haveVideo();
+    void noVideo();
 
 signals:
     void signal_selectVideo(int identify);

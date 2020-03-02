@@ -20,16 +20,19 @@ NvrConfig::NvrConfig(QWidget *parent) :
     initStackedWidget();
 }
 #include"virtualkeyboard.h"
+#include <mainwindow.h>
 void NvrConfig::initStackedWidget()
 {
 
     if(deviceSetting == NULL){
         deviceSetting = new DeviceSetting(this);
+        deviceSetting->installEventFilter(MainWindow::systemConfigEventFilter);
         ui->stackedWidget->addWidget(deviceSetting);
     }
 
     if(systemManager == NULL){
         systemManager = new SystemManager(this);
+        systemManager->installEventFilter(MainWindow::systemConfigEventFilter);
         ui->stackedWidget->addWidget(systemManager);
     }
 }
@@ -113,6 +116,7 @@ QPushButton * NvrConfig::createSelfBtn(QString btnTxt,QString res)
     const QSize btnSize(218,36);
     QPushButton *btn = new QPushButton();
 
+    btn->setFocusPolicy(Qt::NoFocus);
     btn ->setCheckable(true);
     btn ->setFixedSize(btnSize);
     btn ->setStyleSheet("QPushButton{background-color: #FFFFFF;border:none}"

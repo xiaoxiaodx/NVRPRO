@@ -17,7 +17,7 @@ bool InputEditKeyEventFilter::eventFilter(QObject *obj, QEvent *event)
 
     if (event->type() == MyKeyPressEvent::eventType()) {
         MyKeyPressEvent *customerEvent = dynamic_cast<MyKeyPressEvent*>(event);
-      //  qDebug() <<"InputEditKeyEventFilter:"<< customerEvent->getValueString();
+        qDebug() <<"InputEditKeyEventFilter:"<< customerEvent->getValueString();
         QString currentStr = lineEdit->text();
         QString keyStr = customerEvent->getValueString();
         QString setStr = "";

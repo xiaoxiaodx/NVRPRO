@@ -27,6 +27,7 @@ VideoWindow::VideoWindow(QWidget *parent,int mW,int mH,int identify) :
 //    });
 
     setControlPostion();
+    hideControl();
 }
 
 VideoWindow::~VideoWindow()
@@ -36,16 +37,19 @@ VideoWindow::~VideoWindow()
 
 bool VideoWindow::event(QEvent *event)
 {
-    if (event->type() == CustomerEvent::eventType())
-    {
-//        CustomerEvent *customerEvent = dynamic_cast<CustomerEvent*>(event);
-//        qDebug() <<"VideoWindow:"<< customerEvent->getValueString();
-        return true;
-    }else if (event->type() == QEvent::MouseButtonPress) {
-        emit signal_selectVideo(mIdentify);
-    }
+
 
     return QWidget::event(event);
+}
+
+void VideoWindow::haveVideo()
+{
+    ui->label_videoLoss->setVisible(false);
+}
+
+void VideoWindow::noVideo()
+{
+    ui->label_videoLoss->setVisible(true);
 }
 
 void VideoWindow::showControl()

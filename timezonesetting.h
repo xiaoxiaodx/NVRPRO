@@ -15,6 +15,7 @@ public:
     explicit Timezonesetting(QWidget *parent = NULL);
     ~Timezonesetting();
 
+    void setDefaultTimeZone(int index);
    signals:
     void signal_timezoneStr(QString);
 private slots:

@@ -88,5 +88,6 @@
         <file>images/keyborad_enter_P.png</file>
         <file>images/keyborad_letter_h.png</file>
         <file>images/keyborad_letter_p.png</file>
+        <file>config/timezone.conf</file>
     </qresource>
 </RCC>

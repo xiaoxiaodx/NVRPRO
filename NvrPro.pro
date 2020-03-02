@@ -45,7 +45,8 @@ SOURCES += \
     nvrConfig/dcalendardialog.cpp \
     virtualkeyboard.cpp \
     inputeditkeyeventfilter.cpp \
-    mykeypressevent.cpp
+    mykeypressevent.cpp \
+    systemconfigeventfilter.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -68,7 +69,8 @@ HEADERS += \
     nvrConfig/dcalendardialog.h \
     virtualkeyboard.h \
     inputeditkeyeventfilter.h \
-    mykeypressevent.h
+    mykeypressevent.h \
+    systemconfigeventfilter.h
 
 FORMS += \
         mainwindow.ui \

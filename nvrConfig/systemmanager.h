@@ -24,6 +24,9 @@ public:
     ~SystemManager();
 
 
+
+    void setText(QString str);
+
 protected:
     bool event(QEvent *event);
 private slots:
@@ -62,6 +65,7 @@ private:
 
 
     void popCalendar();
+
     AlarmTypeMenu *alarmtypeMenu = NULL;
     CameraMenu *cameraChannelMenu = NULL;
 

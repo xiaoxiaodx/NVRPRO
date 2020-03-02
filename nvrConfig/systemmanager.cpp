@@ -317,12 +317,12 @@ void SystemManager::alarmQueryTableInsert(int row_count,QMap<QString,QVariant> m
 
     // ui->tableWidget->setItem(row_count, 0, item0);
 
-//    QPushButton *pbtnDelete = new QPushButton(tr("Delete"));
-//    pbtnDelete->setStyleSheet("text-align:left;background-color:transparent;border:none;color:#476BFD;font:bold 12px;");
+    //    QPushButton *pbtnDelete = new QPushButton(tr("Delete"));
+    //    pbtnDelete->setStyleSheet("text-align:left;background-color:transparent;border:none;color:#476BFD;font:bold 12px;");
 
-//    connect(pbtnDelete,&QPushButton::clicked,[=](){
+    //    connect(pbtnDelete,&QPushButton::clicked,[=](){
 
-//    });
+    //    });
 
 
     ui->tableWidget_2->setCellWidget(row_count, 0, lable0);
@@ -450,22 +450,28 @@ void SystemManager::slot_timeChange(QTime time)
     ui->label_time->setText(time.toString("hh:mm::ss"));
 }
 
+#include "customerevent.h"
+
 void SystemManager::on_TimeSetpushButton_url_clicked()
 {
-//    QWidget *receiver = QApplication::focusWidget();
-//    qDebug()<<"Send key event to focus widget "<<receiver->objectName();
+    CustomerEvent *event= new CustomerEvent(BELONG_SYSTEMSET,TYPE_SYSTEMSET_TEST1,2);
 
-//    QKeyEvent tabKey(QEvent::KeyPress, Qt::Key_0, Qt::NoModifier);
+    bool result = QCoreApplication::sendEvent(this, event);
 
-//    QCoreApplication::sendEvent(receiver, &tabKey);
+    Q_ASSERT(result);
 
-
-
-
+    delete event;
 
 }
 
 bool SystemManager::event(QEvent *event)
 {
+    qDebug()<<"dsadsa";
 
+}
+
+
+void SystemManager::setText(QString str)
+{
+    ui->TimeSetlineEdit_url->setText(str);
 }
