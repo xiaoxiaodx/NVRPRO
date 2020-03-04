@@ -124,6 +124,7 @@ QPushButton *ReplayWindow::createSelfBtn(QString btnTxt,QString res)
     const QSize btnSize(236,42);
     QPushButton *btn = new QPushButton(this);
 
+    btn->setFocusPolicy(Qt::NoFocus);
     btn ->setFixedSize(btnSize);
     btn ->setStyleSheet("QPushButton{background-color: transparent;border:none}"
                         "QPushButton:pressed{background-color: #476BFD;}");
@@ -131,7 +132,7 @@ QPushButton *ReplayWindow::createSelfBtn(QString btnTxt,QString res)
     QLabel* label2 = new QLabel();
     label2->setFixedSize(QSize(20,20));
     QString sty = "border-image:url("+res+");background-color: transparent;color:#ffffff;";
-    label->setStyleSheet("background-color: #00ffffff;font-size: 16px;font-family:Microsoft Yahei;color:#ffffff;");
+    label->setStyleSheet("background-color: #rgba(0,0,0,0);font-size: 16px;color:#ffffff;");
     label2 ->setStyleSheet(sty);
 
     label->setText(btnTxt);

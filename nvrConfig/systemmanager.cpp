@@ -148,7 +148,6 @@ void SystemManager::createAlarmQueryTable()
 {
 
     ui->tableWidget_2->setGeometry(20,52,815,400);
-    ui->tableWidget_2->setRowCount(3);
     ui->tableWidget_2->setColumnCount(5); //设置列数
 
 
@@ -177,7 +176,7 @@ void SystemManager::createAlarmQueryTable()
     ui->tableWidget_2->setSelectionBehavior(QAbstractItemView::SelectRows); //设置选择行为时每次选择一行
     ui->tableWidget_2->setEditTriggers(QAbstractItemView::NoEditTriggers); //设置不可编辑
 
-    ui->tableWidget_2->setStyleSheet("background-color:#F9F9F9;selection-background-color:#F1F4FF;"); //设置背景色
+    ui->tableWidget_2->setStyleSheet("color:#333333;background-color:#F9F9F9;selection-background-color:#F1F4FF;"); //设置背景色
     ui->tableWidget_2->setFocusPolicy(Qt::NoFocus);
 
     //设置水平、垂直滚动条样式
@@ -207,6 +206,7 @@ void SystemManager::createDeviceTableHeader()
     QWidget *widget2 = new QWidget(this);
     QLabel *lable2 = new QLabel("Camera",widget2);
     QPushButton *btn2 = new QPushButton(widget2);
+    btn2->setFocusPolicy(Qt::NoFocus);
     lable2->setGeometry(0,10,44,15);
     btn2->setGeometry(50,13,10,10);
     btn2 ->setStyleSheet("QPushButton{border-image: url(:/images/table_menu.png);}"
@@ -219,6 +219,7 @@ void SystemManager::createDeviceTableHeader()
     QLabel *lable3 = new QLabel("Alarm Typle",widget3);
     QPushButton *btn3 = new QPushButton(widget3);
     lable3->setGeometry(0,10,69,15);
+    btn3->setFocusPolicy(Qt::NoFocus);
     btn3->setGeometry(73,13,10,10);
     btn3 ->setStyleSheet("QPushButton{border-image: url(:/images/table_menu.png);}"
                          "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}");
@@ -232,6 +233,8 @@ void SystemManager::createDeviceTableHeader()
     lable4->setGeometry(0,10,59,15);
     btn4up->setGeometry(63,12,10,6);
     btn4down->setGeometry(63,19,10,6);
+    btn4up->setFocusPolicy(Qt::NoFocus);
+    btn4down->setFocusPolicy(Qt::NoFocus);
     btn4up ->setStyleSheet("QPushButton{border-image: url(:/images/table_up.png);}"
                            "QPushButton:pressed{border-image: url(:/images/table_up_p.png);}");
     btn4down ->setStyleSheet("QPushButton{border-image: url(:/images/table_down.png);}"
@@ -245,6 +248,8 @@ void SystemManager::createDeviceTableHeader()
 
     btn5up->setGeometry(58,12,10,6);
     btn5down->setGeometry(58,19,10,6);
+    btn5down->setFocusPolicy(Qt::NoFocus);
+    btn5up->setFocusPolicy(Qt::NoFocus);
     btn5up ->setStyleSheet("QPushButton{border-image: url(:/images/table_up.png);}"
                            "QPushButton:pressed{border-image: url(:/images/table_up_p.png);}");
 
@@ -259,6 +264,7 @@ void SystemManager::createDeviceTableHeader()
     widget5->setStyleSheet("background-color:#EDEDED;");
 
 
+    ui->tableWidget_2->setRowCount(1);
     ui->tableWidget_2->setRowHeight(row_count,35);
     ui->tableWidget_2->setCellWidget(row_count, 0,lable1);
     ui->tableWidget_2->setCellWidget(row_count, 1,widget2);
@@ -327,6 +333,7 @@ void SystemManager::alarmQueryTableInsert(int row_count,QMap<QString,QVariant> m
 
     //    });
 
+    ui->tableWidget_2->setRowCount(ui->tableWidget_2->rowCount()+1);
 
     ui->tableWidget_2->setCellWidget(row_count, 0, lable0);
     ui->tableWidget_2->setItem(row_count, 1, item1);
@@ -382,20 +389,27 @@ void SystemManager::createUserManagement()
     ui->UserManagerlineEdit_newpassword->installEventFilter(MainWindow::EditKeyEventFilter);
     ui->UserManagerlineEdit_confirmagain->installEventFilter(MainWindow::EditKeyEventFilter);
 }
+
+//以输入框的做边界 和标签的右边界作为对齐的像素
 void SystemManager::adjustUserManagementWidgetPos()
 {
     ui->widget_6->setGeometry(0,0,950,518);
 
+    int lineEditLeftPix = 174;
+    int lableRightPix = 176-16;
+
     ui->UserManagerlabel_title->move(20,20);
     ui->UserManagerline->move(20,52);
 
-    ui->UserManagerlabel_oldpassword->move(70,76);
-    ui->UserManagerlineEdit_oldpassword->move(174,73);
-    ui->UserManagerlabel_newpassword->move(70,124);
-    ui->UserManagerlineEdit_newpassword->move(174,121);
-    ui->UserManagerlabel_confirmagain->move(65,172);
-    ui->UserManagerlineEdit_confirmagain->move(174,169);
-    ui->UserManagerpushButton_submit->move(279,217);
+    ui->UserManagerlabel_oldpassword->move(lableRightPix - ui->UserManagerlabel_oldpassword->width() ,76);
+    ui->UserManagerlineEdit_oldpassword->move(lineEditLeftPix,73);
+    ui->UserManagerlabel_newpassword->move(lableRightPix - ui->UserManagerlabel_newpassword->width(),124);
+    ui->UserManagerlineEdit_newpassword->move(lineEditLeftPix,121);
+    ui->UserManagerlabel_confirmagain->move(lableRightPix - ui->UserManagerlabel_confirmagain->width(),172);
+    ui->UserManagerlineEdit_confirmagain->move(lineEditLeftPix,169);
+
+
+    ui->UserManagerpushButton_submit->move(lineEditLeftPix+ui->UserManagerlineEdit_confirmagain->width()- ui->UserManagerpushButton_submit->width(),217);
 }
 
 SystemManager::~SystemManager()

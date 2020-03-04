@@ -14,26 +14,10 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true"/>
+   <string notr="true">background-color: transparent;
+font-size:14px;
+color: #ffffff;</string>
   </property>
-  <widget class="QLabel" name="label_ipc_identify">
-   <property name="geometry">
-    <rect>
-     <x>30</x>
-     <y>30</y>
-     <width>92</width>
-     <height>18</height>
-    </rect>
-   </property>
-   <property name="styleSheet">
-    <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
-	font-size:14px;
-    color: #ffffff;</string>
-   </property>
-   <property name="text">
-    <string/>
-   </property>
-  </widget>
   <widget class="QFrame" name="frame">
    <property name="geometry">
     <rect>
@@ -272,7 +256,7 @@ border-image: url(:/images/cloudControl_bg.png);</string>
     <property name="geometry">
      <rect>
       <x>50</x>
-      <y>20</y>
+      <y>10</y>
       <width>57</width>
       <height>24</height>
      </rect>
@@ -298,6 +282,24 @@ border-image: url(:/images/cloudControl_bg.png);</string>
     </property>
     <property name="styleSheet">
      <string notr="true">border-image: url(:/images/motetion_warn.png);</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_ipc_identify">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>92</width>
+      <height>18</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">	
+
+	</string>
     </property>
     <property name="text">
      <string/>

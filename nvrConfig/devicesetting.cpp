@@ -58,6 +58,7 @@ void DeviceSetting::createDeviceTableHeader()
     QLabel *lable = new QLabel("Status",widget3);
     QPushButton *btn = new QPushButton(widget3);
 
+    btn->setFocusPolicy(Qt::NoFocus);
     lable->setGeometry(0,10,36,15);
     btn ->setStyleSheet("QPushButton{border-image: url(:/images/table_menu.png);}"
                         "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}"
@@ -80,6 +81,7 @@ void DeviceSetting::createDeviceTableHeader()
     lable6->setStyleSheet("background-color:#EBECF0;");
 
 
+    ui->tableWidget->setRowCount(1);
     ui->tableWidget->setRowHeight(row_count,35);
     ui->tableWidget->setCellWidget(row_count, 0,lable0);
     ui->tableWidget->setCellWidget(row_count, 1,lable1);
@@ -135,6 +137,8 @@ void DeviceSetting::deviceTableInsert(int row_count,QMap<QString,QVariant> map)
     //        showDialog(row_count);
     //    });
 
+
+    ui->tableWidget->setRowCount(row_count+1);
     ui->tableWidget->setRowHeight(row_count,35);
     ui->tableWidget->setCellWidget(row_count, 0, widget);
     ui->tableWidget->setItem(row_count, 1, item1);
@@ -159,7 +163,7 @@ void DeviceSetting::createDeviceTable()
 
     ui->widget->setGeometry(0,0,950,518);
     ui->tableWidget->setGeometry(16,16,815,400);
-    ui->tableWidget->setRowCount(3);
+  //  ui->tableWidget->setRowCount(1);
     ui->tableWidget->setColumnCount(7); //设置列数
 
     //设置表头内容
@@ -209,7 +213,7 @@ void DeviceSetting::createDeviceTable()
     ui->tableWidget->setSelectionBehavior(QAbstractItemView::SelectRows); //设置选择行为时每次选择一行
     ui->tableWidget->setEditTriggers(QAbstractItemView::NoEditTriggers); //设置不可编辑
 
-    ui->tableWidget->setStyleSheet("background-color:#F9F9F9;selection-background-color:#F1F4FF;"); //设置背景色
+    ui->tableWidget->setStyleSheet("color:#333333;background-color:#F9F9F9;selection-background-color:#F1F4FF;"); //设置背景色
     ui->tableWidget->setFocusPolicy(Qt::NoFocus);
 
     //设置水平、垂直滚动条样式
