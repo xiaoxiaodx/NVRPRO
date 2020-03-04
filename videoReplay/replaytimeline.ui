@@ -29,7 +29,6 @@
     <string notr="true">QWidget{
 	background-color:#323232;
 	color:white;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font-size: 12px;
 }
 QPushButton {

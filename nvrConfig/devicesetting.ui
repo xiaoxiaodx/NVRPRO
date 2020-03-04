@@ -19,14 +19,14 @@
   <widget class="QLabel" name="label_title">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>10</y>
+     <x>16</x>
+     <y>16</y>
      <width>171</width>
-     <height>41</height>
+     <height>19</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+    <string notr="true">
 	font:bold 16px;
     color: #333333;</string>
    </property>
@@ -43,6 +43,9 @@
      <height>531</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QTabWidget::pane{border-width:0px;}
 
@@ -54,26 +57,22 @@ min-height:34px;
 
 color: #666666;
 
-font:bold 14px &quot;Microsoft YaHei&quot;;
+font:bold 14px ;
 
-border: 0px solid;
- 
+border: 1px solid;
+border-color:  #D9D9D9;
 }
 
 
 QTabBar::tab:selected{
 
-min-width:160px;
+min-width:155px;
 
 min-height:34px;
 
 color: #4796f0;
 
-font:15px &quot;Microsoft YaHei&quot;;
-
-border: 0px solid;
-
-border-bottom: 2px solid;
+border: 1px solid;
 
 border-color: #476BFD;
 
@@ -96,7 +95,7 @@ image: url(:/png/images/jy_close2.png)
 </string>
    </property>
    <property name="currentIndex">
-    <number>3</number>
+    <number>0</number>
    </property>
    <widget class="QWidget" name="tab_1">
     <attribute name="title">
@@ -148,7 +147,6 @@ image: url(:/png/images/jy_close2.png)
      <property name="styleSheet">
       <string notr="true">QWidget{
 background-color: #F9F9F9;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font-size:14px;
     color: #333333;
 }
@@ -178,13 +176,26 @@ QPushButton#OSDpushButton_submit {
 	border-style:inset;  
 	border-radius:3px;  
 	color:white;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font:bold 10px;
 }
 QPushButton#OSDpushButton_submit:pressed {  
     padding-left:6px;  
     padding-top:6px;  
 }  
+QLineEdit{
+border-width:1px;
+border-radius:2px;
+font-size:14px;
+color:#999999;
+border:1px solid #D2D2D2;
+}
+QLineEdit:hover{
+border-width:1px;
+border-radius:2px;
+font-size:14px;
+color:#999999;
+border:1px solid #476BFD;
+}
 
 </string>
      </property>
@@ -678,7 +689,7 @@ background-color: rgb(226, 226, 226);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">QWidget{background-color: #F9F9F9;
-font-family: &quot;Microsoft YaHei&quot;;
+
 	font-size:14px;
     color: #333333;
 }
@@ -726,7 +737,7 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -861,7 +872,7 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -895,7 +906,7 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -1263,8 +1274,8 @@ QPushButton#Alarmswitch:checked{
     <widget class="QWidget" name="widget_4" native="true">
      <property name="geometry">
       <rect>
-       <x>9</x>
-       <y>9</y>
+       <x>0</x>
+       <y>0</y>
        <width>951</width>
        <height>481</height>
       </rect>
@@ -1272,7 +1283,7 @@ QPushButton#Alarmswitch:checked{
      <property name="styleSheet">
       <string notr="true">QWidget{
 	background-color: #F9F9F9;
-	font-family: &quot;Microsoft YaHei&quot;;
+
 	font-size:14px;
     color: #333333;
 }
@@ -1642,7 +1653,7 @@ QComboBox QScrollBar::sub-line::vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -1676,7 +1687,7 @@ QComboBox QScrollBar::sub-line::vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -1710,7 +1721,7 @@ QComboBox QScrollBar::sub-line::vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -1844,7 +1855,7 @@ QComboBox QScrollBar::sub-line::vertical{
      <property name="styleSheet">
       <string notr="true">QWidget{
 background-color: #F9F9F9;
-	font-family: &quot;Microsoft YaHei&quot;;
+
 	font-size:14px;
     color: #333333;
 }
@@ -1880,13 +1891,27 @@ QPushButton#RTMPpushButton_submit {
 	border-style:inset;  
 	border-radius:3px;  
 	color:white;
-	font-family: &quot;Microsoft YaHei&quot;;
+
 	font:bold 10px;
 }
 QPushButton#RTMPpushButton_submit:pressed {  
     padding-left:6px;  
     padding-top:6px;  
 }  
+QLineEdit{
+border-width:1px;
+border-radius:2px;
+font-size:14px;
+color:#999999;
+border:1px solid #D2D2D2;
+}
+QLineEdit:hover{
+border-width:1px;
+border-radius:2px;
+font-size:14px;
+color:#999999;
+border:1px solid #476BFD;
+}
 
 </string>
      </property>
@@ -1900,7 +1925,7 @@ QPushButton#RTMPpushButton_submit:pressed {
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -2251,7 +2276,6 @@ QComboBox QAbstractItemView::item
     font-size:14px;
     color:#333333;
     background:#ffffff;
-    font-family:&quot;Microsoft YaHei&quot;;
 	min-height: 30px; 
 }
 
@@ -2303,7 +2327,7 @@ QComboBox QScrollBar::sub-line::vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -2342,7 +2366,7 @@ QComboBox QScrollBar::sub-line::vertical{
        <rect>
         <x>30</x>
         <y>290</y>
-        <width>91</width>
+        <width>81</width>
         <height>22</height>
        </rect>
       </property>

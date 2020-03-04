@@ -112,7 +112,7 @@ background-color: rgba(0,0,0,0.09);</string>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">	font-family: &quot;HelveticaNeue&quot;;
+    <string notr="true">
 	font: 14px;
     color: #333333;</string>
    </property>
@@ -224,7 +224,6 @@ QPushButton:pressed{border-image: url(:/images/yearnext_p.png);}
 	background-color:transparent;
 	border:none;
 	color:#666666;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font-size: 14px;
 }
 QPushButton:pressed {  
@@ -257,7 +256,6 @@ QPushButton:pressed {
 	background-color:transparent;
 	border:none;
 	color:#476BFD;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font-size: 14px;
 }
 QPushButton:pressed {  

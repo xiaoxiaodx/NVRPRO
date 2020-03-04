@@ -55,9 +55,9 @@ void SystemManager::adjustTimeSettingWidgetPos()
     ui->TimeSetlabel_everyday->move(186,115);
     ui->TimeSetpushButton_everyweek->move(272,119);
     ui->TimeSetlabel_everyweek->move(298,115);
-    ui->TimeSetlabel_url->move(40,160);
-    ui->TimeSetlineEdit_url->move(79,157);
-    ui->TimeSetpushButton_url->move(291,159);
+    ui->TimeSetlabel_url->move(40,162);
+    ui->TimeSetlineEdit_url->move(85,157);
+    ui->TimeSetpushButton_url->move(297,159);
 
     ui->TimeSetlabel_summertime->move(20,225);
     ui->TimeSetline_1->move(20,257);
@@ -129,7 +129,9 @@ void SystemManager::adjustAlarmQueryWidgetPos()
 
 
     ui->widget_3->setGeometry(0,0,950,518);
+
     ui->label_title_alarm->move(20,20);
+    ui->tableWidget_2->move(20,52);
     ui->widget_date->move(479,16);
     ui->widget_time->move(717,16);
 
@@ -206,7 +208,7 @@ void SystemManager::createDeviceTableHeader()
     QLabel *lable2 = new QLabel("Camera",widget2);
     QPushButton *btn2 = new QPushButton(widget2);
     lable2->setGeometry(0,10,44,15);
-    btn2->setGeometry(48,13,10,10);
+    btn2->setGeometry(50,13,10,10);
     btn2 ->setStyleSheet("QPushButton{border-image: url(:/images/table_menu.png);}"
                          "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}");
 
@@ -302,7 +304,8 @@ void SystemManager::alarmQueryTableInsert(int row_count,QMap<QString,QVariant> m
         QLabel *lable2 = new QLabel("Motion Detection",widget2);
         QPushButton *btn2 = new QPushButton(widget2);
         lable2->setGeometry(3,8,102,15);
-        btn2->setGeometry(108,11,12,12);
+
+        btn2->setGeometry(114,11,12,12);
         btn2 ->setStyleSheet("QPushButton{border-image: url(:/images/table_play.png);}"
                              "QPushButton:pressed{border-image: url(:/images/table_play_p.png);}");
         widget2->setStyleSheet("background-color:transparent");
@@ -354,8 +357,8 @@ void SystemManager::adjustDiskManagementWidgetPos()
     ui->Diskmanagerlabel_hderr->move(20,135);
     ui->Diskmanagerline_1->move(20,167);
     ui->Diskmanagerlabel_storage->move(40,189);
-    ui->DiskmanagerprogressBar->move(185,194);
-    ui->Diskmanagerlabel_storage_2->move(375,214);
+    ui->DiskmanagerprogressBar->move(181,194);
+    ui->Diskmanagerlabel_storage_2->move(375,212);
 }
 
 void SystemManager::createSystemOperation()
@@ -366,9 +369,9 @@ void SystemManager::adjustSystemOperationWidgetPos()
 {
     ui->widget_5->setGeometry(0,0,950,518);
     ui->Systemoperation_pushbutton_reboot->move(50,42);
-    ui->Systemoperation_label_reboot->move(40,90);
+    ui->Systemoperation_label_reboot->move(44,90);
     ui->Systemoperation_pushbutton_reset->move(161,42);
-    ui->Systemoperation_label_reset->move(158,90);
+    ui->Systemoperation_label_reset->move(160,90);
 }
 
 void SystemManager::createUserManagement()
@@ -388,11 +391,11 @@ void SystemManager::adjustUserManagementWidgetPos()
 
     ui->UserManagerlabel_oldpassword->move(70,76);
     ui->UserManagerlineEdit_oldpassword->move(174,73);
-    ui->UserManagerlabel_newpassword->move(63,121);
-    ui->UserManagerlineEdit_newpassword->move(174,118);
-    ui->UserManagerlabel_confirmagain->move(65,169);
-    ui->UserManagerlineEdit_confirmagain->move(174,166);
-    ui->UserManagerpushButton_submit->move(279,204);
+    ui->UserManagerlabel_newpassword->move(70,124);
+    ui->UserManagerlineEdit_newpassword->move(174,121);
+    ui->UserManagerlabel_confirmagain->move(65,172);
+    ui->UserManagerlineEdit_confirmagain->move(174,169);
+    ui->UserManagerpushButton_submit->move(279,217);
 }
 
 SystemManager::~SystemManager()

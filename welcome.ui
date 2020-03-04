@@ -19,22 +19,19 @@
 }
 QLineEdit {
 	color:#ADADAD;
-    border: 0px solid rgb(41, 57, 85);
+    border: 1px solid #EDEEF0;  
     border-radius: 4px; 
     background: #EDEEF0;  
-    selection-background-color: green; 
+    selection-background-color: #476BFD; 
     font-size: 16px ;
 	padding-left:20px;
 	padding-right:20px;
 	placeholderText:&quot;password&quot;
 }
- 
- QLineEdit[echoMode=&quot;2&quot;] {
-      lineedit-password-character: 9679;
-}
 
-QLineEdit:hover {
-    border: 1px solid rgba(71,107,253,1);; 
+QLineEdit:hover{
+border:1px solid #476BFD;
+border-radius: 4px; 
 }
 
 </string>
@@ -49,7 +46,7 @@ QLineEdit:hover {
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">
+    <string notr="true">	font-family:&quot;Helvetica&quot;;
 	font:bold 30px;
     color: #333333;</string>
    </property>

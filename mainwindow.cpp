@@ -29,9 +29,9 @@ MainWindow::MainWindow(QWidget *parent) :
     createSingletonEventFilter();
 
 
-    createDialog_timeZoneSetting();
+    //createDialog_timeZoneSetting();
     //createDialog_passwordSetting();
-    //createDialog_welcome();
+    createDialog_welcome();
     createVideoWindow(4);
     //createDialog_config();
     // createReplayWindow();

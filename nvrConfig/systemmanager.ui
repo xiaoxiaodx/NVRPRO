@@ -16,14 +16,14 @@
   <widget class="QLabel" name="label_title">
    <property name="geometry">
     <rect>
-     <x>20</x>
-     <y>10</y>
+     <x>16</x>
+     <y>16</y>
      <width>171</width>
-     <height>41</height>
+     <height>19</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+    <string notr="true">
 	font:bold 16px;
     color: #333333;</string>
    </property>
@@ -40,6 +40,9 @@
      <height>501</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QTabWidget::pane{border-width:0px;}
 
@@ -51,26 +54,22 @@ min-height:34px;
 
 color: #666666;
 
-font:bold 14px &quot;Microsoft YaHei&quot;;
+font:bold 14px ;
 
-border: 0px solid;
- 
+border: 1px solid;
+
+border-color:  #D9D9D9;
 }
 
 
 QTabBar::tab:selected{
 
-min-width:160px;
+min-width:155px;
 
 min-height:34px;
 
 color: #4796f0;
-
-font:15px &quot;Microsoft YaHei&quot;;
-
-border: 0px solid;
-
-border-bottom: 2px solid;
+font:bold 14px ;
 
 border-color: #476BFD;
 
@@ -105,7 +104,7 @@ image: url(:/png/images/jy_close2.png)
     <widget class="QWidget" name="widget" native="true">
      <property name="geometry">
       <rect>
-       <x>30</x>
+       <x>-10</x>
        <y>9</y>
        <width>1071</width>
        <height>431</height>
@@ -114,10 +113,10 @@ image: url(:/png/images/jy_close2.png)
      <property name="styleSheet">
       <string notr="true">QWidget{
 	background-color: #F9F9F9;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font-size:14px;
     color: #333333;
 }
+
 
 /*2个开关按钮*/
 QPushButton#TimeSetswith_setting,
@@ -151,7 +150,6 @@ QPushButton#TimeSetpushButton_url{
 	border-style:inset;  
 	border-radius:3px;  
 	color:white;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font:bold 10px;
 }
 QPushButton#TimeSetpushButton_url:pressed {  
@@ -160,7 +158,23 @@ QPushButton#TimeSetpushButton_url:pressed {
     /* 使文字有一点移动 */  
     padding-left:6px;  
     padding-top:6px;  
-}  </string>
+}  
+
+QLineEdit{
+border-width:1px;
+border-radius:2px;
+font-size:14px;
+color:#999999;
+border:1px solid #D2D2D2;
+}
+QLineEdit:hover{
+border-width:1px;
+border-radius:2px;
+font-size:14px;
+color:#999999;
+border:1px solid #476BFD;
+}
+</string>
      </property>
      <widget class="Line" name="TimeSetline">
       <property name="geometry">
@@ -302,12 +316,12 @@ background-color: rgb(226, 226, 226);</string>
        <rect>
         <x>20</x>
         <y>20</y>
-        <width>85</width>
+        <width>111</width>
         <height>22</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -433,8 +447,7 @@ background-color: rgb(226, 226, 226);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
-	font:bold 14px;
+       <string notr="true">	font:bold 14px;
     color: #333333;</string>
       </property>
       <property name="text">
@@ -468,7 +481,7 @@ background-color: rgb(226, 226, 226);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -561,7 +574,7 @@ QComboBox QAbstractItemView::item
     font-size:14px;
     color:#333333;
     background:#ffffff;
-    font-family:&quot;Microsoft YaHei&quot;;
+
 	min-height: 30px; 
 }
 
@@ -629,24 +642,24 @@ QComboBox QScrollBar::sub-line::vertical{
       </rect>
      </property>
      <property name="styleSheet">
-      <string notr="true">background-color: #F9F9F9;
-	font-family: &quot;Microsoft YaHei&quot;;
+      <string notr="true">QWidget{
+	background-color: #F9F9F9;
 	font-size:14px;
-    color: #333333;</string>
+    color: #333333;
+}</string>
      </property>
      <widget class="QLabel" name="Systeminfolabel_systeminfo">
       <property name="geometry">
        <rect>
         <x>40</x>
         <y>30</y>
-        <width>85</width>
+        <width>121</width>
         <height>22</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
-	font:bold 14px;
-    color: #333333;</string>
+       <string notr="true">
+	font:bold ;</string>
       </property>
       <property name="text">
        <string>System Info</string>
@@ -674,14 +687,14 @@ background-color: rgb(226, 226, 226);</string>
        <rect>
         <x>40</x>
         <y>250</y>
-        <width>101</width>
+        <width>141</width>
         <height>22</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
-	font:bold 14px;
-    color: #333333;</string>
+       <string notr="true">
+	font:bold ;
+</string>
       </property>
       <property name="text">
        <string>Network Info</string>
@@ -710,8 +723,11 @@ background-color: rgb(226, 226, 226);</string>
         <x>70</x>
         <y>110</y>
         <width>84</width>
-        <height>19</height>
+        <height>17</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color:#666666;</string>
       </property>
       <property name="text">
        <string>Device Typle</string>
@@ -749,8 +765,11 @@ background-color: rgb(226, 226, 226);</string>
         <x>70</x>
         <y>140</y>
         <width>81</width>
-        <height>22</height>
+        <height>17</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color:#666666;</string>
       </property>
       <property name="text">
        <string>Device DID</string>
@@ -772,14 +791,14 @@ background-color: rgb(226, 226, 226);</string>
      <widget class="QLabel" name="Systeminfolabel_softversion">
       <property name="geometry">
        <rect>
-        <x>70</x>
+        <x>60</x>
         <y>170</y>
         <width>113</width>
-        <height>19</height>
+        <height>17</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color:#666666</string>
+       <string notr="true">	color:#666666;</string>
       </property>
       <property name="text">
        <string>Software Version</string>
@@ -804,8 +823,11 @@ background-color: rgb(226, 226, 226);</string>
         <x>60</x>
         <y>210</y>
         <width>119</width>
-        <height>19</height>
+        <height>17</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color:#666666;</string>
       </property>
       <property name="text">
        <string>Hardware Version</string>
@@ -817,8 +839,11 @@ background-color: rgb(226, 226, 226);</string>
         <x>100</x>
         <y>310</y>
         <width>73</width>
-        <height>19</height>
+        <height>17</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color:#666666;</string>
       </property>
       <property name="text">
        <string>IP Address</string>
@@ -843,8 +868,11 @@ background-color: rgb(226, 226, 226);</string>
         <x>90</x>
         <y>360</y>
         <width>90</width>
-        <height>19</height>
+        <height>17</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">	color:#666666;</string>
       </property>
       <property name="text">
        <string>Mac Address</string>
@@ -880,7 +908,6 @@ background-color: rgb(226, 226, 226);</string>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: #F9F9F9;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font-size:12px;
     color: #333333;</string>
      </property>
@@ -907,7 +934,7 @@ background-color: rgb(226, 226, 226);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -921,7 +948,7 @@ background-color: rgb(226, 226, 226);</string>
         <x>490</x>
         <y>10</y>
         <width>228</width>
-        <height>31</height>
+        <height>28</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -931,7 +958,7 @@ border:1px solid rgba(85%,85%,85%,1);</string>
       <widget class="QLabel" name="label_startDate">
        <property name="geometry">
         <rect>
-         <x>9</x>
+         <x>10</x>
          <y>3</y>
          <width>81</width>
          <height>22</height>
@@ -1088,7 +1115,6 @@ QPushButton:pressed{border-image: url(:/images/table_time_p.png);}</string>
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: #F9F9F9;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font-size:14px;
     color: #333333;</string>
      </property>
@@ -1114,12 +1140,12 @@ background-color: rgb(226, 226, 226);</string>
        <rect>
         <x>40</x>
         <y>40</y>
-        <width>131</width>
+        <width>161</width>
         <height>22</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -1154,7 +1180,7 @@ background-color: rgb(226, 226, 226);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font:bold 14px;
     color: #333333;</string>
       </property>
@@ -1297,8 +1323,8 @@ QProgressBar::chunk {
      </property>
      <property name="styleSheet">
       <string notr="true">background-color: #F9F9F9;
-	font-family: &quot;Microsoft YaHei&quot;;
-	font-size:14px;
+
+	font-size:16px;
     color: #333333;
 </string>
      </property>
@@ -1393,7 +1419,6 @@ border-image: url(:/images/reset_press.png);
      <property name="styleSheet">
       <string notr="true">QWidget{
 background-color: #F9F9F9;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font-size:14px;
     color: #333333;
 }
@@ -1405,7 +1430,6 @@ QPushButton {
 	border-style:inset;  
 	border-radius:3px;  
 	color:white;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font:bold 10px;
 }
 QPushButton:pressed {  
@@ -1415,6 +1439,20 @@ QPushButton:pressed {
     padding-left:6px;  
     padding-top:6px;  
 }  
+QLineEdit{
+border-width:1px;
+border-radius:2px;
+font-size:14px;
+color:#999999;
+border:1px solid #D2D2D2;
+}
+QLineEdit:hover{
+border-width:1px;
+border-radius:2px;
+font-size:14px;
+color:#999999;
+border:1px solid #476BFD;
+}
 </string>
      </property>
      <widget class="QLabel" name="UserManagerlabel_title">
@@ -1422,14 +1460,13 @@ QPushButton:pressed {
        <rect>
         <x>20</x>
         <y>40</y>
-        <width>111</width>
+        <width>171</width>
         <height>22</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
-	font:bold 14px;
-    color: #333333;</string>
+       <string notr="true">
+	font:bold 14px;</string>
       </property>
       <property name="text">
        <string>Edit Password</string>
@@ -1480,7 +1517,7 @@ background-color: rgb(226, 226, 226);</string>
        <rect>
         <x>50</x>
         <y>182</y>
-        <width>111</width>
+        <width>91</width>
         <height>22</height>
        </rect>
       </property>

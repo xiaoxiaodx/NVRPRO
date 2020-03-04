@@ -126,7 +126,6 @@ QPushButton:pressed{border-image: url(:/images/yearnext_p.png);}
 	background-color:transparent;
 	border:none;
 	color:#666666;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font-size: 12px;
 }
 QPushButton:pressed {  
@@ -180,7 +179,6 @@ color: rgba(0,0,0,85%);</string>
 	background-color:transparent;
 	border:none;
 	color:#476BFD;
-	font-family: &quot;Microsoft YaHei&quot;;
 	font-size: 12px;
 }
 QPushButton:pressed {  
@@ -376,7 +374,7 @@ QPushButton:pressed{border-image: url(:/images/yearnext_p.png);}
    </property>
    <property name="styleSheet">
     <string notr="true">font-size:12px;
-font-family:&quot;HelveticaNeue&quot;;
+
 color:rgba(0,0,0,65%);
 line-height:19px;</string>
    </property>
@@ -395,7 +393,7 @@ line-height:19px;</string>
    </property>
    <property name="styleSheet">
     <string notr="true">font-size:12px;
-font-family:&quot;HelveticaNeue&quot;;
+
 color:rgba(0,0,0,65%);
 line-height:19px;</string>
    </property>

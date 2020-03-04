@@ -10,7 +10,7 @@ DeleteConfirmDialog::DeleteConfirmDialog(QWidget *parent) :
     this->setWindowFlags(Qt::FramelessWindowHint);
 
     ui->label_askimg->move(23,36);
-    ui->label_askcontent->move(49,32);
+    ui->label_askcontent->move(49,38);
     ui->pushButton_close->move(280,11);
     ui->pushButton_confirm->move(194,78);
     ui->pushButton_cancel->move(246,78);

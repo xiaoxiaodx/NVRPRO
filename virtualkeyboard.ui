@@ -27,7 +27,7 @@ QPushButton{
 	border-style:solid;
 	border-width:1px;
 	border-color:#EBECF0;
-	font-family: &quot;Microsoft YaHei&quot;;
+	font-family: &quot;Helvetica&quot;;
 	font-size: 14px;
     min-width:26px; 
     min-height:26px;  

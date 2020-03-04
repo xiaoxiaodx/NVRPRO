@@ -30,7 +30,7 @@ QPushButton {
 	border-style:inset;  
 	border-radius:10px;  
 	color:white;
-	font-family: &quot;Microsoft YaHei&quot;;
+	font-family: &quot;Helvetica&quot;;
 	font-size: 20px;
 }
 QPushButton#pushButton:pressed {  
@@ -47,8 +47,8 @@ QPushButton#pushButton:pressed {
     <rect>
      <x>130</x>
      <y>168</y>
-     <width>311</width>
-     <height>41</height>
+     <width>312</width>
+     <height>46</height>
     </rect>
    </property>
    <property name="styleSheet">
@@ -107,7 +107,7 @@ QComboBox QAbstractItemView::item
     font-size:16px;
     color:#333333;
     background:#ffffff;
-    font-family:&quot;Microsoft YaHei&quot;;
+    font-family:&quot;Helvetica&quot;;
 	min-height: 38px; 
 }
 
@@ -158,7 +158,7 @@ QComboBox QScrollBar::sub-line::vertical{
      <x>210</x>
      <y>70</y>
      <width>160</width>
-     <height>38</height>
+     <height>36</height>
     </rect>
    </property>
    <property name="sizePolicy">
@@ -168,7 +168,7 @@ QComboBox QScrollBar::sub-line::vertical{
     </sizepolicy>
    </property>
    <property name="styleSheet">
-    <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+    <string notr="true">	font-family: &quot;Helvetica&quot;;
 	font:bold 30px;
     color: #333333;</string>
    </property>

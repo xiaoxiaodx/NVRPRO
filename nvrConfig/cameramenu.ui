@@ -21,7 +21,6 @@ QPushButton{border-image: url(:/images/device_unselect.png);}
 QPushButton:checked{border-image: url(:/images/device_select.png);}
 QLabel{
 color:#333333;
-font-family: &quot;Microsoft YaHei&quot;;
 font-size: 10px ;
 border-image:none
 }</string>
