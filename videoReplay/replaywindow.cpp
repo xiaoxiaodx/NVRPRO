@@ -65,6 +65,19 @@ void ReplayWindow::mousePressEvent(QMouseEvent *event)
 
 void ReplayWindow::popMenu()
 {
+
+
+    QWidgetAction *buttonActionSpace = new QWidgetAction(this);
+    QLabel *lable = new QLabel(this);
+    lable ->setFixedSize(QSize(240,20));
+    lable->setStyleSheet("background-color: #171717;");
+    buttonActionSpace->setDefaultWidget(lable);
+    QWidgetAction *buttonActionSpace1 = new QWidgetAction(this);
+    QLabel *lable1 = new QLabel(this);
+    lable1 ->setFixedSize(QSize(240,20));
+    lable1->setStyleSheet("background-color: #171717;");
+    buttonActionSpace1->setDefaultWidget(lable1);
+
     QWidgetAction *buttonActionCloudControl = new QWidgetAction(this);
     QWidgetAction *buttonActionReplay = new QWidgetAction(this);
     QWidgetAction *buttonActionDeviceSet = new QWidgetAction(this);
@@ -87,9 +100,12 @@ void ReplayWindow::popMenu()
     if(buttonMenu == NULL){
         buttonMenu = new QMenu(this);
 
+        buttonMenu->setStyleSheet("background-color: #171717;");
+        buttonMenu->addAction(buttonActionSpace);
         buttonMenu->addAction(buttonActionReplay);
         buttonMenu->addAction(buttonActionDeviceSet);
         buttonMenu->addAction(buttonActionSystemSet);
+        buttonMenu->addAction(buttonActionSpace1);
 
 
         //给动作设置信号槽

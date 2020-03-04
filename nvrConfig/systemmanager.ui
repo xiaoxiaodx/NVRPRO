@@ -95,7 +95,7 @@ image: url(:/png/images/jy_close2.png)
 </string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>5</number>
    </property>
    <property name="elideMode">
     <enum>Qt::ElideRight</enum>
@@ -930,13 +930,8 @@ background-color: rgb(226, 226, 226);</string>
     border:none;                   
     font-size:12px;                
     color:#333333;   
+	selection-color:#333333;  
 	selection-background-color:#F1F4FF
-}
-
-QTableWidget::item::selected      // 每个单元格被选中状态
-{
-    color:#333333;        
-	background-color:#F1F4FF;                        
 }
 
 QScrollBar{
@@ -1452,7 +1447,8 @@ border-image: url(:/images/reset_press.png);
      </property>
      <property name="styleSheet">
       <string notr="true">QWidget{
-background-color: #F9F9F9;
+	font-family:&quot;SimSun&quot;;
+	background-color: #F9F9F9;
 	font-size:14px;
     color: #333333;
 }

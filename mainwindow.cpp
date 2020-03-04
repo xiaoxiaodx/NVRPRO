@@ -215,6 +215,7 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
         popMenu();
     }
 }
+#include <QLabel>
 void MainWindow::popMenu()
 {
 
@@ -222,6 +223,20 @@ void MainWindow::popMenu()
     //初始化菜单
     if(rightMouseMenu == NULL){
         rightMouseMenu = new QMenu(this);
+
+        rightMouseMenu->setStyleSheet("background-color: #171717;");
+        QWidgetAction *buttonActionSpace = new QWidgetAction(this);
+        QLabel *lable = new QLabel(this);
+        lable ->setFixedSize(QSize(240,20));
+        lable->setStyleSheet("background-color: #171717;");
+        buttonActionSpace->setDefaultWidget(lable);
+        QWidgetAction *buttonActionSpace1 = new QWidgetAction(this);
+        QLabel *lable1 = new QLabel(this);
+        lable1 ->setFixedSize(QSize(240,20));
+        lable1->setStyleSheet("background-color: #171717;");
+        buttonActionSpace1->setDefaultWidget(lable1);
+
+
 
         QWidgetAction *buttonActionCloudControl = new QWidgetAction(this);
         QWidgetAction *buttonActionReplay = new QWidgetAction(this);
@@ -242,10 +257,13 @@ void MainWindow::popMenu()
         buttonActionSystemSet->setDefaultWidget(pbtnSystemSet);
 
         //动作添加到菜单
+
+        rightMouseMenu->addAction(buttonActionSpace);
         rightMouseMenu->addAction(buttonActionCloudControl);
         rightMouseMenu->addAction(buttonActionReplay);
         rightMouseMenu->addAction(buttonActionDeviceSet);
         rightMouseMenu->addAction(buttonActionSystemSet);
+        rightMouseMenu->addAction(buttonActionSpace1);
 
         //给动作设置信号槽
         connect( pbtnCloudControl, SIGNAL(clicked()),this,SLOT(slot_menuSelectCloudControl()));

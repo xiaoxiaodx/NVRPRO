@@ -20,12 +20,10 @@ EventBelong CustomerEvent::getEventBelong(void)
 #include <QDebug>
 QEvent::Type CustomerEvent::eventType()
 {
-
-    qDebug()<<"1111111111:"<<m_EventType;
     // 创建事件Type
     if (m_EventType == QEvent::None)
         m_EventType = (QEvent::Type)QEvent::registerEventType();
-     qDebug()<<"222222222:"<<m_EventType;
+
     return m_EventType;
 }
 

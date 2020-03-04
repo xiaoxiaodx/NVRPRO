@@ -481,7 +481,7 @@ void SystemManager::on_TimeSetpushButton_url_clicked()
 
 bool SystemManager::event(QEvent *event)
 {
-    qDebug()<<"dsadsa";
+
 
 }
 

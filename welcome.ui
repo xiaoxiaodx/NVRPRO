@@ -26,7 +26,6 @@ QLineEdit {
     font-size: 16px ;
 	padding-left:20px;
 	padding-right:20px;
-	placeholderText:&quot;password&quot;
 }
 
 QLineEdit:hover{
@@ -51,7 +50,10 @@ border-radius: 4px;
     color: #333333;</string>
    </property>
    <property name="text">
-    <string>welcome!</string>
+    <string>Welcome!</string>
+   </property>
+   <property name="alignment">
+    <set>Qt::AlignCenter</set>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_password">
@@ -105,7 +107,7 @@ QPushButton#pushButton:pressed {
 </string>
    </property>
    <property name="text">
-    <string>Next</string>
+    <string>Sign In</string>
    </property>
   </widget>
  </widget>

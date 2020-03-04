@@ -6,16 +6,24 @@ int main(int argc, char *argv[])
     QApplication a(argc, argv);
 
 
+
+    qDebug() <<"1:"<< qApp->font().rawName();
+    qDebug() << qApp->font().family();
+    qDebug() << qApp->font().defaultFamily();
+    qDebug() << qApp->font().styleName();
+    qDebug() << qApp->font().toString();
+    qDebug() << qApp->font().key();
+
     QFont font;
-    font.setFamily("Helvetica"); // Tahoma 宋体
+    font.setFamily("helvetica");
     qApp->setFont(font);
 
-//    qDebug() << qApp->font().rawName();
-//    qDebug() << qApp->font().family();
-//    qDebug() << qApp->font().defaultFamily();
-//    qDebug() << qApp->font().styleName();
-//    qDebug() << qApp->font().toString();
-//    qDebug() << qApp->font().key();
+    qDebug()  <<"2:"<< qApp->font().rawName();
+    qDebug() << qApp->font().family();
+    qDebug() << qApp->font().defaultFamily();
+    qDebug() << qApp->font().styleName();
+    qDebug() << qApp->font().toString();
+    qDebug() << qApp->font().key();
 
     MainWindow w;
 
