@@ -35,6 +35,8 @@ MainWindow::MainWindow(QWidget *parent) :
     createVideoWindow(4);
     //createDialog_config();
     // createReplayWindow();
+
+    /******2222*///
 }
 
 void MainWindow::createSingletonKeyBorad()
