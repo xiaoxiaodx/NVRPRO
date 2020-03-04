@@ -151,19 +151,17 @@ void SystemManager::createAlarmQueryTable()
     ui->tableWidget_2->setColumnCount(5); //设置列数
 
 
-    // ui->tableWidget_2->horizontalHeader()->setDefaultSectionSize(130);
+     ui->tableWidget_2->horizontalHeader()->setDefaultSectionSize(130);
     ui->tableWidget_2->horizontalHeader()->resizeSection(0,114);
     ui->tableWidget_2->horizontalHeader()->resizeSection(1,130);
     ui->tableWidget_2->horizontalHeader()->resizeSection(2,206);
     ui->tableWidget_2->horizontalHeader()->resizeSection(3,210);
     ui->tableWidget_2->horizontalHeader()->resizeSection(4,150);
 
-    ui->tableWidget_2->horizontalHeader()->setFixedHeight(31); //设置表头的高度
-
-    ui->tableWidget_2->horizontalHeader()->setStyleSheet("QHeaderView::section{border:none;font:bold;background:#EBECF0;}"); //设置表头背景色
+//    ui->tableWidget_2->horizontalHeader()->setFixedHeight(31); //设置表头的高度
+//    ui->tableWidget_2->horizontalHeader()->setStyleSheet("QHeaderView::section{border:none;font:bold;background:#EBECF0;}"); //设置表头背景色
     ui->tableWidget_2->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
-
-    ui->tableWidget_2->horizontalHeader()->setVisible(false); //设置垂直头不可见
+//    ui->tableWidget_2->horizontalHeader()->setVisible(false); //设置垂直头不可见
     ui->tableWidget_2->verticalHeader()->setDefaultSectionSize(2); //设置行距
     ui->tableWidget_2->verticalHeader()->setVisible(false); //设置垂直头不可见
 
@@ -176,20 +174,20 @@ void SystemManager::createAlarmQueryTable()
     ui->tableWidget_2->setSelectionBehavior(QAbstractItemView::SelectRows); //设置选择行为时每次选择一行
     ui->tableWidget_2->setEditTriggers(QAbstractItemView::NoEditTriggers); //设置不可编辑
 
-    ui->tableWidget_2->setStyleSheet("color:#333333;background-color:#F9F9F9;selection-background-color:#F1F4FF;"); //设置背景色
+   // ui->tableWidget_2->setStyleSheet("color:#333333;background-color:#F9F9F9;selection-background-color:#F1F4FF;"); //设置背景色
     ui->tableWidget_2->setFocusPolicy(Qt::NoFocus);
 
     //设置水平、垂直滚动条样式
-    ui->tableWidget_2->horizontalScrollBar()->setStyleSheet("QScrollBar{background:transparent; height:10px;}"
-                                                            "QScrollBar::handle{background:lightgray; border:2px solid transparent; border-radius:5px;}"
-                                                            "QScrollBar::handle:hover{background:gray;}"
-                                                            "QScrollBar::sub-line{background:transparent;}"
-                                                            "QScrollBar::add-line{background:transparent;}");
-    ui->tableWidget_2->verticalScrollBar()->setStyleSheet("QScrollBar{background:transparent; width: 10px;}"
-                                                          "QScrollBar::handle{background:lightgray; border:2px solid transparent; border-radius:5px;}"
-                                                          "QScrollBar::handle:hover{background:gray;}"
-                                                          "QScrollBar::sub-line{background:transparent;}"
-                                                          "QScrollBar::add-line{background:transparent;}");
+//    ui->tableWidget_2->horizontalScrollBar()->setStyleSheet("QScrollBar{background:transparent; height:10px;}"
+//                                                            "QScrollBar::handle{background:lightgray; border:2px solid transparent; border-radius:5px;}"
+//                                                            "QScrollBar::handle:hover{background:gray;}"
+//                                                            "QScrollBar::sub-line{background:transparent;}"
+//                                                            "QScrollBar::add-line{background:transparent;}");
+//    ui->tableWidget_2->verticalScrollBar()->setStyleSheet("QScrollBar{background:transparent; width: 10px;}"
+//                                                          "QScrollBar::handle{background:lightgray; border:2px solid transparent; border-radius:5px;}"
+//                                                          "QScrollBar::handle:hover{background:gray;}"
+//                                                          "QScrollBar::sub-line{background:transparent;}"
+//                                                          "QScrollBar::add-line{background:transparent;}");
 
 }
 

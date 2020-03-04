@@ -126,7 +126,32 @@ image: url(:/png/images/jy_close2.png)
        <enum>Qt::NoFocus</enum>
       </property>
       <property name="styleSheet">
-       <string notr="true"/>
+       <string notr="true">QTableWidget                 
+{
+    background-color:#F9F9F9;            
+    border:none;                   
+    font-size:12px;                
+    color:#333333;   
+	selection-background-color:#F1F4FF
+}
+
+QTableWidget::item::selected      // 每个单元格被选中状态
+{
+    color:#333333;        
+	background-color:#F1F4FF;                        
+}
+
+QScrollBar{
+background:transparent; width: 10px;}
+QScrollBar::handle{
+background:lightgray; border:2px solid transparent; border-radius:5px;}
+ QScrollBar::handle:hover{
+background:gray;}
+
+QScrollBar::sub-line{
+background:transparent;
+}
+ QScrollBar::add-line{background:transparent;}</string>
       </property>
      </widget>
     </widget>

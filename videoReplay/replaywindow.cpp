@@ -121,18 +121,21 @@ void ReplayWindow::slot_SystemSetClick()
 
 QPushButton *ReplayWindow::createSelfBtn(QString btnTxt,QString res)
 {
+
+
+
     const QSize btnSize(236,42);
     QPushButton *btn = new QPushButton(this);
 
-    btn->setFocusPolicy(Qt::NoFocus);
     btn ->setFixedSize(btnSize);
-    btn ->setStyleSheet("QPushButton{background-color: transparent;border:none}"
+    btn ->setStyleSheet("QPushButton{background-color: #171717;color:#ffffff;border:none}"
                         "QPushButton:pressed{background-color: #476BFD;}");
+    btn->setFocusPolicy(Qt::NoFocus);
     QLabel* label = new QLabel();
     QLabel* label2 = new QLabel();
     label2->setFixedSize(QSize(20,20));
     QString sty = "border-image:url("+res+");background-color: transparent;color:#ffffff;";
-    label->setStyleSheet("background-color: #rgba(0,0,0,0);font-size: 16px;color:#ffffff;");
+    label->setStyleSheet("background-color: transparent;font-size: 16px;color:#ffffff;");
     label2 ->setStyleSheet(sty);
 
     label->setText(btnTxt);

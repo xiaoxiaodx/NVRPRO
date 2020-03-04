@@ -162,45 +162,24 @@ void DeviceSetting::createDeviceTable()
 {
 
     ui->widget->setGeometry(0,0,950,518);
-    ui->tableWidget->setGeometry(16,16,815,400);
+    ui->tableWidget->setGeometry(16,16,900,400);
   //  ui->tableWidget->setRowCount(1);
     ui->tableWidget->setColumnCount(7); //设置列数
 
-    //设置表头内容
-    QStringList header;
-    header<<" "<<tr("DID")<<tr("Device Name")<<tr("Status")<<tr("Software Version   ")<<tr("Hardware Version    ")<<tr("Operate");
 
-    // new QTableWidgetItem(QIcon(":/Image/IED.png"), "Jan's month")
 
-    int index =0;
-    ui->tableWidget->setHorizontalHeaderItem(index++,new QTableWidgetItem("   "));
-    ui->tableWidget->setHorizontalHeaderItem(index++,new QTableWidgetItem(tr("DID")));
-    ui->tableWidget->setHorizontalHeaderItem(index++,new QTableWidgetItem(tr("Device Name")));
-    QTableWidgetItem *item = new QTableWidgetItem(QIcon(":/images/checked.png"),tr("Status"));
 
-    ui->tableWidget->setHorizontalHeaderItem(index++,item);
-    ui->tableWidget->setHorizontalHeaderItem(index++,new QTableWidgetItem(tr("Software Version   ")));
-    ui->tableWidget->setHorizontalHeaderItem(index++,new QTableWidgetItem(tr("Hardware Version   ")));
-    ui->tableWidget->setHorizontalHeaderItem(index++,new QTableWidgetItem(tr("Operate")));
-    //  ui->tableWidget->setHorizontalHeaderLabels(header);
-
-    //设置表头字体加粗
-    QFont font = ui->tableWidget->horizontalHeader()->font();
-    font.setFamily("Microsoft Yahei");
-    font.setPixelSize(12);
-    ui->tableWidget->horizontalHeader()->setFont(font);
-    ui->tableWidget->horizontalHeader()->setStretchLastSection(true); //设置充满表宽度
-    //ui->tableWidget->verticalHeader()->setResizeMode(QHeaderView::ResizeToContents);
-
-    ui->tableWidget->horizontalHeader()->setDefaultSectionSize(130);
-    ui->tableWidget->horizontalHeader()->resizeSection(0,50); //设置表头第一列的宽度为150
-    ui->tableWidget->horizontalHeader()->setFixedHeight(31); //设置表头的高度
-
-    ui->tableWidget->horizontalHeader()->setStyleSheet("QHeaderView::section{border:none;font:bold;background:#EBECF0;}"); //设置表头背景色
-    ui->tableWidget->horizontalHeader()->setDefaultAlignment(Qt::AlignLeft | Qt::AlignVCenter);
 
     ui->tableWidget->horizontalHeader()->setVisible(false);
 
+
+   ui->tableWidget->horizontalHeader()->resizeSection(0,84);
+   ui->tableWidget->horizontalHeader()->resizeSection(1,132);
+   ui->tableWidget->horizontalHeader()->resizeSection(2,120);
+   ui->tableWidget->horizontalHeader()->resizeSection(3,132);
+   ui->tableWidget->horizontalHeader()->resizeSection(4,146);
+   ui->tableWidget->horizontalHeader()->resizeSection(5,140);
+   ui->tableWidget->horizontalHeader()->resizeSection(6,81);
 
     ui->tableWidget->verticalHeader()->setDefaultSectionSize(2); //设置行距
     ui->tableWidget->verticalHeader()->setVisible(false); //设置垂直头不可见

@@ -10,12 +10,12 @@ int main(int argc, char *argv[])
     font.setFamily("Helvetica"); // Tahoma 宋体
     qApp->setFont(font);
 
-    qDebug() << qApp->font().rawName();
-    qDebug() << qApp->font().family();
-    qDebug() << qApp->font().defaultFamily();
-    qDebug() << qApp->font().styleName();
-    qDebug() << qApp->font().toString();
-    qDebug() << qApp->font().key();
+//    qDebug() << qApp->font().rawName();
+//    qDebug() << qApp->font().family();
+//    qDebug() << qApp->font().defaultFamily();
+//    qDebug() << qApp->font().styleName();
+//    qDebug() << qApp->font().toString();
+//    qDebug() << qApp->font().key();
 
     MainWindow w;
 

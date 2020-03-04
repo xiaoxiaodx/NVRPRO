@@ -16,7 +16,6 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //test***********************test  qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
     this->setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground, true);
     setAutoFillBackground(true);
@@ -363,7 +362,7 @@ QPushButton *MainWindow::createSelfBtn(QString btnTxt,QString res)
     QLabel* label2 = new QLabel();
     label2->setFixedSize(QSize(20,20));
     QString sty = "border-image:url("+res+");background-color: transparent;color:#ffffff;";
-    label->setStyleSheet("background-color: transparent;font-size: 16px;font-family:Microsoft Yahei;color:#ffffff;");
+    label->setStyleSheet("background-color: transparent;font-size: 16px;color:#ffffff;");
     label2 ->setStyleSheet(sty);
 
     label->setText(btnTxt);
