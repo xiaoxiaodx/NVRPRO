@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    //test***********************test
+    //test***********************test  qqqqqqqqqqqqqqqqqqqqqqqqqqqqqq
     this->setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground, true);
     setAutoFillBackground(true);
@@ -36,7 +36,7 @@ MainWindow::MainWindow(QWidget *parent) :
     //createDialog_config();
     // createReplayWindow();
 
-    /******2222*///
+
 }
 
 void MainWindow::createSingletonKeyBorad()
