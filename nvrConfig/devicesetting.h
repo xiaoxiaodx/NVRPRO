@@ -15,6 +15,11 @@ public:
     explicit DeviceSetting(QWidget *parent = NULL);
     ~DeviceSetting();
 
+private slots:
+    void on_OSDpushButton_submit_clicked();
+
+    void on_RTMPpushButton_submit_clicked();
+
 private:
     Ui::DeviceSetting *ui;
 

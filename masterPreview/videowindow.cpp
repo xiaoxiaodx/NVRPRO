@@ -38,6 +38,10 @@ VideoWindow::~VideoWindow()
 bool VideoWindow::event(QEvent *event)
 {
 
+    if(event->type() == QEvent::MouseButtonPress){
+
+        emit signal_selectVideo(mIdentify);
+    }
 
     return QWidget::event(event);
 }
@@ -83,8 +87,8 @@ void VideoWindow::setControlPostion()
     int videoLossW = 283;
     int videoLossH = 30;
 
-    int motionDetectionW = 40;
-    int motionDetectionH = 40;
+    int motionDetectionW = 24;
+    int motionDetectionH = 24;
 
     int commonBtnW = 32;
     int commonBtnH = 32;

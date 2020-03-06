@@ -34,7 +34,6 @@ SOURCES += \
     nvrConfig/nvrconfig.cpp \
     nvrConfig/devicesetting.cpp \
     nvrConfig/systemmanager.cpp \
-    nvrConfig/deleteconfirmdialog.cpp \
     nvrConfig/cameramenu.cpp \
     nvrConfig/alarmtypemenu.cpp \
     masterPreview/videowindow.cpp \
@@ -46,7 +45,9 @@ SOURCES += \
     virtualkeyboard.cpp \
     inputeditkeyeventfilter.cpp \
     mykeypressevent.cpp \
-    systemconfigeventfilter.cpp
+    systemconfigeventfilter.cpp \
+    nvrConfig/confirmdialog.cpp \
+    messagedialog.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -57,7 +58,6 @@ HEADERS += \
     nvrConfig/nvrconfig.h \
     nvrConfig/devicesetting.h \
     nvrConfig/systemmanager.h \
-    nvrConfig/deleteconfirmdialog.h \
     nvrConfig/cameramenu.h \
     nvrConfig/alarmtypemenu.h \
     masterPreview/videowindow.h \
@@ -70,7 +70,9 @@ HEADERS += \
     virtualkeyboard.h \
     inputeditkeyeventfilter.h \
     mykeypressevent.h \
-    systemconfigeventfilter.h
+    systemconfigeventfilter.h \
+    nvrConfig/confirmdialog.h \
+    messagedialog.h
 
 FORMS += \
         mainwindow.ui \
@@ -80,7 +82,6 @@ FORMS += \
     nvrConfig/devicesetting.ui \
     nvrConfig/nvrconfig.ui \
     nvrConfig/systemmanager.ui \
-    nvrConfig/deleteconfirmdialog.ui \
     nvrConfig/cameramenu.ui \
     nvrConfig/alarmtypemenu.ui \
     masterPreview/videowindow.ui \
@@ -89,7 +90,9 @@ FORMS += \
     videoReplay/replaytimeline.ui \
     nvrConfig/timeselectdialog.ui \
     nvrConfig/dcalendardialog.ui \
-    virtualkeyboard.ui
+    virtualkeyboard.ui \
+    nvrConfig/confirmdialog.ui \
+    messagedialog.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

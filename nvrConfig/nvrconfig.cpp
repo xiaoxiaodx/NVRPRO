@@ -40,7 +40,7 @@ void NvrConfig::initStackedWidget()
 void NvrConfig::setMenuItem()
 {
     btnMasterPreview = createSelfBtn("Master Preview",":/images/masterPreview.png");
-    btnReplay= createSelfBtn("Video Replay",":/images/video_replay.png");
+    btnReplay= createSelfBtn("Video Replay",":/images/video_replay1.png");
     btnDeviceSetting= createSelfBtn("Device Setting",":/images/device_setting.png");
     btnSystemManagement= createSelfBtn("System Management",":/images/system_manager.png");
 

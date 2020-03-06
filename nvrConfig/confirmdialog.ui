@@ -1,75 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DeleteConfirmDialog</class>
- <widget class="QDialog" name="DeleteConfirmDialog">
+ <class>ConfirmDialog</class>
+ <widget class="QDialog" name="ConfirmDialog">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>550</width>
-    <height>241</height>
+    <width>300</width>
+    <height>109</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color: rgb(255, 255, 255);</string>
-  </property>
-  <widget class="QLabel" name="label_askcontent">
+  <widget class="QLabel" name="label_askimg">
    <property name="geometry">
     <rect>
-     <x>100</x>
-     <y>80</y>
-     <width>171</width>
-     <height>24</height>
+     <x>23</x>
+     <y>36</y>
+     <width>16</width>
+     <height>16</height>
     </rect>
-   </property>
-   <property name="text">
-    <string>Confirm to delete ?</string>
-   </property>
-  </widget>
-  <widget class="QPushButton" name="pushButton_confirm">
-   <property name="geometry">
-    <rect>
-     <x>280</x>
-     <y>160</y>
-     <width>44</width>
-     <height>22</height>
-    </rect>
-   </property>
-   <property name="focusPolicy">
-    <enum>Qt::NoFocus</enum>
    </property>
    <property name="styleSheet">
-    <string notr="true">QPushButton {
-	background-color:rgba(28%,42%,99%,100%);
-
-
-	border-style:inset;  
-	border-radius:3px;  
-	color:white;
-	font-family: &quot;Microsoft YaHei&quot;;
-	font-size: 10px;
-}
-QPushButton#pushButton:pressed {  
-    /* 改变背景色   
-    background-color:rgb(40,85,20); */
-    /* 使文字有一点移动 */  
-    padding-left:6px;  
-    padding-top:6px;  
-}  
-</string>
+    <string notr="true">border-image: url(:/images/ask.png);</string>
    </property>
    <property name="text">
-    <string>Yes</string>
+    <string/>
    </property>
   </widget>
   <widget class="QPushButton" name="pushButton_cancel">
    <property name="geometry">
     <rect>
-     <x>360</x>
-     <y>160</y>
+     <x>246</x>
+     <y>78</y>
      <width>44</width>
      <height>22</height>
     </rect>
@@ -99,11 +63,24 @@ QPushButton#pushButton:pressed {
     <string>No</string>
    </property>
   </widget>
+  <widget class="QLabel" name="label_askcontent">
+   <property name="geometry">
+    <rect>
+     <x>49</x>
+     <y>34</y>
+     <width>171</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>Confirm to delete ?</string>
+   </property>
+  </widget>
   <widget class="QPushButton" name="pushButton_close">
    <property name="geometry">
     <rect>
-     <x>510</x>
-     <y>10</y>
+     <x>280</x>
+     <y>11</y>
      <width>9</width>
      <height>9</height>
     </rect>
@@ -115,20 +92,40 @@ QPushButton#pushButton:pressed {
     <string/>
    </property>
   </widget>
-  <widget class="QLabel" name="label_askimg">
+  <widget class="QPushButton" name="pushButton_confirm">
    <property name="geometry">
     <rect>
-     <x>40</x>
-     <y>80</y>
-     <width>16</width>
-     <height>16</height>
+     <x>194</x>
+     <y>78</y>
+     <width>44</width>
+     <height>22</height>
     </rect>
    </property>
+   <property name="focusPolicy">
+    <enum>Qt::NoFocus</enum>
+   </property>
    <property name="styleSheet">
-    <string notr="true">border-image: url(:/images/ask.png);</string>
+    <string notr="true">QPushButton {
+	background-color:rgba(28%,42%,99%,100%);
+
+
+	border-style:inset;  
+	border-radius:3px;  
+	color:white;
+	font-family: &quot;Microsoft YaHei&quot;;
+	font-size: 10px;
+}
+QPushButton#pushButton:pressed {  
+    /* 改变背景色   
+    background-color:rgb(40,85,20); */
+    /* 使文字有一点移动 */  
+    padding-left:6px;  
+    padding-top:6px;  
+}  
+</string>
    </property>
    <property name="text">
-    <string/>
+    <string>Yes</string>
    </property>
   </widget>
  </widget>

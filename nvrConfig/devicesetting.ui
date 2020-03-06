@@ -43,22 +43,27 @@
      <height>531</height>
     </rect>
    </property>
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
    <property name="focusPolicy">
     <enum>Qt::NoFocus</enum>
    </property>
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
    <property name="styleSheet">
     <string notr="true">QTabWidget::pane{border-width:0px;}
-
+QTabWidget::tab-bar { alignment: Left; }
 QTabBar::tab {
 
-min-width:155px;
-
-min-height:34px;
-
+height:34px;
+min-width:30ex;
 color: #666666;
-
 font:bold 14px ;
-
 border: 1px solid;
 border-color:  #D9D9D9;
 }
@@ -66,11 +71,8 @@ border-color:  #D9D9D9;
 
 QTabBar::tab:selected{
 
-min-width:155px;
 
-min-height:34px;
-
-color: #4796f0;
+color: #476BFD;
 
 border: 1px solid;
 
@@ -79,23 +81,16 @@ border-color: #476BFD;
 }
 
 
-QTabBar::close-button {
-
-image: url(:/png/images/jy_close1.png)
-
-}
-
- 
-
-QTabBar::close-button:selected {
-
-image: url(:/png/images/jy_close2.png)
-
-}
 </string>
    </property>
+   <property name="tabShape">
+    <enum>QTabWidget::Rounded</enum>
+   </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>4</number>
+   </property>
+   <property name="elideMode">
+    <enum>Qt::ElideMiddle</enum>
    </property>
    <widget class="QWidget" name="tab_1">
     <attribute name="title">
@@ -210,6 +205,7 @@ QPushButton#OSDpushButton_submit:pressed {
 QLineEdit{
 border-width:1px;
 border-radius:2px;
+padding-left:8px;
 font-size:14px;
 color:#999999;
 border:1px solid #D2D2D2;
@@ -683,8 +679,8 @@ background-color: rgb(226, 226, 226);</string>
        <rect>
         <x>680</x>
         <y>400</y>
-        <width>75</width>
-        <height>23</height>
+        <width>55</width>
+        <height>25</height>
        </rect>
       </property>
       <property name="focusPolicy">
@@ -986,7 +982,7 @@ QPushButton#Alarmswitch:checked{
         <x>30</x>
         <y>430</y>
         <width>54</width>
-        <height>12</height>
+        <height>22</height>
        </rect>
       </property>
       <property name="text">
@@ -1348,16 +1344,17 @@ QPushButton#VideolpushButton_recordingoff:checked,
        <rect>
         <x>150</x>
         <y>230</y>
-        <width>148</width>
-        <height>28</height>
+        <width>132</width>
+        <height>30</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">QComboBox {
       border: 1px solid #D2D2D2;
       border-radius: 2px;
-      padding: 1px 10px 1px 10px;
-      min-width: 6em;
+      padding-left:10px;
+      min-width: 120px;
+		min-height:28px;
 	  color:#000000;
 	  font-size:14px;
   }
@@ -1372,21 +1369,20 @@ QPushButton#VideolpushButton_recordingoff:checked,
 
   QComboBox:!editable:on, QComboBox::drop-down:editable:on {
       background: #F9F9F9;
-      padding-top: 1px;
       padding-left: 10px;
   }
 
   QComboBox::drop-down {
       subcontrol-origin: padding;
       subcontrol-position: top right;
-      width: 60px;
+      width:40px;
       border-left-width: 1px;
       border-left-color: darkgray;
       border-radius: 4px;
   }
 
   QComboBox::down-arrow {
-	padding: 1px 1px 1px 30px;
+	padding: 1px 1px 1px 10px;
 	width:10;
 	height:6;
 	image:url(:/images/comboxArrow.png)
@@ -1400,24 +1396,24 @@ QPushButton#VideolpushButton_recordingoff:checked,
 /**************   QComboBox 定制 ****************/
 QComboBox QAbstractItemView
 {
+padding-top:8px;
     outline:0px;
     background:#ffffff;
 	border:1px solid rgba(0,0,0,15%);
 }
 QComboBox QAbstractItemView::item
 {
-    padding-left:20px;
+    padding-left:8px;
 	border-width:0px;
     font-size:14px;
     color:#333333;
     background:#ffffff;
-    font-family:&quot;Microsoft YaHei&quot;;
-	min-height: 30px; 
+	min-height: 28px; 
 }
 
 QComboBox QAbstractItemView::item:selected
 {
-	background:#000000;
+	background:#F4F6FF;
 	border-width:0px
 }
 
@@ -1782,7 +1778,7 @@ QComboBox QScrollBar::sub-line::vertical{
         <x>110</x>
         <y>160</y>
         <width>101</width>
-        <height>16</height>
+        <height>18</height>
        </rect>
       </property>
       <property name="text">
@@ -1817,7 +1813,7 @@ QComboBox QScrollBar::sub-line::vertical{
         <x>290</x>
         <y>160</y>
         <width>101</width>
-        <height>16</height>
+        <height>18</height>
        </rect>
       </property>
       <property name="text">
@@ -1855,7 +1851,7 @@ QComboBox QScrollBar::sub-line::vertical{
         <x>450</x>
         <y>160</y>
         <width>161</width>
-        <height>16</height>
+        <height>18</height>
        </rect>
       </property>
       <property name="text">
@@ -1926,6 +1922,7 @@ QPushButton#RTMPpushButton_submit:pressed {
 QLineEdit{
 border-width:1px;
 border-radius:2px;
+padding-left:8px;
 font-size:14px;
 color:#999999;
 border:1px solid #D2D2D2;
@@ -2238,16 +2235,17 @@ border:1px solid #476BFD;
        <rect>
         <x>150</x>
         <y>170</y>
-        <width>148</width>
-        <height>28</height>
+        <width>132</width>
+        <height>30</height>
        </rect>
       </property>
       <property name="styleSheet">
        <string notr="true">QComboBox {
       border: 1px solid #D2D2D2;
       border-radius: 2px;
-      padding: 1px 10px 1px 10px;
-      min-width: 6em;
+      padding-left:10px;
+      min-width: 120px;
+		min-height:28px;
 	  color:#000000;
 	  font-size:14px;
   }
@@ -2262,21 +2260,20 @@ border:1px solid #476BFD;
 
   QComboBox:!editable:on, QComboBox::drop-down:editable:on {
       background: #F9F9F9;
-      padding-top: 1px;
       padding-left: 10px;
   }
 
   QComboBox::drop-down {
       subcontrol-origin: padding;
       subcontrol-position: top right;
-      width: 60px;
+      width:40px;
       border-left-width: 1px;
       border-left-color: darkgray;
       border-radius: 4px;
   }
 
   QComboBox::down-arrow {
-	padding: 1px 1px 1px 30px;
+	padding: 1px 1px 1px 10px;
 	width:10;
 	height:6;
 	image:url(:/images/comboxArrow.png)
@@ -2290,23 +2287,24 @@ border:1px solid #476BFD;
 /**************   QComboBox 定制 ****************/
 QComboBox QAbstractItemView
 {
+padding-top:8px;
     outline:0px;
     background:#ffffff;
 	border:1px solid rgba(0,0,0,15%);
 }
 QComboBox QAbstractItemView::item
 {
-    padding-left:20px;
+    padding-left:8px;
 	border-width:0px;
     font-size:14px;
     color:#333333;
     background:#ffffff;
-	min-height: 30px; 
+	min-height: 28px; 
 }
 
 QComboBox QAbstractItemView::item:selected
 {
-	background:#000000;
+	background:#F4F6FF;
 	border-width:0px
 }
 
@@ -2381,7 +2379,7 @@ QComboBox QScrollBar::sub-line::vertical{
        <rect>
         <x>140</x>
         <y>238</y>
-        <width>160</width>
+        <width>200</width>
         <height>28</height>
        </rect>
       </property>
@@ -2407,7 +2405,7 @@ QComboBox QScrollBar::sub-line::vertical{
        <rect>
         <x>130</x>
         <y>288</y>
-        <width>160</width>
+        <width>200</width>
         <height>28</height>
        </rect>
       </property>
@@ -2433,7 +2431,7 @@ QComboBox QScrollBar::sub-line::vertical{
        <rect>
         <x>130</x>
         <y>328</y>
-        <width>160</width>
+        <width>200</width>
         <height>28</height>
        </rect>
       </property>
@@ -2443,8 +2441,8 @@ QComboBox QScrollBar::sub-line::vertical{
        <rect>
         <x>430</x>
         <y>410</y>
-        <width>75</width>
-        <height>23</height>
+        <width>55</width>
+        <height>25</height>
        </rect>
       </property>
       <property name="focusPolicy">

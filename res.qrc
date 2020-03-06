@@ -89,5 +89,7 @@
         <file>images/keyborad_letter_h.png</file>
         <file>images/keyborad_letter_p.png</file>
         <file>config/timezone.conf</file>
+        <file>images/video_replay1.png</file>
+        <file>images/cloudControl_bg1.png</file>
     </qresource>
 </RCC>

@@ -30,7 +30,6 @@ QPushButton {
 	border-style:inset;  
 	border-radius:10px;  
 	color:white;
-	font-family: &quot;Helvetica&quot;;
 	font-size: 20px;
 }
 QPushButton#pushButton:pressed {  
@@ -48,15 +47,15 @@ QPushButton#pushButton:pressed {
      <x>130</x>
      <y>168</y>
      <width>312</width>
-     <height>46</height>
+     <height>48</height>
     </rect>
    </property>
    <property name="styleSheet">
     <string notr="true">QComboBox {
-      border: 0px solid rgba(0,0,0,0.15);
+      border: 0px solid rgba(0,0,0,15%);
       border-radius: 3px;
-      padding: 1px 30px 1px 30px;
-      min-width: 6em;
+      padding-left:20px;
+		min-height:46px;
 	  color:#333333;
 	  font-size:16px;
   }
@@ -71,8 +70,7 @@ QPushButton#pushButton:pressed {
 
   QComboBox:!editable:on, QComboBox::drop-down:editable:on {
       background: #EDEEF0;
-      padding-top: 3px;
-      padding-left: 30px;
+
   }
 
   QComboBox::drop-down {
@@ -89,26 +87,25 @@ QPushButton#pushButton:pressed {
   }
 
   QComboBox::down-arrow:on {
-      top: 1px;
-      left: 1px;
+
   }
 
 /**************   QComboBox 定制 ****************/
 QComboBox QAbstractItemView
 {
+	padding-top:14px;
     outline:0px;
     background:#ffffff;
-	border:1px solid rgba(0,0,0,0.15);
+	border:1px solid rgba(0,0,0,15%);
 }
 QComboBox QAbstractItemView::item
 {
-    padding-left:28px;
+	padding-left:18px;
 	border-width:0px;
     font-size:16px;
     color:#333333;
     background:#ffffff;
-    font-family:&quot;Helvetica&quot;;
-	min-height: 38px; 
+	min-height: 46px; 
 }
 
 QComboBox QAbstractItemView::item:selected
@@ -168,9 +165,8 @@ QComboBox QScrollBar::sub-line::vertical{
     </sizepolicy>
    </property>
    <property name="styleSheet">
-    <string notr="true">	font-family: &quot;Helvetica&quot;;
-	font:bold 30px;
-    color: #333333;</string>
+    <string notr="true">font:bold 30px;
+color: #333333;</string>
    </property>
    <property name="text">
     <string>Time Zone</string>

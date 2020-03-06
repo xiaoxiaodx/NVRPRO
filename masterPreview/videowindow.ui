@@ -137,7 +137,7 @@ background-color: transparent;
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: transparent;
-border-image: url(:/images/cloudControl_bg.png);</string>
+border-image: url(:/images/cloudControl_bg1.png);</string>
     </property>
     <widget class="QPushButton" name="pushButton_cloudControl_up">
      <property name="geometry">
@@ -273,8 +273,8 @@ border-image: url(:/images/cloudControl_bg.png);</string>
      <rect>
       <x>750</x>
       <y>50</y>
-      <width>40</width>
-      <height>40</height>
+      <width>24</width>
+      <height>24</height>
      </rect>
     </property>
     <property name="focusPolicy">
@@ -297,9 +297,7 @@ border-image: url(:/images/cloudControl_bg.png);</string>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">	
-
-	</string>
+     <string notr="true"/>
     </property>
     <property name="text">
      <string/>

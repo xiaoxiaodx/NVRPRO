@@ -6,8 +6,9 @@
 #include <QSpinBox>
 #include <QDebug>
 #include <QHBoxLayout>
-#include "deleteconfirmdialog.h"
+#include "confirmdialog.h"
 #include "mainwindow.h"
+#include "messagedialog.h"
 DeviceSetting::DeviceSetting(QWidget *parent) :
     QWidget(parent),
     ui(new Ui::DeviceSetting)
@@ -63,7 +64,7 @@ void DeviceSetting::createDeviceTableHeader()
     btn ->setStyleSheet("QPushButton{border-image: url(:/images/table_menu.png);}"
                         "QPushButton:pressed{border-image: url(:/images/table_menu_p.png);}"
                         "QPushButton:hovered{border-image: url(:/images/table_menu_hover.png);}");
-    btn->setGeometry(40,13,10,10);
+    btn->setGeometry(40,13,12,12);
 
     QLabel *lable0 = new QLabel("");
     QLabel *lable1 = new QLabel(tr("DID"));
@@ -153,7 +154,7 @@ void DeviceSetting::showDialog(int deleteIndex)
 {
     qDebug()<<"准备删除"<<deleteIndex<<"行,ps:表头是第0行";
 
-    DeleteConfirmDialog *dialog = new DeleteConfirmDialog(this);
+    ConfirmDialog *dialog = new ConfirmDialog(this);
     dialog->setGeometry(256,234,300,110);
     dialog->show();
 }
@@ -254,8 +255,8 @@ void DeviceSetting::adjustOSDWidgetPos()
     ui->OSDlineEdit_cam2->move(458,272);
     ui->OSDlineEdit_cam3->move(139,320);
     ui->OSDlineEdit_cam4->move(458,320);
+    ui->OSDpushButton_submit->move(ui->OSDlineEdit_cam4->x()+ui->OSDlineEdit_cam4->width()-ui->OSDpushButton_submit->width(),ui->OSDlineEdit_cam4->y() +ui->OSDlineEdit_cam4->height() + 20);
 
-    ui->OSDpushButton_submit->move(563,368);
 }
 
 
@@ -299,9 +300,10 @@ void DeviceSetting::adjustAlarmWidgetPos()
     ui->Alarmlabel_alarmtime->move(23,231);
     ui->Alarmline_2->move(23,263);
 
-    ui->Alarmlabel_siren->move(23,407);
-    ui->Alarmlabel_swith->move(40,460);
-    ui->Alarmswitch->move(104,464);
+    ui->Alarmlabel_siren->move(20,413);
+    ui->Alarmline_3->move(20,445);
+    ui->Alarmlabel_swith->move(40,466);
+    ui->Alarmswitch->move(102,470);
 }
 
 void DeviceSetting::createVideoSetting()
@@ -331,6 +333,7 @@ void DeviceSetting::adjustVideoWidgetPos()
 
     ui->Videolabel_resolution->move(40,170);
     ui->VideocomboBox->move(124,163);
+    ui->VideocomboBox->setView(new QListView());
 
     ui->Videolabel_AlarmTime->move(30,235);
     ui->Videoline_2->move(20,267);
@@ -362,6 +365,7 @@ void DeviceSetting::adjustRTMPWidgetPos()
 
     ui->RTMPlabel_resolution->move(40,166);
     ui->RTMPcomboBox->move(124,163);
+    ui->RTMPcomboBox->setView(new QListView());
 
     ui->RTMPlabel_url->move(85,234);
     ui->RTMPlineEdit_url->move(124,231);
@@ -370,9 +374,26 @@ void DeviceSetting::adjustRTMPWidgetPos()
     ui->RTMPlabel_password->move(48,327);
     ui->RTMPlineEdit_password->move(124,324);
 
-    ui->RTMPpushButton_submit->move(270,372);
+    ui->RTMPpushButton_submit->move(ui->RTMPlineEdit_password->x() + ui->RTMPlineEdit_password->width() - ui->RTMPpushButton_submit->width(),ui->RTMPlineEdit_password->y()+ui->RTMPlineEdit_password->height()+20);
+
 }
 DeviceSetting::~DeviceSetting()
 {
     delete ui;
+}
+
+void DeviceSetting::on_OSDpushButton_submit_clicked()
+{
+
+    MessageDialog *dialog = new MessageDialog(this,"输入错误 请重新输入");
+
+    dialog->showDialogOnRight(ui->OSDpushButton_submit,20,1000);
+
+}
+
+void DeviceSetting::on_RTMPpushButton_submit_clicked()
+{
+    MessageDialog *dialog = new MessageDialog(this,"输入错误 请重新输入");
+
+    dialog->showDialogOnRight(ui->RTMPpushButton_submit,20,1000);
 }

@@ -224,25 +224,40 @@ void MainWindow::popMenu()
     if(rightMouseMenu == NULL){
         rightMouseMenu = new QMenu(this);
 
-        rightMouseMenu->setStyleSheet("background-color: #171717;");
+        rightMouseMenu->setStyleSheet("background-color: #171717;padding:0px;border:none;");
         QWidgetAction *buttonActionSpace = new QWidgetAction(this);
         QLabel *lable = new QLabel(this);
-        lable ->setFixedSize(QSize(240,20));
+        lable ->setFixedSize(QSize(200,10));
         lable->setStyleSheet("background-color: #171717;");
         buttonActionSpace->setDefaultWidget(lable);
         QWidgetAction *buttonActionSpace1 = new QWidgetAction(this);
         QLabel *lable1 = new QLabel(this);
-        lable1 ->setFixedSize(QSize(240,20));
+        lable1 ->setFixedSize(QSize(200,10));
         lable1->setStyleSheet("background-color: #171717;");
         buttonActionSpace1->setDefaultWidget(lable1);
 
+        QWidgetAction *buttonActionSpace2 = new QWidgetAction(this);
+        QLabel *lable2 = new QLabel(this);
+        lable2 ->setFixedSize(QSize(200,10));
+        lable2->setStyleSheet("background-color: #171717;");
+        buttonActionSpace2->setDefaultWidget(lable2);
 
+        QWidgetAction *buttonActionSpace3 = new QWidgetAction(this);
+        QLabel *lable3 = new QLabel(this);
+        lable3 ->setFixedSize(QSize(200,10));
+        lable3->setStyleSheet("background-color: #171717;");
+        buttonActionSpace3->setDefaultWidget(lable3);
+
+        QWidgetAction *buttonActionSpace4 = new QWidgetAction(this);
+        QLabel *lable4 = new QLabel(this);
+        lable4 ->setFixedSize(QSize(200,10));
+        lable4->setStyleSheet("background-color: #171717;");
+        buttonActionSpace4->setDefaultWidget(lable4);
 
         QWidgetAction *buttonActionCloudControl = new QWidgetAction(this);
         QWidgetAction *buttonActionReplay = new QWidgetAction(this);
         QWidgetAction *buttonActionDeviceSet = new QWidgetAction(this);
         QWidgetAction *buttonActionSystemSet = new QWidgetAction(this);
-
 
         QPushButton *pbtnCloudControl =  createSelfBtn(tr("PTZ Control"),":/images/menu_cloudcontrol.png");
         buttonActionCloudControl->setDefaultWidget(pbtnCloudControl);
@@ -260,10 +275,13 @@ void MainWindow::popMenu()
 
         rightMouseMenu->addAction(buttonActionSpace);
         rightMouseMenu->addAction(buttonActionCloudControl);
-        rightMouseMenu->addAction(buttonActionReplay);
-        rightMouseMenu->addAction(buttonActionDeviceSet);
-        rightMouseMenu->addAction(buttonActionSystemSet);
         rightMouseMenu->addAction(buttonActionSpace1);
+        rightMouseMenu->addAction(buttonActionReplay);
+        rightMouseMenu->addAction(buttonActionSpace2);
+        rightMouseMenu->addAction(buttonActionDeviceSet);
+        rightMouseMenu->addAction(buttonActionSpace3);
+        rightMouseMenu->addAction(buttonActionSystemSet);
+        rightMouseMenu->addAction(buttonActionSpace4);
 
         //给动作设置信号槽
         connect( pbtnCloudControl, SIGNAL(clicked()),this,SLOT(slot_menuSelectCloudControl()));
@@ -361,14 +379,11 @@ void MainWindow::slot_switchWindow(WindowType type)
     default:
         return;
     }
-
-
-
 }
 
 QPushButton *MainWindow::createSelfBtn(QString btnTxt,QString res)
 {
-    const QSize btnSize(236,42);
+    const QSize btnSize(200,42);
     QPushButton *btn = new QPushButton(this);
 
 
@@ -385,15 +400,14 @@ QPushButton *MainWindow::createSelfBtn(QString btnTxt,QString res)
 
     label->setText(btnTxt);
     QHBoxLayout* myLayout = new QHBoxLayout();
-    myLayout->addSpacing(20);
+    myLayout->addSpacing(12);
     myLayout->addWidget(label2);
-    myLayout->addSpacing(10);
+    myLayout->addSpacing(6);
     myLayout->addWidget(label);
-    myLayout->addStretch();
     btn->setLayout(myLayout);
-
     return btn;
 }
+
 void MainWindow::slot_selectVideo(int identify)
 {
 

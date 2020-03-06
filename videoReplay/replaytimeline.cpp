@@ -42,9 +42,14 @@ void ReplayTimeline::init()
 
     ui->widget_date->move(302,11);
 
-    ui->pushButton_slow->move(909,7);
-    ui->pushButton_play->move(955,7);
-    ui->pushButton_fast->move(1002,7);
+
+    int imgW = 20;
+    int space = 26;
+
+
+    ui->pushButton_slow->move((1920-imgW)/2 - space-imgW,10);
+    ui->pushButton_play->move((1920-imgW)/2,10);
+    ui->pushButton_fast->move((1920-imgW)/2 + space+imgW,10);
 
     ui->label_normalimg->move(1298,17);
     ui->label_normal->move(1310,13);

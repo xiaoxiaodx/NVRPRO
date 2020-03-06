@@ -1,6 +1,7 @@
 #include "welcome.h"
 #include "ui_welcome.h"
 #include "mainwindow.h"
+#include "messagedialog.h"
 Welcome::Welcome(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Welcome)
@@ -47,5 +48,8 @@ void Welcome::setControlPostion()
 
 void Welcome::on_pushButton_clicked()
 {
+
+    MessageDialog *dialog = new MessageDialog(this,"test");
+    dialog->showDialogOnBottom(ui->pushButton);
     emit signal_loginStr(ui->lineEdit_password->text());
 }

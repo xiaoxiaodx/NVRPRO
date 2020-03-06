@@ -13,6 +13,9 @@
   <property name="windowTitle">
    <string>Form</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: #E2E2E2;</string>
+  </property>
   <widget class="QWidget" name="widget_title" native="true">
    <property name="geometry">
     <rect>
@@ -60,9 +63,9 @@
   <widget class="QWidget" name="widget_menu" native="true">
    <property name="geometry">
     <rect>
-     <x>19</x>
+     <x>8</x>
      <y>69</y>
-     <width>160</width>
+     <width>171</width>
      <height>571</height>
     </rect>
    </property>

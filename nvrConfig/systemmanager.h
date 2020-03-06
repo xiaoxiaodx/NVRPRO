@@ -42,6 +42,12 @@ private slots:
     void slot_dateChange(QString  datestr1,QString  datestr2);
     void on_TimeSetpushButton_url_clicked();
 
+    void on_Systemoperation_pushbutton_reboot_clicked();
+
+    void on_Systemoperation_pushbutton_reset_clicked();
+
+    void on_UserManagerpushButton_submit_clicked();
+
 private:
     Ui::SystemManager *ui;
     void init();

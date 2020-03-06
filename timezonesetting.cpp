@@ -3,6 +3,7 @@
 #include <QDebug>
 #include <QStyledItemDelegate>
 #include <QTime>
+#include <QListView>
 #include <QFile>
 Timezonesetting::Timezonesetting(QWidget *parent) :
     QDialog(parent),
@@ -49,9 +50,11 @@ void Timezonesetting::setControlPostion()
     int thisW = this->width();
     int thisH = this->height();
 
+    ui->comboBox->setView(new QListView());
     ui->label->setGeometry((thisW - labelW)/2,labelY,labelW,labelH);
     ui->comboBox->setGeometry((thisW - comboBoxW)/2,comboxY,comboBoxW,comboBoxH);
     ui->pushButton_next->setGeometry((thisW - btnW)/2,btnY,btnW,btnH);
+
 }
 
 void Timezonesetting::setDefaultTimeZone(int index)

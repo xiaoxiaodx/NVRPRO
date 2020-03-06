@@ -15,7 +15,7 @@ int main(int argc, char *argv[])
     qDebug() << qApp->font().key();
 
     QFont font;
-    font.setFamily("helvetica");
+    font.setFamily("微软雅黑");
     qApp->setFont(font);
 
     qDebug()  <<"2:"<< qApp->font().rawName();

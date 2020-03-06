@@ -18,6 +18,7 @@ void TimeSelectDialog::init()
     QStandardItemModel  *minItemModel = new QStandardItemModel(this);
     QStandardItemModel  *secsItemModel = new QStandardItemModel(this);
 
+
     ui->listView_hour->setModel(hourItemModel);
     ui->listView_minute->setModel(minItemModel);
     ui->listView_seconds->setModel(secsItemModel);

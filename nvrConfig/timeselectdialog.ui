@@ -30,14 +30,14 @@ QListView{
 }
 QListView::item
 {
-    padding-top:12px;
-    padding-bottom:6px;
+	height:32px;
+  
 }
 
 QListView::item:selected
 {    /*border:0px;*/
     background:#F4F6FF;
-	color:rgba(0,0,0,0.65);  
+	color:rgba(0,0,0,65%);  
     padding:0px;
     margin:0px;
 }/*上次选择后保留的状态，鼠标离开后显示*/QListView::item:selected:!active
@@ -55,7 +55,7 @@ QScrollBar:vertical
 QScrollBar::handle:vertical
 {
     width:3px;
-    background:rgba(0,0,0,0.15);
+    background:rgba(0,0,0,15%);
     border-radius:4px;
     min-height:20px;}/*鼠标触及滑块样式*/QScrollBar::handle:vertical:hover
 {
