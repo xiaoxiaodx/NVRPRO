@@ -47,6 +47,8 @@ void PasswordSetting::setControlPostion()
     ui->label_2->setGeometry(QRect((thisW - label_2W)/2,label_2Y,label_2W,label_2H));
     ui->label_3->setGeometry(ui->label_2->x() - 8,ui->label_2->y(),8,label_2H);
 
+    ui->lineEdit_password->setPasswordInput(true);
+    ui->lineEdit_confirm->setPasswordInput(true);
     ui->lineEdit_password->installEventFilter(MainWindow::EditKeyEventFilter);
     ui->lineEdit_confirm->installEventFilter(MainWindow::EditKeyEventFilter);
 

@@ -56,7 +56,7 @@ border-radius: 4px;
     <set>Qt::AlignCenter</set>
    </property>
   </widget>
-  <widget class="QLineEdit" name="lineEdit_password">
+  <widget class="MyLineEdit" name="lineEdit_password">
    <property name="geometry">
     <rect>
      <x>150</x>
@@ -69,7 +69,7 @@ border-radius: 4px;
     <string/>
    </property>
    <property name="echoMode">
-    <enum>QLineEdit::Password</enum>
+    <enum>QLineEdit::Normal</enum>
    </property>
    <property name="placeholderText">
     <string>password</string>
@@ -111,6 +111,13 @@ QPushButton#pushButton:pressed {
    </property>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header location="global">mylineedit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

@@ -37,6 +37,8 @@ void Welcome::setControlPostion()
 
     ui->label->setGeometry((thisW - labelW)/2,labelY,labelW,labelH);
 
+
+    ui->lineEdit_password->setPasswordInput(true);
     ui->lineEdit_password->installEventFilter(MainWindow::EditKeyEventFilter);
 
     ui->lineEdit_password->setGeometry((thisW - lineEdit_passwordW)/2,lineEdit_passwordY,lineEdit_passwordW,lineEdit_passwordH);

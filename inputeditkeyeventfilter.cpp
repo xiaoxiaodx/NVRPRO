@@ -1,6 +1,7 @@
 #include "inputeditkeyeventfilter.h"
 #include <QDebug>
 #include <QLineEdit>
+#include "mylineedit.h"
 #include <QMouseEvent>
 #include "mainwindow.h"
 InputEditKeyEventFilter::InputEditKeyEventFilter(QObject *parent) : QObject(parent)
@@ -11,13 +12,15 @@ InputEditKeyEventFilter::InputEditKeyEventFilter(QObject *parent) : QObject(pare
 bool InputEditKeyEventFilter::eventFilter(QObject *obj, QEvent *event)
 {
 
-    QLineEdit *lineEdit = dynamic_cast<QLineEdit*>(obj);
+    MyLineEdit *lineEdit = NULL;
+    lineEdit = dynamic_cast<MyLineEdit*>(obj);
+
 
     Q_ASSERT(lineEdit);
 
     if (event->type() == MyKeyPressEvent::eventType()) {
         MyKeyPressEvent *customerEvent = dynamic_cast<MyKeyPressEvent*>(event);
-        qDebug() <<"InputEditKeyEventFilter:"<< customerEvent->getValueString();
+        //qDebug() <<"InputEditKeyEventFilter:"<< customerEvent->getValueString();
         QString currentStr = lineEdit->text();
         QString keyStr = customerEvent->getValueString();
         QString setStr = "";
@@ -32,14 +35,14 @@ bool InputEditKeyEventFilter::eventFilter(QObject *obj, QEvent *event)
                 setStr = currentStr.remove(--curCursorPos,1);
             else
                 return true;
-            qDebug()<<"backspace:"<<currentStr<<"   "<<setStr<<"    "<<curCursorPos;
+            //qDebug()<<"backspace:"<<currentStr<<"   "<<setStr<<"    "<<curCursorPos;
 
         }else {
             setStr += currentStr.insert(curCursorPos,keyStr);
             curCursorPos+=1;
         }
 
-        qDebug() <<"cursorPosition:"<< curCursorPos<<"    "<<setStr;
+        // qDebug() <<"cursorPosition:"<< curCursorPos<<"    "<<setStr;
 
         lineEdit->setText(setStr);
         lineEdit->setCursorPosition(curCursorPos);

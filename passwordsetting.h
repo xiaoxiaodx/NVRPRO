@@ -21,6 +21,7 @@ private slots:
     void on_pushButton_next_clicked();
 
 private:
+
     Ui::PasswordSetting *ui;
     void setControlPostion();
 };

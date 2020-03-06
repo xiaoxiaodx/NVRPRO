@@ -47,7 +47,9 @@ SOURCES += \
     mykeypressevent.cpp \
     systemconfigeventfilter.cpp \
     nvrConfig/confirmdialog.cpp \
-    messagedialog.cpp
+    messagedialog.cpp \
+    mylineedit.cpp
+
 
 HEADERS += \
         mainwindow.h \
@@ -72,7 +74,9 @@ HEADERS += \
     mykeypressevent.h \
     systemconfigeventfilter.h \
     nvrConfig/confirmdialog.h \
-    messagedialog.h
+    messagedialog.h \
+    mylineedit.h
+
 
 FORMS += \
         mainwindow.ui \

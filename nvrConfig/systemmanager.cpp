@@ -533,6 +533,6 @@ void SystemManager::on_UserManagerpushButton_submit_clicked()
 {
     MessageDialog *dialog = new MessageDialog(this,"输入错误 请重新输入");
 
-    dialog->showDialogOnRight(ui->TimeSetpushButton_url,20,1000);
+    dialog->showDialogOnRight(ui->UserManagerpushButton_submit,20,1000);
 
 }

@@ -87,7 +87,7 @@ border-color: #476BFD;
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>4</number>
+    <number>0</number>
    </property>
    <property name="elideMode">
     <enum>Qt::ElideMiddle</enum>
@@ -427,7 +427,7 @@ background-color: rgb(226, 226, 226);</string>
        <string>Cam1 Name</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="OSDlineEdit_cam1">
+     <widget class="MyLineEdit" name="OSDlineEdit_cam1">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -618,7 +618,7 @@ background-color: rgb(226, 226, 226);</string>
        <string>Cam1 Name</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="OSDlineEdit_cam2">
+     <widget class="MyLineEdit" name="OSDlineEdit_cam2">
       <property name="geometry">
        <rect>
         <x>510</x>
@@ -641,7 +641,7 @@ background-color: rgb(226, 226, 226);</string>
        <string>Cam1 Name</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="OSDlineEdit_cam3">
+     <widget class="MyLineEdit" name="OSDlineEdit_cam3">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -664,7 +664,7 @@ background-color: rgb(226, 226, 226);</string>
        <string>Cam1 Name</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="OSDlineEdit_cam4">
+     <widget class="MyLineEdit" name="OSDlineEdit_cam4">
       <property name="geometry">
        <rect>
         <x>510</x>
@@ -2374,7 +2374,7 @@ QComboBox QScrollBar::sub-line::vertical{
        <string>URL</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="RTMPlineEdit_url">
+     <widget class="MyLineEdit" name="RTMPlineEdit_url">
       <property name="geometry">
        <rect>
         <x>140</x>
@@ -2400,7 +2400,7 @@ QComboBox QScrollBar::sub-line::vertical{
        <string>User Name</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="RTMPlineEdit_username">
+     <widget class="MyLineEdit" name="RTMPlineEdit_username">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -2426,7 +2426,7 @@ QComboBox QScrollBar::sub-line::vertical{
        <string>Password</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="RTMPlineEdit_password">
+     <widget class="MyLineEdit" name="RTMPlineEdit_password">
       <property name="geometry">
        <rect>
         <x>130</x>
@@ -2459,6 +2459,13 @@ QComboBox QScrollBar::sub-line::vertical{
    </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header location="global">mylineedit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>

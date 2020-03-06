@@ -98,7 +98,7 @@ image: url(:/png/images/jy_close2.png)
 </string>
    </property>
    <property name="currentIndex">
-    <number>5</number>
+    <number>0</number>
    </property>
    <property name="elideMode">
     <enum>Qt::ElideRight</enum>
@@ -305,7 +305,7 @@ background-color: rgb(226, 226, 226);</string>
        <bool>true</bool>
       </property>
      </widget>
-     <widget class="QLineEdit" name="TimeSetlineEdit_url">
+     <widget class="MyLineEdit" name="TimeSetlineEdit_url">
       <property name="geometry">
        <rect>
         <x>120</x>
@@ -1546,7 +1546,7 @@ background-color: rgb(226, 226, 226);</string>
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="UserManagerlineEdit_newpassword">
+     <widget class="MyLineEdit" name="UserManagerlineEdit_newpassword">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -1572,7 +1572,7 @@ background-color: rgb(226, 226, 226);</string>
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="UserManagerlineEdit_oldpassword">
+     <widget class="MyLineEdit" name="UserManagerlineEdit_oldpassword">
       <property name="geometry">
        <rect>
         <x>210</x>
@@ -1598,7 +1598,7 @@ background-color: rgb(226, 226, 226);</string>
        <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="UserManagerlineEdit_confirmagain">
+     <widget class="MyLineEdit" name="UserManagerlineEdit_confirmagain">
       <property name="geometry">
        <rect>
         <x>200</x>
@@ -1631,6 +1631,13 @@ background-color: rgb(226, 226, 226);</string>
    </widget>
   </widget>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MyLineEdit</class>
+   <extends>QLineEdit</extends>
+   <header location="global">mylineedit.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
