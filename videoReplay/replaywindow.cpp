@@ -67,12 +67,12 @@ void ReplayWindow::popMenu()
 {
     QWidgetAction *buttonActionSpace = new QWidgetAction(this);
     QLabel *lable = new QLabel(this);
-    lable ->setFixedSize(QSize(200,10));
+    lable ->setFixedSize(QSize(210,10));
     lable->setStyleSheet("background-color: #171717;");
     buttonActionSpace->setDefaultWidget(lable);
     QWidgetAction *buttonActionSpace1 = new QWidgetAction(this);
     QLabel *lable1 = new QLabel(this);
-    lable1 ->setFixedSize(QSize(200,10));
+    lable1 ->setFixedSize(QSize(210,10));
     lable1->setStyleSheet("background-color: #171717;");
     buttonActionSpace1->setDefaultWidget(lable1);
 
@@ -125,16 +125,16 @@ void ReplayWindow::slot_DeviceSetClick()
     emit signal_switchWindow(DEVICESET);
     buttonMenu->close();
 }
+
 void ReplayWindow::slot_SystemSetClick()
 {
-
     emit signal_switchWindow(SYSTEMSET);
     buttonMenu->close();
 }
 
 QPushButton *ReplayWindow::createSelfBtn(QString btnTxt,QString res)
 {
-    const QSize btnSize(200,42);
+    const QSize btnSize(210,42);
     QPushButton *btn = new QPushButton(this);
 
     btn ->setFixedSize(btnSize);

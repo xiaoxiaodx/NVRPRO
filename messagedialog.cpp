@@ -22,15 +22,15 @@ void  MessageDialog::showDialogOnTop(QWidget *widget,int padding,int timeInterva
 {
     //文本显示的矩形大小
     QFont wordfont = QApplication::font();
-    wordfont.setPointSize(10);
+    wordfont.setPointSize(12);
     QFontMetrics fm(wordfont);
     QRect rec = fm.boundingRect(m_showContent);
 
 
     QPoint controlGlobalPos = widget->mapToGlobal(QPoint(0,0));
 
-    int dialogW = rec.width()+20;
-    int dialogH = rec.height() +20;
+    int dialogW = rec.width()+16;
+    int dialogH = rec.height() +8;
 
 
     int dilogLeftX = controlGlobalPos.x() + (widget->width() - dialogW)/2 ;
@@ -55,20 +55,18 @@ void  MessageDialog::showDialogOnBottom(QWidget *widget,int padding,int timeInte
 {
     //文本显示的矩形大小
     QFont wordfont = QApplication::font();
-    wordfont.setPointSize(10);
+    wordfont.setPointSize(12);
     QFontMetrics fm(wordfont);
     QRect rec = fm.boundingRect(m_showContent);
 
 
     QPoint controlGlobalPos = widget->mapToGlobal(QPoint(0,0));
 
-    int dialogW = rec.width()+20;
-    int dialogH = rec.height() +20;
-
+    int dialogW = rec.width()+16;
+    int dialogH = rec.height() +8;
 
     int dilogLeftX = controlGlobalPos.x() + (widget->width() - dialogW)/2 ;
     int dilogLeftY = controlGlobalPos.y() + dialogH + padding;
-
 
     QPoint screenPos(dilogLeftX,dilogLeftY);
 
@@ -80,7 +78,6 @@ void  MessageDialog::showDialogOnBottom(QWidget *widget,int padding,int timeInte
 
     connect(&timer,SIGNAL(timeout()),this,SLOT(slot_destroySelf()));
     timer.start(timeInterval);
-
 }
 
 void MessageDialog::showDialogOnRight(QWidget *widget,int padding,int timeInterval )
@@ -92,11 +89,10 @@ void MessageDialog::showDialogOnRight(QWidget *widget,int padding,int timeInterv
     QFontMetrics fm(wordfont);
     QRect rec = fm.boundingRect(m_showContent);
 
-
     QPoint controlGlobalPos = widget->mapToGlobal(QPoint(0,0));
 
-    int dialogW = rec.width()+20;
-    int dialogH = rec.height() +20;
+    int dialogW = rec.width()+16;
+    int dialogH = rec.height() +8;
 
 
     int dilogLeftX = controlGlobalPos.x() + widget->width() + padding;

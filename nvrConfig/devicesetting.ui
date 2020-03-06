@@ -87,7 +87,7 @@ border-color: #476BFD;
     <enum>QTabWidget::Rounded</enum>
    </property>
    <property name="currentIndex">
-    <number>0</number>
+    <number>4</number>
    </property>
    <property name="elideMode">
     <enum>Qt::ElideMiddle</enum>
@@ -792,7 +792,7 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font-size: 14px;
     color: #333333;</string>
       </property>
@@ -810,9 +810,9 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">	
 	font-size: 14px;
-    color: #000000;</string>
+    color: #333333;</string>
       </property>
       <property name="text">
        <string>Motion Detection</string>
@@ -828,9 +828,9 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font-size: 14px;
-    color: #000000;</string>
+    color: #333333;</string>
       </property>
       <property name="text">
        <string>Video Loss</string>
@@ -999,7 +999,7 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font-size: 14px;
     color: #333333;</string>
       </property>
@@ -1017,9 +1017,9 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font-size: 14px;
-    color: #000000;</string>
+    color: #333333;</string>
       </property>
       <property name="text">
        <string>Video Loss</string>
@@ -1035,9 +1035,9 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font-size: 14px;
-    color: #000000;</string>
+    color: #333333;</string>
       </property>
       <property name="text">
        <string>Motion Detection</string>
@@ -1097,7 +1097,7 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font-size: 14px;
     color: #333333;</string>
       </property>
@@ -1115,9 +1115,9 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font-size: 14px;
-    color: #000000;</string>
+    color: #333333;</string>
       </property>
       <property name="text">
        <string>Video Loss</string>
@@ -1133,9 +1133,9 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font-size: 14px;
-    color: #000000;</string>
+    color: #333333;</string>
       </property>
       <property name="text">
        <string>Motion Detection</string>
@@ -1198,7 +1198,7 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font-size: 14px;
     color: #333333;</string>
       </property>
@@ -1216,9 +1216,9 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font-size: 14px;
-    color: #000000;</string>
+    color: #333333;</string>
       </property>
       <property name="text">
        <string>Video Loss</string>
@@ -1234,9 +1234,9 @@ QPushButton#Alarmswitch:checked{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">	font-family: &quot;Microsoft YaHei&quot;;
+       <string notr="true">
 	font-size: 14px;
-    color: #000000;</string>
+    color: #333333;</string>
       </property>
       <property name="text">
        <string>Motion Detection</string>
@@ -2131,8 +2131,8 @@ border:1px solid #476BFD;
        <rect>
         <x>220</x>
         <y>115</y>
-        <width>16</width>
-        <height>16</height>
+        <width>14</width>
+        <height>14</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -2246,7 +2246,7 @@ border:1px solid #476BFD;
       padding-left:10px;
       min-width: 120px;
 		min-height:28px;
-	  color:#000000;
+	  color:#333333;
 	  font-size:14px;
   }
 
@@ -2351,7 +2351,7 @@ QComboBox QScrollBar::sub-line::vertical{
       </property>
       <property name="styleSheet">
        <string notr="true">
-	font:bold 14px;
+	font:14px;
     color: #333333;</string>
       </property>
       <property name="text">
@@ -2368,7 +2368,7 @@ QComboBox QScrollBar::sub-line::vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #000000;</string>
+       <string notr="true">color: #333333;</string>
       </property>
       <property name="text">
        <string>URL</string>
@@ -2394,7 +2394,7 @@ QComboBox QScrollBar::sub-line::vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #000000;</string>
+       <string notr="true">color: #333333;</string>
       </property>
       <property name="text">
        <string>User Name</string>
@@ -2420,7 +2420,7 @@ QComboBox QScrollBar::sub-line::vertical{
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: #000000;</string>
+       <string notr="true">color: #333333;</string>
       </property>
       <property name="text">
        <string>Password</string>

@@ -43,7 +43,6 @@
         <file>images/table_menu.png</file>
         <file>images/table_menu_hover.png</file>
         <file>images/table_menu_p.png</file>
-        <file>images/table_down.png</file>
         <file>images/table_down_p.png</file>
         <file>images/table_up.png</file>
         <file>images/table_up_p.png</file>
@@ -91,5 +90,8 @@
         <file>config/timezone.conf</file>
         <file>images/video_replay1.png</file>
         <file>images/cloudControl_bg1.png</file>
+        <file>images/table_down.png</file>
+        <file>images/table_down_h.png</file>
+        <file>images/table_up_H.png</file>
     </qresource>
 </RCC>

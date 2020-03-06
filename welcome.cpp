@@ -50,6 +50,6 @@ void Welcome::on_pushButton_clicked()
 {
 
     MessageDialog *dialog = new MessageDialog(this,"test");
-    dialog->showDialogOnBottom(ui->pushButton);
+    dialog->showDialogOnTop(ui->lineEdit_password,19);
     emit signal_loginStr(ui->lineEdit_password->text());
 }

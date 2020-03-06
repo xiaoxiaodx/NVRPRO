@@ -68,8 +68,7 @@ void PasswordSetting::on_pushButton_next_clicked()
 
 
     MessageDialog *dialog = new MessageDialog(this,"test");
-    dialog->showDialogOnBottom(ui->pushButton_next,20,1000);
+    dialog->showDialogOnTop(ui->lineEdit_password,3,1000);
 
     emit signal_password(pwd,confirm);
-
 }

@@ -12,12 +12,6 @@ InputEditKeyEventFilter::InputEditKeyEventFilter(QObject *parent) : QObject(pare
 bool InputEditKeyEventFilter::eventFilter(QObject *obj, QEvent *event)
 {
 
-
-
-
-
-
-
     if (event->type() == MyKeyPressEvent::eventType()) {
         MyLineEdit *lineEdit = dynamic_cast<MyLineEdit*>(obj);
         Q_ASSERT(lineEdit);

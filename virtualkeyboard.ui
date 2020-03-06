@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>412</width>
+    <width>408</width>
     <height>152</height>
    </rect>
   </property>
@@ -76,7 +76,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_m">
    <property name="geometry">
     <rect>
-     <x>244</x>
+     <x>242</x>
      <y>92</y>
      <width>28</width>
      <height>28</height>
@@ -95,7 +95,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_gantanhao">
    <property name="geometry">
     <rect>
-     <x>274</x>
+     <x>272</x>
      <y>92</y>
      <width>28</width>
      <height>28</height>
@@ -114,7 +114,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_n">
    <property name="geometry">
     <rect>
-     <x>214</x>
+     <x>212</x>
      <y>92</y>
      <width>28</width>
      <height>28</height>
@@ -139,7 +139,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_v">
    <property name="geometry">
     <rect>
-     <x>153</x>
+     <x>152</x>
      <y>92</y>
      <width>28</width>
      <height>28</height>
@@ -158,7 +158,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_b">
    <property name="geometry">
     <rect>
-     <x>183</x>
+     <x>182</x>
      <y>92</y>
      <width>28</width>
      <height>28</height>
@@ -177,7 +177,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_dot">
    <property name="geometry">
     <rect>
-     <x>334</x>
+     <x>332</x>
      <y>92</y>
      <width>28</width>
      <height>28</height>
@@ -196,7 +196,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_douhao">
    <property name="geometry">
     <rect>
-     <x>365</x>
+     <x>362</x>
      <y>92</y>
      <width>44</width>
      <height>28</height>
@@ -215,7 +215,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_wenhao">
    <property name="geometry">
     <rect>
-     <x>304</x>
+     <x>302</x>
      <y>92</y>
      <width>28</width>
      <height>28</height>
@@ -234,7 +234,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_c">
    <property name="geometry">
     <rect>
-     <x>123</x>
+     <x>122</x>
      <y>92</y>
      <width>28</width>
      <height>28</height>
@@ -272,7 +272,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_x">
    <property name="geometry">
     <rect>
-     <x>93</x>
+     <x>92</x>
      <y>92</y>
      <width>28</width>
      <height>28</height>
@@ -329,7 +329,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_g">
    <property name="geometry">
     <rect>
-     <x>169</x>
+     <x>168</x>
      <y>62</y>
      <width>28</width>
      <height>28</height>
@@ -348,7 +348,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_j">
    <property name="geometry">
     <rect>
-     <x>230</x>
+     <x>228</x>
      <y>62</y>
      <width>28</width>
      <height>28</height>
@@ -373,7 +373,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_d">
    <property name="geometry">
     <rect>
-     <x>109</x>
+     <x>108</x>
      <y>62</y>
      <width>28</width>
      <height>28</height>
@@ -392,7 +392,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_f">
    <property name="geometry">
     <rect>
-     <x>139</x>
+     <x>138</x>
      <y>62</y>
      <width>28</width>
      <height>28</height>
@@ -411,7 +411,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_h">
    <property name="geometry">
     <rect>
-     <x>200</x>
+     <x>198</x>
      <y>62</y>
      <width>28</width>
      <height>28</height>
@@ -430,7 +430,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_s">
    <property name="geometry">
     <rect>
-     <x>79</x>
+     <x>78</x>
      <y>62</y>
      <width>28</width>
      <height>28</height>
@@ -487,7 +487,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_l">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>288</x>
      <y>62</y>
      <width>28</width>
      <height>28</height>
@@ -506,7 +506,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_gang">
    <property name="geometry">
     <rect>
-     <x>351</x>
+     <x>348</x>
      <y>62</y>
      <width>28</width>
      <height>28</height>
@@ -525,7 +525,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_xiahuaxian">
    <property name="geometry">
     <rect>
-     <x>321</x>
+     <x>318</x>
      <y>62</y>
      <width>28</width>
      <height>28</height>
@@ -544,7 +544,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_fanxiexian">
    <property name="geometry">
     <rect>
-     <x>381</x>
+     <x>378</x>
      <y>62</y>
      <width>28</width>
      <height>28</height>
@@ -563,7 +563,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_k">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>258</x>
      <y>62</y>
      <width>28</width>
      <height>28</height>
@@ -601,7 +601,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_del">
    <property name="geometry">
     <rect>
-     <x>352</x>
+     <x>348</x>
      <y>2</y>
      <width>58</width>
      <height>28</height>
@@ -620,7 +620,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_0">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>318</x>
      <y>2</y>
      <width>28</width>
      <height>28</height>
@@ -639,7 +639,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_3">
    <property name="geometry">
     <rect>
-     <x>110</x>
+     <x>108</x>
      <y>2</y>
      <width>28</width>
      <height>28</height>
@@ -658,7 +658,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_7">
    <property name="geometry">
     <rect>
-     <x>229</x>
+     <x>228</x>
      <y>2</y>
      <width>28</width>
      <height>28</height>
@@ -696,7 +696,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_9">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>288</x>
      <y>2</y>
      <width>28</width>
      <height>28</height>
@@ -715,7 +715,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_2">
    <property name="geometry">
     <rect>
-     <x>80</x>
+     <x>78</x>
      <y>2</y>
      <width>28</width>
      <height>28</height>
@@ -734,7 +734,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_8">
    <property name="geometry">
     <rect>
-     <x>260</x>
+     <x>258</x>
      <y>2</y>
      <width>28</width>
      <height>28</height>
@@ -772,7 +772,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_6">
    <property name="geometry">
     <rect>
-     <x>199</x>
+     <x>198</x>
      <y>2</y>
      <width>28</width>
      <height>28</height>
@@ -797,7 +797,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_1">
    <property name="geometry">
     <rect>
-     <x>50</x>
+     <x>48</x>
      <y>2</y>
      <width>28</width>
      <height>28</height>
@@ -816,8 +816,8 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_t">
    <property name="geometry">
     <rect>
-     <x>153</x>
-     <y>31</y>
+     <x>152</x>
+     <y>32</y>
      <width>28</width>
      <height>28</height>
     </rect>
@@ -835,8 +835,8 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_y">
    <property name="geometry">
     <rect>
-     <x>183</x>
-     <y>31</y>
+     <x>182</x>
+     <y>32</y>
      <width>28</width>
      <height>28</height>
     </rect>
@@ -854,8 +854,8 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_p">
    <property name="geometry">
     <rect>
-     <x>304</x>
-     <y>31</y>
+     <x>302</x>
+     <y>32</y>
      <width>28</width>
      <height>28</height>
     </rect>
@@ -873,8 +873,8 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_r">
    <property name="geometry">
     <rect>
-     <x>123</x>
-     <y>31</y>
+     <x>122</x>
+     <y>32</y>
      <width>28</width>
      <height>28</height>
     </rect>
@@ -892,8 +892,8 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_o">
    <property name="geometry">
     <rect>
-     <x>274</x>
-     <y>31</y>
+     <x>272</x>
+     <y>32</y>
      <width>28</width>
      <height>28</height>
     </rect>
@@ -911,8 +911,8 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_maohao">
    <property name="geometry">
     <rect>
-     <x>334</x>
-     <y>31</y>
+     <x>332</x>
+     <y>32</y>
      <width>28</width>
      <height>28</height>
     </rect>
@@ -930,8 +930,8 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_i">
    <property name="geometry">
     <rect>
-     <x>244</x>
-     <y>31</y>
+     <x>242</x>
+     <y>32</y>
      <width>28</width>
      <height>28</height>
     </rect>
@@ -949,8 +949,8 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_u">
    <property name="geometry">
     <rect>
-     <x>214</x>
-     <y>31</y>
+     <x>212</x>
+     <y>32</y>
      <width>28</width>
      <height>28</height>
     </rect>
@@ -975,7 +975,7 @@ border-image: url(:/images/keyborad_enter_P.png);
    <property name="geometry">
     <rect>
      <x>2</x>
-     <y>31</y>
+     <y>32</y>
      <width>28</width>
      <height>28</height>
     </rect>
@@ -994,7 +994,7 @@ border-image: url(:/images/keyborad_enter_P.png);
    <property name="geometry">
     <rect>
      <x>32</x>
-     <y>31</y>
+     <y>32</y>
      <width>28</width>
      <height>28</height>
     </rect>
@@ -1013,7 +1013,7 @@ border-image: url(:/images/keyborad_enter_P.png);
    <property name="geometry">
     <rect>
      <x>62</x>
-     <y>31</y>
+     <y>32</y>
      <width>28</width>
      <height>28</height>
     </rect>
@@ -1031,8 +1031,8 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_e">
    <property name="geometry">
     <rect>
-     <x>93</x>
-     <y>31</y>
+     <x>92</x>
+     <y>32</y>
      <width>28</width>
      <height>28</height>
     </rect>
@@ -1050,8 +1050,8 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_yinhao">
    <property name="geometry">
     <rect>
-     <x>365</x>
-     <y>31</y>
+     <x>362</x>
+     <y>32</y>
      <width>44</width>
      <height>28</height>
     </rect>
@@ -1069,7 +1069,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_space">
    <property name="geometry">
     <rect>
-     <x>123</x>
+     <x>122</x>
      <y>122</y>
      <width>164</width>
      <height>28</height>
@@ -1088,7 +1088,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_guohao1">
    <property name="geometry">
     <rect>
-     <x>290</x>
+     <x>288</x>
      <y>122</y>
      <width>28</width>
      <height>28</height>
@@ -1107,7 +1107,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_denghao">
    <property name="geometry">
     <rect>
-     <x>93</x>
+     <x>92</x>
      <y>122</y>
      <width>28</width>
      <height>28</height>
@@ -1183,7 +1183,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_kuohao2">
    <property name="geometry">
     <rect>
-     <x>320</x>
+     <x>318</x>
      <y>122</y>
      <width>28</width>
      <height>28</height>
@@ -1202,7 +1202,7 @@ border-image: url(:/images/keyborad_enter_P.png);
   <widget class="QPushButton" name="pushButton_enter">
    <property name="geometry">
     <rect>
-     <x>351</x>
+     <x>348</x>
      <y>122</y>
      <width>58</width>
      <height>28</height>

@@ -16,26 +16,23 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+
     this->setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_TranslucentBackground, true);
     setAutoFillBackground(true);
     currentMainWindowShowType = MASTERPREVIEW;
-
-
     listVideoW.clear();
 
     createSingletonKeyBorad();
     createSingletonEventFilter();
 
-
-    //createDialog_timeZoneSetting();
-    //createDialog_passwordSetting();
-   // createDialog_welcome();
+    createDialog_timeZoneSetting();
+    createDialog_passwordSetting();
+    createDialog_welcome();
     createVideoWindow(4);
+
     //createDialog_config();
-    // createReplayWindow();
-
-
+    //createReplayWindow();
 }
 
 void MainWindow::createSingletonKeyBorad()
@@ -145,6 +142,7 @@ void MainWindow::createDialog_timeZoneSetting()
         timeZoneSetting->show();
     }
 }
+
 void MainWindow::createDialog_passwordSetting()
 {
     QDesktopWidget* pDesktopWidget = QApplication::desktop();
@@ -227,30 +225,30 @@ void MainWindow::popMenu()
         rightMouseMenu->setStyleSheet("background-color: #171717;padding:0px;border:none;");
         QWidgetAction *buttonActionSpace = new QWidgetAction(this);
         QLabel *lable = new QLabel(this);
-        lable ->setFixedSize(QSize(200,10));
+        lable ->setFixedSize(QSize(210,10));
         lable->setStyleSheet("background-color: #171717;");
         buttonActionSpace->setDefaultWidget(lable);
         QWidgetAction *buttonActionSpace1 = new QWidgetAction(this);
         QLabel *lable1 = new QLabel(this);
-        lable1 ->setFixedSize(QSize(200,10));
+        lable1 ->setFixedSize(QSize(210,10));
         lable1->setStyleSheet("background-color: #171717;");
         buttonActionSpace1->setDefaultWidget(lable1);
 
         QWidgetAction *buttonActionSpace2 = new QWidgetAction(this);
         QLabel *lable2 = new QLabel(this);
-        lable2 ->setFixedSize(QSize(200,10));
+        lable2 ->setFixedSize(QSize(210,10));
         lable2->setStyleSheet("background-color: #171717;");
         buttonActionSpace2->setDefaultWidget(lable2);
 
         QWidgetAction *buttonActionSpace3 = new QWidgetAction(this);
         QLabel *lable3 = new QLabel(this);
-        lable3 ->setFixedSize(QSize(200,10));
+        lable3 ->setFixedSize(QSize(210,10));
         lable3->setStyleSheet("background-color: #171717;");
         buttonActionSpace3->setDefaultWidget(lable3);
 
         QWidgetAction *buttonActionSpace4 = new QWidgetAction(this);
         QLabel *lable4 = new QLabel(this);
-        lable4 ->setFixedSize(QSize(200,10));
+        lable4 ->setFixedSize(QSize(210,10));
         lable4->setStyleSheet("background-color: #171717;");
         buttonActionSpace4->setDefaultWidget(lable4);
 
@@ -383,7 +381,7 @@ void MainWindow::slot_switchWindow(WindowType type)
 
 QPushButton *MainWindow::createSelfBtn(QString btnTxt,QString res)
 {
-    const QSize btnSize(200,42);
+    const QSize btnSize(210,42);
     QPushButton *btn = new QPushButton(this);
 
 

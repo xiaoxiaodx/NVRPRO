@@ -3,6 +3,7 @@
 #include <QHeaderView>
 #include <QScrollBar>
 #include <QHBoxLayout>
+#include <QButtonGroup>
 #include "mainwindow.h"
 #include "customerevent.h"
 #include "messagedialog.h"
@@ -14,7 +15,6 @@ SystemManager::SystemManager(QWidget *parent) :
     ui->setupUi(this);
     init();
 }
-
 
 void SystemManager::init()
 {
@@ -244,15 +244,29 @@ void SystemManager::createDeviceTableHeader()
     QLabel *lable4 = new QLabel("Start Time",widget4);
     QPushButton *btn4up = new QPushButton(widget4);
     QPushButton *btn4down = new QPushButton(widget4);
+
+
+
     lable4->setGeometry(0,10,59,15);
     btn4up->setGeometry(63,12,11,7);
     btn4down->setGeometry(63,19,11,7);
     btn4up->setFocusPolicy(Qt::NoFocus);
     btn4down->setFocusPolicy(Qt::NoFocus);
     btn4up ->setStyleSheet("QPushButton{border-image: url(:/images/table_up.png);}"
-                           "QPushButton:pressed{border-image: url(:/images/table_up_p.png);}");
+
+                           "QPushButton:checked{border-image: url(:/images/table_up_p.png);}");
     btn4down ->setStyleSheet("QPushButton{border-image: url(:/images/table_down.png);}"
-                             "QPushButton:pressed{border-image: url(:/images/table_down_p.png);}");
+
+                             "QPushButton:checked{border-image: url(:/images/table_down_p.png);}");
+
+    btn4up->setCheckable(true);
+    btn4down->setCheckable(true);
+
+    /*单选菜单效果*/
+    QButtonGroup *buttonGround = new QButtonGroup(this);
+    buttonGround->addButton(btn4up);
+    buttonGround->addButton(btn4down);
+    buttonGround->setExclusive(true);
 
     QWidget *widget5 = new QWidget(this);
     QLabel *lable5 = new QLabel("End Time",widget5);
@@ -265,11 +279,22 @@ void SystemManager::createDeviceTableHeader()
     btn5down->setFocusPolicy(Qt::NoFocus);
     btn5up->setFocusPolicy(Qt::NoFocus);
     btn5up ->setStyleSheet("QPushButton{border-image: url(:/images/table_up.png);}"
-                           "QPushButton:pressed{border-image: url(:/images/table_up_p.png);}");
+
+                           "QPushButton:checked{border-image: url(:/images/table_up_p.png);}");
 
     btn5down ->setStyleSheet("QPushButton{border-image: url(:/images/table_down.png);}"
-                             "QPushButton:pressed{border-image: url(:/images/table_down_p.png);}");
 
+                             "QPushButton:checked{border-image: url(:/images/table_down_p.png);}");
+
+    btn5up->setCheckable(true);
+    btn5down->setCheckable(true);
+
+
+    /*单选菜单效果*/
+    QButtonGroup *buttonGround1 = new QButtonGroup(this);
+    buttonGround1->addButton(btn5up);
+    buttonGround1->addButton(btn5down);
+    buttonGround1->setExclusive(true);
 
     lable1->setStyleSheet("background-color:#EDEDED;");
     widget2->setStyleSheet("background-color:#EDEDED;");
@@ -494,7 +519,7 @@ void SystemManager::on_TimeSetpushButton_url_clicked()
 //    delete event;
 
 
-    MessageDialog *dialog = new MessageDialog(this,"输入错误 请重新输入");
+    MessageDialog *dialog = new MessageDialog(this,"MessageDialog");
 
     dialog->showDialogOnRight(ui->TimeSetpushButton_url,20,1000);
 

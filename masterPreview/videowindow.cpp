@@ -58,7 +58,7 @@ void VideoWindow::noVideo()
 
 void VideoWindow::showControl()
 {
-    ui->frame->setStyleSheet("#frame{border:4px solid #476BFD}");
+    ui->frame->setStyleSheet("#frame{border:2px solid #476BFD}");
     ui->widget_cloudControl->setVisible(true);
     ui->pushButton_setHome->setVisible(true);
     ui->pushButton_replay->setVisible(true);

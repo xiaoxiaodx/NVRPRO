@@ -6,6 +6,7 @@
 #include <QSpinBox>
 #include <QDebug>
 #include <QHBoxLayout>
+#include <QButtonGroup>
 #include "confirmdialog.h"
 #include "mainwindow.h"
 #include "messagedialog.h"
@@ -81,6 +82,8 @@ void DeviceSetting::createDeviceTableHeader()
     QLabel *lable4 = new QLabel(tr("Software Version"));
     QLabel *lable5 = new QLabel(tr("Hardware Version"));
     QLabel *lable6 = new QLabel(tr("Operate"));
+
+
 
     widget3->setStyleSheet("background-color:#EBECF0;");
     lable0->setStyleSheet("background-color:#EBECF0;");
