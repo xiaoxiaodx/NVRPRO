@@ -29,7 +29,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
 
     //createDialog_timeZoneSetting();
-    createDialog_passwordSetting();
+    //createDialog_passwordSetting();
    // createDialog_welcome();
     createVideoWindow(4);
     //createDialog_config();

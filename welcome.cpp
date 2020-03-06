@@ -44,8 +44,6 @@ void Welcome::setControlPostion()
     ui->lineEdit_password->setGeometry((thisW - lineEdit_passwordW)/2,lineEdit_passwordY,lineEdit_passwordW,lineEdit_passwordH);
 
     ui->pushButton->setGeometry((thisW - btnW)/2,btnY,btnW,btnH);
-
-
 }
 
 void Welcome::on_pushButton_clicked()

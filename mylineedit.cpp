@@ -4,7 +4,7 @@ MyLineEdit::MyLineEdit(QWidget *parent) :
     QLineEdit(parent)
 {
 
-     qDebug()<<"111dsadsadsa";
+    // qDebug()<<"111dsadsadsa";
 }
 
 void MyLineEdit::setPasswordInput(bool ispwd)
