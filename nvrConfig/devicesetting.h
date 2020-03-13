@@ -20,6 +20,7 @@ private slots:
 
     void on_RTMPpushButton_submit_clicked();
 
+    void slot_tableDeleteItem();
 private:
     Ui::DeviceSetting *ui;
 

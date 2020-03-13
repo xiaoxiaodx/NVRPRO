@@ -7,30 +7,30 @@ int main(int argc, char *argv[])
 
 
 
-    qDebug() <<"1:"<< qApp->font().rawName();
-    qDebug() << qApp->font().family();
-    qDebug() << qApp->font().defaultFamily();
-    qDebug() << qApp->font().styleName();
-    qDebug() << qApp->font().toString();
-    qDebug() << qApp->font().key();
+//    qDebug() <<"1:"<< qApp->font().rawName();
+//    qDebug() << qApp->font().family();
+//    qDebug() << qApp->font().defaultFamily();
+//    qDebug() << qApp->font().styleName();
+//    qDebug() << qApp->font().toString();
+//    qDebug() << qApp->font().key();
 
-    QFont font;
-    font.setFamily("微软雅黑");
-    qApp->setFont(font);
+//    QFont font;
+//    font.setFamily("微软雅黑");
+//    qApp->setFont(font);
 
-    qDebug()  <<"2:"<< qApp->font().rawName();
-    qDebug() << qApp->font().family();
-    qDebug() << qApp->font().defaultFamily();
-    qDebug() << qApp->font().styleName();
-    qDebug() << qApp->font().toString();
-    qDebug() << qApp->font().key();
+//    qDebug()  <<"2:"<< qApp->font().rawName();
+//    qDebug() << qApp->font().family();
+//    qDebug() << qApp->font().defaultFamily();
+//    qDebug() << qApp->font().styleName();
+//    qDebug() << qApp->font().toString();
+//    qDebug() << qApp->font().key();
 
     MainWindow w;
 
     w.showFullScreen();
 
 
-    QFontDatabase SS;
-    qDebug()<<"fonts:"<<SS.families();
+//    QFontDatabase SS;
+//    qDebug()<<"fonts:"<<SS.families();
     return a.exec();
 }

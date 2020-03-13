@@ -133,7 +133,8 @@ void MessageDialog::slot_destroySelf()
 {
     disconnect(&timer,SIGNAL(timeout()),this,SLOT(slot_destroySelf()));
     timer.stop();
-    deleteLater();
+    this->close();
+    //deleteLater();
 }
 #include <QDebug>
 MessageDialog::~MessageDialog()

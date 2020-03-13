@@ -42,6 +42,7 @@ public slots:
 
     //主预览
     void slot_selectVideo(int);
+    void slot_dClickVideo(int,bool);
     void slot_masterControl(int ide,MasterControl type);
     //密码设置
     void slot_passwordSetting(QString,QString);
@@ -80,7 +81,7 @@ private:
 
     QPushButton *createSelfBtn(QString str,QString res);
 
-    int const rectSpace = 2;//分屏的时候，相邻矩形的边距
+    int const rectSpace =0;//分屏的时候，相邻矩形的边距
     int const videoN = 2;//几乘几的视频显示
 
     QMenu *rightMouseMenu = NULL;

@@ -26,10 +26,10 @@ MainWindow::MainWindow(QWidget *parent) :
     createSingletonKeyBorad();
     createSingletonEventFilter();
 
-    createDialog_timeZoneSetting();
-    createDialog_passwordSetting();
-    createDialog_welcome();
-    createVideoWindow(4);
+    // createDialog_timeZoneSetting();
+    //createDialog_passwordSetting();
+    //createDialog_welcome();
+    createVideoWindow(1);
 
     //createDialog_config();
     //createReplayWindow();
@@ -115,10 +115,14 @@ void MainWindow::createVideoWindow(int n)
 
         for(int j=0;j<videoN;j++){//横向添加
             VideoWindow *videoWindow = new VideoWindow(this,widthPerRect,heightPerRect,i*videoN+j);
-
+            videoWindow->setParent(this);
             connect(videoWindow,SIGNAL(signal_selectVideo(int)),this,SLOT(slot_selectVideo(int)));
+            connect(videoWindow,SIGNAL(signal_dClickVideo(int,bool)),this,SLOT(slot_dClickVideo(int,bool)));
+
             connect(videoWindow,SIGNAL(signal_masterControl(int,MasterControl)),this,SLOT(slot_masterControl(int,MasterControl)));
             videoWindow->setGeometry((widthPerRect+rectSpace)*j ,(heightPerRect+rectSpace)*i,widthPerRect,heightPerRect);
+
+
 
             listVideoW.append(videoWindow);
         }
@@ -178,24 +182,24 @@ void MainWindow::createDialog_welcome()
 
 void MainWindow::paintEvent(QPaintEvent*)
 {
-    QPainter pt(this);
+    //    QPainter pt(this);
 
-    QColor c(Qt::gray);
-    c.setAlpha(0);
-    pt.fillRect(rect(), c);
-    QPen pen(QColor("#252525"),rectSpace);
+    //    QColor c(Qt::gray);
+    //    c.setAlpha(0);
+    //    pt.fillRect(rect(), c);
+    //    QPen pen(QColor("#252525"),rectSpace);
 
-    pen.setBrush(QBrush(QColor("#252525")));
-    pt.setPen(pen);
+    //    pen.setBrush(QBrush(QColor("#252525")));
+    //    pt.setPen(pen);
 
 
-    int widthPerRect = (rect().width() - rectSpace *(videoN-1))/videoN;
-    int heightPerRect = (rect().height() - rectSpace *(videoN-1))/videoN;
+    //  int widthPerRect = (rect().width() - rectSpace *(videoN-1))/videoN;
+    //   int heightPerRect = (rect().height() - rectSpace *(videoN-1))/videoN;
 
-    for(int i = 0;i<videoN-1;i++){//画线
-        pt.drawLine(widthPerRect*(i+1) + rectSpace*i,0,widthPerRect*(i+1) + rectSpace*i,rect().height());//竖线
-        pt.drawLine(0,heightPerRect*(i+1) + rectSpace*i,rect().width(),heightPerRect*(i+1) + rectSpace*i);//横线
-    }
+    //    for(int i = 0;i<videoN-1;i++){//画线
+    //        pt.drawLine(widthPerRect*(i+1) + rectSpace*i,0,widthPerRect*(i+1) + rectSpace*i,rect().height());//竖线
+    //        pt.drawLine(0,heightPerRect*(i+1) + rectSpace*i,rect().width(),heightPerRect*(i+1) + rectSpace*i);//横线
+    //    }
 }
 
 
@@ -404,6 +408,56 @@ QPushButton *MainWindow::createSelfBtn(QString btnTxt,QString res)
     myLayout->addWidget(label);
     btn->setLayout(myLayout);
     return btn;
+}
+
+
+void MainWindow::slot_dClickVideo(int identify,bool isMax)
+{
+    //获取主屏幕分辨率
+    QRect screenRect = QApplication::desktop()->screenGeometry();
+    int widthPerRect = (screenRect.width() - rectSpace *(videoN-1))/videoN;
+    int heightPerRect = (screenRect.height() - rectSpace *(videoN-1))/videoN;
+    for (int i=0;i<listVideoW.size();i++) {
+
+        VideoWindow *w = listVideoW.at(i);
+        if(identify == w->getIdentify()){
+
+
+            if(w->isMax){
+
+                // w->setVisible(true);
+                int hi = i/2;
+                int vi = i%2;
+
+
+
+                w->setGeometry((widthPerRect+rectSpace)*vi,(heightPerRect+rectSpace)*hi,widthPerRect,heightPerRect);
+                w->adjustWsize(widthPerRect,heightPerRect);
+                w->isMax = false;
+            }else {
+
+
+                w->setGeometry(0,0,screenRect.width(),screenRect.height());
+                w->adjustWsize(screenRect.width(),screenRect.height());
+                w->isMax = true;
+
+
+
+
+            }
+
+        }else{
+
+
+
+            if(!isMax)
+                w->hide();
+            else
+                w->show();
+
+
+        }
+    }
 }
 
 void MainWindow::slot_selectVideo(int identify)

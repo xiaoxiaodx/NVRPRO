@@ -49,7 +49,15 @@ void Welcome::setControlPostion()
 void Welcome::on_pushButton_clicked()
 {
 
-    MessageDialog *dialog = new MessageDialog(this,"test");
-    dialog->showDialogOnTop(ui->lineEdit_password,19);
+
+    MessageDialog dialog(this,"test");
+    dialog.showDialogOnBottom(ui->pushButton,19);
+
     emit signal_loginStr(ui->lineEdit_password->text());
+
+    QEventLoop loop;
+    connect(&dialog,SIGNAL(finished(int)),&loop,SLOT(quit()));
+    loop.exec();
+    qDebug()<<"sasas";
+
 }

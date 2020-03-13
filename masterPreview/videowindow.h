@@ -28,12 +28,16 @@ public:
 
     int getIdentify();
     void showControl();
+    void adjustWsize(int w,int h);
+
     void hideControl();
     void haveVideo();
     void noVideo();
+     bool isMax = false;
 
 signals:
     void signal_selectVideo(int identify);
+    void signal_dClickVideo(int identify,bool isMax);
     void signal_masterControl(int identify,MasterControl type);
 private slots:
     void on_pushButton_cloudControl_right_clicked();
@@ -61,6 +65,9 @@ private:
     bool mouseIsInsideInterface = false;
     bool event(QEvent *event);
     int mIdentify;
+
+
+
 };
 
 #endif // VIDEOWINDOW_H

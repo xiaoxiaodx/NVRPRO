@@ -9,22 +9,23 @@ VideoWindow::VideoWindow(QWidget *parent,int mW,int mH,int identify) :
     ui->setupUi(this);
     mWidth = mW;
     mHeight = mH;
+
     mIdentify = identify;
 
-//    QPushButton *button = new QPushButton(this);
-//    button->setText("测试自定义事件");
-//    // 建立连接, 发送信号
-//    QObject::connect(button, &QPushButton::clicked, [=](void)->void{
-//        // 使用PostEvent方式发送
-//        CustomerEvent *customerEvent = new CustomerEvent("PostCustomerEvent");
-//        QCoreApplication::postEvent(this->parent(), customerEvent);
+    //    QPushButton *button = new QPushButton(this);
+    //    button->setText("测试自定义事件");
+    //    // 建立连接, 发送信号
+    //    QObject::connect(button, &QPushButton::clicked, [=](void)->void{
+    //        // 使用PostEvent方式发送
+    //        CustomerEvent *customerEvent = new CustomerEvent("PostCustomerEvent");
+    //        QCoreApplication::postEvent(this->parent(), customerEvent);
 
-//        // 使用SendEvent方式发送
-//        CustomerEvent *sendCustomerEvent = new CustomerEvent("SendCustomerEvent");
-//        bool result = QCoreApplication::sendEvent(this, sendCustomerEvent);
-//        qDebug() << "The Dispose Result Is " << result;
-//        delete sendCustomerEvent;
-//    });
+    //        // 使用SendEvent方式发送
+    //        CustomerEvent *sendCustomerEvent = new CustomerEvent("SendCustomerEvent");
+    //        bool result = QCoreApplication::sendEvent(this, sendCustomerEvent);
+    //        qDebug() << "The Dispose Result Is " << result;
+    //        delete sendCustomerEvent;
+    //    });
 
     setControlPostion();
     hideControl();
@@ -34,13 +35,26 @@ VideoWindow::~VideoWindow()
 {
     delete ui;
 }
-
+#include <QMouseEvent>
 bool VideoWindow::event(QEvent *event)
 {
 
     if(event->type() == QEvent::MouseButtonPress){
 
-        emit signal_selectVideo(mIdentify);
+        QMouseEvent *mev = dynamic_cast<QMouseEvent *>(event);
+        if(!mev)
+            return false;
+        if(mev->button() == Qt::LeftButton){
+            emit signal_selectVideo(mIdentify);
+            return true;
+        }
+        if(isMax)
+            return true;
+    }else if(event->type() == QEvent::MouseButtonDblClick){
+
+        emit signal_dClickVideo(mIdentify,isMax);
+        return true;
+
     }
 
     return QWidget::event(event);
@@ -56,6 +70,14 @@ void VideoWindow::noVideo()
     ui->label_videoLoss->setVisible(true);
 }
 
+
+void VideoWindow::adjustWsize(int w,int h)
+{
+    mWidth = w;
+    mHeight = h;
+    setControlPostion();
+}
+
 void VideoWindow::showControl()
 {
     ui->frame->setStyleSheet("#frame{border:2px solid #476BFD}");
@@ -63,22 +85,24 @@ void VideoWindow::showControl()
     ui->pushButton_setHome->setVisible(true);
     ui->pushButton_replay->setVisible(true);
     ui->pushButton_video_swith->setVisible(true);
-
 }
+
 void VideoWindow::hideControl()
 {
 
-    ui->frame->setStyleSheet("#frame{border:0px solid #476BFD}");
+    ui->frame->setStyleSheet("#frame{border:2px solid #252525}");
     ui->widget_cloudControl->setVisible(false);
     ui->pushButton_setHome->setVisible(false);
     ui->pushButton_replay->setVisible(false);
     ui->pushButton_video_swith->setVisible(false);
+
 }
 
 int VideoWindow::getIdentify()
 {
     return mIdentify;
 }
+
 void VideoWindow::setControlPostion()
 {
     int cloudControllW = 160;

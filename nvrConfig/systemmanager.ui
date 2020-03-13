@@ -98,7 +98,7 @@ image: url(:/png/images/jy_close2.png)
 </string>
    </property>
    <property name="currentIndex">
-    <number>2</number>
+    <number>4</number>
    </property>
    <property name="elideMode">
     <enum>Qt::ElideRight</enum>

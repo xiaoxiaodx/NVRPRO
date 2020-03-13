@@ -126,15 +126,12 @@ border-color: #476BFD;
     background-color:#F9F9F9;            
     border:none;                   
     font-size:12px;                
-    color:#333333;   
-	selection-background-color:#F1F4FF
+    color:#333333;
+	selection-color:#333333;  
+	selection-background-color:#F1F4FF;
 }
 
-QTableWidget::item::selected      // 每个单元格被选中状态
-{
-    color:#333333;        
-	background-color:#F1F4FF;                        
-}
+
 
 QScrollBar{
 background:transparent; width: 10px;}

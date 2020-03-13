@@ -55,7 +55,7 @@ void DeviceSetting::init()
     qDebug()<< "111:"<< ui->tableWidget->columnCount() ;
     qDebug()<< "111:"<< ui->tableWidget->rowCount() ;
 
-//    QLabel *lable =static_cast<QLabel*>(ui->tableWidget->cellWidget(1,1));
+    //    QLabel *lable =static_cast<QLabel*>(ui->tableWidget->cellWidget(1,1));
 
     qDebug()<<"test1111111111111:"<<ui->tableWidget->item(1,1)->text();
 
@@ -146,9 +146,9 @@ void DeviceSetting::deviceTableInsert(int row_count,QMap<QString,QVariant> map)
     QPushButton *pbtnDelete = new QPushButton(tr("Delete"));
     pbtnDelete->setStyleSheet("text-align:left;background-color:transparent;border:none;color:#476BFD;font:bold 12px;");
 
-    //    connect(pbtnDelete,&QPushButton::clicked,[=](){
-    //        showDialog(row_count);
-    //    });
+    pbtnDelete->setObjectName("btnDelete"+QString::number(row_count));
+    connect(pbtnDelete,SIGNAL(clicked()),this,SLOT(slot_tableDeleteItem()));
+
 
 
     ui->tableWidget->setRowCount(row_count+1);
@@ -160,6 +160,17 @@ void DeviceSetting::deviceTableInsert(int row_count,QMap<QString,QVariant> map)
     ui->tableWidget->setItem(row_count, 4, item4);
     ui->tableWidget->setItem(row_count, 5, item5);
     ui->tableWidget->setCellWidget(row_count, 6, pbtnDelete);
+}
+
+void DeviceSetting::slot_tableDeleteItem()
+{
+    QPushButton *btn=qobject_cast<QPushButton*>(sender());
+
+    QString btnName = btn->objectName();
+
+    int deleteRow = btnName.remove("btnDelete").toInt();
+
+    qDebug()<<" deleteRow   "<<deleteRow;
 }
 
 void DeviceSetting::showDialog(int deleteIndex)
@@ -176,7 +187,7 @@ void DeviceSetting::createDeviceTable()
 
     ui->widget->setGeometry(0,0,950,518);
     ui->tableWidget->setGeometry(16,16,900,400);
-  //  ui->tableWidget->setRowCount(1);
+    //  ui->tableWidget->setRowCount(1);
     ui->tableWidget->setColumnCount(7); //设置列数
 
 
@@ -186,13 +197,13 @@ void DeviceSetting::createDeviceTable()
     ui->tableWidget->horizontalHeader()->setVisible(false);
 
 
-   ui->tableWidget->horizontalHeader()->resizeSection(0,84);
-   ui->tableWidget->horizontalHeader()->resizeSection(1,132);
-   ui->tableWidget->horizontalHeader()->resizeSection(2,120);
-   ui->tableWidget->horizontalHeader()->resizeSection(3,132);
-   ui->tableWidget->horizontalHeader()->resizeSection(4,146);
-   ui->tableWidget->horizontalHeader()->resizeSection(5,140);
-   ui->tableWidget->horizontalHeader()->resizeSection(6,81);
+    ui->tableWidget->horizontalHeader()->resizeSection(0,84);
+    ui->tableWidget->horizontalHeader()->resizeSection(1,132);
+    ui->tableWidget->horizontalHeader()->resizeSection(2,120);
+    ui->tableWidget->horizontalHeader()->resizeSection(3,132);
+    ui->tableWidget->horizontalHeader()->resizeSection(4,146);
+    ui->tableWidget->horizontalHeader()->resizeSection(5,140);
+    ui->tableWidget->horizontalHeader()->resizeSection(6,81);
 
     ui->tableWidget->verticalHeader()->setDefaultSectionSize(2); //设置行距
     ui->tableWidget->verticalHeader()->setVisible(false); //设置垂直头不可见
@@ -409,3 +420,5 @@ void DeviceSetting::on_RTMPpushButton_submit_clicked()
 
     dialog->showDialogOnRight(ui->RTMPpushButton_submit,20,1000);
 }
+
+
