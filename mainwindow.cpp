@@ -466,10 +466,21 @@ void MainWindow::slot_selectVideo(int identify)
     for (int i=0;i<listVideoW.size();i++) {
 
         VideoWindow *w = listVideoW.at(i);
-        if(identify == w->getIdentify())
-            w->showControl();
-        else
-            w->hideControl();
+        if(identify == w->getIdentify()){
+            if(!w->isSelect){
+                w->showControl();
+                w->isSelect = true;
+            }
+
+        }
+
+        else{
+            if(w->isSelect){
+                w->hideControl();
+                w->isSelect = false;
+            }
+
+        }
     }
 }
 

@@ -34,6 +34,7 @@ public:
     void haveVideo();
     void noVideo();
      bool isMax = false;
+     bool isSelect = false;
 
 signals:
     void signal_selectVideo(int identify);
