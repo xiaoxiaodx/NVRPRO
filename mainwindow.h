@@ -51,12 +51,12 @@ public slots:
     //登录
     void slot_loginStr(QString);
 protected:
-    void paintEvent(QPaintEvent*);
+   // void paintEvent(QPaintEvent*);
 
 
     void mousePressEvent(QMouseEvent *event);
 
-    bool event(QEvent *event);
+
 
 
 private:
